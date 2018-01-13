@@ -14,6 +14,7 @@ public class JtLogConfig
 	private static volatile JtLogConfig jtLogConfig;
 	private int maxLengthOfRow = 130;
 	private ArrayList<JtLogFilter> jtLogFilters;
+	private boolean isUsedJavaPrinter = false;
 	
 	private JtLogConfig()
 	{
@@ -63,5 +64,15 @@ public class JtLogConfig
 	public ArrayList<JtLogFilter> getJtLogFilters()
 	{
 		return jtLogFilters;
+	}
+	
+	public void setUsedJavaPrinter(boolean usedJavaPrinter)
+	{
+		isUsedJavaPrinter = usedJavaPrinter;
+	}
+	
+	public boolean isUsedJavaPrinter()
+	{
+		return isUsedJavaPrinter;
 	}
 }

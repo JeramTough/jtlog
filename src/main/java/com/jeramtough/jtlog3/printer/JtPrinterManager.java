@@ -1,5 +1,6 @@
 package com.jeramtough.jtlog3.printer;
 
+import com.jeramtough.jtlog3.JtLogConfig;
 import com.jeramtough.jtlog3.style.PrintStyleManager;
 
 public class JtPrinterManager
@@ -22,8 +23,15 @@ public class JtPrinterManager
 				{
 					try
 					{
-						Class androidLogcatClass = Class.forName(androidLogcatPackageName);
-						jtPrinter = new AndroidJtPrinterImpl();
+						if (JtLogConfig.getJtLogConfig().isUsedJavaPrinter())
+						{
+							jtPrinter = new JavaJtPrinterImpl();
+						}
+						else
+						{
+							Class androidLogcatClass = Class.forName(androidLogcatPackageName);
+							jtPrinter = new AndroidJtPrinterImpl();
+						}
 					}
 					catch (ClassNotFoundException e)
 					{

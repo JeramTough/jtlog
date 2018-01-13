@@ -18,28 +18,15 @@ public class TestMain
 	
 	public TestMain()
 	{
-		//		test1();
-		//		test2();
+		JtLogConfig.getJtLogConfig().setUsedJavaPrinter(true);
+		test1();
+		test2();
 		test3();
 	}
 	
 	private void test1()
 	{
-		//每次都是新对象
-		LogInformation logInformation = new LogInformation("dsafsafd");
-		logInformation.setJtLogLevel(JtLogLevel.DEBUG);
-		logInformation.setTag("debug");
-		
-		//输入适配器,存在两个实例就得
-		JtPrinter jtPrinter = new JavaJtPrinterImpl();
-		
-		PrintStyle printStyle = new DebugPrintStyle();
-		
-		JtLogger jtLogger = JtLogger.getJtLogger();
-		jtLogger.setJtPrinter(jtPrinter);
-		jtLogger.setPrintStyle(printStyle);
-		
-		jtLogger.log(logInformation);
+		new A();
 	}
 	
 	private void test2()

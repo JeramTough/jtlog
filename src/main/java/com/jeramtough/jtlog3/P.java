@@ -13,6 +13,12 @@ public class P
 	
 	static
 	{
+		StringBuilder text = new StringBuilder();
+		for (int i = 0; i < JtLogConfig.getJtLogConfig().getMaxLengthOfRow() * 2; i++)
+		{
+			text.append("-");
+		}
+		P.p(text.toString());
 	}
 	
 	public static void p(String message)
@@ -37,7 +43,8 @@ public class P
 	
 	public static void p(Object message)
 	{
-		LogInformation logInformation = new LogInformation(MyStringUtil.ObjectsToString(message));
+		LogInformation logInformation =
+				new LogInformation(MyStringUtil.ObjectsToString(message));
 		logInformation.setJtLogLevel(JtLogLevel.PRIMARY);
 		
 		PrintStyle printStyle = PrintStyleManager.getPrimaryPrintStyle();
@@ -71,7 +78,8 @@ public class P
 	
 	public static void info(String tag, Object message)
 	{
-		LogInformation logInformation = new LogInformation(MyStringUtil.ObjectsToString(message));
+		LogInformation logInformation =
+				new LogInformation(MyStringUtil.ObjectsToString(message));
 		logInformation.setTag(tag);
 		logInformation.setJtLogLevel(JtLogLevel.INFO);
 		
@@ -105,7 +113,8 @@ public class P
 	
 	public static void warn(String tag, Object message)
 	{
-		LogInformation logInformation = new LogInformation(MyStringUtil.ObjectsToString(message));
+		LogInformation logInformation =
+				new LogInformation(MyStringUtil.ObjectsToString(message));
 		logInformation.setTag(tag);
 		logInformation.setJtLogLevel(JtLogLevel.WARN);
 		
@@ -139,7 +148,8 @@ public class P
 	
 	public static void error(String tag, Object message)
 	{
-		LogInformation logInformation = new LogInformation(MyStringUtil.ObjectsToString(message));
+		LogInformation logInformation =
+				new LogInformation(MyStringUtil.ObjectsToString(message));
 		logInformation.setTag(tag);
 		logInformation.setJtLogLevel(JtLogLevel.ERROR);
 		
@@ -189,7 +199,8 @@ public class P
 	
 	public static void debug(Object message)
 	{
-		LogInformation logInformation = new LogInformation(MyStringUtil.ObjectsToString(message));
+		LogInformation logInformation =
+				new LogInformation(MyStringUtil.ObjectsToString(message));
 		logInformation.setJtLogLevel(JtLogLevel.DEBUG);
 		
 		PrintStyle printStyle = PrintStyleManager.getDebugPrintStyle();
