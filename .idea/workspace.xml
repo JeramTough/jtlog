@@ -6,16 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog3/printer/JtPrinter.java" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog3/printer/JtPrinter.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestMain.java" afterPath="$PROJECT_DIR$/src/test/java/TestMain.java" />
-    </list>
+    <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -127,12 +118,11 @@
       <file leaf-file-name="B.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/B.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="230">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding>
                 <element signature="e#94#95#0" expanded="true" />
                 <element signature="e#112#113#0" expanded="true" />
-                <element signature="e#134#135#0" expanded="true" />
                 <element signature="e#167#168#0" expanded="true" />
               </folding>
             </state>
@@ -827,7 +817,7 @@
       <updated>1515780248402</updated>
       <workItem from="1515780252581" duration="16961000" />
       <workItem from="1515941282136" duration="56000" />
-      <workItem from="1516038535277" duration="2044000" />
+      <workItem from="1516038535277" duration="2171000" />
     </task>
     <servers />
   </component>
@@ -837,7 +827,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19061000" />
+    <option name="totallyTimeSpent" value="19188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1378" height="735" extended-state="0" />
@@ -1112,12 +1102,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/B.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="230">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding>
             <element signature="e#94#95#0" expanded="true" />
             <element signature="e#112#113#0" expanded="true" />
-            <element signature="e#134#135#0" expanded="true" />
             <element signature="e#167#168#0" expanded="true" />
           </folding>
         </state>
