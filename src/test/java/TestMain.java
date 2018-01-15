@@ -19,9 +19,10 @@ public class TestMain
 	public TestMain()
 	{
 		JtLogConfig.getJtLogConfig().setUsedJavaPrinter(true);
-		test1();
-		test2();
-		test3();
+		//		test1();
+		////		test2();
+		////		test3();
+		test4();
 	}
 	
 	private void test1()
@@ -47,4 +48,11 @@ public class TestMain
 		JtLogConfig.getJtLogConfig().addFilter(tagJtLogFilter);
 		P.info("abc", "bbbb");
 	}
+	
+	private void test4()
+	{
+		B b=new B();
+		b.b();
+	}
 }
+

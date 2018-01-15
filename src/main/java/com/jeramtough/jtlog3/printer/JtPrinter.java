@@ -10,6 +10,4 @@ import com.jeramtough.jtlog3.level.JtLogLevel;
 public interface JtPrinter
 {
 	void print(JtLogLevel jtLogLevel, String logText);
-	
-	
 }
