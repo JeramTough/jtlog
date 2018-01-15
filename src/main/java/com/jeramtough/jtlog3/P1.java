@@ -49,13 +49,13 @@ public class P1
 		P.error(tag, message);
 	}
 	
-	public <T extends Number> void error(String tag, T message)
+	public <T extends Number> void error(T message)
 	{
 		P.error(tag, message);
 	}
 	
 	
-	public static void error(String tag, Object message)
+	public void error(Object message)
 	{
 		P.error(tag, message);
 	}
