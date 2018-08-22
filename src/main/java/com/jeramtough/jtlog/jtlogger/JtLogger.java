@@ -1,5 +1,7 @@
 package com.jeramtough.jtlog.jtlogger;
 
+import com.jeramtough.jtlog.log.LogContext;
+
 /**
  * 这个是客户端使用JtLog日志框架的核心接口
  * <p>
@@ -95,4 +97,6 @@ public interface JtLogger {
      * @param message 输出内容
      */
     <T> void verbose(String tag, T message);
+
+    LogContext getLogContext();
 }

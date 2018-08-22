@@ -3,7 +3,8 @@ package com.jeramtough.jtlog.jtlogger;
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
 import com.jeramtough.jtlog.log.LogConfig;
 import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.logproxy.FilterJtloggerProxy;
+import com.jeramtough.jtlog.logproxy.EnabledJtLoggerProxy;
+import com.jeramtough.jtlog.logproxy.FilterJtLoggerProxy;
 
 import java.util.HashMap;
 
@@ -35,7 +36,7 @@ public final class JtLoggerManager {
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(contextName, jtLogger);
 
-            loadLogProxy(jtLogger, logContext);
+            jtLogger = loadLogProxy(jtLogger);
         }
         return jtLogger;
     }
@@ -46,20 +47,22 @@ public final class JtLoggerManager {
 
         JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) c.getDeclaredAnnotation(JtLoggerConfig.class);
 
-        System.out.println(jtLoggerConfig == null);
-
         if (jtLoggerConfig != null) {
             logConfig.setEnabled(jtLoggerConfig.isEnabled());
             logConfig.setUsedJtloggerApi(jtLoggerConfig.isUsedJtloggerApi());
             logConfig.setMaxLengthOfRow(jtLoggerConfig.maxLengthOfRow());
+            logConfig.setVisibleLevel(jtLoggerConfig.visibleLevel());
         }
         return logConfig;
     }
 
-    private static void loadLogProxy(JtLogger jtLogger, LogContext logContext) {
-        FilterJtloggerProxy filterJtloggerProxy = new FilterJtloggerProxy(logContext);
+    private static JtLogger loadLogProxy(JtLogger jtLogger) {
+        EnabledJtLoggerProxy enabledJtLoggerProxy = new EnabledJtLoggerProxy();
+        FilterJtLoggerProxy filterJtloggerProxy = new FilterJtLoggerProxy();
 
-        filterJtloggerProxy.doFilterProxy(jtLogger);
+        jtLogger = enabledJtLoggerProxy.doProxy(jtLogger);
+//        jtLogger = filterJtloggerProxy.doProxy(jtLogger);
+        return jtLogger;
     }
 
 }

@@ -101,4 +101,9 @@ public class JtLoggerImpl implements JtLogger {
         PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
+    @Override
+    public LogContext getLogContext() {
+        return logContext;
+    }
+
 }

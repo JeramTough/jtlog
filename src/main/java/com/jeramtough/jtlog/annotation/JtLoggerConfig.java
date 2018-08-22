@@ -2,6 +2,7 @@ package com.jeramtough.jtlog.annotation;
 
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.filter.TagLogFilter;
+import com.jeramtough.jtlog.level.LogLevel;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -22,6 +23,5 @@ public @interface JtLoggerConfig {
 
     int maxLengthOfRow() default 130;
 
-    Class<? extends LogFilter>[] logFilters() default {};
-
+    LogLevel visibleLevel() default LogLevel.DEBUG;
 }

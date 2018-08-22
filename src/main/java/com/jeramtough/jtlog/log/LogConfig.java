@@ -1,6 +1,9 @@
 package com.jeramtough.jtlog.log;
 
 import com.jeramtough.jtlog.filter.LogFilter;
+import com.jeramtough.jtlog.level.LogLevel;
+
+import java.util.ArrayList;
 
 /**
  * Created on 2018-08-21 15:52
@@ -10,7 +13,8 @@ public class LogConfig {
     private int maxLengthOfRow = 130;
     private boolean isEnabled = true;
     private boolean isUsedJtloggerApi = false;
-    private LogFilter[] logFilters;
+    private ArrayList<? super LogFilter> logFilters;
+    private LogLevel visibleLevel = LogLevel.DEBUG;
 
     public int getMaxLengthOfRow() {
         return maxLengthOfRow;
@@ -36,11 +40,24 @@ public class LogConfig {
         isEnabled = enabled;
     }
 
-    public LogFilter[] getLogFilters() {
+
+    public void addLogFilter(LogFilter logFilter) {
+        logFilters.add(logFilter);
+    }
+
+    public void removeLogFilter(LogFilter logFilter) {
+        logFilters.remove(logFilter);
+    }
+
+    public ArrayList<? super LogFilter> getLogFilters() {
         return logFilters;
     }
 
-    public void setLogFilters(LogFilter[] logFilters) {
-        this.logFilters = logFilters;
+    public LogLevel getVisibleLevel() {
+        return visibleLevel;
+    }
+
+    public void setVisibleLevel(LogLevel visibleLevel) {
+        this.visibleLevel = visibleLevel;
     }
 }
