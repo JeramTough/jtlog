@@ -1,6 +1,8 @@
 package com.jeramtough.jtlog.printer;
 
+import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.log.LogContext;
+import com.jeramtough.jtlog.printer.proxy.EnabledPrinterProxy;
 import com.jeramtough.jtlog.style.PrintStyleManager;
 
 /**
@@ -9,10 +11,10 @@ import com.jeramtough.jtlog.style.PrintStyleManager;
  */
 public class PrinterFactory {
 
-    private static volatile JtPrinter jtPrinter;
-    private static volatile LogbackPrinter logbackPrinter;
-    private static volatile Log4j2Printer log4j2Printer;
-    private static volatile AndroidPrinter androidPrinter;
+    private static volatile Printer jtPrinter;
+    private static volatile Printer logbackPrinter;
+    private static volatile Printer log4j2Printer;
+    private static volatile Printer androidPrinter;
 
     private static final String ANDROID_LOGCAT_PACKAGE_NAME = "android.util" +
             ".Log";
@@ -40,7 +42,7 @@ public class PrinterFactory {
 
     //***********************
     //***********************
-    private static JtPrinter getJtPrinter(LogContext logContext) {
+    private static Printer getJtPrinter(LogContext logContext) {
         if (jtPrinter == null) {
             synchronized (PrintStyleManager.class) {
                 if (jtPrinter == null) {
@@ -51,33 +53,37 @@ public class PrinterFactory {
         return jtPrinter;
     }
 
-    private static LogbackPrinter getLogbackPrinter(LogContext logContext) {
+    private static Printer getLogbackPrinter(LogContext logContext) {
         if (logbackPrinter == null) {
             synchronized (PrintStyleManager.class) {
                 if (logbackPrinter == null) {
                     logbackPrinter = new LogbackPrinter(logContext);
+                    logbackPrinter = loadPrinterProxy(logContext, logbackPrinter);
                 }
             }
         }
         return logbackPrinter;
     }
 
-    private static Log4j2Printer getLog4j2Printer(LogContext logContext) {
+    private static Printer getLog4j2Printer(LogContext logContext) {
         if (log4j2Printer == null) {
             synchronized (PrintStyleManager.class) {
                 if (log4j2Printer == null) {
                     log4j2Printer = new Log4j2Printer(logContext);
+                    log4j2Printer = loadPrinterProxy(logContext, log4j2Printer);
                 }
             }
         }
         return log4j2Printer;
     }
 
-    private static AndroidPrinter getAndroidPrinter(LogContext logContext) {
+    private static Printer getAndroidPrinter(LogContext logContext) {
         if (androidPrinter == null) {
             synchronized (PrintStyleManager.class) {
                 if (androidPrinter == null) {
                     androidPrinter = new AndroidPrinter(logContext);
+                    androidPrinter = loadPrinterProxy(logContext,
+                            androidPrinter);
                 }
             }
         }
@@ -95,5 +101,11 @@ public class PrinterFactory {
             e.printStackTrace();
         }
         return false;
+    }
+
+    private static Printer loadPrinterProxy(LogContext logContext, Printer printer) {
+        EnabledPrinterProxy enabledPrinterProxy = new EnabledPrinterProxy(logContext);
+        printer=enabledPrinterProxy.doProxy(printer);
+        return printer;
     }
 }

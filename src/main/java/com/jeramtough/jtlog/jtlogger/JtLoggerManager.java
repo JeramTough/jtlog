@@ -36,7 +36,7 @@ public final class JtLoggerManager {
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(contextName, jtLogger);
 
-            jtLogger = loadLogProxy(jtLogger);
+//            jtLogger = loadLogProxy(jtLogger);
         }
         return jtLogger;
     }

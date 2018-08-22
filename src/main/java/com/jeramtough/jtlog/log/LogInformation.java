@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class LogInformation {
 
-    private final static int CALLER_COUNT = 11;
+    private final static int CALLER_COUNT = 4;
 
     private String message;
     private StackTraceElement stackTraceElement;

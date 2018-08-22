@@ -3,7 +3,7 @@ import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 import com.jeramtough.jtlog.l.L;
 
-@JtLoggerConfig(isUsedJtloggerApi = false)
+@JtLoggerConfig(isUsedJtloggerApi = false,isEnabled = true)
 public class TestMain {
     public static void main(String[] args) {
         new TestMain();
