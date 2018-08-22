@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="Jtlog3_main" target="1.8" />
       <module name="Jtlog3_test" target="1.8" />
+      <module name="Jtlog_main" target="1.8" />
+      <module name="Jtlog_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
