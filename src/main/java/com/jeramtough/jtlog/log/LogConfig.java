@@ -1,14 +1,16 @@
 package com.jeramtough.jtlog.log;
 
+import com.jeramtough.jtlog.filter.LogFilter;
+
 /**
  * Created on 2018-08-21 15:52
  * by @author JeramTough
  */
 public class LogConfig {
     private int maxLengthOfRow = 130;
-    private boolean isBridgedLogback = false;
-    private boolean isBridgedLog4j2 = false;
-    private boolean isBridgedLogcat = true;
+    private boolean isEnabled = true;
+    private boolean isUsedJtloggerApi = false;
+    private LogFilter[] logFilters;
 
     public int getMaxLengthOfRow() {
         return maxLengthOfRow;
@@ -18,27 +20,27 @@ public class LogConfig {
         this.maxLengthOfRow = maxLengthOfRow;
     }
 
-    public boolean isBridgedLogback() {
-        return isBridgedLogback;
+    public boolean isUsedJtloggerApi() {
+        return isUsedJtloggerApi;
     }
 
-    public void setBridgedLogback(boolean bridgedLogback) {
-        isBridgedLogback = bridgedLogback;
+    public void setUsedJtloggerApi(boolean usedJtloggerApi) {
+        isUsedJtloggerApi = usedJtloggerApi;
     }
 
-    public boolean isBridgedLog4j2() {
-        return isBridgedLog4j2;
+    public boolean isEnabled() {
+        return isEnabled;
     }
 
-    public void setBridgedLog4j2(boolean bridgedLog4j2) {
-        isBridgedLog4j2 = bridgedLog4j2;
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 
-    public boolean isBridgedLogcat() {
-        return isBridgedLogcat;
+    public LogFilter[] getLogFilters() {
+        return logFilters;
     }
 
-    public void setBridgedLogcat(boolean bridgedLogcat) {
-        isBridgedLogcat = bridgedLogcat;
+    public void setLogFilters(LogFilter[] logFilters) {
+        this.logFilters = logFilters;
     }
 }

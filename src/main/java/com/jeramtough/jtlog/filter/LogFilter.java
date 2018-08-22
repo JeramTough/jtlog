@@ -7,7 +7,6 @@ import com.jeramtough.jtlog.log.LogInformation;
  * on 2018  January 13 Saturday 13:13.
  */
 
-public interface JtLogFilter
-{
-	boolean isPrinted(LogInformation logInformation);
+public interface LogFilter {
+    boolean isPrinted(LogInformation logInformation);
 }

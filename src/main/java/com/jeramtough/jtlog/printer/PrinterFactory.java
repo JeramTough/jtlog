@@ -16,20 +16,23 @@ public class PrinterFactory {
 
     private static final String ANDROID_LOGCAT_PACKAGE_NAME = "android.util" +
             ".Log";
+    private static final String LOGBACK_PACKAGE_NAME = "ch.qos.logback.classic.Logger";
+    private static final String LOG4J2_PACKAGE_NAME = "org.apache.logging.log4j.Logger";
 
     private PrinterFactory() {
     }
 
     public static Printer getPrinter(LogContext logContext) {
         Printer printer;
-        if (logContext.getLogConfig().isBridgedLogback()) {
+        if (logContext.getLogConfig().isUsedJtloggerApi()) {
+            printer = getJtPrinter(logContext);
+        } else if (isUsedEspecialLogApi(LOGBACK_PACKAGE_NAME)) {
             printer = getLogbackPrinter(logContext);
-        } else if (logContext.getLogConfig().isBridgedLog4j2()) {
+        } else if (isUsedEspecialLogApi(LOG4J2_PACKAGE_NAME)) {
             printer = getLog4j2Printer(logContext);
-        } else if (isUsedAndroidLoccat()) {
+        } else if (isUsedEspecialLogApi(ANDROID_LOGCAT_PACKAGE_NAME)) {
             printer = getAndroidPrinter(logContext);
-        }
-        else {
+        } else {
             printer = getJtPrinter(logContext);
         }
         return printer;
@@ -81,9 +84,10 @@ public class PrinterFactory {
         return androidPrinter;
     }
 
-    private static boolean isUsedAndroidLoccat() {
+
+    private static boolean isUsedEspecialLogApi(String packageName) {
         try {
-            Class androidLogcatClass = Class.forName(ANDROID_LOGCAT_PACKAGE_NAME);
+            Class androidLogcatClass = Class.forName(packageName);
             if (androidLogcatClass != null) {
                 return true;
             }
