@@ -1,22 +1,21 @@
-package com.jeramtough.jtlog;
+package com.jeramtough.jtlog.printer;
 
+import ch.qos.logback.classic.Logger;
 import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.log.LogInformation;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Created on 2018-08-21 19:27
+ * Created on 2018-08-21 18:21
  * by @author JeramTough
  */
-public class Log4j2Printer extends BasePrinter {
+public class LogbackPrinter extends BasePrinter {
 
     private Logger logger;
 
-    public Log4j2Printer(LogContext logContext) {
+    public LogbackPrinter(LogContext logContext) {
         super(logContext);
-
-        logger = LogManager.getLogger(logContext.getContextName());
+        logger = (Logger) LoggerFactory.getLogger(getLogContext().getContextName());
     }
 
     @Override
@@ -53,4 +52,5 @@ public class Log4j2Printer extends BasePrinter {
     public void println(LogInformation logInformation, String stylizedText) {
         System.out.println(stylizedText);
     }
+
 }

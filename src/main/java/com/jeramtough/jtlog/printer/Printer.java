@@ -1,4 +1,4 @@
-package com.jeramtough.jtlog;
+package com.jeramtough.jtlog.printer;
 
 
 import com.jeramtough.jtlog.log.LogInformation;

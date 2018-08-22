@@ -1,51 +1,46 @@
-package com.jeramtough.jtlog;
+package com.jeramtough.jtlog.printer;
 
-import ch.qos.logback.classic.Logger;
 import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.log.LogInformation;
-import org.slf4j.LoggerFactory;
 
 /**
- * Created on 2018-08-21 18:21
+ * Created on 2018-08-21 16:55
  * by @author JeramTough
  */
-public class LogbackPrinter extends BasePrinter {
+public class JtPrinter extends BasePrinter {
 
-    private Logger logger;
-
-    public LogbackPrinter(LogContext logContext) {
+    JtPrinter(LogContext logContext) {
         super(logContext);
-        logger = (Logger) LoggerFactory.getLogger(getLogContext().getContextName());
     }
 
     @Override
     public void verbose(LogInformation logInformation, String stylizedText) {
-        logger.trace(stylizedText);
+        System.out.println(stylizedText);
     }
 
     @Override
     public void arrive(LogInformation logInformation, String stylizedText) {
-        logger.debug(stylizedText);
+        System.out.println(stylizedText);
     }
 
     @Override
     public void debug(LogInformation logInformation, String stylizedText) {
-        logger.debug(stylizedText);
+        System.out.println(stylizedText);
     }
 
     @Override
     public void info(LogInformation logInformation, String stylizedText) {
-        logger.info(stylizedText);
+        System.out.println(stylizedText);
     }
 
     @Override
     public void warn(LogInformation logInformation, String stylizedText) {
-        logger.warn(stylizedText);
+        System.out.println(stylizedText);
     }
 
     @Override
     public void error(LogInformation logInformation, String stylizedText) {
-        logger.error(stylizedText);
+        System.out.println(stylizedText);
     }
 
     @Override

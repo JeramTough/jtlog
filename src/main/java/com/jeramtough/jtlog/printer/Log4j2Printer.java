@@ -1,48 +1,52 @@
-package com.jeramtough.jtlog;
+package com.jeramtough.jtlog.printer;
 
 import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.log.LogInformation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
- * Created on 2018-08-21 19:26
+ * Created on 2018-08-21 19:27
  * by @author JeramTough
  */
-public class AndroidPrinter extends BasePrinter {
+public class Log4j2Printer extends BasePrinter {
 
-    private final String LOGCAT_TAG = "jtlog3";
+    private Logger logger;
 
-    public AndroidPrinter(LogContext logContext) {
+    public Log4j2Printer(LogContext logContext) {
         super(logContext);
+
+        logger = LogManager.getLogger(logContext.getContextName());
     }
 
     @Override
     public void verbose(LogInformation logInformation, String stylizedText) {
-        android.util.Log.v(LOGCAT_TAG, stylizedText);
+        logger.trace(stylizedText);
     }
 
     @Override
     public void arrive(LogInformation logInformation, String stylizedText) {
-        android.util.Log.d(LOGCAT_TAG, stylizedText);
+        logger.debug(stylizedText);
     }
 
     @Override
     public void debug(LogInformation logInformation, String stylizedText) {
-        android.util.Log.d(LOGCAT_TAG, stylizedText);
+        logger.debug(stylizedText);
     }
 
     @Override
     public void info(LogInformation logInformation, String stylizedText) {
-        android.util.Log.i(LOGCAT_TAG, stylizedText);
+        logger.info(stylizedText);
     }
 
     @Override
     public void warn(LogInformation logInformation, String stylizedText) {
-        android.util.Log.w(LOGCAT_TAG, stylizedText);
+        logger.warn(stylizedText);
     }
 
     @Override
     public void error(LogInformation logInformation, String stylizedText) {
-        android.util.Log.e(LOGCAT_TAG, stylizedText);
+        logger.error(stylizedText);
     }
 
     @Override

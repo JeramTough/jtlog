@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.jtlogger;
 
-import com.jeramtough.jtlog.PrinterFactory;
+import com.jeramtough.jtlog.printer.PrinterFactory;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.log.LogInformation;
