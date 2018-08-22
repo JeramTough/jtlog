@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.level;
 
-import java.util.Comparator;
+import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
 
 /**
  * 日志等级<>br</>
@@ -10,15 +10,17 @@ import java.util.Comparator;
  * @author 11718
  */
 
-public enum LogLevel implements Comparator<LogLevel> {
-    INFO("I", 3), WARN("W", 4), ERROR("E", 5), DEBUG("D", 2),
-    PRINTLN("P", 6), ARRIVE("Arrive", 1), VERBOSE("V", 0);
+public enum LogLevel {
+    INFO("I", "info", 3), WARN("W", "warn", 4), ERROR("E", "error", 5), DEBUG("D", "debug", 2),
+    PRINTLN("P", "println", 6), ARRIVE("Arrive", "arrive", 1), VERBOSE("V", "verbose", 0);
 
     private String flag;
+    private String name;
     private int priority;
 
-    LogLevel(String flag, int priority) {
+    LogLevel(String flag, String name, int priority) {
         this.flag = flag;
+        this.name = name;
         this.priority = priority;
     }
 
@@ -27,8 +29,31 @@ public enum LogLevel implements Comparator<LogLevel> {
     }
 
 
-    @Override
-    public int compare(LogLevel o1, LogLevel o2) {
+    public static int compare(LogLevel o1, LogLevel o2) {
         return o1.priority - o2.priority;
+    }
+
+    public static LogLevel getLogLevelByName(String name) {
+        if (INFO.name.equals(name)) {
+            return INFO;
+        } else if (WARN.name.equals(name)) {
+            return WARN;
+
+        } else if (ERROR.name.equals(name)) {
+            return ERROR;
+
+        } else if (DEBUG.name.equals(name)) {
+            return DEBUG;
+
+        } else if (ARRIVE.name.equals(name)) {
+            return ARRIVE;
+
+        } else if (PRINTLN.name.equals(name)) {
+            return PRINTLN;
+
+        } else if (VERBOSE.name.equals(name)) {
+            return VERBOSE;
+        }
+        return VERBOSE;
     }
 }

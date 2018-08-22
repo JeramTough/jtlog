@@ -4,7 +4,7 @@ import com.jeramtough.jtlog.annotation.JtLoggerConfig;
 import com.jeramtough.jtlog.log.LogConfig;
 import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.logproxy.EnabledJtLoggerProxy;
-import com.jeramtough.jtlog.logproxy.FilterJtLoggerProxy;
+import com.jeramtough.jtlog.logproxy.LevelLoggerProxy;
 
 import java.util.HashMap;
 
@@ -58,10 +58,10 @@ public final class JtLoggerManager {
 
     private static JtLogger loadLogProxy(JtLogger jtLogger) {
         EnabledJtLoggerProxy enabledJtLoggerProxy = new EnabledJtLoggerProxy();
-        FilterJtLoggerProxy filterJtloggerProxy = new FilterJtLoggerProxy();
+        LevelLoggerProxy levelLoggerProxy = new LevelLoggerProxy();
 
         jtLogger = enabledJtLoggerProxy.doProxy(jtLogger);
-//        jtLogger = filterJtloggerProxy.doProxy(jtLogger);
+        jtLogger = levelLoggerProxy.doProxy(jtLogger);
         return jtLogger;
     }
 

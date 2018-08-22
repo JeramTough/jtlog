@@ -12,6 +12,8 @@ import java.lang.reflect.Proxy;
  */
 public abstract class BaseJtLoggerProxy implements JtLoggerProxy {
 
+    static final String GET_LOG_CONTEXT_METHOD = "getLogContext";
+
     @Override
     public JtLogger doProxy(JtLogger jtLogger) {
         final JtLogger finalJtLogger = jtLogger;
@@ -25,7 +27,7 @@ public abstract class BaseJtLoggerProxy implements JtLoggerProxy {
         return jtLogger;
     }
 
-    public abstract Object invoke(JtLogger jtLogger, Object proxy, Method method,
-                                  Object[] args);
+    abstract Object invoke(JtLogger jtLogger, Object proxy, Method method,
+                           Object[] args);
 
 }
