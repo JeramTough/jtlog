@@ -7,6 +7,8 @@ import com.jeramtough.jtlog.log.LogContext;
 import java.util.HashMap;
 
 /**
+ * 负责生成和管理JtLogger实例
+ *
  * Created on 2018-08-21 17:11
  * by @author JeramTough
  */

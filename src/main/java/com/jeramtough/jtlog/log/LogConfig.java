@@ -6,14 +6,43 @@ import com.jeramtough.jtlog.level.LogLevel;
 import java.util.ArrayList;
 
 /**
+ * 日志框架的设置类
+ * <p>
  * Created on 2018-08-21 15:52
  * by @author JeramTough
  */
 public class LogConfig {
+
+    /**
+     * 日志内容输出，每行最大长度，超过这个长度就会换行
+     */
     private int maxLengthOfRow = 130;
+
+
+    /**
+     * 是否允许输出日志
+     */
     private boolean isEnabled = true;
-    private boolean isUsedJtloggerApi = false;
+
+
+    /**
+     * 是否使用JtLogger框架的Api,当为Android框架时强制使用Logcat的Api实现输出，<br/>
+     * false的话会自适应使用Logback或者Log4j2<br/>
+     * 的api实现输出
+     */
+    private boolean isUsedJtloggerApi = true;
+
+
+    /**
+     * 日志过滤器集合
+     */
     private ArrayList<LogFilter> logFilters;
+
+
+    /**
+     * 最低可见日志等级，默认为DEBUG等级，日志等级优先级就参考<br/>
+     * {@link LogLevel}
+     */
     private LogLevel minVisibleLevel = LogLevel.DEBUG;
 
     public LogConfig() {

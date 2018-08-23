@@ -21,7 +21,7 @@ public abstract class BasePrinter implements Printer {
     }
 
     @Override
-    public void print(LogInformation logInformation) {
+    public String print(LogInformation logInformation) {
         String stylizedText = null;
         switch (logInformation.getLogLevel()) {
             case ARRIVE:
@@ -53,7 +53,9 @@ public abstract class BasePrinter implements Printer {
                 stylizedText = PrintStyleManager.getVerbosePrintStyle().stylize(logInformation);
                 verbose(logInformation, stylizedText);
                 break;
+            default:
         }
+        return stylizedText;
     }
 
     public abstract void verbose(LogInformation logInformation, String stylizedText);

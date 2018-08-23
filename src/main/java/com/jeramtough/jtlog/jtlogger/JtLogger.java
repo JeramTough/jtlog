@@ -11,7 +11,7 @@ import com.jeramtough.jtlog.log.LogContext;
 public interface JtLogger {
 
     /**
-     * 程序执行到标记锚点输出，格式为:<>br</>
+     * 程序执行到标记锚点输出，格式为:<br/>
      */
     void arrive();
 
@@ -98,5 +98,10 @@ public interface JtLogger {
      */
     <T> void verbose(String tag, T message);
 
+    /**
+     * 得到日志环境类
+     *
+     * @return 日志环境类
+     */
     LogContext getLogContext();
 }

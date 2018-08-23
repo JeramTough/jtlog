@@ -9,7 +9,7 @@ import com.jeramtough.jtlog.log.LogInformation;
  */
 public class AndroidPrinter extends BasePrinter {
 
-    private final String LOGCAT_TAG = "jtlog3";
+    private final String LOGCAT_TAG = "JTLOG";
 
     public AndroidPrinter(LogContext logContext) {
         super(logContext);

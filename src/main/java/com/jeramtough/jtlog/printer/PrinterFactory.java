@@ -33,13 +33,16 @@ public class PrinterFactory {
     public static Printer getPrinter(LogContext logContext) {
         Printer printer;
         if (logContext.getLogConfig().isUsedJtloggerApi()) {
-            printer = getJtPrinter(logContext);
+            if (isUsedEspecialLogApi(ANDROID_LOGCAT_PACKAGE_NAME) &&
+                    !isUsedEspecialLogApi(LOGBACK_PACKAGE_NAME)) {
+                printer = getAndroidPrinter(logContext);
+            } else {
+                printer = getJtPrinter(logContext);
+            }
         } else if (isUsedEspecialLogApi(LOGBACK_PACKAGE_NAME)) {
             printer = getLogbackPrinter(logContext);
         } else if (isUsedEspecialLogApi(LOG4J2_PACKAGE_NAME)) {
             printer = getLog4j2Printer(logContext);
-        } else if (isUsedEspecialLogApi(ANDROID_LOGCAT_PACKAGE_NAME)) {
-            printer = getAndroidPrinter(logContext);
         } else {
             printer = getJtPrinter(logContext);
         }

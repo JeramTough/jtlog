@@ -9,5 +9,12 @@ import com.jeramtough.jtlog.log.LogInformation;
  * @author 11718
  */
 public interface Printer {
-    void print(LogInformation logInformation);
+
+    /**
+     * 输出日志到控制台
+     *
+     * @param logInformation 日志信息
+     * @return 格式化日志信息成为的String
+     */
+    String print(LogInformation logInformation);
 }

@@ -1,18 +1,49 @@
 package com.jeramtough.jtlog.level;
 
-import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
-
 /**
- * 日志等级<>br</>
- * 输出优先级:<>br</>
+ * 日志等级<br/>
+ * 输出优先级:<br/>
  * PRINTLN > ERROR > WARN > INFO > DEBUG > ARRIVE > VERBOSE
  *
  * @author 11718
  */
 
 public enum LogLevel {
-    INFO("I", "info", 3), WARN("W", "warn", 4), ERROR("E", "error", 5), DEBUG("D", "debug", 2),
-    PRINTLN("P", "println", 6), ARRIVE("Arrive", "arrive", 1), VERBOSE("V", "verbose", 0);
+    /**
+     *
+     */
+    INFO("I", "info", 3),
+
+    /**
+     *
+     */
+    WARN("W", "warn", 4),
+
+    /**
+     *
+     */
+    ERROR("E", "error", 5),
+
+    /**
+     *
+     */
+    DEBUG("D", "debug", 2),
+
+
+    /**
+     *
+     */
+    PRINTLN("P", "println", 6),
+
+    /**
+     *
+     */
+    ARRIVE("Arrive", "arrive", 1),
+
+    /**
+     *
+     */
+    VERBOSE("V", "verbose", 0);
 
     private String flag;
     private String name;

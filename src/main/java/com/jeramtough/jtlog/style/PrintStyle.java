@@ -8,5 +8,10 @@ import com.jeramtough.jtlog.log.LogInformation;
  * @author 11718
  */
 public interface PrintStyle {
+    /**
+     * 格式化日志信息成为String
+     *
+     * @param logInformation 日志信息类
+     */
     String stylize(LogInformation logInformation);
 }

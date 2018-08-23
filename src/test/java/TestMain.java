@@ -1,28 +1,29 @@
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
+import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.with.WithJtLogger;
 
 @JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = true,
-        minVisibleLevel =
-                LogLevel.VERBOSE)
-public class TestMain {
+        minVisibleLevel = LogLevel.VERBOSE)
+public class TestMain implements WithJtLogger {
     public static void main(String[] args) {
         new TestMain();
     }
 
     public TestMain() {
         test();
-//        test1();
-//				test2();
+        test1();
+        test2();
         //		test3();
     }
 
     private void test() {
         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
 
-        TagLogFilter tagLogFilter=new TagLogFilter("aaa");
+        TagLogFilter tagLogFilter = new TagLogFilter("aaa");
         jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
 
         jtLogger.info("infoinfo");
@@ -35,6 +36,10 @@ public class TestMain {
     }
 
     private void test1() {
+        L.info("L.infoinfoinfo");
+    }
+    private void test2() {
+        getJtLogger().error("with.www");
     }
 
 }

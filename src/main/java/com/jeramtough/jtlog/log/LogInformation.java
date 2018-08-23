@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * 日志信息类，包含输出内容，时间，日志等级，标签等信息
+ * <p>
  * Created by 11718
  * on 2017  October 14 Saturday 17:38.
  */
