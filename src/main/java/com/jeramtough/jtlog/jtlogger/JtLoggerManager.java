@@ -79,6 +79,7 @@ public final class JtLoggerManager {
             logConfig.setUsedJtloggerApi(jtLoggerConfig.isUsedJtloggerApi());
             logConfig.setMaxLengthOfRow(jtLoggerConfig.maxLengthOfRow());
             logConfig.setMinVisibleLevel(jtLoggerConfig.minVisibleLevel());
+            logConfig.setCallerPlus(jtLoggerConfig.callerPlus());
         }
         return logConfig;
     }

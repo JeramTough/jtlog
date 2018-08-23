@@ -25,7 +25,7 @@ public class JtLoggerImpl implements JtLogger {
     }
 
     @Override
-    public <T1> void p(T1 message) {
+    public <T> void p(T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.PRINTLN)
                 .setLogContext(logContext).setMessage(message.toString()).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);

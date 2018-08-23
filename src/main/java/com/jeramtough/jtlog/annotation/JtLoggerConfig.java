@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 /**
  * 日志框架的设置注释类
- *
+ * <p>
  * Created on 2018-08-22 09:16
  * by @author JeramTough
  */
@@ -45,4 +45,6 @@ public @interface JtLoggerConfig {
      * 日志环境名，日志框架根据环境名区分不同的日志环境
      */
     String contextName() default "";
+
+    int callerPlus() default 0;
 }

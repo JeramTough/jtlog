@@ -25,7 +25,6 @@ public class LogInformation {
 
 
     private LogInformation() {
-        stackTraceElement = ((new Exception()).getStackTrace())[CALLER_COUNT];
     }
 
     public String getTime() {
@@ -91,6 +90,11 @@ public class LogInformation {
         this.logContext = logContext;
     }
 
+    private void processingInformation() {
+        stackTraceElement =
+                ((new Exception()).getStackTrace())[CALLER_COUNT + logContext.getLogConfig().getCallerPlus()];
+    }
+
     //{{{{{{{{{}}}}}}}}}}}}}}}}}
     public static class Builder {
         private LogInformation logInformation;
@@ -120,6 +124,7 @@ public class LogInformation {
         }
 
         public LogInformation build() {
+            logInformation.processingInformation();
             return logInformation;
         }
     }

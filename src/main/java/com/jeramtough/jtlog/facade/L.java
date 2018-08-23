@@ -8,11 +8,12 @@ import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.util.MyStringUtil;
 
 /**
+ * 日志工具类，使用一个全局的JtLogger对象实例，可用静态方法直接调用
  * Created on 2018-08-21 18:15
  * by @author JeramTough
  */
-@JtLoggerConfig(isUsedJtloggerApi = false,
-        minVisibleLevel = LogLevel.VERBOSE)
+@JtLoggerConfig(minVisibleLevel = LogLevel.VERBOSE,
+        callerPlus = 1)
 public class L {
 
     private static JtLogger jtLogger;
@@ -38,8 +39,7 @@ public class L {
         jtLogger.arrive();
     }
 
-
-    public static <T1> void p(T1 message) {
+    public static <T> void p(T message) {
         jtLogger.p(message);
     }
 

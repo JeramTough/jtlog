@@ -21,7 +21,7 @@ public interface JtLogger {
      *
      * @param message 输出内容
      */
-    <T1> void p(T1 message);
+    <T> void p(T message);
 
     /**
      * 输出Info级别的日志

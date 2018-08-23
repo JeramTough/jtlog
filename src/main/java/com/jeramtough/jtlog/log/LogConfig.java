@@ -45,6 +45,12 @@ public class LogConfig {
      */
     private LogLevel minVisibleLevel = LogLevel.DEBUG;
 
+    /**
+     * 决定输出位置的标记<br/>
+     * {caller}=(L.java:71)
+     */
+    private int callerPlus = 0;
+
     public LogConfig() {
         logFilters = new ArrayList<>();
     }
@@ -92,5 +98,13 @@ public class LogConfig {
 
     public void setMinVisibleLevel(LogLevel minVisibleLevel) {
         this.minVisibleLevel = minVisibleLevel;
+    }
+
+    public int getCallerPlus() {
+        return callerPlus;
+    }
+
+    public void setCallerPlus(int callerPlus) {
+        this.callerPlus = callerPlus;
     }
 }

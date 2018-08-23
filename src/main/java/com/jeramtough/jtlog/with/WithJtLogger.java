@@ -4,6 +4,7 @@ import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 
 /**
+ * 附加日志接口，默认contextName为当前类名
  * @author 11718
  */
 public interface WithJtLogger {
