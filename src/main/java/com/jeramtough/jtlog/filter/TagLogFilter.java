@@ -12,7 +12,7 @@ public class TagLogFilter implements LogFilter {
 
     @Override
     public boolean isPrinted(LogInformation logInformation) {
-        if (logInformation.getTag().equals(noPrintedTag)) {
+        if (noPrintedTag.equals(logInformation.getTag())) {
             return false;
         } else {
             return true;

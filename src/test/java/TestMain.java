@@ -1,9 +1,12 @@
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
+import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
-import com.jeramtough.jtlog.l.L;
+import com.jeramtough.jtlog.level.LogLevel;
 
-@JtLoggerConfig(isUsedJtloggerApi = false,isEnabled = true)
+@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = true,
+        minVisibleLevel =
+                LogLevel.VERBOSE)
 public class TestMain {
     public static void main(String[] args) {
         new TestMain();
@@ -18,6 +21,10 @@ public class TestMain {
 
     private void test() {
         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+
+        TagLogFilter tagLogFilter=new TagLogFilter("aaa");
+        jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
+
         jtLogger.info("infoinfo");
         jtLogger.warn("warnwarn");
         jtLogger.debug("adfsa", "debugdebug");

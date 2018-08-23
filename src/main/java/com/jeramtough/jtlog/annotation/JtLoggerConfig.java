@@ -23,5 +23,7 @@ public @interface JtLoggerConfig {
 
     int maxLengthOfRow() default 130;
 
-    LogLevel visibleLevel() default LogLevel.DEBUG;
+    LogLevel minVisibleLevel() default LogLevel.DEBUG;
+
+    String contextName() default "";
 }

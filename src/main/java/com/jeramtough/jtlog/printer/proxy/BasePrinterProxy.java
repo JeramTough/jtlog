@@ -1,11 +1,11 @@
 package com.jeramtough.jtlog.printer.proxy;
 
-import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.logproxy.BaseJtLoggerProxy;
+import com.jeramtough.jtlog.log.LogInformation;
 import com.jeramtough.jtlog.printer.Printer;
 
 import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
@@ -16,6 +16,7 @@ import java.lang.reflect.Proxy;
 public abstract class BasePrinterProxy implements PrinterProxy {
 
     private LogContext logContext;
+    private LogInformation logInformation;
 
     public BasePrinterProxy(LogContext logContext) {
         this.logContext = logContext;
@@ -28,14 +29,31 @@ public abstract class BasePrinterProxy implements PrinterProxy {
                 new Class[]{Printer.class}, new InvocationHandler() {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) {
-                        return BasePrinterProxy.this.invoke(logContext, finalPrinter, proxy,
-                                method,
-                                args);
+
+                        for (Object arg : args) {
+                            if (arg instanceof LogInformation) {
+                                logInformation = (LogInformation) arg;
+                            }
+                        }
+
+                        try {
+                            return BasePrinterProxy.this.invoke(logContext, finalPrinter, proxy,
+                                    method,
+                                    args);
+                        } catch (IllegalAccessException | InvocationTargetException e) {
+                            e.printStackTrace();
+                        }
+                        return null;
                     }
                 });
         return printer;
     }
 
     abstract Object invoke(LogContext logContext, Printer printer, Object proxy, Method method,
-                           Object[] args);
+                           Object[] args) throws IllegalAccessException,
+            InvocationTargetException;
+
+    public LogInformation getLogInformation() {
+        return logInformation;
+    }
 }

@@ -3,7 +3,13 @@ package com.jeramtough.jtlog.printer;
 import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.printer.proxy.EnabledPrinterProxy;
+import com.jeramtough.jtlog.printer.proxy.FilterPrinterProxy;
+import com.jeramtough.jtlog.printer.proxy.LevelPrinterProxy;
+import com.jeramtough.jtlog.printer.proxy.PrinterProxy;
 import com.jeramtough.jtlog.style.PrintStyleManager;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created on 2018-08-21 17:31
@@ -104,8 +110,17 @@ public class PrinterFactory {
     }
 
     private static Printer loadPrinterProxy(LogContext logContext, Printer printer) {
+        ArrayList<PrinterProxy> printerProxies = new ArrayList<>();
         EnabledPrinterProxy enabledPrinterProxy = new EnabledPrinterProxy(logContext);
-        printer=enabledPrinterProxy.doProxy(printer);
+        printerProxies.add(enabledPrinterProxy);
+        LevelPrinterProxy levelPrinterProxy = new LevelPrinterProxy(logContext);
+        printerProxies.add(levelPrinterProxy);
+        FilterPrinterProxy filterPrinterProxy = new FilterPrinterProxy(logContext);
+        printerProxies.add(filterPrinterProxy);
+
+        for (PrinterProxy printerProxy : printerProxies) {
+            printer = printerProxy.doProxy(printer);
+        }
         return printer;
     }
 }

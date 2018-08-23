@@ -13,8 +13,12 @@ public class LogConfig {
     private int maxLengthOfRow = 130;
     private boolean isEnabled = true;
     private boolean isUsedJtloggerApi = false;
-    private ArrayList<? super LogFilter> logFilters;
-    private LogLevel visibleLevel = LogLevel.DEBUG;
+    private ArrayList<LogFilter> logFilters;
+    private LogLevel minVisibleLevel = LogLevel.DEBUG;
+
+    public LogConfig() {
+        logFilters = new ArrayList<>();
+    }
 
     public int getMaxLengthOfRow() {
         return maxLengthOfRow;
@@ -49,15 +53,15 @@ public class LogConfig {
         logFilters.remove(logFilter);
     }
 
-    public ArrayList<? super LogFilter> getLogFilters() {
+    public ArrayList<LogFilter> getLogFilters() {
         return logFilters;
     }
 
-    public LogLevel getVisibleLevel() {
-        return visibleLevel;
+    public LogLevel getMinVisibleLevel() {
+        return minVisibleLevel;
     }
 
-    public void setVisibleLevel(LogLevel visibleLevel) {
-        this.visibleLevel = visibleLevel;
+    public void setMinVisibleLevel(LogLevel minVisibleLevel) {
+        this.minVisibleLevel = minVisibleLevel;
     }
 }

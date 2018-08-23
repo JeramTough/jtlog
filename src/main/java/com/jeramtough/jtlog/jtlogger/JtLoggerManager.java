@@ -3,8 +3,6 @@ package com.jeramtough.jtlog.jtlogger;
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
 import com.jeramtough.jtlog.log.LogConfig;
 import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.logproxy.EnabledJtLoggerProxy;
-import com.jeramtough.jtlog.logproxy.LevelLoggerProxy;
 
 import java.util.HashMap;
 
@@ -24,7 +22,7 @@ public final class JtLoggerManager {
     }
 
     public static JtLogger getJtLogger(Class c) {
-        String contextName = c.getSimpleName();
+        String contextName = parseContextNameFromAnnotation(c);
         JtLogger jtLogger;
         if (jtLoggerHashMap.containsKey(contextName)) {
             jtLogger = jtLoggerHashMap.get(contextName);
@@ -35,8 +33,6 @@ public final class JtLoggerManager {
             logContext.setContextName(contextName);
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(contextName, jtLogger);
-
-//            jtLogger = loadLogProxy(jtLogger);
         }
         return jtLogger;
     }
@@ -51,18 +47,18 @@ public final class JtLoggerManager {
             logConfig.setEnabled(jtLoggerConfig.isEnabled());
             logConfig.setUsedJtloggerApi(jtLoggerConfig.isUsedJtloggerApi());
             logConfig.setMaxLengthOfRow(jtLoggerConfig.maxLengthOfRow());
-            logConfig.setVisibleLevel(jtLoggerConfig.visibleLevel());
+            logConfig.setMinVisibleLevel(jtLoggerConfig.minVisibleLevel());
         }
         return logConfig;
     }
 
-    private static JtLogger loadLogProxy(JtLogger jtLogger) {
-        EnabledJtLoggerProxy enabledJtLoggerProxy = new EnabledJtLoggerProxy();
-        LevelLoggerProxy levelLoggerProxy = new LevelLoggerProxy();
-
-        jtLogger = enabledJtLoggerProxy.doProxy(jtLogger);
-        jtLogger = levelLoggerProxy.doProxy(jtLogger);
-        return jtLogger;
+    private static String parseContextNameFromAnnotation(Class c) {
+        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) c.getDeclaredAnnotation(JtLoggerConfig.class);
+        if (jtLoggerConfig != null && !jtLoggerConfig.contextName().equals("")) {
+            return jtLoggerConfig.contextName();
+        } else {
+            return c.getSimpleName();
+        }
     }
 
 }
