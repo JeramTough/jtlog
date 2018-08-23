@@ -88,6 +88,25 @@ public class JtLoggerImpl implements JtLogger {
     }
 
     @Override
+    public <T> void debugs(T... messages) {
+        String message = "";
+        for (int i = 0; i < messages.length; i++) {
+            String m = messages[i].toString();
+            if (m != null) {
+                if (i == 0) {
+                    message = message + m;
+                } else {
+                    message = message + " ，" + m;
+                }
+            }
+        }
+
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.DEBUG)
+                .setLogContext(logContext).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
     public <T> void verbose(T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.VERBOSE)
                 .setLogContext(logContext).setMessage(message.toString()).build();

@@ -83,6 +83,15 @@ public interface JtLogger {
      */
     <T> void debug(String tag, T message);
 
+
+    /**
+     * 输出debug级别的日志输出，可输出多条debug消息，<br/>
+     * 以“，”分割
+     *
+     * @param messages 输出内容
+     */
+    <T> void debugs(T... messages);
+
     /**
      * 输出verbose级别的日志
      *

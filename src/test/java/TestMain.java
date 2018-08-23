@@ -40,6 +40,7 @@ public class TestMain implements WithJtLogger {
     }
     private void test2() {
         getJtLogger().debug("with.www");
+        getJtLogger().debugs("Strinds",1,12.1f,false);
     }
 
 }

@@ -75,6 +75,10 @@ public class L {
         jtLogger.debug(tag, message);
     }
 
+    public <T> void debugs(T... messages) {
+        jtLogger.debugs(messages);
+    }
+
     public static <T> void verbose(T message) {
         jtLogger.verbose(message);
     }
