@@ -36,10 +36,10 @@ public class TestMain implements WithJtLogger {
     }
 
     private void test1() {
-        L.info("L.infoinfoinfo");
+        L.debug("L.infoinfoinfo");
     }
     private void test2() {
-        getJtLogger().error("with.www");
+        getJtLogger().debug("with.www");
     }
 
 }

@@ -47,6 +47,6 @@ public class AndroidPrinter extends BasePrinter {
 
     @Override
     public void println(LogInformation logInformation, String stylizedText) {
-        System.out.println(stylizedText);
+        android.util.Log.v(LOGCAT_TAG, stylizedText);
     }
 }

@@ -83,9 +83,9 @@ public class LogInformation {
         this.logLevel = logLevel;
     }
 
-    public LogContext getLogContext() {
+    /*public LogContext getLogContext() {
         return logContext;
-    }
+    }*/
 
     public void setLogContext(LogContext logContext) {
         this.logContext = logContext;

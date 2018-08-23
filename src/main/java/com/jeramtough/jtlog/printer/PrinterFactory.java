@@ -106,8 +106,7 @@ public class PrinterFactory {
             if (androidLogcatClass != null) {
                 return true;
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (ClassNotFoundException ignored) {
         }
         return false;
     }

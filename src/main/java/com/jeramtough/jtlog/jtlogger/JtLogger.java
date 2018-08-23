@@ -16,7 +16,7 @@ public interface JtLogger {
     void arrive();
 
     /**
-     * 普通的输出，不带任何格式,相当于<br/>
+     * 普通的输出，不带任何格式,类似于<br/>
      * System.out.println();
      *
      * @param message 输出内容

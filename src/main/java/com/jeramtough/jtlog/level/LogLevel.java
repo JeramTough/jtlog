@@ -33,7 +33,7 @@ public enum LogLevel {
     /**
      *
      */
-    PRINTLN("P", "println", 6),
+    PRINTLN("P", "p", 6),
 
     /**
      *

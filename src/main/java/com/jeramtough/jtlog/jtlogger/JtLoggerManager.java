@@ -72,7 +72,7 @@ public final class JtLoggerManager {
     private static LogConfig parseLogConfigFromAnnotation(Class c) {
         LogConfig logConfig = new LogConfig();
 
-        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) c.getDeclaredAnnotation(JtLoggerConfig.class);
+        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) c.getAnnotation(JtLoggerConfig.class);
 
         if (jtLoggerConfig != null) {
             logConfig.setEnabled(jtLoggerConfig.isEnabled());
@@ -84,7 +84,7 @@ public final class JtLoggerManager {
     }
 
     private static String parseContextNameFromAnnotation(Class c) {
-        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) c.getDeclaredAnnotation(JtLoggerConfig.class);
+        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) c.getAnnotation(JtLoggerConfig.class);
         if (jtLoggerConfig != null && !jtLoggerConfig.contextName().equals("")) {
             return jtLoggerConfig.contextName();
         } else {
