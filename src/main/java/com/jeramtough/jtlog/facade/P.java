@@ -11,14 +11,14 @@ import com.jeramtough.jtlog.util.MyStringUtil;
  * Created on 2018-08-21 18:15
  * by @author JeramTough
  */
-@JtLoggerConfig(isUsedJtloggerApi = false,
+@JtLoggerConfig(isUsedJtloggerApi = true,
         minVisibleLevel = LogLevel.VERBOSE)
-public class L {
+public class P {
 
     private static JtLogger jtLogger;
 
     static {
-        jtLogger = JtLoggerManager.getJtLogger(L.class);
+        jtLogger = JtLoggerManager.getJtLogger(P.class);
 
         StringBuilder text = new StringBuilder();
         for (int ii = 0; ii < 3; ii++) {

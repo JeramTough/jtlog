@@ -7,83 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/with/WithJtLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Jtlog3_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/11718.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/11718.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Jtlog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Jtlog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Jtlog_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Jtlog_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Jtlog_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Jtlog_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/JtLogConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/JtLogger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/LogInformation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/WithLogger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/filter/JtLogFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/filter/TagJtLogFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/level/JtLogLevel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/p/P.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/p/P1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/printer/AndroidJtPrinterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/printer/JavaJtPrinterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/printer/JtPrinter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/printer/JtPrinterManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/printer/Log4j2JtPrinterImpl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/printer/Log4j2JtPrinterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/printer/LogbackJtPrinterImpl$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/printer/LogbackJtPrinterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/ArrivePrintStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/BasePrintStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/DebugPrintStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/ErrorPrintStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/InfoPrintStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/PrimaryPrintStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/PrintStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/PrintStyleManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/style/WarnPrintStyle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog3/util/MyStringUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/Jtlog3-1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/WithLogger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/annotation/JtLoggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/annotation/JtLoggerConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/filter/TagLogFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/filter/TagLogFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/jtlogger/JtLoggerManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/jtlogger/JtLoggerManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/l/L.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/level/LogLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/level/LogLevel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/log/LogConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/log/LogConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/log/LogInformation$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/log/LogInformation$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/log/LogInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/log/LogInformation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/printer/AndroidPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/printer/AndroidPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/printer/BasePrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/printer/BasePrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/printer/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/printer/Printer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/printer/PrinterFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/printer/PrinterFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/style/BasePrintStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/jeramtough/jtlog/style/BasePrintStyle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/TestMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/TestMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/WithLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/annotation/JtLoggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/annotation/JtLoggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/filter/LogFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/filter/LogFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/filter/TagLogFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/filter/TagLogFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/l/L.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/level/LogLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/level/LogLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/AndroidPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/AndroidPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/BasePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/BasePrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/PrinterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/PrinterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/PrintStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/PrintStyle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/util/MyStringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/util/MyStringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -193,29 +118,29 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="6" />
-          <entry key="java" value="86" />
+          <entry key="java" value="89" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="6" />
-          <entry key="JAVA" value="86" />
+          <entry key="JAVA" value="89" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="57" />
+          <entry key="dummy" value="70" />
           <entry key="gradle" value="1" />
-          <entry key="java" value="3967" />
+          <entry key="java" value="4037" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="3967" />
-          <entry key="PLAIN_TEXT" value="57" />
+          <entry key="JAVA" value="4037" />
+          <entry key="PLAIN_TEXT" value="70" />
         </counts>
       </usages-collector>
     </session>
@@ -225,8 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            <state relative-caret-position="-234">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#659#660#0" expanded="true" />
@@ -254,11 +179,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+            <state relative-caret-position="552">
+              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#878#879#0" expanded="true" />
@@ -310,17 +235,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="46">
+              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
               <folding>
                 <element signature="e#1147#1148#0" expanded="true" />
                 <element signature="e#1171#1172#0" expanded="true" />
                 <element signature="e#1287#1288#0" expanded="true" />
                 <element signature="e#1327#1328#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1347">
+              <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/P.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -661,7 +607,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog3/JtLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog3/printer/Log4j2JtPrinterImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog3/printer/JtPrinterManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog3/printer/AndroidJtPrinterImpl.java" />
@@ -694,7 +639,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/filter/LogFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/filter/TagLogFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/level/LogLevel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/Printer.java" />
@@ -709,9 +653,11 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/with/WithJtLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/PrinterFactory.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestMain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/util/MyStringUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/P.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" />
       </list>
     </option>
   </component>
@@ -812,6 +758,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlogger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
               <item name="printer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -856,7 +811,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535002499980" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535003427494" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -865,18 +820,21 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jeramtough.jtlog.printer.proxy" />
+      <recent name="com.jeramtough.jtlog3.printer" />
+      <recent name="com.jeramtough.jtlog3.filter" />
+      <recent name="com.jeramtough.jtlog3.style" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jeramtough.jtlog.facade" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Codes\IdeaCodes\Jtlog3\src\test" />
       <recent name="E:\Codes\IdeaCodes\Jtlog3\src\main\java\com\jeramtough\jtlog" />
       <recent name="E:\Codes\IdeaCodes\Jtlog3\libs" />
       <recent name="E:\Codes\IdeaCodes\Jtlog3\src\main\java\com\jeramtough\jtlog3" />
       <recent name="E:\Codes\IdeaCodes\Jtlog3\src\main\java\com\jeramtough\jtlog3\style" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jeramtough.jtlog.printer.proxy" />
-      <recent name="com.jeramtough.jtlog3.printer" />
-      <recent name="com.jeramtough.jtlog3.filter" />
-      <recent name="com.jeramtough.jtlog3.style" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1044,7 +1002,7 @@
       <workItem from="1534897213077" duration="925000" />
       <workItem from="1534934820376" duration="56000" />
       <workItem from="1534934888459" duration="17619000" />
-      <workItem from="1534991998868" duration="10040000" />
+      <workItem from="1534991998868" duration="10690000" />
     </task>
     <servers />
   </component>
@@ -1054,7 +1012,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85842000" />
+    <option name="totallyTimeSpent" value="86492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="0" width="1372" height="735" extended-state="0" />
@@ -1099,13 +1057,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/libs/android.jar!/android/util/Log.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/JtLogConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/LogbackJtPrinterImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/ArrivePrintStyle.java">
@@ -1302,28 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/artifacts/Jtlog3_jar.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1404,10 +1333,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+          <folding>
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1171#1172#0" expanded="true" />
+            <element signature="e#1287#1288#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1347">
+          <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/P.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+        <state relative-caret-position="552">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#878#879#0" expanded="true" />
@@ -1436,19 +1407,6 @@
             <element signature="e#1937#1938#0" expanded="true" />
             <element signature="e#1985#1986#0" expanded="true" />
             <element signature="e#2032#2033#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="e#1147#1148#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
           </folding>
         </state>
       </provider>
