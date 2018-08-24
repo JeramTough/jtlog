@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Jtlog.iml" filepath="$PROJECT_DIR$/.idea/modules/Jtlog.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Jtlog_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Jtlog_main.iml" group="Jtlog" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Jtlog_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Jtlog_test.iml" group="Jtlog" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jtlog.iml" filepath="$PROJECT_DIR$/.idea/modules/jtlog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jtlog_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jtlog_main.iml" group="jtlog" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jtlog_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jtlog_test.iml" group="jtlog" />
     </modules>
   </component>
 </project>

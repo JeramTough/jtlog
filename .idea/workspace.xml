@@ -6,10 +6,47 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="" />
+    <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Jtlog_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apiguardian_apiguardian_api_1_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_api_5_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_platform_junit_platform_commons_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_opentest4j_opentest4j_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Jtlog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jtlog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Jtlog_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jtlog_main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Jtlog_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jtlog_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/annotation/JtLoggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/annotation/JtLoggerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/facade/L.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/facade/L.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/facade/P.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/jtlogger/JtLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/jtlogger/JtLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/jtlogger/JtLoggerManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/jtlogger/JtLoggerManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/log/LogConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/log/LogConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/log/LogInformation$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/log/LogInformation$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/log/LogInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/log/LogInformation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/printer/AndroidPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/printer/AndroidPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/style/BasePrintStyle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/style/BasePrintStyle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/util/MyStringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/util/MyStringUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/with/WithJtLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/jeramtough/jtlog/with/WithJtLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Jtlog-1.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/Jtlog-1.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/rolling.log" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +143,7 @@
     <session id="1927652530">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.opened" value="3" />
@@ -114,30 +151,61 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gradle" value="7" />
+          <entry key="gradle" value="9" />
           <entry key="java" value="130" />
-          <entry key="xml" value="3" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Groovy" value="7" />
+          <entry key="Groovy" value="9" />
           <entry key="JAVA" value="130" />
-          <entry key="XML" value="3" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="95" />
-          <entry key="gradle" value="2" />
+          <entry key="gradle" value="8" />
           <entry key="java" value="5496" />
+          <entry key="xml" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="2" />
+          <entry key="Groovy" value="8" />
           <entry key="JAVA" value="5496" />
           <entry key="PLAIN_TEXT" value="95" />
+          <entry key="XML" value="35" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-704083918">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="xml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="XML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="xml" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
     </session>
@@ -145,56 +213,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="81" column="47" lean-forward="true" selection-start-line="80" selection-end-line="81" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1990#1991#0" expanded="true" />
-                <element signature="e#2013#2014#0" expanded="true" />
-                <element signature="e#2099#2100#0" expanded="true" />
-                <element signature="e#2160#2161#0" expanded="true" />
-                <element signature="e#2206#2207#0" expanded="true" />
-                <element signature="e#2254#2255#0" expanded="true" />
-                <element signature="e#2301#2302#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4455#4456#0" expanded="true" />
-                <element signature="e#4488#4489#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="e#1204#1205#0" expanded="true" />
-                <element signature="e#1245#1246#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="115">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -225,15 +247,15 @@
       <find>O</find>
       <find>@</find>
       <find>T1</find>
+      <find>Jtlog</find>
     </findStrings>
     <replaceStrings>
       <replace>MyStringUtil.ObjectsToString(message)</replace>
       <replace>;</replace>
       <replace />
-      <replace />
-      <replace />
       <replace>public static</replace>
       <replace>@</replace>
+      <replace>jtlog</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -255,14 +277,14 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="Jtlog" />
+              <option name="name" value="jtlog" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="Jtlog" />
+                <option name="name" value="jtlog" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
@@ -276,7 +298,7 @@
           <value>
             <list>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'Jtlog'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'jtlog'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
@@ -286,7 +308,7 @@
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'Jtlog'." />
+                <option name="description" value="Displays the sub-projects of root project 'jtlog'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
@@ -296,12 +318,12 @@
                 <option name="name" value="classes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in root project 'Jtlog'. [incubating]" />
+                <option name="description" value="Displays the dependent components of components in root project 'jtlog'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'Jtlog'." />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'jtlog'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
@@ -326,7 +348,7 @@
                 <option name="name" value="jar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'Jtlog'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'jtlog'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
@@ -336,7 +358,7 @@
                 <option name="name" value="processResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'Jtlog'." />
+                <option name="description" value="Displays the tasks runnable from root project 'jtlog'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -356,7 +378,7 @@
                 <option name="name" value="compileJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'Jtlog'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'jtlog'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -381,7 +403,7 @@
                 <option name="name" value="compileTestJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'Jtlog'." />
+                <option name="description" value="Displays all dependencies declared in root project 'jtlog'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -401,12 +423,17 @@
                 <option name="name" value="build" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Installs the 'archives' artifacts into the local Maven repository." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="install" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project and all projects it depends on." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildNeeded" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'Jtlog'." />
+                <option name="description" value="Displays the properties of root project 'jtlog'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
@@ -417,10 +444,10 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4604878090405" />
+        <entry key="$PROJECT_DIR$" value="4605182349774" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="397903954" />
-        <entry key="$PROJECT_DIR$/settings.gradle" value="1118320543" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3632010532" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="1157903017" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -439,7 +466,7 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="Jtlog" />
+              <option name="name" value="jtlog" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="E:/Environment/gradle/gradle-4.1/lib/ant-1.9.6.jar" />
@@ -527,10 +554,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog3/printer/AndroidJtPrinterImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/AndroidJtPrinterImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/Log4j2Printer.java" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/filter/TagJtLogFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/filter/JtLoggerProxy.java" />
@@ -561,9 +586,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/WithLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/WithJtLogger.java" />
         <option value="$PROJECT_DIR$/.idea/artifacts/Jtlog3_jar.xml" />
-        <option value="$PROJECT_DIR$/.idea/artifacts/Jtlog_jar.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/PrinterFactory.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/P.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/AndroidPrinter.java" />
         <option value="$PROJECT_DIR$/src/test/java/StringUtilTest.java" />
@@ -578,6 +601,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/.idea/artifacts/Jtlog_jar.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -586,6 +613,36 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:/Environment/maven/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="E:\Environment\maven\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="jtlog" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="jtlog" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="jtlog" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="deploy" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="4" />
@@ -617,136 +674,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="jtlog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
-              <item name="facade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
-              <item name="jtlogger" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
-              <item name="printer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Jtlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Jtlog" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535119373339" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535127441492" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -759,11 +712,11 @@
       <recent name="com.jeramtough.jtlog.facade" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Codes\IdeaCodes\Jtlog" />
       <recent name="E:\Codes\IdeaCodes\Jtlog3\src\test" />
       <recent name="E:\Codes\IdeaCodes\Jtlog3\src\main\java\com\jeramtough\jtlog" />
       <recent name="E:\Codes\IdeaCodes\Jtlog3\libs" />
       <recent name="E:\Codes\IdeaCodes\Jtlog3\src\main\java\com\jeramtough\jtlog3" />
-      <recent name="E:\Codes\IdeaCodes\Jtlog3\src\main\java\com\jeramtough\jtlog3\style" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -778,7 +731,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestMain">
+  <component name="RunManager" selected="Gradle.Jtlog [install]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -787,7 +740,7 @@
     </configuration>
     <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestMain" />
-      <module name="Jtlog_test" />
+      <module name="jtlog_test" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -797,6 +750,24 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="Jtlog [install]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="install" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="Jtlog3 [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -810,24 +781,6 @@
         <option name="taskNames">
           <list>
             <option value="assemble" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method v="2" />
-    </configuration>
-    <configuration name="Jtlog3 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -853,7 +806,7 @@
       <method v="2" />
     </configuration>
     <configuration name="StringUtilTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Jtlog_test" />
+      <module name="jtlog_test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="StringUtilTest" />
       <option name="METHOD_NAME" value="test" />
@@ -889,17 +842,17 @@
     <list>
       <item itemvalue="Application.TestMain" />
       <item itemvalue="Gradle.Jtlog3 [jar]" />
-      <item itemvalue="Gradle.Jtlog3 [build]" />
       <item itemvalue="Gradle.Jtlog3 [assemble]" />
       <item itemvalue="JUnit.StringUtilTest.test" />
+      <item itemvalue="Gradle.Jtlog [install]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Jtlog [install]" />
         <item itemvalue="Application.TestMain" />
         <item itemvalue="JUnit.StringUtilTest.test" />
         <item itemvalue="Gradle.Jtlog3 [jar]" />
         <item itemvalue="Gradle.Jtlog3 [assemble]" />
-        <item itemvalue="Gradle.Jtlog3 [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -925,6 +878,8 @@
       <workItem from="1534934820376" duration="56000" />
       <workItem from="1534934888459" duration="17619000" />
       <workItem from="1534991998868" duration="19363000" />
+      <workItem from="1535127188345" duration="336000" />
+      <workItem from="1535127608245" duration="712000" />
     </task>
     <servers />
   </component>
@@ -961,13 +916,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102217000" />
+    <option name="totallyTimeSpent" value="106509000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="0" width="1372" height="735" extended-state="1" />
-    <editor active="true" />
+    <frame x="4" y="0" width="1372" height="735" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28353658" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29268292" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -976,12 +930,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298791" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33333334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3298791" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3298791" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32993197" />
@@ -992,11 +946,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Gradle" order="5" visible="true" weight="0.16615854" />
+      <window_info anchor="right" id="Gradle" order="5" weight="0.16615854" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
+      <window_info anchor="right" id="Maven Projects" order="9" visible="true" weight="0.25762194" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1006,14 +960,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/ArrivePrintStyle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/JtPrinterManager.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/p/P.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/p/P1.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/p/PInterface.java" />
@@ -1029,9 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,13 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#1753#1754#0" expanded="true" />
-            <element signature="e#1790#1791#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1079,11 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1091,10 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="41" />
-          <folding>
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1123,9 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1137,27 +1061,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/artifacts/Jtlog3_jar.xml" />
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/Jtlog_jar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/VerbosePrintStyle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1183,9 +1086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1235,12 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="102" column="32" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2065#2066#0" expanded="true" />
-            <element signature="e#2114#2115#0" expanded="true" />
-            <element signature="e#2158#2159#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1248,9 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1258,28 +1149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1563">
           <caret line="92" column="12" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
-          <folding>
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1435#1436#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#1573#1574#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
-            <element signature="e#1629#1630#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
-            <element signature="e#1765#1766#0" expanded="true" />
-            <element signature="e#1815#1816#0" expanded="true" />
-            <element signature="e#1855#1856#0" expanded="true" />
-            <element signature="e#1896#1897#0" expanded="true" />
-            <element signature="e#1929#1930#0" expanded="true" />
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2033#2034#0" expanded="true" />
-            <element signature="e#2176#2177#0" expanded="true" />
-            <element signature="e#2237#2238#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1287,24 +1156,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/P.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1776#1777#0" expanded="true" />
-            <element signature="e#1815#1816#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/P.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/level/LogLevel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="805">
@@ -1330,56 +1185,59 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1245#1246#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1219">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="2116">
           <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4455#4456#0" expanded="true" />
-            <element signature="e#4488#4489#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1955">
+          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="81" column="47" lean-forward="true" selection-start-line="80" selection-end-line="81" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1990#1991#0" expanded="true" />
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2099#2100#0" expanded="true" />
-            <element signature="e#2160#2161#0" expanded="true" />
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2301#2302#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="736">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-column="25" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/Jtlog_jar.xml" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/poms/pom-default.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
         </state>
       </provider>
     </entry>
