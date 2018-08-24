@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMain.java" afterDir="false" />
-    </list>
+    <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -152,13 +147,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+            <state relative-caret-position="206">
+              <caret line="81" column="47" lean-forward="true" selection-start-line="80" selection-end-line="81" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1990#1991#0" expanded="true" />
                 <element signature="e#2013#2014#0" expanded="true" />
-                <element signature="e#2058#2059#0" expanded="true" />
                 <element signature="e#2099#2100#0" expanded="true" />
                 <element signature="e#2160#2161#0" expanded="true" />
                 <element signature="e#2206#2207#0" expanded="true" />
@@ -746,7 +740,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535034024360" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535119373339" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -967,10 +961,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101526000" />
+    <option name="totallyTimeSpent" value="102217000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="0" width="1372" height="735" extended-state="0" />
+    <frame x="4" y="0" width="1372" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28353658" />
@@ -1374,13 +1368,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+        <state relative-caret-position="206">
+          <caret line="81" column="47" lean-forward="true" selection-start-line="80" selection-end-line="81" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1990#1991#0" expanded="true" />
             <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2058#2059#0" expanded="true" />
             <element signature="e#2099#2100#0" expanded="true" />
             <element signature="e#2160#2161#0" expanded="true" />
             <element signature="e#2206#2207#0" expanded="true" />
