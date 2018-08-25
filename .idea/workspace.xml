@@ -6,7 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="" />
+    <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMain.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -154,25 +157,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
-          <entry key="md" value="1" />
+          <entry key="java" value="2" />
+          <entry key="md" value="2" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
-          <entry key="Markdown" value="1" />
+          <entry key="JAVA" value="2" />
+          <entry key="Markdown" value="2" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="java" value="102" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JAVA" value="102" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -192,11 +197,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-321">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="276">
+              <caret line="35" column="28" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="35" selection-end-column="28" />
               <folding>
-                <element signature="e#1204#1205#0" expanded="true" />
-                <element signature="e#1245#1246#0" expanded="true" />
+                <element signature="e#1210#1211#0" expanded="true" />
+                <element signature="e#1264#1265#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -206,10 +211,19 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="289">
-                <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <first_editor relative-caret-position="287">
+                <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/with/WithJtLogger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -589,7 +603,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/with/WithJtLogger.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" />
@@ -597,6 +610,7 @@
         <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/.idea/artifacts/Jtlog_jar.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/TestMain.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -675,6 +689,54 @@
               <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="jtlog" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="with" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -686,7 +748,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535195807058" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535196861186" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -724,7 +786,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Jtlog [install]">
+  <component name="RunManager" selected="Application.TestMain">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -841,8 +903,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Jtlog [install]" />
         <item itemvalue="Application.TestMain" />
+        <item itemvalue="Gradle.Jtlog [install]" />
         <item itemvalue="JUnit.StringUtilTest.test" />
         <item itemvalue="Gradle.Jtlog3 [jar]" />
         <item itemvalue="Gradle.Jtlog3 [assemble]" />
@@ -872,7 +934,7 @@
       <workItem from="1534934888459" duration="17619000" />
       <workItem from="1534991998868" duration="19363000" />
       <workItem from="1535127188345" duration="336000" />
-      <workItem from="1535127608245" duration="1938000" />
+      <workItem from="1535127608245" duration="2992000" />
     </task>
     <servers />
   </component>
@@ -909,7 +971,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107735000" />
+    <option name="totallyTimeSpent" value="108789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="0" width="1372" height="735" extended-state="0" />
@@ -924,12 +986,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298791" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33333334" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3298791" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3298791" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32993197" />
@@ -1174,13 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/with/WithJtLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1219">
@@ -1232,13 +1287,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/with/WithJtLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-321">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="276">
+          <caret line="35" column="28" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="35" selection-end-column="28" />
           <folding>
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1245#1246#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1264#1265#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1246,8 +1308,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="289">
-            <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <first_editor relative-caret-position="287">
+            <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
           </first_editor>
           <second_editor />
         </state>
