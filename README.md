@@ -6,17 +6,17 @@
 &emsp;&emsp;A logging library for javaweb project or android project. 
 
 ---
-### 环境要求
+### ==环境要求==
 JDK1.8及以上
 
 ---
 
 
-### 添加依赖
+### ==添加依赖==
 jtlog/build/libs/jtlog-*.jar
 
 ---
-### 简单使用
+### ==简单使用==
 ##### 1. 使用JtLogger接口
 
 ```
@@ -96,7 +96,7 @@ public class TestMain implements WithJtLogger {
     }
 }
 ```
-*效果*
+*效果：*
 
 ```
 D:{time}=20:09:08.882 , {thread}=main , {context}=TestMain , {location}=TestMain.<init>().18 , {caller}=(TestMain.java:18)
@@ -105,8 +105,23 @@ D:{time}=20:09:08.882 , {thread}=main , {context}=TestMain , {location}=TestMain
 I:{time}=20:09:08.903 , {thread}=main , {context}=TestMain , {tag}=tag
 false
 ```
-
-
 ---
+
+### ==配置==
+
+##### 配置属性：
+
+属性名 | 描述 | 默认值
+---|---|---
+contextName | 日志环境名，{context}=的标识，日志框架根据环境名区分不同的日志环境 |传入Class对象的类名或者实现WithJtLogger接口的类名
+isEnabled | 是否允许输出日志 |true
+maxLengthOfRow | 日志框架输出内容时，每一行的最大长度，超过这个长度就会换行 |130
+minVisibleLevel | 最低可见日志等级，默认为DEBUG等级，日志等级优先级为：PRINTLN > ERROR > WARN > INFO > DEBUG > ARRIVE > VERBOSE |DEBUG
+isUsedJtloggerApi | 是否使用JtLogger框架的Api进行日志输出，false的话会自适应使用Logback或者Log4j2的Api进行输出 |true
+
+
+
+##### 1. 注释配置
+
 
 

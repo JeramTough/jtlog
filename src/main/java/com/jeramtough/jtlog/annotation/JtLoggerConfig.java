@@ -23,15 +23,15 @@ public @interface JtLoggerConfig {
     boolean isEnabled() default true;
 
     /**
-     * 是否使用JtLogger框架的Api,当为Android框架时强制使用Logcat的Api实现输出，<br/>
-     * false的话会自适应使用Logback或者Log4j2<br/>
+     * 是否使用JtLogger框架的Api进行日志输出，<br/>
+     * false的话会自适应使用Logback或者Log4j2的Api进行输出<br/>
      * 的api实现输出
      */
     boolean isUsedJtloggerApi() default true;
 
 
     /**
-     * 日志内容输出，每行最大长度，超过这个长度就会换行
+     * 日志框架输出内容时，每一行的最大长度，超过这个长度就会换行
      */
     int maxLengthOfRow() default 130;
 
@@ -42,9 +42,13 @@ public @interface JtLoggerConfig {
     LogLevel minVisibleLevel() default LogLevel.DEBUG;
 
     /**
-     * 日志环境名，日志框架根据环境名区分不同的日志环境
+     * 日志环境名，{context}=的标识，日志框架根据环境名区分不同的日志环境
      */
     String contextName() default "";
 
+    /**
+     * 决定输出位置caller的标记<br/>
+     * {caller}=(L.java:71)
+     */
     int callerPlus() default 0;
 }

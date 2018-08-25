@@ -46,7 +46,7 @@ public class LogConfig {
     private LogLevel minVisibleLevel = LogLevel.DEBUG;
 
     /**
-     * 决定输出位置的标记<br/>
+     * 决定输出位置caller的标记<br/>
      * {caller}=(L.java:71)
      */
     private int callerPlus = 0;

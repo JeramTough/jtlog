@@ -1,8 +1,7 @@
 package com.jeramtough.jtlog.level;
 
 /**
- * 日志等级<br/>
- * 输出优先级:<br/>
+ * 日志可见等级排名：<br/>
  * PRINTLN > ERROR > WARN > INFO > DEBUG > ARRIVE > VERBOSE
  *
  * @author 11718
