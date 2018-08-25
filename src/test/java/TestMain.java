@@ -6,21 +6,23 @@ import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.with.WithJtLogger;
 
-@JtLoggerConfig(isUsedJtloggerApi = true, isEnabled = true,
+@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = false,
+        maxLengthOfRow = 0,contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE)
 public class TestMain implements WithJtLogger {
     public static void main(String[] args) {
+        JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+        jtLogger.getLogContext().getLogConfig().setMaxLengthOfRow(0);
+        jtLogger.getLogContext().getLogConfig().setEnabled(false);
+        jtLogger.info("information");
+
         new TestMain();
     }
 
     public TestMain() {
-
-        getJtLogger().debug(131313);
-        getJtLogger().info("tag",false);
-
-       /* test();
+        test();
         test1();
-        test2();*/
+        test2();
         //		test3();
     }
 

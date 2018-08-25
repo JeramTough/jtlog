@@ -123,5 +123,28 @@ isUsedJtloggerApi | 是否使用JtLogger框架的Api进行日志输出，false�
 
 ##### 1. 注释配置
 
+```
+@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = false,
+        maxLengthOfRow = 0,contextName = "MyLogger",
+        minVisibleLevel = LogLevel.VERBOSE)
+public class TestMain implements WithJtLogger {
+    public static void main(String[] args) {
+        JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+        jtLogger.info("information");
+        new TestMain();
+    }
+}
+```
+##### 2. 编程式配置
+
+```
+public class TestMain {
+    public static void main(String[] args) {
+        JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+        jtLogger.getLogContext().getLogConfig().setMaxLengthOfRow(0);
+        jtLogger.getLogContext().getLogConfig().setEnabled(false);
+        jtLogger.info("information");
+    }
+```
 
 
