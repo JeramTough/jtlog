@@ -11,11 +11,6 @@ import com.jeramtough.jtlog.with.WithJtLogger;
         minVisibleLevel = LogLevel.VERBOSE)
 public class TestMain implements WithJtLogger {
     public static void main(String[] args) {
-        JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
-        jtLogger.getLogContext().getLogConfig().setMaxLengthOfRow(0);
-        jtLogger.getLogContext().getLogConfig().setEnabled(false);
-        jtLogger.info("information");
-
         new TestMain();
     }
 
@@ -29,8 +24,11 @@ public class TestMain implements WithJtLogger {
     private void test() {
         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
 
+        //过滤掉标签标记为“aaa”的日志
         TagLogFilter tagLogFilter = new TagLogFilter("aaa");
         jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
+
+        jtLogger.info("aaa","这句日志信息将会被过滤掉");
 
         jtLogger.arrive();
         jtLogger.info("11111");

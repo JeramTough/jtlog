@@ -148,3 +148,31 @@ public class TestMain {
 ```
 
 
+### ==过滤器==
+- 使用标签过滤器,过滤掉指定tag的日志输出
+
+```
+//过滤掉标签标记为“aaa”的日志
+TagLogFilter tagLogFilter = new TagLogFilter("aaa");
+jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
+
+jtLogger.info("aaa","这句日志信息将会被过滤掉");
+```
+- 自定义过滤器
+
+```
+//实现LogFilter接口
+public class CustomLogFilter implements LogFilter {
+    @Override
+    public boolean isPrinted(LogInformation logInformation) {
+        if (logInformation.getLogLevel() == LogLevel.DEBUG) {
+            return false;
+        }
+        return true;
+    }
+}
+
+//使用
+jtLogger.getLogContext().getLogConfig().addLogFilter(customLogFilter);
+```
+
