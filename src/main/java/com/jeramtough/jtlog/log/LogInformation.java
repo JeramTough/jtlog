@@ -17,7 +17,8 @@ public class LogInformation {
 
     private final static int CALLER_COUNT = 4;
 
-    private String message;
+    private Object message;
+    private String messageString;
     private StackTraceElement stackTraceElement;
     private String tag;
     private LogLevel logLevel;
@@ -40,7 +41,7 @@ public class LogInformation {
     }
 
     public String getMessage() {
-        return message;
+        return messageString;
     }
 
     public String getClassName() {
@@ -62,7 +63,7 @@ public class LogInformation {
         return stackTraceElement.getFileName();
     }
 
-    public void setMessage(String message) {
+    public void setMessage(Object message) {
         this.message = message;
     }
 
@@ -93,6 +94,11 @@ public class LogInformation {
     private void processingInformation() {
         stackTraceElement =
                 ((new Exception()).getStackTrace())[CALLER_COUNT + logContext.getLogConfig().getCallerPlus()];
+        if (message == null) {
+            messageString = "[null]";
+        } else {
+            messageString = message.toString();
+        }
     }
 
     //{{{{{{{{{}}}}}}}}}}}}}}}}}
@@ -113,7 +119,7 @@ public class LogInformation {
             return this;
         }
 
-        public Builder setMessage(String message) {
+        public Builder setMessage(Object message) {
             logInformation.setMessage(message);
             return this;
         }

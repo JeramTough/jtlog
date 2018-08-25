@@ -14,9 +14,13 @@ public class TestMain implements WithJtLogger {
     }
 
     public TestMain() {
-        test();
+
+        getJtLogger().debug(131313);
+        getJtLogger().info("tag",false);
+
+       /* test();
         test1();
-        test2();
+        test2();*/
         //		test3();
     }
 
@@ -33,11 +37,14 @@ public class TestMain implements WithJtLogger {
         jtLogger.debug("44444");
         jtLogger.error("tag", "55555");
         jtLogger.verbose("tag", "66666");
-        jtLogger.p("77777");
+        jtLogger.p("77777"); //不带任何格式输出
     }
 
     private void test1() {
-        L.debug("this is a debug information");
+        L.debug(null);
+        L.info(88888.f);
+        L.verbose("99999");
+        L.debugs(null,111111,121212);
     }
     private void test2() {
         getJtLogger().debug("with.www");

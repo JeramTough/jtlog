@@ -75,7 +75,7 @@ public class L {
         jtLogger.debug(tag, message);
     }
 
-    public <T> void debugs(T... messages) {
+    public static  <T> void debugs(T... messages) {
         jtLogger.debugs(messages);
     }
 

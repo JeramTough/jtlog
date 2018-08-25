@@ -8,6 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="563eaa7e-a68b-4895-912a-1c39c7c281c0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -157,27 +161,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="8" />
           <entry key="md" value="2" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="8" />
           <entry key="Markdown" value="2" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="102" />
+          <entry key="java" value="371" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="102" />
+          <entry key="JAVA" value="371" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -197,12 +201,80 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="35" column="28" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="35" selection-end-column="28" />
+            <state relative-caret-position="92">
+              <caret line="10" selection-start-line="10" selection-end-line="24" selection-end-column="5" />
               <folding>
-                <element signature="e#1210#1211#0" expanded="true" />
-                <element signature="e#1264#1265#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#560#561#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1803#1804#0" expanded="true" />
+                <element signature="e#1842#1843#0" expanded="true" />
+                <element signature="e#1990#1991#0" expanded="true" />
+                <element signature="e#2031#2032#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="111" column="66" lean-forward="true" selection-start-line="111" selection-start-column="66" selection-end-line="111" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1338">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding>
+                <element signature="e#1456#1457#0" expanded="true" />
+                <element signature="e#1494#1495#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/BasePrinter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102">
+              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -212,7 +284,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="287">
-                <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+                <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
               </first_editor>
               <second_editor />
             </state>
@@ -255,6 +327,7 @@
       <find>@</find>
       <find>T1</find>
       <find>Jtlog</find>
+      <find>setMessage(message.toString())</find>
     </findStrings>
     <replaceStrings>
       <replace>MyStringUtil.ObjectsToString(message)</replace>
@@ -263,6 +336,7 @@
       <replace>public static</replace>
       <replace>@</replace>
       <replace>jtlog</replace>
+      <replace>setMessage(message)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -596,20 +670,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/P.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/AndroidPrinter.java" />
         <option value="$PROJECT_DIR$/src/test/java/StringUtilTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/util/MyStringUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/annotation/JtLoggerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/with/WithJtLogger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/.idea/artifacts/Jtlog_jar.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestMain.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
@@ -722,6 +796,33 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlogger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="printer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jtlog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jtlog" type="462c0819:PsiDirectoryNode" />
               <item name="with" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -748,7 +849,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535196861186" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535199181536" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -934,7 +1035,7 @@
       <workItem from="1534934888459" duration="17619000" />
       <workItem from="1534991998868" duration="19363000" />
       <workItem from="1535127188345" duration="336000" />
-      <workItem from="1535127608245" duration="2992000" />
+      <workItem from="1535127608245" duration="5311000" />
     </task>
     <servers />
   </component>
@@ -971,7 +1072,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108789000" />
+    <option name="totallyTimeSpent" value="111108000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="0" width="1372" height="735" extended-state="0" />
@@ -1144,24 +1245,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/PrinterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/BasePrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1200,13 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1563">
-          <caret line="92" column="12" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StringUtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -1233,32 +1313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1219">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1990#1991#0" expanded="true" />
-            <element signature="e#2031#2032#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2116">
-          <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1294,13 +1348,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/facade/L.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+            <element signature="e#2031#2032#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/jtlogger/JtLoggerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="111" column="66" lean-forward="true" selection-start-line="111" selection-start-column="66" selection-end-line="111" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/printer/BasePrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/log/LogInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1338">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#1456#1457#0" expanded="true" />
+            <element signature="e#1494#1495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/style/BasePrintStyle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="35" selection-end-column="28" />
+        <state relative-caret-position="92">
+          <caret line="10" selection-start-line="10" selection-end-line="24" selection-end-column="5" />
           <folding>
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1264#1265#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1309,7 +1419,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="287">
-            <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+            <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
           </first_editor>
           <second_editor />
         </state>

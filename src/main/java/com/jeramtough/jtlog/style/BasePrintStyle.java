@@ -38,7 +38,7 @@ public abstract class BasePrintStyle implements PrintStyle {
         int limitNumber = logInformation.getLogContext().getLogConfig().getMaxLengthOfRow();
 
         String message = "\n" + MyStringUtil.splitTextByCounterOfRow(
-                logInformation.getMessage() == null ? "[null]" : logInformation.getMessage(),
+                logInformation.getMessage(),
                 limitNumber) + "\n";
         return message;
     }
