@@ -21,6 +21,11 @@ public class LogInformation {
     private String messageString;
     private StackTraceElement stackTraceElement;
     private String tag;
+    private String time;
+    private String threadName;
+    private String className;
+    private String methodName;
+    private String line;
     private LogLevel logLevel;
     private LogContext logContext;
 
@@ -28,16 +33,16 @@ public class LogInformation {
     private LogInformation() {
     }
 
+    void setStackTraceElement(StackTraceElement stackTraceElement) {
+        this.stackTraceElement = stackTraceElement;
+    }
+
     public String getTime() {
-        Date date = new Date();
-        DateFormat format = new SimpleDateFormat("HH:mm:ss.SSS");
-        String time = format.format(date);
         return time;
     }
 
-    public String getThread() {
-        String thread = Thread.currentThread().getName();
-        return thread;
+    public String getThreadName() {
+        return threadName;
     }
 
     public String getMessage() {
@@ -45,17 +50,14 @@ public class LogInformation {
     }
 
     public String getClassName() {
-        String className = stackTraceElement.getClassName();
         return className;
     }
 
     public String getMethodName() {
-        String methodName = stackTraceElement.getMethodName();
         return methodName;
     }
 
     public String getLine() {
-        String line = stackTraceElement.getLineNumber() + "";
         return line;
     }
 
@@ -75,11 +77,11 @@ public class LogInformation {
         return logLevel;
     }
 
-    public void setTag(String tag) {
+    void setTag(String tag) {
         this.tag = tag;
     }
 
-    public void setLogLevel(LogLevel logLevel) {
+    void setLogLevel(LogLevel logLevel) {
         this.logLevel = logLevel;
     }
 
@@ -87,18 +89,37 @@ public class LogInformation {
         return logContext;
     }
 
-    public void setLogContext(LogContext logContext) {
+    void setLogContext(LogContext logContext) {
         this.logContext = logContext;
     }
 
+
     private void processingInformation() {
-        stackTraceElement =
-                ((new Exception()).getStackTrace())[CALLER_COUNT + logContext.getLogConfig().getCallerPlus()];
+        if (stackTraceElement == null) {
+            stackTraceElement =
+                    ((new Exception()).getStackTrace())[CALLER_COUNT + logContext.getLogConfig().getCallerPlus()];
+        }
+
         if (message == null) {
             messageString = "[null]";
-        } else {
+        }
+        else {
             messageString = message.toString();
         }
+
+        //processing time
+        Date date = new Date();
+        DateFormat format = new SimpleDateFormat("HH:mm:ss.SSS");
+        time = format.format(date);
+
+        threadName = Thread.currentThread().getName();
+
+        className = stackTraceElement.getClassName();
+
+        methodName = stackTraceElement.getMethodName();
+
+        line = stackTraceElement.getLineNumber() + "";
+
     }
 
     //{{{{{{{{{}}}}}}}}}}}}}}}}}
@@ -126,6 +147,11 @@ public class LogInformation {
 
         public Builder setLogContext(LogContext logContext) {
             logInformation.setLogContext(logContext);
+            return this;
+        }
+
+        public Builder setStackTraceElement(StackTraceElement stackTraceElement) {
+            logInformation.setStackTraceElement(stackTraceElement);
             return this;
         }
 

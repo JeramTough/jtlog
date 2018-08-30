@@ -8,7 +8,7 @@ import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.with.WithJtLogger;
 import org.slf4j.LoggerFactory;
 
-@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = true,
+@JtLoggerConfig(isUsedJtloggerApi = true, isEnabled = true,
         maxLengthOfRow = 130, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE)
 public class TestMain implements WithJtLogger {
@@ -56,6 +56,8 @@ public class TestMain implements WithJtLogger {
     }
 
     private void test3() {
+        Logger logger= (Logger) LoggerFactory.getLogger("testlogback");
+        logger.debug("aaa");
     }
 
 }

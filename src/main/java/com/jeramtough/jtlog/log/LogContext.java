@@ -8,10 +8,14 @@ import com.jeramtough.jtlog.jtlogger.JtLoggerImpl;
  * Created on 2018-08-21 14:45
  * by @author JeramTough
  */
-public class LogContext {
+public final class LogContext {
 
     private String contextName;
     private LogConfig logConfig;
+
+    public LogContext() {
+        logConfig = new LogConfig();
+    }
 
     public String getContextName() {
         return contextName;

@@ -28,7 +28,8 @@ public final class JtLoggerManager {
         JtLogger jtLogger;
         if (jtLoggerHashMap.containsKey(contextName)) {
             jtLogger = jtLoggerHashMap.get(contextName);
-        } else {
+        }
+        else {
             LogContext logContext = new LogContext();
             LogConfig logConfig = parseLogConfigFromAnnotation(contextClass);
             logContext.setLogConfig(logConfig);
@@ -43,9 +44,10 @@ public final class JtLoggerManager {
         JtLogger jtLogger;
         if (jtLoggerHashMap.containsKey(contextName)) {
             jtLogger = jtLoggerHashMap.get(contextName);
-        } else {
+        }
+        else {
             LogContext logContext = new LogContext();
-            LogConfig logConfig = new LogConfig();
+            LogConfig logConfig = logContext.getLogConfig();
             logContext.setLogConfig(logConfig);
             logContext.setContextName(contextName);
             jtLogger = new JtLoggerImpl(logContext);
@@ -59,9 +61,8 @@ public final class JtLoggerManager {
         if (jtLoggerHashMap.containsKey(logContext.getContextName())) {
             jtLogger = jtLoggerHashMap.get(logContext.getContextName());
             jtLogger.getLogContext().setLogConfig(logContext.getLogConfig());
-        } else {
-            LogConfig logConfig = new LogConfig();
-            logContext.setLogConfig(logConfig);
+        }
+        else {
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(logContext.getContextName(), jtLogger);
         }
@@ -88,7 +89,8 @@ public final class JtLoggerManager {
         JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) c.getAnnotation(JtLoggerConfig.class);
         if (jtLoggerConfig != null && !jtLoggerConfig.contextName().equals("")) {
             return jtLoggerConfig.contextName();
-        } else {
+        }
+        else {
             return c.getSimpleName();
         }
     }

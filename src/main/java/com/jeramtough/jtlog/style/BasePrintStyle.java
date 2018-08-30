@@ -29,7 +29,7 @@ public abstract class BasePrintStyle implements PrintStyle {
 
         }
         String head = logInformation.getLogLevel().getFlag() + ":{time}=" +
-                logInformation.getTime() + " , " + "{thread}=" + logInformation.getThread() + context + tag;
+                logInformation.getTime() + " , " + "{thread}=" + logInformation.getThreadName() + context + tag;
 
         return head;
     }

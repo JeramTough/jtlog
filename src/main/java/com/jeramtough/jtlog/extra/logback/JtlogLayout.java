@@ -1,10 +1,11 @@
-package com.jeramtough.jtlog.extra;
+package com.jeramtough.jtlog.extra.logback;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.LayoutBase;
 import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.log.LogConfig;
 import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.log.LogInformation;
 import com.jeramtough.jtlog.style.PrintStyle;
@@ -15,6 +16,7 @@ import com.jeramtough.jtlog.style.PrintStyleManager;
  * by @author JeramTough
  */
 public class JtlogLayout extends LayoutBase<ILoggingEvent> {
+
     @Override
     public String doLayout(ILoggingEvent iLoggingEvent) {
         LogLevel logLevel;
@@ -44,14 +46,16 @@ public class JtlogLayout extends LayoutBase<ILoggingEvent> {
             logLevel = LogLevel.DEBUG;
             printStyle = PrintStyleManager.getDebugPrintStyle();
         }
-        LogContext logContext=new LogContext();
+        LogContext logContext = new LogContext();
         logContext.setContextName("jtlog");
         logContext.getLogConfig().setMinVisibleLevel(LogLevel.VERBOSE);
-        logContext.getLogConfig().setCallerPlus(0);
+        logContext.getLogConfig().setCallerPlus(-4);
+
         LogInformation logInformation =
                 new LogInformation.Builder().setLogContext(logContext)
                         .setJtLogLevel(logLevel)
-                        .setMessage(iLoggingEvent.getMessage()).build();
+                        .setMessage(iLoggingEvent.getMessage())
+                        .setStackTraceElement(iLoggingEvent.getCallerData()[0]).build();
 
         return printStyle.stylize(logInformation);
     }
