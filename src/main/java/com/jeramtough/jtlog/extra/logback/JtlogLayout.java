@@ -47,7 +47,7 @@ public class JtlogLayout extends LayoutBase<ILoggingEvent> {
             printStyle = PrintStyleManager.getDebugPrintStyle();
         }
         LogContext logContext = new LogContext();
-        logContext.setContextName("jtlog");
+        logContext.setContextName("JTLOG_FOR_LOGBACK");
         logContext.getLogConfig().setMinVisibleLevel(LogLevel.VERBOSE);
         logContext.getLogConfig().setCallerPlus(-4);
 
