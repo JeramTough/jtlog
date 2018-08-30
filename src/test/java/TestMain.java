@@ -1,3 +1,4 @@
+import ch.qos.logback.classic.Logger;
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
 import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.filter.TagLogFilter;
@@ -5,9 +6,10 @@ import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.with.WithJtLogger;
+import org.slf4j.LoggerFactory;
 
-@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = false,
-        maxLengthOfRow = 0,contextName = "MyLogger",
+@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = true,
+        maxLengthOfRow = 130, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE)
 public class TestMain implements WithJtLogger {
     public static void main(String[] args) {
@@ -18,8 +20,9 @@ public class TestMain implements WithJtLogger {
         test();
         test1();
         test2();
-        //		test3();
+        test3();
     }
+
 
     private void test() {
         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
@@ -28,7 +31,7 @@ public class TestMain implements WithJtLogger {
         TagLogFilter tagLogFilter = new TagLogFilter("aaa");
         jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
 
-        jtLogger.info("aaa","这句日志信息将会被过滤掉");
+        jtLogger.info("aaa", "这句日志信息将会被过滤掉");
 
         jtLogger.arrive();
         jtLogger.info("11111");
@@ -44,11 +47,15 @@ public class TestMain implements WithJtLogger {
         L.debug(null);
         L.info(88888.f);
         L.verbose("99999");
-        L.debugs(null,111111,121212);
+        L.debugs(null, 111111, 121212);
     }
+
     private void test2() {
         getJtLogger().debug("with.www");
-        getJtLogger().debugs("Strinds",1,12.1f,false);
+        getJtLogger().debugs("Strinds", 1, 12.1f, false);
+    }
+
+    private void test3() {
     }
 
 }

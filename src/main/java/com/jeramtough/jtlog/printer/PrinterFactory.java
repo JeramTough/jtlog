@@ -56,6 +56,7 @@ public class PrinterFactory {
             synchronized (PrintStyleManager.class) {
                 if (jtPrinter == null) {
                     jtPrinter = new JtPrinter(logContext);
+                    jtPrinter = loadPrinterProxy(logContext, jtPrinter);
                 }
             }
         }
