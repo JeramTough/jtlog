@@ -2,7 +2,7 @@ package com.jeramtough.jtlog.level;
 
 /**
  * 日志可见等级排名：<br/>
- * PRINTLN > ERROR > WARN > INFO > DEBUG > ARRIVE > VERBOSE
+ * PRINTLN   ERROR   WARN   INFO   DEBUG   ARRIVE   VERBOSE
  *
  * @author 11718
  */
