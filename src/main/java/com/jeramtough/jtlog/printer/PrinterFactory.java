@@ -36,14 +36,18 @@ public class PrinterFactory {
             if (isUsedEspecialLogApi(ANDROID_LOGCAT_PACKAGE_NAME) &&
                     !isUsedEspecialLogApi(LOGBACK_PACKAGE_NAME)) {
                 printer = getAndroidPrinter(logContext);
-            } else {
+            }
+            else {
                 printer = getJtPrinter(logContext);
             }
-        } else if (isUsedEspecialLogApi(LOGBACK_PACKAGE_NAME)) {
+        }
+        else if (isUsedEspecialLogApi(LOGBACK_PACKAGE_NAME)) {
             printer = getLogbackPrinter(logContext);
-        } else if (isUsedEspecialLogApi(LOG4J2_PACKAGE_NAME)) {
+        }
+        else if (isUsedEspecialLogApi(LOG4J2_PACKAGE_NAME)) {
             printer = getLog4j2Printer(logContext);
-        } else {
+        }
+        else {
             printer = getJtPrinter(logContext);
         }
         return printer;

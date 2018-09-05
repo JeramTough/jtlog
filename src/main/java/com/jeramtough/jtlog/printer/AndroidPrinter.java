@@ -17,36 +17,36 @@ public class AndroidPrinter extends BasePrinter {
 
     @Override
     public void verbose(LogInformation logInformation, String stylizedText) {
-        android.util.Log.v(LOGCAT_TAG, stylizedText);
+//        android.util.Log.v(LOGCAT_TAG, stylizedText);
     }
 
     @Override
     public void arrive(LogInformation logInformation, String stylizedText) {
-        android.util.Log.d(LOGCAT_TAG, stylizedText);
+//        android.util.Log.d(LOGCAT_TAG, stylizedText);
     }
 
     @Override
     public void debug(LogInformation logInformation, String stylizedText) {
-        android.util.Log.d(LOGCAT_TAG, stylizedText);
+//        android.util.Log.d(LOGCAT_TAG, stylizedText);
     }
 
     @Override
     public void info(LogInformation logInformation, String stylizedText) {
-        android.util.Log.i(LOGCAT_TAG, stylizedText);
+//        android.util.Log.i(LOGCAT_TAG, stylizedText);
     }
 
     @Override
     public void warn(LogInformation logInformation, String stylizedText) {
-        android.util.Log.w(LOGCAT_TAG, stylizedText);
+//        android.util.Log.w(LOGCAT_TAG, stylizedText);
     }
 
     @Override
     public void error(LogInformation logInformation, String stylizedText) {
-        android.util.Log.e(LOGCAT_TAG, stylizedText);
+//        android.util.Log.e(LOGCAT_TAG, stylizedText);
     }
 
     @Override
     public void println(LogInformation logInformation, String stylizedText) {
-        android.util.Log.v(LOGCAT_TAG, stylizedText);
+//        android.util.Log.v(LOGCAT_TAG, stylizedText);
     }
 }
