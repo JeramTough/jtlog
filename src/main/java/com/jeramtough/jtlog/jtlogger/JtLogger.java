@@ -11,12 +11,12 @@ import com.jeramtough.jtlog.log.LogContext;
 public interface JtLogger {
 
     /**
-     * 程序执行到标记锚点输出，格式为:<br/>
+     * 程序执行到标记锚点输出，格式为:
      */
     void arrive();
 
     /**
-     * 普通的输出，不带任何格式,类似于<br/>
+     * 普通的输出，不带任何格式,类似于
      * System.out.println();
      *
      * @param message 输出内容
@@ -85,7 +85,7 @@ public interface JtLogger {
 
 
     /**
-     * 输出debug级别的日志输出，可输出多条debug消息，<br/>
+     * 输出debug级别的日志输出，可输出多条debug消息，
      * 以“，”分割
      *
      * @param messages 输出内容

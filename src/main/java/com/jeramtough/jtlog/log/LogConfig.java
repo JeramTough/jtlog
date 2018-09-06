@@ -26,8 +26,8 @@ public class LogConfig {
 
 
     /**
-     * 是否使用JtLogger框架的Api,当为Android框架时强制使用Logcat的Api实现输出，<br/>
-     * false的话会自适应使用Logback或者Log4j2<br/>
+     * 是否使用JtLogger框架的Api,当为Android框架时强制使用Logcat的Api实现输出，
+     * false的话会自适应使用Logback或者Log4j2
      * 的api实现输出
      */
     private boolean isUsedJtloggerApi = true;
@@ -40,13 +40,13 @@ public class LogConfig {
 
 
     /**
-     * 最低可见日志等级，默认为DEBUG等级，日志等级优先级就参考<br/>
+     * 最低可见日志等级，默认为DEBUG等级，日志等级优先级就参考
      * {@link LogLevel}
      */
     private LogLevel minVisibleLevel = LogLevel.DEBUG;
 
     /**
-     * 决定输出位置caller的标记<br/>
+     * 决定输出位置caller的标记
      * {caller}=(L.java:71)
      */
     private int callerPlus = 0;
