@@ -10,7 +10,7 @@ import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.with.WithJtLogger;
 import org.slf4j.LoggerFactory;
 
-@JtLoggerConfig(isUsedJtloggerApi = true, isEnabled = true,
+@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = true,
         maxLengthOfRow = 130, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE)
 public class TestMain implements WithJtLogger {

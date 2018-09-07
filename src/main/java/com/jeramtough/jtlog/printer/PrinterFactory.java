@@ -1,6 +1,5 @@
 package com.jeramtough.jtlog.printer;
 
-import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.printer.proxy.EnabledPrinterProxy;
 import com.jeramtough.jtlog.printer.proxy.FilterPrinterProxy;
@@ -9,7 +8,6 @@ import com.jeramtough.jtlog.printer.proxy.PrinterProxy;
 import com.jeramtough.jtlog.style.PrintStyleManager;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created on 2018-08-21 17:31
@@ -22,10 +20,6 @@ public class PrinterFactory {
     private static volatile Printer log4j2Printer;
     private static volatile Printer androidPrinter;
 
-    private static final String ANDROID_LOGCAT_PACKAGE_NAME = "android.util" +
-            ".Log";
-    private static final String LOGBACK_PACKAGE_NAME = "ch.qos.logback.classic.Logger";
-    private static final String LOG4J2_PACKAGE_NAME = "org.apache.logging.log4j.Logger";
 
     private PrinterFactory() {
     }
@@ -33,18 +27,18 @@ public class PrinterFactory {
     public static Printer getPrinter(LogContext logContext) {
         Printer printer;
         if (logContext.getLogConfig().isUsedJtloggerApi()) {
-            if (isUsedEspecialLogApi(ANDROID_LOGCAT_PACKAGE_NAME) &&
-                    !isUsedEspecialLogApi(LOGBACK_PACKAGE_NAME)) {
+            if (isUsedEspecialLogApi(AndroidPrinter.LOGCAT_PACKAGE_NAME) &&
+                    !isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)) {
                 printer = getAndroidPrinter(logContext);
             }
             else {
                 printer = getJtPrinter(logContext);
             }
         }
-        else if (isUsedEspecialLogApi(LOGBACK_PACKAGE_NAME)) {
+        else if (isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)) {
             printer = getLogbackPrinter(logContext);
         }
-        else if (isUsedEspecialLogApi(LOG4J2_PACKAGE_NAME)) {
+        else if (isUsedEspecialLogApi(Log4j2Printer.LOG4J2_LOG_MANAGER_PACKAGE_NAME)) {
             printer = getLog4j2Printer(logContext);
         }
         else {
@@ -55,6 +49,7 @@ public class PrinterFactory {
 
     //***********************
     //***********************
+
     private static Printer getJtPrinter(LogContext logContext) {
         if (jtPrinter == null) {
             synchronized (PrintStyleManager.class) {
