@@ -6,17 +6,17 @@
 &emsp;&emsp;A logging library for javaweb project or android project. 
 
 ---
-### ==环境要求==
+### ==一、环境要求==
 JDK1.8及以上
 
 ---
 
 
-### ==添加依赖==
+### ==二、添加依赖==
 jar包位置 : [jtlog/build/libs/jtlog-*.jar](https://github.com/JeramTough/jtlog/tree/master/build/libs)
 
 ---
-### ==简单使用==
+### ==三、简单使用==
 ##### 1. 使用JtLogger接口
 
 ```
@@ -110,7 +110,7 @@ false
 --
 
 
-### ==配置==
+### ==四、配置==
 
 ##### 配置属性：
 
@@ -153,7 +153,7 @@ public class TestMain {
 ---
 
 --
-### ==过滤器==
+### ==五、过滤器==
 - 使用标签过滤器,过滤掉指定tag的日志输出
 
 ```
@@ -183,7 +183,7 @@ jtLogger.getLogContext().getLogConfig().addLogFilter(customLogFilter);
 
 ---
 --
-### ==日志持久化==
+### ==六、日志持久化==
 当需要把日志信息做持久化处理，比如写入到某文件或者存入数据库时，可以使用**Recoder**接口，框架里有一个Recoder的实现类**FileRecoder**，用于日志信息文件保存方法。
 ````
 /**
