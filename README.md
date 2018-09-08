@@ -182,7 +182,49 @@ jtLogger.getLogContext().getLogConfig().addLogFilter(customLogFilter);
 ---
 --
 ### ==日志持久化==
-<html>
-当需要把日志信息做持久化处理，比如写入到某文件或者存入数据库时，可以使用<font color='red'>Recoder</font>接口。
-</html>
+当需要把日志信息做持久化处理，比如写入到某文件或者存入数据库时，可以使用**Recoder**接口，框架里有一个Recoder的实现类**FileRecoder**，用于日志信息文件保存方法。
+````
+/**
+ * 
+ * 创建RecorderHandler的实现类，并重写handleRecorders()方法，返回一个Recorder接口的数组
+ * ，数据里的Recorder接口实现类就是你的日志信息保存逻辑实现类
+ */
+public class MyRecordHandler implements RecorderHandler {
+    @Override
+    public Recorder[] handleRecorders() {
+        return new Recorder[]{new MyRecorder()};
+    }
+}
+
+
+/**
+ * 实现自己的持久化逻辑
+ */
+public class MyRecorder implements Recorder {
+    @Override
+    public void record(LogInformation logInformation, String stylizedText) throws IOException {
+        //saved log to where you want.
+        File file=new File("/someWhere/info.log");
+        IOUtil.write(stylizedText.getBytes(),new FileOutputStream(file));
+    }
+}
+
+
+/**
+ * 使用注释配置RecorderHandler类
+ */
+@JtLoggerConfig(recorderHandleClass = MyRecordHandler.class,
+isEnabled = true)
+public class FileTst implements WithJtLogger {
+    @Test
+    public void test() {
+        getJtLogger().info("saving log information in somewhere");
+    }
+}
+
+```
+
+
+
+
 
