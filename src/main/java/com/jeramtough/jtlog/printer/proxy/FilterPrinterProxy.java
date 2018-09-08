@@ -27,7 +27,7 @@ public class FilterPrinterProxy extends BasePrinterProxy {
         }
 
         if (isPrinted) {
-            method.invoke(printer, args);
+           return method.invoke(printer, args);
         }
         return null;
     }

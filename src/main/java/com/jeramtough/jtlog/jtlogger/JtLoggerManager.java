@@ -3,7 +3,12 @@ package com.jeramtough.jtlog.jtlogger;
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
 import com.jeramtough.jtlog.log.LogConfig;
 import com.jeramtough.jtlog.log.LogContext;
+import com.jeramtough.jtlog.recorder.DefaultRecorderHandler;
+import com.jeramtough.jtlog.recorder.Recorder;
+import com.jeramtough.jtlog.recorder.RecorderHandler;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
 /**
@@ -81,6 +86,7 @@ public final class JtLoggerManager {
             logConfig.setMaxLengthOfRow(jtLoggerConfig.maxLengthOfRow());
             logConfig.setMinVisibleLevel(jtLoggerConfig.minVisibleLevel());
             logConfig.setCallerPlus(jtLoggerConfig.callerPlus());
+            logConfig.setRecorders(parseRecordsFromAnnotation(jtLoggerConfig.recorderHandleClass()));
         }
         return logConfig;
     }
@@ -93,6 +99,21 @@ public final class JtLoggerManager {
         else {
             return c.getSimpleName();
         }
+    }
+
+    private static Recorder[] parseRecordsFromAnnotation(Class<? extends RecorderHandler> c) {
+        RecorderHandler recorderHandler = null;
+        try {
+            Constructor constructor = c.getConstructor();
+            recorderHandler = (RecorderHandler) constructor.newInstance();
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
+            e.printStackTrace();
+        } finally {
+            if (recorderHandler == null) {
+                recorderHandler = new DefaultRecorderHandler();
+            }
+        }
+        return recorderHandler.handleRecorders();
     }
 
 }

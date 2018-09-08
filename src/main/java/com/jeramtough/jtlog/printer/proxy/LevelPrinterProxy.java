@@ -21,7 +21,7 @@ public class LevelPrinterProxy extends BasePrinterProxy {
         int result = LogLevel.compare(logContext.getLogConfig().getMinVisibleLevel(),
                 getLogInformation().getLogLevel());
         if (result <= 0) {
-            method.invoke(printer, args);
+            return method.invoke(printer, args);
         }
         return null;
     }

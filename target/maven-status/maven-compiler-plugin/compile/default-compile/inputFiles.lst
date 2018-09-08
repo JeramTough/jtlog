@@ -30,7 +30,6 @@ E:\Codes\IdeaCodes\JtlogForMaven\src\main\java\com\jeramtough\jtlog\style\Arrive
 E:\Codes\IdeaCodes\JtlogForMaven\src\main\java\com\jeramtough\jtlog\recorder\FileRecorder.java
 E:\Codes\IdeaCodes\JtlogForMaven\src\main\java\com\jeramtough\jtlog\printer\AndroidPrinter.java
 E:\Codes\IdeaCodes\JtlogForMaven\src\main\java\com\jeramtough\jtlog\printer\proxy\BasePrinterProxy.java
-E:\Codes\IdeaCodes\JtlogForMaven\src\main\java\com\jeramtough\jtlog\extra\logback\JtlogLayout.java
 E:\Codes\IdeaCodes\JtlogForMaven\src\main\java\com\jeramtough\jtlog\printer\proxy\PrinterProxy.java
 E:\Codes\IdeaCodes\JtlogForMaven\src\main\java\com\jeramtough\jtlog\filter\LogFilter.java
 E:\Codes\IdeaCodes\JtlogForMaven\src\main\java\com\jeramtough\jtlog\printer\proxy\LevelPrinterProxy.java

@@ -8,25 +8,16 @@ import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.with.WithJtLogger;
+import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 @JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = true,
         maxLengthOfRow = 130, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE)
 public class TestMain implements WithJtLogger {
-    public static void main(String[] args) {
-        new TestMain();
-    }
 
-    public TestMain() {
-        test();
-        test1();
-        test2();
-        test3();
-    }
-
-
-    private void test() {
+    @Test
+    public void test() {
         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
 
         //过滤掉标签标记为“aaa”的日志
@@ -45,21 +36,34 @@ public class TestMain implements WithJtLogger {
         jtLogger.p("77777"); //不带任何格式输出
     }
 
-    private void test1() {
+    @Test
+    public void test1() {
         L.debug(null);
         L.info(88888.f);
         L.verbose("99999");
         L.debugs(null, 111111, 121212);
     }
 
-    private void test2() {
+    @Test
+    public void test2() {
         getJtLogger().debug("with.www");
         getJtLogger().debugs("Strinds", 1, 12.1f, false);
     }
 
-    private void test3() {
-        Logger logger= (Logger) LoggerFactory.getLogger("testlogback");
+    @Test
+    public void test3() {
+        Logger logger = (Logger) LoggerFactory.getLogger("testlogback");
         logger.debug("aaa");
+    }
+
+    @Test
+    public void testRecorderHandler(){
+        JtLogger jtLogger=JtLoggerManager.getJtLogger(MyRecordHandler.class);
+        jtLogger.debug("abc111111");
+        jtLogger.debug("abc222222");
+        jtLogger.debug("abc3333");
+        jtLogger.debug("abc44444444");
+        jtLogger.debug("abc555555555");
     }
 
 }

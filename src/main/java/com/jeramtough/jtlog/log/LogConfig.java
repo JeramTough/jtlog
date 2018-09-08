@@ -2,6 +2,9 @@ package com.jeramtough.jtlog.log;
 
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.recorder.DefaultRecorderHandler;
+import com.jeramtough.jtlog.recorder.Recorder;
+import com.jeramtough.jtlog.recorder.RecorderHandler;
 
 import java.util.ArrayList;
 
@@ -50,6 +53,11 @@ public class LogConfig {
      * {caller}=(L.java:71)
      */
     private int callerPlus = 0;
+
+    /**
+     * 日志记录对象数组
+     */
+    private Recorder[] recorders;
 
     public LogConfig() {
         logFilters = new ArrayList<>();
@@ -106,5 +114,13 @@ public class LogConfig {
 
     public void setCallerPlus(int callerPlus) {
         this.callerPlus = callerPlus;
+    }
+
+    public Recorder[] getRecorders() {
+        return recorders;
+    }
+
+    public void setRecorders(Recorder[] recorders) {
+        this.recorders = recorders;
     }
 }

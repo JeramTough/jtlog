@@ -1,10 +1,7 @@
 package com.jeramtough.jtlog.printer;
 
 import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.printer.proxy.EnabledPrinterProxy;
-import com.jeramtough.jtlog.printer.proxy.FilterPrinterProxy;
-import com.jeramtough.jtlog.printer.proxy.LevelPrinterProxy;
-import com.jeramtough.jtlog.printer.proxy.PrinterProxy;
+import com.jeramtough.jtlog.printer.proxy.*;
 import com.jeramtough.jtlog.style.PrintStyleManager;
 
 import java.util.ArrayList;
@@ -113,12 +110,16 @@ public class PrinterFactory {
 
     private static Printer loadPrinterProxy(LogContext logContext, Printer printer) {
         ArrayList<PrinterProxy> printerProxies = new ArrayList<>();
+
         EnabledPrinterProxy enabledPrinterProxy = new EnabledPrinterProxy(logContext);
         printerProxies.add(enabledPrinterProxy);
         LevelPrinterProxy levelPrinterProxy = new LevelPrinterProxy(logContext);
         printerProxies.add(levelPrinterProxy);
         FilterPrinterProxy filterPrinterProxy = new FilterPrinterProxy(logContext);
         printerProxies.add(filterPrinterProxy);
+
+        RecorderPrinterProxy recorderPrinterProxy = new RecorderPrinterProxy(logContext);
+        printerProxies.add(recorderPrinterProxy);
 
         for (PrinterProxy printerProxy : printerProxies) {
             printer = printerProxy.doProxy(printer);

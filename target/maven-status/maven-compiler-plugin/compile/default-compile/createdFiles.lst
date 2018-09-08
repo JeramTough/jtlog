@@ -16,7 +16,6 @@ com\jeramtough\jtlog\jtlogger\JtLoggerImpl.class
 com\jeramtough\jtlog\recorder\Recorder.class
 com\jeramtough\jtlog\printer\Printer.class
 com\jeramtough\jtlog\style\WarnPrintStyle.class
-com\jeramtough\jtlog\extra\logback\JtlogLayout.class
 com\jeramtough\jtlog\style\VerbosePrintStyle.class
 com\jeramtough\jtlog\printer\AndroidPrinter.class
 com\jeramtough\jtlog\log\LogInformation.class

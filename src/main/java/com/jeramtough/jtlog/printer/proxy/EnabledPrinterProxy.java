@@ -18,7 +18,7 @@ public class EnabledPrinterProxy extends BasePrinterProxy {
     @Override
     Object invoke(LogContext logContext, Printer printer, Object proxy, Method method, Object[] args) throws InvocationTargetException, IllegalAccessException {
         if (logContext.getLogConfig().isEnabled()) {
-            method.invoke(printer, args);
+            return method.invoke(printer, args);
         }
         return null;
     }
