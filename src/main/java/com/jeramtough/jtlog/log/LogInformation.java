@@ -109,7 +109,7 @@ public class LogInformation {
 
         //processing time
         Date date = new Date();
-        DateFormat format = new SimpleDateFormat("HH:mm:ss.SSS");
+        DateFormat format = new SimpleDateFormat("HH:mm:ss:SSS");
         time = format.format(date);
 
         threadName = Thread.currentThread().getName();

@@ -7,6 +7,7 @@ import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.recorder.FileRecorder;
 import com.jeramtough.jtlog.with.WithJtLogger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
@@ -57,13 +58,21 @@ public class TestMain implements WithJtLogger {
     }
 
     @Test
-    public void testRecorderHandler(){
-        JtLogger jtLogger=JtLoggerManager.getJtLogger(MyRecordHandler.class);
+    public void testRecorderHandler() {
+        JtLogger jtLogger = JtLoggerManager.getJtLogger(MyRecordHandler.class);
         jtLogger.debug("abc111111");
         jtLogger.debug("abc222222");
         jtLogger.debug("abc3333");
         jtLogger.debug("abc44444444");
+        //手动触发保存
+        ((FileRecorder) jtLogger.getLogContext().getLogConfig().getRecorders()[0]).wirteLogFile();
+
+        //5次后触发
         jtLogger.debug("abc555555555");
+        jtLogger.debug("abc666666666");
+        jtLogger.debug("abc777777777");
+        jtLogger.debug("abc888888888");
+        jtLogger.debug("abc999999999");
     }
 
 }

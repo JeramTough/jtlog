@@ -2,10 +2,7 @@ package com.jeramtough.jtlog.recorder;
 
 import com.jeramtough.jtlog.log.LogInformation;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -39,53 +36,80 @@ public class FileRecorder implements Recorder {
     }
 
     @Override
-    public void record(LogInformation logInformation, String stylizedText) {
+    public synchronized void record(LogInformation logInformation, String stylizedText) {
         cacheRecordedLogs.add(stylizedText);
-
         if (cacheRecordedLogs.size() >= maxCacheRecordedCount) {
-            executorService.submit(new WirteLogThread());
+            writing();
         }
     }
 
     /**
      * 手动添加写入日志信息文件任务，当保存日志信息线程池空闲时执行。
      */
-    public void wirteLogFile() {
-        executorService.submit(new WirteLogThread());
+    public synchronized void wirteLogFile() {
+        writing();
+    }
+
+    //**********************
+    private void writing() {
+        System.out.println("start writing logs to file");
+        String[] logs = new String[cacheRecordedLogs.size()];
+        for (int i = 0; i < cacheRecordedLogs.size(); i++) {
+            logs[i] = cacheRecordedLogs.get(i);
+        }
+        cacheRecordedLogs.clear();
+        executorService.submit(new WriteLogThread(logs));
     }
 
     //{{{{{{{{{{{}}}}}}}}}}
-    private class WirteLogThread implements Runnable {
+    private class WriteLogThread implements Runnable {
+
+        private final String[] logs;
+
+        private WriteLogThread(String[] logs) {
+            this.logs = logs;
+        }
 
         @Override
         public void run() {
-            if (!logFile.exists()) {
-                try {
-                    logFile.createNewFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
             try {
+                if (!logFile.exists()) {
+                    logFile.createNewFile();
+                }
                 FileInputStream fileInputStream = new FileInputStream(logFile);
+
                 File temporaryFile =
                         new File(logFile.getParentFile().getAbsolutePath()
-                                + File.pathSeparator + logFile.getName() + ".temporary");
+                                + "\\" + logFile.getName() + ".temporary");
+                System.out.println(temporaryFile.getAbsolutePath());
+                temporaryFile.createNewFile();
                 FileOutputStream fileOutputStream = new FileOutputStream(temporaryFile);
-                byte[] readBytes = new byte[255];
-                while (fileInputStream.read(readBytes) > 0) {
-                    fileOutputStream.write(readBytes);
+
+
+                if (logFile.length() > 0) {
+                    InputStreamReader reader = new InputStreamReader(
+                            fileInputStream);
+                    BufferedReader bufferedReader = new BufferedReader(reader);
+                    while (true) {
+                        String line = bufferedReader.readLine();
+                        if (line != null) {
+                            fileOutputStream.write((line+"\n").getBytes());
+                        }
+                        else {
+                            break;
+                        }
+                    }
                 }
 
-                for (String log : cacheRecordedLogs) {
+                for (String log : logs) {
                     fileOutputStream.write(log.getBytes());
                 }
 
-                logFile.delete();
-                temporaryFile.renameTo(logFile);
 
                 fileInputStream.close();
                 fileOutputStream.close();
+                logFile.delete();
+                temporaryFile.renameTo(logFile);
 
             } catch (IOException e) {
                 e.printStackTrace();
