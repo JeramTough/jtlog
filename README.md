@@ -107,6 +107,9 @@ false
 ```
 ---
 
+--
+
+
 ### ==配置==
 
 ##### 配置属性：
@@ -147,7 +150,7 @@ public class TestMain {
     }
 ```
 
-
+--
 ### ==过滤器==
 - 使用标签过滤器,过滤掉指定tag的日志输出
 
@@ -175,4 +178,11 @@ public class CustomLogFilter implements LogFilter {
 //使用
 jtLogger.getLogContext().getLogConfig().addLogFilter(customLogFilter);
 ```
+
+---
+--
+### ==日志持久化==
+<html>
+当需要把日志信息做持久化处理，比如写入到某文件或者存入数据库时，可以使用<font color='red'>Recoder</font>接口。
+</html>
 
