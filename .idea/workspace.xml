@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d0d36ce9-2000-4e58-b5f7-c12eadc221fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/recorder/Recorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jeramtough/jtlog/recorder/Recorder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/FileTst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/FileTst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/MyRecordHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/MyRecordHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -117,7 +114,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="301">
-                <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
+                <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
               </first_editor>
               <second_editor />
             </state>
@@ -306,7 +303,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536385667795" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536385781812" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -477,7 +474,7 @@
       <workItem from="1536207725973" duration="7286000" />
       <workItem from="1536280518749" duration="1418000" />
       <workItem from="1536281955194" duration="26303000" />
-      <workItem from="1536368297750" duration="13315000" />
+      <workItem from="1536368297750" duration="13429000" />
     </task>
     <servers />
   </component>
@@ -514,7 +511,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68893000" />
+    <option name="totallyTimeSpent" value="69007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="0" width="1372" height="735" extended-state="0" />
@@ -922,7 +919,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="301">
-            <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
+            <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
           </first_editor>
           <second_editor />
         </state>
