@@ -17,6 +17,6 @@ public interface Recorder {
      * @param logInformation {@link LogInformation}
      * @param stylizedText 格式化后的日志文本信息
      */
-    void record(LogInformation logInformation, String stylizedText) throws IOException;
+    void record(LogInformation logInformation, String stylizedText);
 
 }

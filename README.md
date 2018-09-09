@@ -13,7 +13,28 @@ JDK1.8及以上
 
 
 ### ==二、添加依赖==
-jar包位置 : [jtlog/build/libs/jtlog-*.jar](https://github.com/JeramTough/jtlog/tree/master/build/libs)
+- jar包位置 : [jtlog/build/libs/jtlog-*.jar](https://github.com/JeramTough/jtlog/tree/master/build/libs)  
+
+
+- Mave 
+
+```
+<dependency>
+    <groupId>com.jeramtough</groupId>
+    <artifactId>jtlog</artifactId>
+    <version>x.x.x</version>
+</dependency>
+
+```
+- Gradle 
+
+```
+compile group: 'com.jeramtough', name: 'jtlog', version: '1.2.0'
+
+```
+
+
+
 
 ---
 ### ==三、简单使用==
