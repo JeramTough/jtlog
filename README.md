@@ -29,7 +29,7 @@ JDK1.8及以上
 - Gradle 
 
 ```
-compile group: 'com.jeramtough', name: 'jtlog', version: '1.2.0'
+compile group: 'com.jeramtough', name: 'jtlog', version: 'x.x.x'
 
 ```
 
