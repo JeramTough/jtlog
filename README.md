@@ -13,7 +13,7 @@ JDK1.8及以上
 
 
 ### ==二、添加依赖==
-- jar包位置 : [jtlog/build/libs/jtlog-*.jar](https://github.com/JeramTough/jtlog/tree/master/build/libs)  
+- jar包位置 : [target/jtlog-*.jar](https://github.com/JeramTough/jtlog/tree/master/target)  
 
 
 - Mave 
