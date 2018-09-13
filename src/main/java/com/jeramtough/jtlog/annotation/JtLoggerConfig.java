@@ -71,5 +71,5 @@ public @interface JtLoggerConfig {
      *
      * @return 默认返回 {@link DefaultComponentHandler}
      */
-    Class<? extends ComponentHandler> recorderHandleClass() default DefaultComponentHandler.class;
+    Class<? extends ComponentHandler> componentHandleClass() default DefaultComponentHandler.class;
 }

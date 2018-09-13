@@ -91,7 +91,7 @@ public final class JtLoggerManager {
             }
             else {
                 componentHandler =
-                        parseComponentHandlerByComponentHandlerClass(jtLoggerConfig.recorderHandleClass());
+                        parseComponentHandlerByComponentHandlerClass(jtLoggerConfig.componentHandleClass());
                 componentHandlerHashMap.put(contextClass, componentHandler);
             }
 

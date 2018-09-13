@@ -25,6 +25,7 @@ public class TestMain implements WithJtLogger {
         TagLogFilter tagLogFilter = new TagLogFilter("aaa");
         jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
 
+
         jtLogger.info("aaa", "这句日志信息将会被过滤掉");
 
         jtLogger.arrive();

@@ -4,6 +4,7 @@ import com.jeramtough.jtlog.annotation.JtLoggerConfig;
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.handler.ComponentHandler;
+import com.jeramtough.jtlog.handler.DefaultComponentHandler;
 import com.jeramtough.jtlog.recorder.FileLogRecorder;
 import com.jeramtough.jtlog.recorder.LogRecorder;
 
@@ -14,9 +15,9 @@ import java.util.ArrayList;
  * 创建RecorderHandler的实现类，并重写handleRecorders()方法，返回一个Recorder接口的数组
  * ，数据里的Recorder接口实现类就是你的日志信息保存逻辑实现类
  */
-@JtLoggerConfig(recorderHandleClass = MyComponentHandler.class,
+@JtLoggerConfig(componentHandleClass = MyComponentHandler.class,
         contextName = "ComponentHandlerTest")
-public class MyComponentHandler implements ComponentHandler {
+public class MyComponentHandler extends DefaultComponentHandler {
 
     @Override
     public void handleLogFilters(ArrayList<LogFilter> logFilters) {

@@ -133,7 +133,7 @@ false
 
 ### ==四、配置==
 
-##### 配置属性：
+##### 注释型配置的属性：
 
 属性名 | 描述 | 默认值
 ---|---|---
@@ -142,10 +142,11 @@ isEnabled | 是否允许输出日志 |true
 maxLengthOfRow | 日志框架输出内容时，每一行的最大长度，超过这个长度就会换行 |130
 minVisibleLevel | 最低可见日志等级，默认为DEBUG等级，日志等级优先级为：PRINTLN > ERROR > WARN > INFO > DEBUG > ARRIVE > VERBOSE |DEBUG
 isUsedJtloggerApi | 是否使用JtLogger框架的Api进行日志输出，false的话会自适应使用Logback或者Log4j2的Api进行输出 |true
+componentHandleClass | 设置日志系统附加组件的把持类，可以添加一些组件，比如自定义日志过滤器，自定义日志记录器 |DefaultComponentHandler.class
 
 
 
-##### 1. 注释配置
+##### 1. 使用注释配置
 
 ```
 @JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = false,
@@ -159,7 +160,7 @@ public class TestMain implements WithJtLogger {
     }
 }
 ```
-##### 2. 编程式配置
+##### 2. 使用编程式配置
 
 ```
 public class TestMain {
@@ -175,19 +176,15 @@ public class TestMain {
 
 --
 ### ==五、过滤器==
-- 使用标签过滤器,过滤掉指定tag的日志输出
+
+
+**- 实现日志过滤器接口**   
+
+实现LogFilter接口,实现自己的过滤逻辑。  
+TageLogFilter为框架已实现的一个标签(tag)过滤功能。
 
 ```
-//过滤掉标签标记为“aaa”的日志
-TagLogFilter tagLogFilter = new TagLogFilter("aaa");
-jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
-
-jtLogger.info("aaa","这句日志信息将会被过滤掉");
-```
-- 自定义过滤器
-
-```
-//实现LogFilter接口
+//实现LogFilter接口,实现自己的过滤逻辑,返回false则过滤该条日志.
 public class CustomLogFilter implements LogFilter {
     @Override
     public boolean isPrinted(LogInformation logInformation) {
@@ -198,32 +195,56 @@ public class CustomLogFilter implements LogFilter {
     }
 }
 
-//使用
+```
+**- 使用日志过滤器**
+1. 使用编程式方法去使用
+
+```
+//使用LogConfig方法
 jtLogger.getLogContext().getLogConfig().addLogFilter(customLogFilter);
 ```
+2. 使用注释的方法去使用
+
+```
+//第一步，实现ComponentHandler接口或者集成DefaultComponentHandler类
+public class MyComponentHandler extends DefaultComponentHandler {
+
+    @Override
+    public void handleLogFilters(ArrayList<LogFilter> logFilters) {
+        //往logFilters集合里添加日志过滤器对象
+        TagLogFilter tagLogFilter = new TagLogFilter("bbb");
+        logFilters.add(tagLogFilter);
+    }
+
+}
+
+-------------------------------------------
+//第二步，配置注释
+@JtLoggerConfig(componentHandleClass = MyComponentHandler.class,
+        contextName = "ComponentHandlerTest")
+public class TestMain {
+    public static void main(String[] args) {
+         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+         jtLogger.info("bbb", "因为添加了标签过滤器，这句日志信息将会被过滤掉");
+    }
+}
+
+```
+
 
 ---
 --
 ### ==六、日志持久化==
-当需要把日志信息做持久化处理，比如写入到某文件或者存入数据库时，可以使用**Recoder**接口，框架里有一个Recoder的实现类**FileRecoder**，用于日志信息文件保存方法。
+当需要把日志信息做持久化处理，比如写入到某文件或者存入数据库时，需要做持久化处理。
+
+**- 实现LogRecoder接口**   
+框架里有一个Recoder的实现类**FileRecoder**，用于日志信息文件保存方法。
+
 ````
-/**
- * 
- * 创建RecorderHandler的实现类，并重写handleRecorders()方法，返回一个Recorder接口的数组
- * ，数据里的Recorder接口实现类就是你的日志信息保存逻辑实现类
- */
-public class MyRecordHandler implements RecorderHandler {
-    @Override
-    public Recorder[] handleRecorders() {
-        return new Recorder[]{new MyRecorder()};
-    }
-}
-
-
 /**
  * 实现自己的持久化逻辑
  */
-public class MyRecorder implements Recorder {
+public class MyLogRecorder implements LogRecorder {
     @Override
     public void record(LogInformation logInformation, String stylizedText) throws IOException {
         //saved log to where you want.
@@ -245,7 +266,44 @@ public class FileTst implements WithJtLogger {
     }
 }
 
+````
+
+**- 使用日志记录器**
+1. 使用编程式方法去使用
+
 ```
+//使用LogConfig方法
+jtLogger.getLogContext().getLogConfig().addLogRecorder(new MyLogRecorder());
+```
+2. 使用注释的方法去使用
+
+```
+//第一步，实现ComponentHandler接口或者集成DefaultComponentHandler类
+public class MyComponentHandler extends DefaultComponentHandler {
+
+    @Override
+    public void handleLogRecorders(ArrayList<LogRecorder> logRecorders) {
+        File file = new File("E:\\Codes\\IdeaCodes\\JtlogForMaven\\jtlog.log");
+        FileLogRecorder fileLogRecorder = new FileLogRecorder(file, 5);
+        logRecorders.add(fileLogRecorder);
+    }
+
+}
+
+-------------------------------------------
+//第二步，配置注释
+@JtLoggerConfig(componentHandleClass = MyComponentHandler.class,
+        contextName = "ComponentHandlerTest")
+public class TestMain {
+    public static void main(String[] args) {
+         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+         jtLogger.info("aaa", "因为使用了FileLogRecorder，这句日志将会被持久化到文件中");
+    }
+}
+
+```
+
+
 
 
 
