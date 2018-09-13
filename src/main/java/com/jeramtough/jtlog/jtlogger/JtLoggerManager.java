@@ -1,11 +1,10 @@
 package com.jeramtough.jtlog.jtlogger;
 
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
+import com.jeramtough.jtlog.handler.ComponentHandler;
+import com.jeramtough.jtlog.handler.DefaultComponentHandler;
 import com.jeramtough.jtlog.log.LogConfig;
 import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.recorder.DefaultRecorderHandler;
-import com.jeramtough.jtlog.recorder.Recorder;
-import com.jeramtough.jtlog.recorder.RecorderHandler;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -20,9 +19,11 @@ import java.util.HashMap;
 public final class JtLoggerManager {
 
     private static HashMap<String, JtLogger> jtLoggerHashMap;
+    private static HashMap<Class, ComponentHandler> componentHandlerHashMap;
 
     static {
         jtLoggerHashMap = new HashMap<>();
+        componentHandlerHashMap = new HashMap<>();
     }
 
     private JtLoggerManager() {
@@ -35,10 +36,8 @@ public final class JtLoggerManager {
             jtLogger = jtLoggerHashMap.get(contextName);
         }
         else {
-            LogContext logContext = new LogContext();
             LogConfig logConfig = parseLogConfigFromAnnotation(contextClass);
-            logContext.setLogConfig(logConfig);
-            logContext.setContextName(contextName);
+            LogContext logContext = new LogContext(contextName, logConfig);
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(contextName, jtLogger);
         }
@@ -51,10 +50,8 @@ public final class JtLoggerManager {
             jtLogger = jtLoggerHashMap.get(contextName);
         }
         else {
-            LogContext logContext = new LogContext();
-            LogConfig logConfig = logContext.getLogConfig();
-            logContext.setLogConfig(logConfig);
-            logContext.setContextName(contextName);
+            LogConfig logConfig = new LogConfig();
+            LogContext logContext = new LogContext(contextName, logConfig);
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(contextName, jtLogger);
         }
@@ -75,10 +72,10 @@ public final class JtLoggerManager {
     }
 
     //*************************
-    private static LogConfig parseLogConfigFromAnnotation(Class c) {
+    private static LogConfig parseLogConfigFromAnnotation(Class contextClass) {
         LogConfig logConfig = new LogConfig();
 
-        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) c.getAnnotation(JtLoggerConfig.class);
+        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) contextClass.getAnnotation(JtLoggerConfig.class);
 
         if (jtLoggerConfig != null) {
             logConfig.setEnabled(jtLoggerConfig.isEnabled());
@@ -86,7 +83,21 @@ public final class JtLoggerManager {
             logConfig.setMaxLengthOfRow(jtLoggerConfig.maxLengthOfRow());
             logConfig.setMinVisibleLevel(jtLoggerConfig.minVisibleLevel());
             logConfig.setCallerPlus(jtLoggerConfig.callerPlus());
-            logConfig.setRecorders(parseRecordsFromAnnotation(jtLoggerConfig.recorderHandleClass()));
+
+            //得到componentHandler对象实例.
+            ComponentHandler componentHandler;
+            if (componentHandlerHashMap.containsKey(contextClass)) {
+                componentHandler = componentHandlerHashMap.get(contextClass);
+            }
+            else {
+                componentHandler =
+                        parseComponentHandlerByComponentHandlerClass(jtLoggerConfig.recorderHandleClass());
+                componentHandlerHashMap.put(contextClass, componentHandler);
+            }
+
+            //设置LogRecorder和LogFilter
+            componentHandler.handleLogFilters(logConfig.getLogFilters());
+            componentHandler.handleLogRecorders(logConfig.getLogRecorders());
         }
         return logConfig;
     }
@@ -101,19 +112,19 @@ public final class JtLoggerManager {
         }
     }
 
-    private static Recorder[] parseRecordsFromAnnotation(Class<? extends RecorderHandler> c) {
-        RecorderHandler recorderHandler = null;
+    private static ComponentHandler parseComponentHandlerByComponentHandlerClass(Class<?
+            extends ComponentHandler> c) {
+        ComponentHandler componentHandler = null;
         try {
             Constructor constructor = c.getConstructor();
-            recorderHandler = (RecorderHandler) constructor.newInstance();
+            componentHandler = (ComponentHandler) constructor.newInstance();
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
             e.printStackTrace();
         } finally {
-            if (recorderHandler == null) {
-                recorderHandler = new DefaultRecorderHandler();
+            if (componentHandler == null) {
+                componentHandler = new DefaultComponentHandler();
             }
         }
-        return recorderHandler.handleRecorders();
+        return componentHandler;
     }
-
 }

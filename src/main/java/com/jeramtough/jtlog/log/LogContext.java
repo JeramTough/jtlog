@@ -13,8 +13,9 @@ public final class LogContext {
     private String contextName;
     private LogConfig logConfig;
 
-    public LogContext() {
-        logConfig = new LogConfig();
+    public LogContext(String contextName, LogConfig logConfig) {
+        this.contextName = contextName;
+        this.logConfig = logConfig;
     }
 
     public String getContextName() {

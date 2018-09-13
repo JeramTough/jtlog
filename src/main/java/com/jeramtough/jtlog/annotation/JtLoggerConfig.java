@@ -1,8 +1,8 @@
 package com.jeramtough.jtlog.annotation;
 
+import com.jeramtough.jtlog.handler.ComponentHandler;
+import com.jeramtough.jtlog.handler.DefaultComponentHandler;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.recorder.DefaultRecorderHandler;
-import com.jeramtough.jtlog.recorder.RecorderHandler;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -67,10 +67,9 @@ public @interface JtLoggerConfig {
     int callerPlus() default 0;
 
     /**
-     * 实现日志信息持久化功能，指定实现 {@link RecorderHandler} 的类，
-     * 实现类必须有无参的构造函数!
+     * 添加日志系统附加组件的把持类
      *
-     * @return 实现 {@link RecorderHandler} 的类.
+     * @return 默认返回 {@link DefaultComponentHandler}
      */
-    Class<? extends RecorderHandler> recorderHandleClass() default DefaultRecorderHandler.class;
+    Class<? extends ComponentHandler> recorderHandleClass() default DefaultComponentHandler.class;
 }

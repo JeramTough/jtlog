@@ -13,7 +13,7 @@ import java.util.concurrent.*;
  * Created on 2018-09-06 00:25
  * by @author JeramTough
  */
-public class FileRecorder implements Recorder {
+public class FileLogRecorder implements LogRecorder {
 
     private File logFile;
     private int maxCacheRecordedCount;
@@ -25,7 +25,7 @@ public class FileRecorder implements Recorder {
      * @param logFile               日志保存位置
      * @param maxCacheRecordedCount 最大缓存日志信息数量，当到达最大数量就写入文件
      */
-    public FileRecorder(File logFile, int maxCacheRecordedCount) {
+    public FileLogRecorder(File logFile, int maxCacheRecordedCount) {
         this.logFile = logFile;
         this.maxCacheRecordedCount = maxCacheRecordedCount;
 
@@ -81,7 +81,7 @@ public class FileRecorder implements Recorder {
                 File temporaryFile =
                         new File(logFile.getParentFile().getAbsolutePath()
                                 + "\\" + logFile.getName() + ".temporary");
-                System.out.println(temporaryFile.getAbsolutePath());
+//                System.out.println(temporaryFile.getAbsolutePath());
                 temporaryFile.createNewFile();
                 FileOutputStream fileOutputStream = new FileOutputStream(temporaryFile);
 
@@ -93,7 +93,7 @@ public class FileRecorder implements Recorder {
                     while (true) {
                         String line = bufferedReader.readLine();
                         if (line != null) {
-                            fileOutputStream.write((line+"\n").getBytes());
+                            fileOutputStream.write((line + "\n").getBytes());
                         }
                         else {
                             break;

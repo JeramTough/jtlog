@@ -20,6 +20,7 @@ public interface JtLogger {
      * System.out.println();
      *
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void p(T message);
 
@@ -27,6 +28,7 @@ public interface JtLogger {
      * 输出Info级别的日志
      *
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void info(T message);
 
@@ -36,12 +38,14 @@ public interface JtLogger {
      *
      * @param tag     标签
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void info(String tag, T message);
 
 
     /**
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void warn(T message);
 
@@ -50,6 +54,7 @@ public interface JtLogger {
      *
      * @param tag     标签
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void warn(String tag, T message);
 
@@ -57,6 +62,7 @@ public interface JtLogger {
      * 输出error级别的日志
      *
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void error(T message);
 
@@ -65,6 +71,7 @@ public interface JtLogger {
      *
      * @param tag     标签
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void error(String tag, T message);
 
@@ -72,6 +79,7 @@ public interface JtLogger {
      * 输出debug级别的日志
      *
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void debug(T message);
 
@@ -80,6 +88,7 @@ public interface JtLogger {
      *
      * @param tag     标签
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void debug(String tag, T message);
 
@@ -89,6 +98,7 @@ public interface JtLogger {
      * 以“，”分割
      *
      * @param messages 输出内容
+     * @param <T>      任何数据类型
      */
     <T> void debugs(T... messages);
 
@@ -96,6 +106,7 @@ public interface JtLogger {
      * 输出verbose级别的日志
      *
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void verbose(T message);
 
@@ -104,13 +115,14 @@ public interface JtLogger {
      *
      * @param tag     标签
      * @param message 输出内容
+     * @param <T>     任何数据类型
      */
     <T> void verbose(String tag, T message);
 
     /**
      * 得到日志环境类
      *
-     * @return 日志环境类
+     * @return 日志环境类 {@link LogContext}
      */
     LogContext getLogContext();
 }

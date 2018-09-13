@@ -2,9 +2,7 @@ package com.jeramtough.jtlog.log;
 
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.recorder.DefaultRecorderHandler;
-import com.jeramtough.jtlog.recorder.Recorder;
-import com.jeramtough.jtlog.recorder.RecorderHandler;
+import com.jeramtough.jtlog.recorder.LogRecorder;
 
 import java.util.ArrayList;
 
@@ -37,12 +35,6 @@ public class LogConfig {
 
 
     /**
-     * 日志过滤器集合
-     */
-    private ArrayList<LogFilter> logFilters;
-
-
-    /**
      * 最低可见日志等级，默认为DEBUG等级，日志等级优先级就参考
      * {@link LogLevel}
      */
@@ -55,12 +47,18 @@ public class LogConfig {
     private int callerPlus = 0;
 
     /**
-     * 日志记录对象数组
+     * 日志过滤器集合
      */
-    private Recorder[] recorders;
+    private ArrayList<LogFilter> logFilters;
+
+    /**
+     * 日志记录器集合
+     */
+    private ArrayList<LogRecorder> logRecorders;
 
     public LogConfig() {
         logFilters = new ArrayList<>();
+        logRecorders = new ArrayList<>();
     }
 
     public int getMaxLengthOfRow() {
@@ -116,11 +114,15 @@ public class LogConfig {
         this.callerPlus = callerPlus;
     }
 
-    public Recorder[] getRecorders() {
-        return recorders;
+    public void addLogRecord(LogRecorder logRecorder) {
+        logRecorders.add(logRecorder);
     }
 
-    public void setRecorders(Recorder[] recorders) {
-        this.recorders = recorders;
+    public void removeLogRecord(LogRecorder logRecorder) {
+        logRecorders.remove(logRecorder);
+    }
+
+    public ArrayList<LogRecorder> getLogRecorders() {
+        return logRecorders;
     }
 }

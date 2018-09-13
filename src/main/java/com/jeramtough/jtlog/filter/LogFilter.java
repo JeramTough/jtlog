@@ -11,9 +11,10 @@ import com.jeramtough.jtlog.log.LogInformation;
 public interface LogFilter {
 
     /**
-     * 返回true则输出
-     * 
+     * 决定日志是否输出
+     *
      * @param logInformation 日志信息类
+     * @return 返回true则输出
      */
     boolean isPrinted(LogInformation logInformation);
 }
