@@ -7,9 +7,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ *
+ * this class is deprecated, see {@link com.jeramtough.jtlog.filter.EnableLogFilter}
+ *
  * Created on 2018-08-22 21:55
  * by @author JeramTough
  */
+@Deprecated
 public class EnabledPrinterProxy extends BasePrinterProxy {
     public EnabledPrinterProxy(LogContext logContext) {
         super(logContext);

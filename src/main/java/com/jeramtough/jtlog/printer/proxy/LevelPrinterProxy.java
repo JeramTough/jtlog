@@ -8,9 +8,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ * this class is deprecated, see {@link com.jeramtough.jtlog.filter.MinLevelLogFilter}
+ * <p>
  * Created on 2018-08-22 22:35
  * by @author JeramTough
  */
+@Deprecated
 public class LevelPrinterProxy extends BasePrinterProxy {
     public LevelPrinterProxy(LogContext logContext) {
         super(logContext);

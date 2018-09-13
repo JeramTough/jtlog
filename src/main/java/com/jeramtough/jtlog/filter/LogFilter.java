@@ -1,5 +1,6 @@
 package com.jeramtough.jtlog.filter;
 
+import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.log.LogInformation;
 
 /**
@@ -13,8 +14,9 @@ public interface LogFilter {
     /**
      * 决定日志是否输出
      *
+     * @param logContext     Logger的环境类
      * @param logInformation 日志信息类
      * @return 返回true则输出
      */
-    boolean isPrinted(LogInformation logInformation);
+    boolean isPrinted(LogContext logContext, LogInformation logInformation);
 }

@@ -1,6 +1,8 @@
 package com.jeramtough.jtlog.jtlogger;
 
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
+import com.jeramtough.jtlog.filter.EnableLogFilter;
+import com.jeramtough.jtlog.filter.MinLevelLogFilter;
 import com.jeramtough.jtlog.handler.ComponentHandler;
 import com.jeramtough.jtlog.handler.DefaultComponentHandler;
 import com.jeramtough.jtlog.log.LogConfig;
@@ -37,6 +39,8 @@ public final class JtLoggerManager {
         }
         else {
             LogConfig logConfig = parseLogConfigFromAnnotation(contextClass);
+            //添加一些默认实现的日志过滤器
+            addSomeLogFillters(logConfig);
             LogContext logContext = new LogContext(contextName, logConfig);
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(contextName, jtLogger);
@@ -51,6 +55,8 @@ public final class JtLoggerManager {
         }
         else {
             LogConfig logConfig = new LogConfig();
+            //添加一些默认实现的日志过滤器
+            addSomeLogFillters(logConfig);
             LogContext logContext = new LogContext(contextName, logConfig);
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(contextName, jtLogger);
@@ -65,6 +71,8 @@ public final class JtLoggerManager {
             jtLogger.getLogContext().setLogConfig(logContext.getLogConfig());
         }
         else {
+            //添加一些默认实现的日志过滤器
+            addSomeLogFillters(logContext.getLogConfig());
             jtLogger = new JtLoggerImpl(logContext);
             jtLoggerHashMap.put(logContext.getContextName(), jtLogger);
         }
@@ -126,5 +134,13 @@ public final class JtLoggerManager {
             }
         }
         return componentHandler;
+    }
+
+    private static void addSomeLogFillters(LogConfig logConfig) {
+        EnableLogFilter enableLogFilter = new EnableLogFilter();
+        MinLevelLogFilter minLevelLogFilter = new MinLevelLogFilter();
+
+        logConfig.addLogFilter(enableLogFilter);
+        logConfig.addLogFilter(minLevelLogFilter);
     }
 }

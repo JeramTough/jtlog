@@ -111,10 +111,6 @@ public class PrinterFactory {
     private static Printer loadPrinterProxy(LogContext logContext, Printer printer) {
         ArrayList<PrinterProxy> printerProxies = new ArrayList<>();
 
-        EnabledPrinterProxy enabledPrinterProxy = new EnabledPrinterProxy(logContext);
-        printerProxies.add(enabledPrinterProxy);
-        LevelPrinterProxy levelPrinterProxy = new LevelPrinterProxy(logContext);
-        printerProxies.add(levelPrinterProxy);
         FilterPrinterProxy filterPrinterProxy = new FilterPrinterProxy(logContext);
         printerProxies.add(filterPrinterProxy);
 

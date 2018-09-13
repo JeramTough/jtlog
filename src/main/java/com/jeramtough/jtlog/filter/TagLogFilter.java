@@ -1,6 +1,7 @@
 package com.jeramtough.jtlog.filter;
 
 
+import com.jeramtough.jtlog.log.LogContext;
 import com.jeramtough.jtlog.log.LogInformation;
 
 /**
@@ -16,10 +17,11 @@ public class TagLogFilter implements LogFilter {
     }
 
     @Override
-    public boolean isPrinted(LogInformation logInformation) {
+    public boolean isPrinted(LogContext logContext, LogInformation logInformation) {
         if (noPrintedTag.equals(logInformation.getTag())) {
             return false;
-        } else {
+        }
+        else {
             return true;
         }
     }
