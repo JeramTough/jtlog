@@ -67,10 +67,11 @@ public class TestMain implements WithJtLogger {
         jtLogger.debug("abc3333");
         jtLogger.debug("abc44444444");
 
-        jtLogger.debug("bbb","这条日志将会被过滤掉");
+        jtLogger.debug("bbb", "这条日志将会被过滤掉");
 
         //手动触发保存
-        ((FileLogRecorder) jtLogger.getLogContext().getLogConfig().getLogRecorders().get(0)).wirteLogFile();
+        ((FileLogRecorder) jtLogger.getLogContext().getLogConfig().getLogRecorders().get(
+                0)).wirteLogFile();
 
         //5次后触发
         jtLogger.debug("abc555555555");
@@ -78,6 +79,15 @@ public class TestMain implements WithJtLogger {
         jtLogger.debug("abc777777777");
         jtLogger.debug("abc888888888");
         jtLogger.debug("abc999999999");
+    }
+
+    @Test
+    public void test4() {
+        A a = new A();
+        a.a();
+        B b = new B();
+        b.b();
+
     }
 
 }

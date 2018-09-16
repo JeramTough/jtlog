@@ -1,10 +1,13 @@
 package com.jeramtough.jtlog.printer;
 
+import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.printer.proxy.*;
-import com.jeramtough.jtlog.style.PrintStyleManager;
+import com.jeramtough.jtlog.printer.proxy.FilterPrinterProxy;
+import com.jeramtough.jtlog.printer.proxy.PrinterProxy;
+import com.jeramtough.jtlog.printer.proxy.RecorderPrinterProxy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created on 2018-08-21 17:31
@@ -12,42 +15,53 @@ import java.util.ArrayList;
  */
 public class PrinterFactory {
 
-    private static volatile Printer jtPrinter;
-    private static volatile Printer logbackPrinter;
-    private static volatile Printer log4j2Printer;
-    private static volatile Printer androidPrinter;
+    private static HashMap<String, Printer> printerHashMap;
 
+    static {
+        printerHashMap = new HashMap<>();
+    }
 
     private PrinterFactory() {
     }
 
     public static Printer getPrinter(LogContext logContext) {
         Printer printer;
-        if (logContext.getLogConfig().isUsedJtloggerApi()) {
-            if (isUsedEspecialLogApi(AndroidPrinter.LOGCAT_PACKAGE_NAME) &&
-                    !isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)) {
-                printer = getAndroidPrinter(logContext);
-            }
-            else {
-                printer = getJtPrinter(logContext);
-            }
-        }
-        else if (isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)) {
-            printer = getLogbackPrinter(logContext);
-        }
-        else if (isUsedEspecialLogApi(Log4j2Printer.LOG4J2_LOG_MANAGER_PACKAGE_NAME)) {
-            printer = getLog4j2Printer(logContext);
+        if (printerHashMap.containsKey(logContext.getContextName())) {
+            printer = printerHashMap.get(logContext.getContextName());
         }
         else {
-            printer = getJtPrinter(logContext);
+
+            if (logContext.getLogConfig().isUsedJtloggerApi()) {
+                if (isUsedEspecialLogApi(AndroidPrinter.LOGCAT_PACKAGE_NAME) &&
+                        !isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)) {
+                    printer = new AndroidPrinter(logContext);
+                }
+                else {
+                    printer = new JtPrinter(logContext);
+                }
+            }
+            else if (isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)) {
+                printer = new LogbackPrinter(logContext);
+            }
+            else if (isUsedEspecialLogApi(Log4j2Printer.LOG4J2_LOG_MANAGER_PACKAGE_NAME)) {
+                printer = new Log4j2Printer(logContext);
+            }
+            else {
+                printer = new JtPrinter(logContext);
+            }
+
+            printer = loadPrinterProxy(logContext, printer);
+            printerHashMap.put(logContext.getContextName(), printer);
         }
+
         return printer;
     }
 
     //***********************
     //***********************
 
-    private static Printer getJtPrinter(LogContext logContext) {
+    /*private static Printer getJtPrinter(LogContext logContext) {
+        System.out.println(logContext.getContextName()+"2");
         if (jtPrinter == null) {
             synchronized (PrintStyleManager.class) {
                 if (jtPrinter == null) {
@@ -94,7 +108,7 @@ public class PrinterFactory {
             }
         }
         return androidPrinter;
-    }
+    }*/
 
 
     private static boolean isUsedEspecialLogApi(String packageName) {
@@ -103,7 +117,8 @@ public class PrinterFactory {
             if (androidLogcatClass != null) {
                 return true;
             }
-        } catch (ClassNotFoundException ignored) {
+        }
+        catch (ClassNotFoundException ignored) {
         }
         return false;
     }
