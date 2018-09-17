@@ -19,12 +19,14 @@ public abstract class BasePrintStyle implements PrintStyle {
         String context, tag;
         if (logInformation.getLogContext().getContextName().equals(L.class.getSimpleName())) {
             context = "";
-        } else {
+        }
+        else {
             context = " , {context}=" + logInformation.getLogContext().getContextName();
         }
         if (logInformation.getTag() == null) {
             tag = "";
-        } else {
+        }
+        else {
             tag = " , {tag}=" + logInformation.getTag();
 
         }
@@ -41,20 +43,18 @@ public abstract class BasePrintStyle implements PrintStyle {
             message = "\n" + MyStringUtil.splitTextByCounterOfRow(
                     logInformation.getMessage(),
                     limitNumber) + "\n";
-        } else {
+        }
+        else {
             message = logInformation.getMessage();
         }
         return message;
     }
 
 
-    protected String getPosition(LogInformation logInformation) {
-        return " , {location}=" + logInformation.getClassName() + "." +
-                logInformation.getMethodName() + "()" + "." + logInformation.getLine();
-    }
-
-    protected String getCaller(LogInformation logInformation) {
-        return " , {caller}=(" + logInformation.getFileName() + ":" +
+    protected String getLocation(LogInformation logInformation) {
+        return " , {location}=at " + logInformation.getClassName() + "." +
+                logInformation.getMethodName() + "(" +
+                logInformation.getFileName() + ":" +
                 logInformation.getLine() + ")";
     }
 
