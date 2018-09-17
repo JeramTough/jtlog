@@ -41,9 +41,10 @@ public class TestMain implements WithJtLogger {
 
     @Test
     public void test1() {
-        L.debug(null);
+        L.debug(null,null);
         L.info(88888.f);
         L.verbose("99999");
+        L.arrive();
         L.debugs(null, 111111, 121212);
     }
 

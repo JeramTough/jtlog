@@ -7,7 +7,7 @@ public class ArrivePrintStyle extends BasePrintStyle
 	@Override
 	public String stylize(LogInformation logInformation)
 	{
-		String message = getHead(logInformation) + getLocation(logInformation);
+		String message = getHead(logInformation) + getLocation(logInformation)+"\n";
 		return message;
 	}
 }
