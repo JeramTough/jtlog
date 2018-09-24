@@ -45,7 +45,7 @@ public abstract class BasePrintStyle implements PrintStyle {
                     limitNumber) + "\n";
         }
         else {
-            message = logInformation.getMessage();
+            message = "\n" + logInformation.getMessage()+"\n";
         }
         return message;
     }

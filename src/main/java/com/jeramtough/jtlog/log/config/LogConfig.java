@@ -1,4 +1,4 @@
-package com.jeramtough.jtlog.log;
+package com.jeramtough.jtlog.log.config;
 
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.level.LogLevel;
@@ -17,13 +17,13 @@ public class LogConfig {
     /**
      * 日志内容输出，每行最大长度，超过这个长度就会换行
      */
-    private int maxLengthOfRow = 130;
+    private int maxLengthOfRow;
 
 
     /**
      * 是否允许输出日志
      */
-    private boolean isEnabled = true;
+    private boolean isEnabled;
 
 
     /**
@@ -31,20 +31,20 @@ public class LogConfig {
      * false的话会自适应使用Logback或者Log4j2
      * 的api实现输出
      */
-    private boolean isUsedJtloggerApi = true;
+    private boolean isUsedJtloggerApi;
 
 
     /**
      * 最低可见日志等级，默认为DEBUG等级，日志等级优先级就参考
      * {@link LogLevel}
      */
-    private LogLevel minVisibleLevel = LogLevel.DEBUG;
+    private LogLevel minVisibleLevel;
 
     /**
      * 决定输出位置caller的标记
      * {caller}=(L.java:71)
      */
-    private int callerPlus = 0;
+    private int callerPlus;
 
     /**
      * 日志过滤器集合
@@ -56,7 +56,19 @@ public class LogConfig {
      */
     private ArrayList<LogRecorder> logRecorders;
 
+
+    /**
+     * LogConfig决定默认值接口
+     */
+    private static volatile LogConfigDefaultValues logConfigDefaultValues;
+
     public LogConfig() {
+        maxLengthOfRow = getLogConfigDefaultValues().loadMaxLengthOfRow();
+        isEnabled = getLogConfigDefaultValues().loadIsEnabled();
+        isUsedJtloggerApi = getLogConfigDefaultValues().loadIsUsedJtloggerApi();
+        minVisibleLevel = getLogConfigDefaultValues().loadMinVisibleLevel();
+        callerPlus = getLogConfigDefaultValues().loadCallerPlus();
+
         logFilters = new ArrayList<>();
         logRecorders = new ArrayList<>();
     }
@@ -124,5 +136,21 @@ public class LogConfig {
 
     public ArrayList<LogRecorder> getLogRecorders() {
         return logRecorders;
+    }
+
+    public static LogConfigDefaultValues getLogConfigDefaultValues() {
+        if (logConfigDefaultValues == null) {
+            synchronized (LogConfig.class) {
+                if (logConfigDefaultValues == null) {
+                    logConfigDefaultValues = new JtLogConfigDefaultValues();
+                }
+            }
+        }
+        return logConfigDefaultValues;
+    }
+
+    public static void setLogConfigDefaultValues(
+            LogConfigDefaultValues logConfigDefaultValues) {
+        LogConfig.logConfigDefaultValues = logConfigDefaultValues;
     }
 }

@@ -13,7 +13,8 @@ import com.jeramtough.jtlog.util.MyStringUtil;
  * by @author JeramTough
  */
 @JtLoggerConfig(minVisibleLevel = LogLevel.VERBOSE,
-        callerPlus = 1)
+        callerPlus = 1,
+        maxLengthOfRow = 140)
 public class L {
 
     private static JtLogger jtLogger;
@@ -24,10 +25,13 @@ public class L {
         StringBuilder text = new StringBuilder();
         for (int ii = 0; ii < 3; ii++) {
             if (ii != 1) {
-                for (int i = 0; i < jtLogger.getLogContext().getLogConfig().getMaxLengthOfRow() * 2; ++i) {
+                for (int i = 0;
+                     i < jtLogger.getLogContext().getLogConfig().getMaxLengthOfRow() * 2;
+                     ++i) {
                     text.append("-");
                 }
-            } else {
+            }
+            else {
                 text.append(MyStringUtil.getLogo());
             }
         }
@@ -75,7 +79,7 @@ public class L {
         jtLogger.debug(tag, message);
     }
 
-    public static  <T> void debugs(T... messages) {
+    public static <T> void debugs(T... messages) {
         jtLogger.debugs(messages);
     }
 
@@ -90,4 +94,6 @@ public class L {
     public static LogContext getLogContext() {
         return jtLogger.getLogContext();
     }
+
+
 }

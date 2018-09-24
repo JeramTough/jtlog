@@ -1,12 +1,11 @@
 package com.jeramtough.jtlog.jtlogger;
 
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
-import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.filter.EnableLogFilter;
 import com.jeramtough.jtlog.filter.MinLevelLogFilter;
 import com.jeramtough.jtlog.handler.ComponentHandler;
 import com.jeramtough.jtlog.handler.DefaultComponentHandler;
-import com.jeramtough.jtlog.log.LogConfig;
+import com.jeramtough.jtlog.log.config.LogConfig;
 import com.jeramtough.jtlog.log.LogContext;
 
 import java.lang.reflect.Constructor;
@@ -89,9 +88,11 @@ public final class JtLoggerManager {
 
     //*************************
     private static LogConfig parseLogConfigFromAnnotation(Class contextClass) {
+
         LogConfig logConfig = new LogConfig();
 
-        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) contextClass.getAnnotation(JtLoggerConfig.class);
+        JtLoggerConfig jtLoggerConfig = (JtLoggerConfig) contextClass.getAnnotation(
+                JtLoggerConfig.class);
 
         if (jtLoggerConfig != null) {
             logConfig.setEnabled(jtLoggerConfig.isEnabled());
@@ -107,7 +108,8 @@ public final class JtLoggerManager {
             }
             else {
                 componentHandler =
-                        parseComponentHandlerByComponentHandlerClass(jtLoggerConfig.componentHandleClass());
+                        parseComponentHandlerByComponentHandlerClass(
+                                jtLoggerConfig.componentHandleClass());
                 componentHandlerHashMap.put(contextClass, componentHandler);
             }
 
@@ -134,9 +136,11 @@ public final class JtLoggerManager {
         try {
             Constructor constructor = c.getConstructor();
             componentHandler = (ComponentHandler) constructor.newInstance();
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
+        }
+        catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
             e.printStackTrace();
-        } finally {
+        }
+        finally {
             if (componentHandler == null) {
                 componentHandler = new DefaultComponentHandler();
             }

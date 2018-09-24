@@ -7,25 +7,27 @@ import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.log.config.LogConfig;
+import com.jeramtough.jtlog.log.config.LogConfigDefaultValues;
+import com.jeramtough.jtlog.log.config.SimpleLogConfigDefaultValues;
 import com.jeramtough.jtlog.recorder.FileLogRecorder;
 import com.jeramtough.jtlog.with.WithJtLogger;
 import org.junit.jupiter.api.Test;
 import org.omg.CORBA.TRANSACTION_MODE;
 import org.slf4j.LoggerFactory;
 
-@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = true,
+@JtLoggerConfig(isUsedJtloggerApi = true, isEnabled = true,
         maxLengthOfRow = 130, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE)
 public class TestMain implements WithJtLogger {
 
     @Test
     public void test() {
-        JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+        JtLogger jtLogger = JtLoggerManager.getJtLogger("JtloggerInterface");
 
         //过滤掉标签标记为“aaa”的日志
         TagLogFilter tagLogFilter = new TagLogFilter("aaa");
         jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
-
 
         jtLogger.info("aaa", "这句日志信息将会被过滤掉");
 
