@@ -139,14 +139,14 @@ false
 ---|---|---
 contextName | 日志环境名，{context}=的标识，日志框架根据环境名区分不同的日志环境 |传入Class对象的类名或者实现WithJtLogger接口的类名
 isEnabled | 是否允许输出日志 |true
-maxLengthOfRow | 日志框架输出内容时，每一行的最大长度，超过这个长度就会换行 |130
+maxLengthOfRow | 日志框架输出内容时，每一行的最大长度，超过这个长度就会换行 |0
 minVisibleLevel | 最低可见日志等级，默认为DEBUG等级，日志等级优先级为：PRINTLN > ERROR > WARN > INFO > DEBUG > ARRIVE > VERBOSE |DEBUG
 isUsedJtloggerApi | 是否使用JtLogger框架的Api进行日志输出，false的话会自适应使用Logback或者Log4j2的Api进行输出 |true
 componentHandleClass | 设置日志系统附加组件的把持类，可以添加一些组件，比如自定义日志过滤器，自定义日志记录器 |DefaultComponentHandler.class
 
 
 
-##### 1. 使用注释配置
+##### 1. 使用注释声明式配置
 
 ```
 @JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = false,
@@ -172,6 +172,43 @@ public class TestMain {
     }
 ```
 
+
+##### 3. 覆盖框架默认配置
+在第一次使用Jtlog框架前调用才能生效，推荐在项目初始化代码块里调用：  
+ LogConfig.setLogConfigDefaultValues(new **LogConfigDefaultValues**(){...});  
+ 或者  
+LogConfig.setLogConfigDefaultValues(new **SimpleLogConfigDefaultValues**() {...});
+```
+public class TestMain {
+    public static void main(String[] args) {
+         LogConfig.setLogConfigDefaultValues(new LogConfigDefaultValues() {
+            @Override
+            public int loadMaxLengthOfRow() {
+                return 0;
+            }
+
+            @Override
+            public boolean loadIsEnabled() {
+                return true;
+            }
+
+            @Override
+            public boolean loadIsUsedJtloggerApi() {
+                return true;
+            }
+
+            @Override
+            public LogLevel loadMinVisibleLevel() {
+                return LogLevel.DEBUG;
+            }
+
+            @Override
+            public int loadCallerPlus() {
+                return 0;
+            }
+        });
+    }
+```
 ---
 
 --
