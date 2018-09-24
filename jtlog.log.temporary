@@ -1,0 +1,8 @@
+D:{time}=02:10:45:691 , {thread}=main , {context}=ComponentHandlerTest , {location}=at test.TestMain.testComponentHandler(TestMain.java:68)
+abc111111
+D:{time}=02:10:45:692 , {thread}=main , {context}=ComponentHandlerTest , {location}=at test.TestMain.testComponentHandler(TestMain.java:69)
+abc222222
+D:{time}=02:10:45:692 , {thread}=main , {context}=ComponentHandlerTest , {location}=at test.TestMain.testComponentHandler(TestMain.java:70)
+abc3333
+D:{time}=02:10:45:692 , {thread}=main , {context}=ComponentHandlerTest , {location}=at test.TestMain.testComponentHandler(TestMain.java:71)
+abc44444444
