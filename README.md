@@ -174,7 +174,8 @@ public class TestMain {
 
 
 ##### 3. 覆盖框架默认配置
-在第一次使用Jtlog框架前调用才能生效，推荐在项目初始化代码块里调用：  
+在第一次使用Jtlog框架前调用才能生效，推荐在项目初始化代码块里调用，++注意，当使用声明式注释配置时，以声明式注释配置为准++。
+
  LogConfig.setLogConfigDefaultValues(new **LogConfigDefaultValues**(){...});  
  或者  
 LogConfig.setLogConfigDefaultValues(new **SimpleLogConfigDefaultValues**() {...});
