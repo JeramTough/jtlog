@@ -1,4 +1,4 @@
-package com.jeramtough.jtlog.log.config;
+package com.jeramtough.jtlog.config;
 
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.level.LogLevel;

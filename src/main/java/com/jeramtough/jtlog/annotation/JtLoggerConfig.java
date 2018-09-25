@@ -3,9 +3,9 @@ package com.jeramtough.jtlog.annotation;
 import com.jeramtough.jtlog.handler.ComponentHandler;
 import com.jeramtough.jtlog.handler.DefaultComponentHandler;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.log.config.JtLogConfigDefaultValues;
-import com.jeramtough.jtlog.log.config.LogConfig;
-import com.jeramtough.jtlog.log.config.LogConfigDefaultValues;
+import com.jeramtough.jtlog.config.JtLogConfigDefaultValues;
+import com.jeramtough.jtlog.config.LogConfig;
+import com.jeramtough.jtlog.config.LogConfigDefaultValues;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -5,7 +5,7 @@ import com.jeramtough.jtlog.filter.EnableLogFilter;
 import com.jeramtough.jtlog.filter.MinLevelLogFilter;
 import com.jeramtough.jtlog.handler.ComponentHandler;
 import com.jeramtough.jtlog.handler.DefaultComponentHandler;
-import com.jeramtough.jtlog.log.config.LogConfig;
+import com.jeramtough.jtlog.config.LogConfig;
 import com.jeramtough.jtlog.log.LogContext;
 
 import java.lang.reflect.Constructor;

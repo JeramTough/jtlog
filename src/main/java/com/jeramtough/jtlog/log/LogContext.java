@@ -1,7 +1,7 @@
 package com.jeramtough.jtlog.log;
 
 import com.jeramtough.jtlog.jtlogger.JtLoggerImpl;
-import com.jeramtough.jtlog.log.config.LogConfig;
+import com.jeramtough.jtlog.config.LogConfig;
 
 /**
  * 这个是日志环境类,

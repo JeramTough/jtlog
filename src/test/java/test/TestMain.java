@@ -7,13 +7,12 @@ import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.log.config.LogConfig;
-import com.jeramtough.jtlog.log.config.LogConfigDefaultValues;
-import com.jeramtough.jtlog.log.config.SimpleLogConfigDefaultValues;
+import com.jeramtough.jtlog.config.LogConfig;
+import com.jeramtough.jtlog.config.LogConfigDefaultValues;
+import com.jeramtough.jtlog.config.SimpleLogConfigDefaultValues;
 import com.jeramtough.jtlog.recorder.FileLogRecorder;
 import com.jeramtough.jtlog.with.WithJtLogger;
 import org.junit.jupiter.api.Test;
-import org.omg.CORBA.TRANSACTION_MODE;
 import org.slf4j.LoggerFactory;
 
 @JtLoggerConfig(isUsedJtloggerApi = true, isEnabled = true,
