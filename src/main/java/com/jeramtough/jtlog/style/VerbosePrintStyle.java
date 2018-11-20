@@ -10,7 +10,8 @@ public class VerbosePrintStyle extends BasePrintStyle {
     @Override
     public String stylize(LogInformation logInformation) {
         String message =
-                getHead(logInformation)  + getMessage(logInformation);
+                getHead(logInformation) + getTrace(logInformation) + getMessage(
+                        logInformation);
         return message;
     }
 }

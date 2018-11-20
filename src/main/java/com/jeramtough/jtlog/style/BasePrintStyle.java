@@ -45,14 +45,18 @@ public abstract class BasePrintStyle implements PrintStyle {
                     limitNumber) + "\n";
         }
         else {
-            message = "\n" + logInformation.getMessage()+"\n";
+            message = "\n" + logInformation.getMessage() + "\n";
         }
         return message;
     }
 
+    protected String getSimpleLocation(LogInformation logInformation) {
+        return " , {location}=" + "(" + logInformation.getClassName() + ":" +
+                logInformation.getLine() + ")";
+    }
 
-    protected String getLocation(LogInformation logInformation) {
-        return " , {location}=at " + logInformation.getClassName() + "." +
+    protected String getTrace(LogInformation logInformation) {
+        return " , {trace}=at " + logInformation.getClassName() + "." +
                 logInformation.getMethodName() + "(" +
                 logInformation.getFileName() + ":" +
                 logInformation.getLine() + ")";
