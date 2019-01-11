@@ -1,0 +1,10 @@
+D:{time}=09:47:21:336 , {thread}=main , {context}=ComponentHandlerTest
+abc555555555
+D:{time}=09:47:21:337 , {thread}=main , {context}=ComponentHandlerTest
+abc666666666
+D:{time}=09:47:21:337 , {thread}=main , {context}=ComponentHandlerTest
+abc777777777
+D:{time}=09:47:21:338 , {thread}=main , {context}=ComponentHandlerTest
+abc888888888
+D:{time}=09:47:21:338 , {thread}=main , {context}=ComponentHandlerTest
+abc999999999

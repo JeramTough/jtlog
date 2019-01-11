@@ -6,7 +6,7 @@ public class InfoPrintStyle extends BasePrintStyle {
     @Override
     public String stylize(LogInformation logInformation) {
         String message =
-                getHead(logInformation) + getSimpleLocation(logInformation) + getMessage(
+                getHead(logInformation) + getTraceIfEnable(logInformation) + getMessage(
                         logInformation);
         return message;
     }

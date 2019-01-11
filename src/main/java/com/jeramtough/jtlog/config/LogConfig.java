@@ -27,6 +27,12 @@ public class LogConfig {
 
 
     /**
+     * 是否允许输出日志Trace信息.
+     */
+    private boolean isPrintedTrace;
+
+
+    /**
      * 是否使用JtLogger框架的Api,当为Android框架时强制使用Logcat的Api实现输出，
      * false的话会自适应使用Logback或者Log4j2
      * 的api实现输出
@@ -63,11 +69,11 @@ public class LogConfig {
     private static volatile LogConfigDefaultValues logConfigDefaultValues;
 
     public LogConfig() {
-        maxLengthOfRow = getLogConfigDefaultValues().loadMaxLengthOfRow();
-        isEnabled = getLogConfigDefaultValues().loadIsEnabled();
-        isUsedJtloggerApi = getLogConfigDefaultValues().loadIsUsedJtloggerApi();
-        minVisibleLevel = getLogConfigDefaultValues().loadMinVisibleLevel();
-        callerPlus = getLogConfigDefaultValues().loadCallerPlus();
+        maxLengthOfRow = getLogConfigDefaultValues().decidedMaxLengthOfRow();
+        isEnabled = getLogConfigDefaultValues().decidedIsEnabled();
+        isUsedJtloggerApi = getLogConfigDefaultValues().decidedIsUsedJtloggerApi();
+        minVisibleLevel = getLogConfigDefaultValues().decidedMinVisibleLevel();
+        callerPlus = getLogConfigDefaultValues().decidedCallerPlus();
 
         logFilters = new ArrayList<>();
         logRecorders = new ArrayList<>();
@@ -116,6 +122,14 @@ public class LogConfig {
 
     public void setMinVisibleLevel(LogLevel minVisibleLevel) {
         this.minVisibleLevel = minVisibleLevel;
+    }
+
+    public boolean isPrintedTrace() {
+        return isPrintedTrace;
+    }
+
+    public void setPrintedTrace(boolean printedTrace) {
+        isPrintedTrace = printedTrace;
     }
 
     public int getCallerPlus() {

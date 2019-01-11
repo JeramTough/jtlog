@@ -50,16 +50,17 @@ public abstract class BasePrintStyle implements PrintStyle {
         return message;
     }
 
-    protected String getSimpleLocation(LogInformation logInformation) {
-        return " , {location}=" + "(" + logInformation.getClassName() + ":" +
-                logInformation.getLine() + ")";
-    }
+    protected String getTraceIfEnable(LogInformation logInformation) {
+        if (logInformation.getLogContext().getLogConfig().isPrintedTrace()) {
+            return " , {trace}=at " + logInformation.getClassName() + "." +
+                    logInformation.getMethodName() + "(" +
+                    logInformation.getFileName() + ":" +
+                    logInformation.getLine() + ")";
+        }
+        else {
+            return "";
+        }
 
-    protected String getTrace(LogInformation logInformation) {
-        return " , {trace}=at " + logInformation.getClassName() + "." +
-                logInformation.getMethodName() + "(" +
-                logInformation.getFileName() + ":" +
-                logInformation.getLine() + ")";
     }
 
 }

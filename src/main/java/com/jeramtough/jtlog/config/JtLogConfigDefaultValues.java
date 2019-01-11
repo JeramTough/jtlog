@@ -12,6 +12,8 @@ public class JtLogConfigDefaultValues implements LogConfigDefaultValues {
 
     public static final boolean IS_ENABLED = true;
 
+    public static final boolean IS_PRINTED_TRACE = true;
+
     public static final boolean IS_USED_JTLOGGER_API = true;
 
     public static final LogLevel MIN_VISIBLE_LEVEL = LogLevel.DEBUG;
@@ -19,27 +21,32 @@ public class JtLogConfigDefaultValues implements LogConfigDefaultValues {
     public static final int CALLER_PLUS = 0;
 
     @Override
-    public int loadMaxLengthOfRow() {
+    public int decidedMaxLengthOfRow() {
         return MAX_LENGTH_OF_ROM;
     }
 
     @Override
-    public boolean loadIsEnabled() {
+    public boolean decidedIsEnabled() {
         return IS_ENABLED;
     }
 
     @Override
-    public boolean loadIsUsedJtloggerApi() {
+    public boolean decidedIsPrintedTrace() {
+        return IS_PRINTED_TRACE;
+    }
+
+    @Override
+    public boolean decidedIsUsedJtloggerApi() {
         return IS_USED_JTLOGGER_API;
     }
 
     @Override
-    public LogLevel loadMinVisibleLevel() {
+    public LogLevel decidedMinVisibleLevel() {
         return MIN_VISIBLE_LEVEL;
     }
 
     @Override
-    public int loadCallerPlus() {
+    public int decidedCallerPlus() {
         return CALLER_PLUS;
     }
 }

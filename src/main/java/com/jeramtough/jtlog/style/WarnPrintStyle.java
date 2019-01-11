@@ -6,7 +6,8 @@ public class WarnPrintStyle extends BasePrintStyle {
     @Override
     public String stylize(LogInformation logInformation) {
         String message =
-                getHead(logInformation) + getMessage(logInformation);
+                getHead(logInformation) + getTraceIfEnable(logInformation) + getMessage(
+                        logInformation);
         return message;
     }
 }

@@ -8,27 +8,32 @@ import com.jeramtough.jtlog.level.LogLevel;
  */
 public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
     @Override
-    public int loadMaxLengthOfRow() {
+    public int decidedMaxLengthOfRow() {
         return JtLogConfigDefaultValues.MAX_LENGTH_OF_ROM;
     }
 
     @Override
-    public boolean loadIsEnabled() {
+    public boolean decidedIsEnabled() {
         return JtLogConfigDefaultValues.IS_ENABLED;
     }
 
     @Override
-    public boolean loadIsUsedJtloggerApi() {
+    public boolean decidedIsPrintedTrace() {
+        return JtLogConfigDefaultValues.IS_PRINTED_TRACE;
+    }
+
+    @Override
+    public boolean decidedIsUsedJtloggerApi() {
         return JtLogConfigDefaultValues.IS_USED_JTLOGGER_API;
     }
 
     @Override
-    public LogLevel loadMinVisibleLevel() {
+    public LogLevel decidedMinVisibleLevel() {
         return JtLogConfigDefaultValues.MIN_VISIBLE_LEVEL;
     }
 
     @Override
-    public int loadCallerPlus() {
+    public int decidedCallerPlus() {
         return JtLogConfigDefaultValues.CALLER_PLUS;
     }
 }
