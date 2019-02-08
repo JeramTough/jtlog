@@ -7,8 +7,10 @@ import com.jeramtough.jtlog.config.LogConfigDefaultValues;
 import com.jeramtough.jtlog.config.LogConfigFactory;
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.filter.EnableLogFilter;
+import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.filter.MinLevelLogFilter;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -64,6 +66,11 @@ public final class LoggerManager {
             LogConfig logConfig = LogConfigFactory.getLogConfigByAnnotation(
                     logConfigDefaultValues, contextClass);
             LogContext logContext = new LogContext(contextName, logConfig);
+
+            LogFilter[] additionalLogFilters =
+                    parseAdditionalLogFiltersFromAnnotation(contextClass);
+            logContext.getLogFilters().addAll(Arrays.asList(additionalLogFilters));
+
             logger = generatingLogger(logContext);
         }
         return logger;
@@ -85,7 +92,7 @@ public final class LoggerManager {
         Logger logger = new JtLogger(logContext);
 
         //add some default LogFillters
-        addSomeLogFilters(logContext);
+        addCertainLogFilters(logContext);
 
         jtLoggerHashMap.put(logContext.getContextName(), logger);
         return logger;
@@ -102,7 +109,29 @@ public final class LoggerManager {
         }
     }
 
-    private static void addSomeLogFilters(LogContext logContext) {
+    private static LogFilter[] parseAdditionalLogFiltersFromAnnotation(Class c) {
+        LogConfiguration logConfiguration = (LogConfiguration) c.getAnnotation(
+                LogConfiguration.class);
+        if (logConfiguration != null) {
+            LogFilter[] logFilters = new LogFilter[logConfiguration.logFilter().length];
+            for (int i = 0; i < logConfiguration.logFilter().length; i++) {
+                Class<? extends LogFilter> filterClass = logConfiguration.logFilter()[i];
+                try {
+                    LogFilter logFilter = filterClass.newInstance();
+                    logFilters[i] = logFilter;
+
+                }
+                catch (InstantiationException | IllegalAccessException e) {
+                    e.printStackTrace();
+                    return new LogFilter[]{};
+                }
+            }
+            return logFilters;
+        }
+        return new LogFilter[]{};
+    }
+
+    private static void addCertainLogFilters(LogContext logContext) {
         EnableLogFilter enableLogFilter = new EnableLogFilter();
         MinLevelLogFilter minLevelLogFilter = new MinLevelLogFilter();
 

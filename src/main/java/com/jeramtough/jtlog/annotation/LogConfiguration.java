@@ -1,5 +1,6 @@
 package com.jeramtough.jtlog.annotation;
 
+import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 
@@ -83,4 +84,9 @@ public @interface LogConfiguration {
      * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     int wrapCount() default -1;
+
+    /**
+     * 添加额外的日志过滤器，过滤器类必须有个无参公共的构造函数，过滤器详细见{@link LogFilter}
+     */
+    Class<? extends LogFilter>[] logFilter() default {};
 }

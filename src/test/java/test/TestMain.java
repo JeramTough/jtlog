@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 @LogConfiguration(isUsedJtloggerApi = 1, isEnabled = 1,
         maxLengthOfRow = 130, contextName = "MyLogger",
-        minVisibleLevel = LogLevel.VERBOSE)
+        minVisibleLevel = LogLevel.VERBOSE, logFilter = {MyTagLogFilter.class})
 public class TestMain implements WithLogger {
 
     @Test
@@ -64,6 +64,7 @@ public class TestMain implements WithLogger {
     public void test5() {
         getLogger().getLogContext().getLogFilters().add(new TagLogFilter("lalala"));
         getLogger().info("lalala", "这句不会被输出");
+        getLogger().info("my", "这句也不会被输出");
         getLogger().info("lalala00000", "bbbbbbbbbbb");
     }
 
