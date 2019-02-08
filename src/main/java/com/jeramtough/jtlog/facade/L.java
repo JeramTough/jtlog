@@ -1,10 +1,10 @@
 package com.jeramtough.jtlog.facade;
 
-import com.jeramtough.jtlog.annotation.JtLoggerConfig;
+import com.jeramtough.jtlog.annotation.LogConfiguration;
 import com.jeramtough.jtlog.jtlogger.Logger;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.util.MyStringUtil;
 
 /**
@@ -12,15 +12,14 @@ import com.jeramtough.jtlog.util.MyStringUtil;
  * Created on 2018-08-21 18:15
  * by @author JeramTough
  */
-@JtLoggerConfig(minVisibleLevel = LogLevel.VERBOSE,
-        callerPlus = 1,
+@LogConfiguration(minVisibleLevel = LogLevel.VERBOSE,
         maxLengthOfRow = 140)
 public class L {
 
     private static Logger logger;
 
     static {
-        logger = LoggerManager.getJtLogger(L.class);
+        logger = LoggerManager.getLogger(L.class);
 
         StringBuilder text = new StringBuilder();
         for (int ii = 0; ii < 3; ii++) {

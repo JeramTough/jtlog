@@ -1,5 +1,7 @@
 package com.jeramtough.jtlog.style;
 
+import com.jeramtough.jtlog.context.LogContext;
+
 public class PrintStyleManager {
     private static volatile InfoPrintStyle infoPrintStyle;
     private static volatile WarnPrintStyle warnPrintStyle;
@@ -8,12 +10,13 @@ public class PrintStyleManager {
     private static volatile PrintlnPrintStyle printlnPrintStyle;
     private static volatile ArrivePrintStyle arrivePrintStyle;
     private static volatile VerbosePrintStyle verbosePrintStyle;
+    private static volatile DefaultPrintStyle defaultPrintStyle;
 
     public static PrintStyle getPrintlnPrintStyle() {
         if (printlnPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (printlnPrintStyle == null) {
-                    printlnPrintStyle = new PrintlnPrintStyle();
+                    printlnPrintStyle = new PrintlnPrintStyle(null);
                 }
             }
         }
@@ -24,7 +27,7 @@ public class PrintStyleManager {
         if (infoPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (infoPrintStyle == null) {
-                    infoPrintStyle = new InfoPrintStyle();
+                    infoPrintStyle = new InfoPrintStyle(null);
                 }
             }
         }
@@ -35,7 +38,7 @@ public class PrintStyleManager {
         if (warnPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (warnPrintStyle == null) {
-                    warnPrintStyle = new WarnPrintStyle();
+                    warnPrintStyle = new WarnPrintStyle(null);
                 }
             }
         }
@@ -46,7 +49,7 @@ public class PrintStyleManager {
         if (errorPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (errorPrintStyle == null) {
-                    errorPrintStyle = new ErrorPrintStyle();
+                    errorPrintStyle = new ErrorPrintStyle(null);
                 }
             }
         }
@@ -57,7 +60,7 @@ public class PrintStyleManager {
         if (debugPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (debugPrintStyle == null) {
-                    debugPrintStyle = new DebugPrintStyle();
+                    debugPrintStyle = new DebugPrintStyle(null);
                 }
             }
         }
@@ -68,7 +71,7 @@ public class PrintStyleManager {
         if (arrivePrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (arrivePrintStyle == null) {
-                    arrivePrintStyle = new ArrivePrintStyle();
+                    arrivePrintStyle = new ArrivePrintStyle(null);
                 }
             }
         }
@@ -79,10 +82,22 @@ public class PrintStyleManager {
         if (verbosePrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (verbosePrintStyle == null) {
-                    verbosePrintStyle = new VerbosePrintStyle();
+                    verbosePrintStyle = new VerbosePrintStyle(null);
                 }
             }
         }
         return verbosePrintStyle;
+    }
+
+    public static DefaultPrintStyle getDefaultPrintStyle(LogContext logContext) {
+        if (defaultPrintStyle == null) {
+            synchronized (PrintStyleManager.class) {
+                if (defaultPrintStyle == null) {
+                    defaultPrintStyle = new DefaultPrintStyle(
+                            logContext.getLogConfig().getLogHeaderFormat());
+                }
+            }
+        }
+        return defaultPrintStyle;
     }
 }

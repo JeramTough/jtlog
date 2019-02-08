@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.filter;
 
-import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.bean.LogInformation;
 
 /**

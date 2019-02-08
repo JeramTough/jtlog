@@ -1,4 +1,4 @@
-package com.jeramtough.jtlog.bean;
+package com.jeramtough.jtlog.config;
 
 import com.jeramtough.jtlog.level.LogLevel;
 
@@ -23,12 +23,6 @@ public class LogConfig {
 
 
     /**
-     * 是否允许输出日志Trace信息.
-     */
-    private Boolean isPrintedTrace;
-
-
-    /**
      * 是否使用JtLogger框架的Api,当为Android框架时强制使用Logcat的Api实现输出，
      * false的话会自适应使用Logback或者Log4j2
      * 的api实现输出
@@ -42,11 +36,11 @@ public class LogConfig {
      */
     private LogLevel minVisibleLevel;
 
+
     /**
-     * 决定输出位置caller的标记
-     * {caller}=(L.java:71)
+     * 决定日志头格式，其语法规则见{@link com.jeramtough.jtlog.util.LogHeaderFormatUtil}
      */
-    private Integer callerPlus;
+    private String logHeaderFormat;
 
 
     public Integer getMaxLengthOfRow() {
@@ -61,19 +55,19 @@ public class LogConfig {
         return isEnabled;
     }
 
+    public Boolean isEnabled() {
+        return isEnabled;
+    }
+
     public void setEnabled(Boolean enabled) {
         isEnabled = enabled;
     }
 
-    public Boolean getPrintedTrace() {
-        return isPrintedTrace;
-    }
-
-    public void setPrintedTrace(Boolean printedTrace) {
-        isPrintedTrace = printedTrace;
-    }
-
     public Boolean getUsedJtloggerApi() {
+        return isUsedJtloggerApi;
+    }
+
+    public Boolean isUsedJtloggerApi() {
         return isUsedJtloggerApi;
     }
 
@@ -89,11 +83,12 @@ public class LogConfig {
         this.minVisibleLevel = minVisibleLevel;
     }
 
-    public Integer getCallerPlus() {
-        return callerPlus;
+
+    public String getLogHeaderFormat() {
+        return logHeaderFormat;
     }
 
-    public void setCallerPlus(Integer callerPlus) {
-        this.callerPlus = callerPlus;
+    public void setLogHeaderFormat(String logHeaderFormat) {
+        this.logHeaderFormat = logHeaderFormat;
     }
 }

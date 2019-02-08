@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.printer.proxy;
 
-import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.printer.Printer;
 import com.jeramtough.jtlog.recorder.LogRecorder;
 
@@ -18,10 +18,11 @@ public class RecorderPrinterProxy extends BasePrinterProxy {
     }
 
     @Override
-    Object invoke(LogContext logContext, Printer printer, Object proxy, Method method, Object[] args) throws IllegalAccessException, InvocationTargetException {
+    Object invoke(LogContext logContext, Printer printer, Object proxy, Method method,
+                  Object[] args) throws IllegalAccessException, InvocationTargetException {
         String stylizedText = (String) method.invoke(printer, args);
 
-        for (LogRecorder logRecorder : logContext.getLogConfig().getLogRecorders()) {
+        for (LogRecorder logRecorder : logContext.getLogRecorders()) {
             logRecorder.record(getLogInformation(), stylizedText);
         }
 

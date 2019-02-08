@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.printer;
 
-import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.printer.proxy.FilterPrinterProxy;
 import com.jeramtough.jtlog.printer.proxy.PrinterProxy;
 import com.jeramtough.jtlog.printer.proxy.RecorderPrinterProxy;
@@ -14,7 +14,7 @@ import java.util.HashMap;
  */
 public class PrinterFactory {
 
-    private static HashMap<String, Printer> printerHashMap;
+    private static HashMap<LogContext, Printer> printerHashMap;
 
     static {
         printerHashMap = new HashMap<>();
@@ -25,8 +25,8 @@ public class PrinterFactory {
 
     public static Printer getPrinter(LogContext logContext) {
         Printer printer;
-        if (printerHashMap.containsKey(logContext.getContextName())) {
-            printer = printerHashMap.get(logContext.getContextName());
+        if (printerHashMap.containsKey(logContext)) {
+            printer = printerHashMap.get(logContext);
         }
         else {
 
@@ -50,65 +50,13 @@ public class PrinterFactory {
             }
 
             printer = loadPrinterProxy(logContext, printer);
-            printerHashMap.put(logContext.getContextName(), printer);
+            printerHashMap.put(logContext, printer);
         }
 
         return printer;
     }
 
     //***********************
-    //***********************
-
-    /*private static Printer getJtPrinter(LogContext logContext) {
-        System.out.println(logContext.getContextName()+"2");
-        if (jtPrinter == null) {
-            synchronized (PrintStyleManager.class) {
-                if (jtPrinter == null) {
-                    jtPrinter = new JtPrinter(logContext);
-                    jtPrinter = loadPrinterProxy(logContext, jtPrinter);
-                }
-            }
-        }
-        return jtPrinter;
-    }
-
-    private static Printer getLogbackPrinter(LogContext logContext) {
-        if (logbackPrinter == null) {
-            synchronized (PrintStyleManager.class) {
-                if (logbackPrinter == null) {
-                    logbackPrinter = new LogbackPrinter(logContext);
-                    logbackPrinter = loadPrinterProxy(logContext, logbackPrinter);
-                }
-            }
-        }
-        return logbackPrinter;
-    }
-
-    private static Printer getLog4j2Printer(LogContext logContext) {
-        if (log4j2Printer == null) {
-            synchronized (PrintStyleManager.class) {
-                if (log4j2Printer == null) {
-                    log4j2Printer = new Log4j2Printer(logContext);
-                    log4j2Printer = loadPrinterProxy(logContext, log4j2Printer);
-                }
-            }
-        }
-        return log4j2Printer;
-    }
-
-    private static Printer getAndroidPrinter(LogContext logContext) {
-        if (androidPrinter == null) {
-            synchronized (PrintStyleManager.class) {
-                if (androidPrinter == null) {
-                    androidPrinter = new AndroidPrinter(logContext);
-                    androidPrinter = loadPrinterProxy(logContext,
-                            androidPrinter);
-                }
-            }
-        }
-        return androidPrinter;
-    }*/
-
 
     private static boolean isUsedEspecialLogApi(String packageName) {
         try {

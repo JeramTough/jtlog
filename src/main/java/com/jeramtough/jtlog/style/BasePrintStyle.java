@@ -1,5 +1,6 @@
 package com.jeramtough.jtlog.style;
 
+import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.util.MyStringUtil;
@@ -13,15 +14,20 @@ import com.jeramtough.jtlog.util.MyStringUtil;
 
 public abstract class BasePrintStyle implements PrintStyle {
 
+    private LogContext logContext;
+
+    public BasePrintStyle(LogContext logContext) {
+        this.logContext = logContext;
+    }
 
     protected String getHead(LogInformation logInformation) {
 
         String context, tag;
-        if (logInformation.getLogContext().getContextName().equals(L.class.getSimpleName())) {
+        if (getLogContext().getContextName().equals(L.class.getSimpleName())) {
             context = "";
         }
         else {
-            context = " , {context}=" + logInformation.getLogContext().getContextName();
+            context = " , {context}=" + getLogContext().getContextName();
         }
         if (logInformation.getTag() == null) {
             tag = "";
@@ -37,7 +43,7 @@ public abstract class BasePrintStyle implements PrintStyle {
     }
 
     protected String getMessage(LogInformation logInformation) {
-        int limitNumber = logInformation.getLogContext().getLogConfig().getMaxLengthOfRow();
+        int limitNumber = getLogContext().getLogConfig().getMaxLengthOfRow();
         String message;
         if (limitNumber > 0) {
             message = "\n" + MyStringUtil.splitTextByCounterOfRow(
@@ -51,7 +57,7 @@ public abstract class BasePrintStyle implements PrintStyle {
     }
 
     protected String getTraceIfEnable(LogInformation logInformation) {
-        if (logInformation.getLogContext().getLogConfig().isPrintedTrace()) {
+        if (true) {
             return " , {trace}=at " + logInformation.getClassName() + "." +
                     logInformation.getMethodName() + "(" +
                     logInformation.getFileName() + ":" +
@@ -63,4 +69,7 @@ public abstract class BasePrintStyle implements PrintStyle {
 
     }
 
+    public LogContext getLogContext() {
+        return logContext;
+    }
 }

@@ -42,7 +42,12 @@ public enum LogLevel {
     /**
      *
      */
-    VERBOSE("V", "verbose", 0);
+    VERBOSE("V", "verbose", 0),
+
+    /**
+     *
+     */
+    DEFAULT(null, null, -1);
 
     private String flag;
     private String name;
@@ -66,22 +71,28 @@ public enum LogLevel {
     public static LogLevel getLogLevelByName(String name) {
         if (INFO.name.equals(name)) {
             return INFO;
-        } else if (WARN.name.equals(name)) {
+        }
+        else if (WARN.name.equals(name)) {
             return WARN;
 
-        } else if (ERROR.name.equals(name)) {
+        }
+        else if (ERROR.name.equals(name)) {
             return ERROR;
 
-        } else if (DEBUG.name.equals(name)) {
+        }
+        else if (DEBUG.name.equals(name)) {
             return DEBUG;
 
-        } else if (ARRIVE.name.equals(name)) {
+        }
+        else if (ARRIVE.name.equals(name)) {
             return ARRIVE;
 
-        } else if (PRINTLN.name.equals(name)) {
+        }
+        else if (PRINTLN.name.equals(name)) {
             return PRINTLN;
 
-        } else if (VERBOSE.name.equals(name)) {
+        }
+        else if (VERBOSE.name.equals(name)) {
             return VERBOSE;
         }
         return VERBOSE;

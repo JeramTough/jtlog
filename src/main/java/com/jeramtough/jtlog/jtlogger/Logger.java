@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.jtlogger;
 
-import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.context.LogContext;
 
 /**
  * 这个是客户端使用JtLog日志框架的核心接口

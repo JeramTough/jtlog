@@ -87,7 +87,7 @@ public class LogInformation {
     private void processingInformation() {
         if (stackTraceElement == null) {
             stackTraceElement =
-                    ((new Exception()).getStackTrace())[CALLER_COUNT + logContext.getLogConfig().getCallerPlus()];
+                    ((new Exception()).getStackTrace())[CALLER_COUNT];
         }
 
         if (message == null) {
@@ -132,11 +132,6 @@ public class LogInformation {
 
         public Builder setMessage(Object message) {
             logInformation.setMessage(message);
-            return this;
-        }
-
-        public Builder setLogContext(LogContext logContext) {
-            logInformation.setLogContext(logContext);
             return this;
         }
 

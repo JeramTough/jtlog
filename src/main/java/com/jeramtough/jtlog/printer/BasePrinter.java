@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.printer;
 
-import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.style.PrintStyleManager;
 
@@ -26,31 +26,44 @@ public abstract class BasePrinter implements Printer {
         switch (logInformation.getLogLevel()) {
             case ARRIVE:
                 stylizedText =
-                        PrintStyleManager.getArrivePrintStyle().stylize(logInformation);
+                        PrintStyleManager.getDefaultPrintStyle(logContext).stylize(
+                                logInformation);
                 arrive(logInformation, stylizedText);
                 break;
             case DEBUG:
-                stylizedText = PrintStyleManager.getDebugPrintStyle().stylize(logInformation);
+                stylizedText =
+                        PrintStyleManager.getDefaultPrintStyle(logContext).stylize(
+                                logInformation);
                 debug(logInformation, stylizedText);
                 break;
             case PRINTLN:
-                stylizedText = PrintStyleManager.getPrintlnPrintStyle().stylize(logInformation);
+                stylizedText =
+                        PrintStyleManager.getDefaultPrintStyle(logContext).stylize(
+                                logInformation);
                 println(logInformation, stylizedText);
                 break;
             case INFO:
-                stylizedText = PrintStyleManager.getInfoPrintStyle().stylize(logInformation);
+                stylizedText =
+                        PrintStyleManager.getDefaultPrintStyle(logContext).stylize(
+                                logInformation);
                 info(logInformation, stylizedText);
                 break;
             case WARN:
-                stylizedText = PrintStyleManager.getWarnPrintStyle().stylize(logInformation);
+                stylizedText =
+                        PrintStyleManager.getDefaultPrintStyle(logContext).stylize(
+                                logInformation);
                 warn(logInformation, stylizedText);
                 break;
             case ERROR:
-                stylizedText = PrintStyleManager.getErrorPrintStyle().stylize(logInformation);
+                stylizedText =
+                        PrintStyleManager.getDefaultPrintStyle(logContext).stylize(
+                                logInformation);
                 error(logInformation, stylizedText);
                 break;
             case VERBOSE:
-                stylizedText = PrintStyleManager.getVerbosePrintStyle().stylize(logInformation);
+                stylizedText =
+                        PrintStyleManager.getDefaultPrintStyle(logContext).stylize(
+                                logInformation);
                 verbose(logInformation, stylizedText);
                 break;
             default:
