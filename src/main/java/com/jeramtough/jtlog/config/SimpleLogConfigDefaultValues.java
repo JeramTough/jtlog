@@ -1,12 +1,13 @@
 package com.jeramtough.jtlog.config;
 
+import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 
 /**
  * Created on 2018-09-25 01:15
  * by @author JeramTough
  */
-public class JtLogConfigDefaultValues implements LogConfigDefaultValues {
+public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
 
     public static final int MAX_LENGTH_OF_ROM = 0;
 
@@ -16,9 +17,10 @@ public class JtLogConfigDefaultValues implements LogConfigDefaultValues {
 
     public static final LogLevel MIN_VISIBLE_LEVEL = LogLevel.VERBOSE;
 
-    public static final int CALLER_PLUS = 0;
+    public static final int WRAP_COUNT = 1;
 
-    public static final String LOG_HEADER_FORMAT = "";
+    public static final LogHeader[] LOG_HEADERS = new LogHeader[]{LogHeader.CONTEXT,
+            LogHeader.TAG, LogHeader.TIME, LogHeader.THREAD, LogHeader.TRACE};
 
     @Override
     public int loadMaxLengthOfRow() {
@@ -41,11 +43,14 @@ public class JtLogConfigDefaultValues implements LogConfigDefaultValues {
     }
 
     @Override
-    public String loadLogHeaderFormat() {
-        return LOG_HEADER_FORMAT;
+    public LogHeader[] loadLogHeaders() {
+        return LOG_HEADERS;
     }
 
-    public static boolean AAA() {
-        return true;
+    @Override
+    public int loadWrapCount() {
+        return WRAP_COUNT;
     }
+
+
 }

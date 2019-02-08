@@ -24,9 +24,12 @@ public class LogInformation {
     private String time;
     private String threadName;
     private String className;
+    private String fileName;
     private String methodName;
     private String line;
+
     private LogLevel logLevel;
+    private String trace;
 
 
     private LogInformation() {
@@ -61,7 +64,11 @@ public class LogInformation {
     }
 
     public String getFileName() {
-        return stackTraceElement.getFileName();
+        return fileName;
+    }
+
+    public String getTrace() {
+        return trace;
     }
 
     public void setMessage(Object message) {
@@ -103,16 +110,21 @@ public class LogInformation {
         time = format.format(date);
 
         threadName = Thread.currentThread().getName();
-
         className = stackTraceElement.getClassName();
-
         methodName = stackTraceElement.getMethodName();
+        fileName = stackTraceElement.getFileName();
 
         line = stackTraceElement.getLineNumber() + "";
 
+        //processing trace
+        trace = "at " + className + "." +
+                methodName + "(" +
+                fileName + ":" +
+                line + ")";
     }
 
     //{{{{{{{{{}}}}}}}}}}}}}}}}}
+
     public static class Builder {
         private LogInformation logInformation;
 

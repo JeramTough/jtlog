@@ -12,8 +12,6 @@ import com.jeramtough.jtlog.util.MyStringUtil;
  * Created on 2018-08-21 18:15
  * by @author JeramTough
  */
-@LogConfiguration(minVisibleLevel = LogLevel.VERBOSE,
-        maxLengthOfRow = 140)
 public class L {
 
     private static Logger logger;

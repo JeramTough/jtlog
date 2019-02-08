@@ -10,94 +10,82 @@ public class PrintStyleManager {
     private static volatile PrintlnPrintStyle printlnPrintStyle;
     private static volatile ArrivePrintStyle arrivePrintStyle;
     private static volatile VerbosePrintStyle verbosePrintStyle;
-    private static volatile DefaultPrintStyle defaultPrintStyle;
 
-    public static PrintStyle getPrintlnPrintStyle() {
+    public static PrintStyle getPrintlnPrintStyle(LogContext logContext) {
         if (printlnPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (printlnPrintStyle == null) {
-                    printlnPrintStyle = new PrintlnPrintStyle(null);
+                    printlnPrintStyle = new PrintlnPrintStyle(logContext);
                 }
             }
         }
         return printlnPrintStyle;
     }
 
-    public static PrintStyle getInfoPrintStyle() {
+    public static PrintStyle getInfoPrintStyle(LogContext logContext) {
         if (infoPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (infoPrintStyle == null) {
-                    infoPrintStyle = new InfoPrintStyle(null);
+                    infoPrintStyle = new InfoPrintStyle(logContext);
                 }
             }
         }
         return infoPrintStyle;
     }
 
-    public static PrintStyle getWarnPrintStyle() {
+    public static PrintStyle getWarnPrintStyle(LogContext logContext) {
         if (warnPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (warnPrintStyle == null) {
-                    warnPrintStyle = new WarnPrintStyle(null);
+                    warnPrintStyle = new WarnPrintStyle(logContext);
                 }
             }
         }
         return warnPrintStyle;
     }
 
-    public static PrintStyle getErrorPrintStyle() {
+    public static PrintStyle getErrorPrintStyle(LogContext logContext) {
         if (errorPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (errorPrintStyle == null) {
-                    errorPrintStyle = new ErrorPrintStyle(null);
+                    errorPrintStyle = new ErrorPrintStyle(logContext);
                 }
             }
         }
         return errorPrintStyle;
     }
 
-    public static PrintStyle getDebugPrintStyle() {
+    public static PrintStyle getDebugPrintStyle(LogContext logContext) {
         if (debugPrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (debugPrintStyle == null) {
-                    debugPrintStyle = new DebugPrintStyle(null);
+                    debugPrintStyle = new DebugPrintStyle(logContext);
                 }
             }
         }
         return debugPrintStyle;
     }
 
-    public static ArrivePrintStyle getArrivePrintStyle() {
+    public static ArrivePrintStyle getArrivePrintStyle(LogContext logContext) {
         if (arrivePrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (arrivePrintStyle == null) {
-                    arrivePrintStyle = new ArrivePrintStyle(null);
+                    arrivePrintStyle = new ArrivePrintStyle(logContext);
                 }
             }
         }
         return arrivePrintStyle;
     }
 
-    public static VerbosePrintStyle getVerbosePrintStyle() {
+    public static VerbosePrintStyle getVerbosePrintStyle(LogContext logContext) {
         if (verbosePrintStyle == null) {
             synchronized (PrintStyleManager.class) {
                 if (verbosePrintStyle == null) {
-                    verbosePrintStyle = new VerbosePrintStyle(null);
+                    verbosePrintStyle = new VerbosePrintStyle(logContext);
                 }
             }
         }
         return verbosePrintStyle;
     }
 
-    public static DefaultPrintStyle getDefaultPrintStyle(LogContext logContext) {
-        if (defaultPrintStyle == null) {
-            synchronized (PrintStyleManager.class) {
-                if (defaultPrintStyle == null) {
-                    defaultPrintStyle = new DefaultPrintStyle(
-                            logContext.getLogConfig().getLogHeaderFormat());
-                }
-            }
-        }
-        return defaultPrintStyle;
-    }
 }

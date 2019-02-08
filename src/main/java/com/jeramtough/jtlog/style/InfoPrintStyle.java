@@ -3,7 +3,6 @@ package com.jeramtough.jtlog.style;
 import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.context.LogContext;
 
-@Deprecated
 public class InfoPrintStyle extends BasePrintStyle {
     public InfoPrintStyle(LogContext logContext) {
         super(logContext);
@@ -11,9 +10,6 @@ public class InfoPrintStyle extends BasePrintStyle {
 
     @Override
     public String stylize(LogInformation logInformation) {
-        String message =
-                getHead(logInformation) + getTraceIfEnable(logInformation) + getMessage(
-                        logInformation);
-        return message;
+        return getFormattedMessage(logInformation);
     }
 }

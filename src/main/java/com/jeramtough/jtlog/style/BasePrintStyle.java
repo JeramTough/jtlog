@@ -1,72 +1,63 @@
 package com.jeramtough.jtlog.style;
 
-import com.jeramtough.jtlog.context.LogContext;
-import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.bean.LogInformation;
-import com.jeramtough.jtlog.util.MyStringUtil;
+import com.jeramtough.jtlog.context.LogContext;
+import com.jeramtough.jtlog.header.LogHeader;
 
 /**
- * Created by 11718
- * on 2017  October 14 Saturday 17:44.
- *
- * @author 11718
+ * Created on 2019-02-08 16:35
+ * by @author JeramTough
  */
-
 public abstract class BasePrintStyle implements PrintStyle {
 
+    public static final String DEFAULT_LOG_FORMAT = "{headers}\n{message}";
     private LogContext logContext;
 
     public BasePrintStyle(LogContext logContext) {
         this.logContext = logContext;
     }
 
-    protected String getHead(LogInformation logInformation) {
-
-        String context, tag;
-        if (getLogContext().getContextName().equals(L.class.getSimpleName())) {
-            context = "";
+    public String getLogHeaders(LogInformation logInformation) {
+        StringBuilder logHeadersBuilder = new StringBuilder(
+                logInformation.getLogLevel().getFlag() + ":");
+        for (LogHeader logHeader : logContext.getLogConfig().getLogHeaders()) {
+            switch (logHeader) {
+                case CONTEXT:
+                    logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(
+                            "}=").append(logContext.getContextName()).append(" .");
+                    break;
+                case TAG:
+                    if (logInformation.getTag() != null) {
+                        logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(
+                                "}=").append(logInformation.getTag()).append(" .");
+                    }
+                    break;
+                case TIME:
+                    logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(
+                            "}=").append(logInformation.getTime()).append(" .");
+                    break;
+                case THREAD:
+                    logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(
+                            "}=").append(logInformation.getThreadName()).append(" .");
+                    break;
+                case TRACE:
+                    logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(
+                            "}=").append(logInformation.getTrace()).append(" .");
+                    break;
+                default:
+            }
         }
-        else {
-            context = " , {context}=" + getLogContext().getContextName();
-        }
-        if (logInformation.getTag() == null) {
-            tag = "";
-        }
-        else {
-            tag = " , {tag}=" + logInformation.getTag();
-
-        }
-        String head = logInformation.getLogLevel().getFlag() + ":{time}=" +
-                logInformation.getTime() + " , " + "{thread}=" + logInformation.getThreadName() + context + tag;
-
-        return head;
+        return logHeadersBuilder.toString();
     }
 
-    protected String getMessage(LogInformation logInformation) {
-        int limitNumber = getLogContext().getLogConfig().getMaxLengthOfRow();
-        String message;
-        if (limitNumber > 0) {
-            message = "\n" + MyStringUtil.splitTextByCounterOfRow(
-                    logInformation.getMessage(),
-                    limitNumber) + "\n";
+    public String getFormattedMessage(LogInformation logInformation) {
+        String formattedMessage = DEFAULT_LOG_FORMAT.replace("{headers}",
+                getLogHeaders(logInformation)).replace("{message}",
+                logInformation.getMessage());
+        for (int i = 0; i < getLogContext().getLogConfig().getWrapCount(); i++) {
+            formattedMessage = formattedMessage + "\n";
         }
-        else {
-            message = "\n" + logInformation.getMessage() + "\n";
-        }
-        return message;
-    }
-
-    protected String getTraceIfEnable(LogInformation logInformation) {
-        if (true) {
-            return " , {trace}=at " + logInformation.getClassName() + "." +
-                    logInformation.getMethodName() + "(" +
-                    logInformation.getFileName() + ":" +
-                    logInformation.getLine() + ")";
-        }
-        else {
-            return "";
-        }
-
+        return formattedMessage;
     }
 
     public LogContext getLogContext() {

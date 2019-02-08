@@ -1,8 +1,6 @@
 package com.jeramtough.jtlog.annotation;
 
-import com.jeramtough.jtlog.config.JtLogConfigDefaultValues;
-import com.jeramtough.jtlog.handler.ComponentHandler;
-import com.jeramtough.jtlog.handler.DefaultComponentHandler;
+import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 
 import java.lang.annotation.ElementType;
@@ -31,7 +29,7 @@ public @interface LogConfiguration {
      * <p>
      * <p>
      * 返回值小于0表示使用默认值，返回值0表示false, 返回值大于0 表示true
-     * 默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     int isEnabled() default -1;
 
@@ -42,7 +40,7 @@ public @interface LogConfiguration {
      * <p>
      * <p>
      * 返回值小于0表示使用默认值，返回值0表示false, 返回值大于0 表示true
-     * 默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     int isUsedJtloggerApi() default -1;
 
@@ -53,7 +51,7 @@ public @interface LogConfiguration {
      * <p>
      * <p>
      * 返回值小于0使用默认值，返回值0表示不换行, 返回值大于0 表示超过这个值就会换行
-     * 默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     int maxLengthOfRow() default -1;
 
@@ -63,27 +61,26 @@ public @interface LogConfiguration {
      * <p>
      * <p>
      * 返回LogLevel.DEFAULT使用默认值
-     * 默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     LogLevel minVisibleLevel() default LogLevel.DEFAULT;
 
 
-    /* *//**
-     * 见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+    /**
+     * 决定要输出的日志信息头及顺序，有则输出，没有则不输出，
+     * 日志信息头见{@link LogLevel}
      * <p>
      * <p>
-     * 决定输出位置caller的标记
-     * {caller}=(L.java:71)
-     *//*
-    int callerPlus() default JtLogConfigDefaultValues.CALLER_PLUS;*/
+     * 返回{ LogHeader.DEFAULT }使用默认值
+     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     */
+    LogHeader[] logHeaders() default {LogHeader.DEFAULT};
 
     /**
-     * 决定日志头格式，其语法规则见{@link com.jeramtough.jtlog.util.LogHeaderFormatUtil}
+     * 每条新日志间的空行数, 0则两条日志间无空行
      * <p>
-     * 返回"defalut"使用默认值
-     * 见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 返回值小于0使用默认值，返回值0表示两条日志间无空行, 返回值大于0 表示两条日志间有n条空行
+     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
-    String logHeaderFormat() default "default";
-
-
+    int wrapCount() default -1;
 }

@@ -1,8 +1,6 @@
 package com.jeramtough.jtlog.context;
 
-import com.jeramtough.jtlog.config.JtLogConfigDefaultValues;
 import com.jeramtough.jtlog.config.LogConfig;
-import com.jeramtough.jtlog.config.LogConfigDefaultValues;
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.recorder.LogRecorder;
@@ -39,7 +37,6 @@ public final class LogContext {
     public LogContext(String contextName, LogConfig logConfig) {
         this.contextName = contextName;
         this.logConfig = logConfig;
-
         logFilters = new ArrayList<>();
         logRecorders = new ArrayList<>();
     }

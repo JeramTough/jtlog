@@ -1,7 +1,7 @@
 package com.jeramtough.jtlog.jtlogger;
 
 import com.jeramtough.jtlog.annotation.LogConfiguration;
-import com.jeramtough.jtlog.config.JtLogConfigDefaultValues;
+import com.jeramtough.jtlog.config.SimpleLogConfigDefaultValues;
 import com.jeramtough.jtlog.config.LogConfig;
 import com.jeramtough.jtlog.config.LogConfigDefaultValues;
 import com.jeramtough.jtlog.config.LogConfigFactory;
@@ -25,7 +25,7 @@ public final class LoggerManager {
 
     static {
         jtLoggerHashMap = new HashMap<>();
-        logConfigDefaultValues = new JtLogConfigDefaultValues();
+        logConfigDefaultValues = new SimpleLogConfigDefaultValues();
     }
 
     public static Logger getLogger(String contextName) {
@@ -69,8 +69,18 @@ public final class LoggerManager {
         return logger;
     }
 
+    public static LogConfigDefaultValues getLogConfigDefaultValues() {
+        return logConfigDefaultValues;
+    }
+
+    public static void setLogConfigDefaultValues(
+            LogConfigDefaultValues logConfigDefaultValues) {
+        LoggerManager.logConfigDefaultValues = logConfigDefaultValues;
+    }
+
 
     //**********************************
+
     private static Logger generatingLogger(LogContext logContext) {
         Logger logger = new JtLogger(logContext);
 

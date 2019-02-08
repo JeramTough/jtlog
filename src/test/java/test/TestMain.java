@@ -2,18 +2,17 @@ package test;
 
 import com.jeramtough.jtlog.annotation.LogConfiguration;
 import com.jeramtough.jtlog.facade.L;
-import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.Logger;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.with.WithJtLogger;
+import com.jeramtough.jtlog.with.WithLogger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 @LogConfiguration(isUsedJtloggerApi = 1, isEnabled = 1,
         maxLengthOfRow = 130, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE)
-public class TestMain implements WithJtLogger {
+public class TestMain implements WithLogger {
 
     @Test
     public void test() {

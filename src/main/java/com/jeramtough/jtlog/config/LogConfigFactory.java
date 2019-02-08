@@ -1,6 +1,7 @@
 package com.jeramtough.jtlog.config;
 
 import com.jeramtough.jtlog.annotation.LogConfiguration;
+import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 
 /**
@@ -16,7 +17,7 @@ public class LogConfigFactory {
         logConfig.setEnabled(logConfigDefaultValues.loadIsEnabled());
         logConfig.setMinVisibleLevel(logConfigDefaultValues.loadMinVisibleLevel());
         logConfig.setUsedJtloggerApi(logConfigDefaultValues.loadIsUsedJtloggerApi());
-        logConfig.setLogHeaderFormat(logConfigDefaultValues.loadLogHeaderFormat());
+        logConfig.setLogHeaders(logConfigDefaultValues.loadLogHeaders());
         return logConfig;
     }
 
@@ -65,13 +66,22 @@ public class LogConfigFactory {
                 logConfig.setMaxLengthOfRow(logConfiguration.maxLengthOfRow());
             }
 
-            //set logHeaderFormat
-            if ("default".equals(logConfiguration.logHeaderFormat())) {
-                logConfig.setLogHeaderFormat(logConfigDefaultValues.loadLogHeaderFormat());
+            //set logHeaders
+            if (logConfiguration.logHeaders().length == 1 && logConfiguration.logHeaders()[0] == LogHeader.DEFAULT) {
+                logConfig.setLogHeaders(logConfigDefaultValues.loadLogHeaders());
             }
             else {
-                logConfig.setLogHeaderFormat(logConfiguration.logHeaderFormat());
+                logConfig.setLogHeaders(logConfiguration.logHeaders());
             }
+
+            //set wrapCount
+            if (logConfiguration.wrapCount() < 0) {
+                logConfig.setWrapCount(logConfigDefaultValues.loadWrapCount());
+            }
+            else {
+                logConfig.setWrapCount(logConfiguration.wrapCount());
+            }
+
         }
         else {
             return getDefaultValueLogConfig(logConfigDefaultValues);

@@ -8,7 +8,7 @@ import com.jeramtough.jtlog.jtlogger.LoggerManager;
  *
  * @author 11718
  */
-public interface WithJtLogger {
+public interface WithLogger {
 
     default Logger getLogger() {
         Logger logger = LoggerManager.getLogger(this.getClass());

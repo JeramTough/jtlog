@@ -1,9 +1,14 @@
 package com.jeramtough.jtlog.config;
 
+import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 
 /**
- * Created on 2018-09-25 01:05
+ * 该接口决定日志配置默认值，系统默认的实现类为{@link SimpleLogConfigDefaultValues}。
+ * <p>
+ * 实现该接口并调用静态方法LoggerManager.setLogConfigDefaultValues(LogConfigDefaultValues logConfigDefaultValues)
+ * , 就可以覆盖系统默认配置值。
+ * <p>
  * by @author JeramTough
  */
 public interface LogConfigDefaultValues {
@@ -41,9 +46,13 @@ public interface LogConfigDefaultValues {
     LogLevel loadMinVisibleLevel();
 
     /**
-     * 决定日志头格式，其语法规则见{@link com.jeramtough.jtlog.util.LogHeaderFormatUtil}
-     *
-     * @return 加载默认值
+     * 决定要输出的日志信息头及顺序，有则输出，没有则不输出，
+     * 日志信息头见{@link LogLevel}
      */
-    String loadLogHeaderFormat();
+    LogHeader[] loadLogHeaders();
+
+    /**
+     * 每条新日志间的空行数, 0则两条日志间无空行
+     */
+    int loadWrapCount();
 }

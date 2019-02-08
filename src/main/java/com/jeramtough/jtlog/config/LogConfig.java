@@ -1,6 +1,9 @@
 package com.jeramtough.jtlog.config;
 
+import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
+
+import javax.naming.ldap.PagedResultsControl;
 
 /**
  * 每个JtLogger类的配置类
@@ -38,9 +41,16 @@ public class LogConfig {
 
 
     /**
-     * 决定日志头格式，其语法规则见{@link com.jeramtough.jtlog.util.LogHeaderFormatUtil}
+     * 决定要输出的日志信息头及顺序，有则输出，没有则不输出，
+     * 日志信息头见{@link LogLevel}
      */
-    private String logHeaderFormat;
+    private LogHeader[] logHeaders;
+
+
+    /**
+     * 每条新日志间的空行数, 0则两条日志间无空行
+     */
+    private int wrapCount;
 
 
     public Integer getMaxLengthOfRow() {
@@ -83,12 +93,19 @@ public class LogConfig {
         this.minVisibleLevel = minVisibleLevel;
     }
 
-
-    public String getLogHeaderFormat() {
-        return logHeaderFormat;
+    public LogHeader[] getLogHeaders() {
+        return logHeaders;
     }
 
-    public void setLogHeaderFormat(String logHeaderFormat) {
-        this.logHeaderFormat = logHeaderFormat;
+    public void setLogHeaders(LogHeader[] logHeaders) {
+        this.logHeaders = logHeaders;
+    }
+
+    public int getWrapCount() {
+        return wrapCount;
+    }
+
+    public void setWrapCount(int wrapCount) {
+        this.wrapCount = wrapCount;
     }
 }
