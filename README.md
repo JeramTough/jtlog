@@ -41,15 +41,15 @@ compile group: 'com.jeramtough', name: 'jtlog', version: 'x.x.x'
 ##### 1. 使用JtLogger接口
 
 ```
-JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class); 
-jtLogger.arrive();
-jtLogger.info("11111");
-jtLogger.warn("22222");
-jtLogger.debug("tag", "3333");
-jtLogger.debug("44444");
-jtLogger.error("tag", "55555");
-jtLogger.verbose("tag", "66666");
-jtLogger.p("77777"); //不带任何格式输出
+JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class); 
+logger.arrive();
+logger.info("11111");
+logger.warn("22222");
+logger.debug("tag", "3333");
+logger.debug("44444");
+logger.error("tag", "55555");
+logger.verbose("tag", "66666");
+logger.p("77777"); //不带任何格式输出
 
 ```
 *效果：*
@@ -154,8 +154,8 @@ componentHandleClass | 设置日志系统附加组件的把持类，可以添加
         minVisibleLevel = LogLevel.VERBOSE)
 public class TestMain implements WithJtLogger {
     public static void main(String[] args) {
-        JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
-        jtLogger.info("information");
+        JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class);
+        logger.info("information");
         new TestMain();
     }
 }
@@ -165,10 +165,10 @@ public class TestMain implements WithJtLogger {
 ```
 public class TestMain {
     public static void main(String[] args) {
-        JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
-        jtLogger.getLogContext().getLogConfig().setMaxLengthOfRow(0);
-        jtLogger.getLogContext().getLogConfig().setEnabled(false);
-        jtLogger.info("information");
+        JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class);
+        logger.getLogContext().getLogConfig().setMaxLengthOfRow(0);
+        logger.getLogContext().getLogConfig().setEnabled(false);
+        logger.info("information");
     }
 ```
 
@@ -239,7 +239,7 @@ public class CustomLogFilter implements LogFilter {
 
 ```
 //使用LogConfig方法
-jtLogger.getLogContext().getLogConfig().addLogFilter(customLogFilter);
+logger.getLogContext().getLogConfig().addLogFilter(customLogFilter);
 ```
 2. 使用注释的方法去使用
 
@@ -262,8 +262,8 @@ public class MyComponentHandler extends DefaultComponentHandler {
         contextName = "ComponentHandlerTest")
 public class TestMain {
     public static void main(String[] args) {
-         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
-         jtLogger.info("bbb", "因为添加了标签过滤器，这句日志信息将会被过滤掉");
+         JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class);
+         logger.info("bbb", "因为添加了标签过滤器，这句日志信息将会被过滤掉");
     }
 }
 
@@ -311,7 +311,7 @@ public class FileTst implements WithJtLogger {
 
 ```
 //使用LogConfig方法
-jtLogger.getLogContext().getLogConfig().addLogRecorder(new MyLogRecorder());
+logger.getLogContext().getLogConfig().addLogRecorder(new MyLogRecorder());
 ```
 2. 使用注释的方法去使用
 
@@ -334,8 +334,8 @@ public class MyComponentHandler extends DefaultComponentHandler {
         contextName = "ComponentHandlerTest")
 public class TestMain {
     public static void main(String[] args) {
-         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
-         jtLogger.info("aaa", "因为使用了FileLogRecorder，这句日志将会被持久化到文件中");
+         JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class);
+         logger.info("aaa", "因为使用了FileLogRecorder，这句日志将会被持久化到文件中");
     }
 }
 

@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.style;
 
-import com.jeramtough.jtlog.log.LogInformation;
+import com.jeramtough.jtlog.bean.LogInformation;
 
 public class PrintlnPrintStyle extends BasePrintStyle
 {

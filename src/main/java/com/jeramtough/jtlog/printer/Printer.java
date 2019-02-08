@@ -1,7 +1,7 @@
 package com.jeramtough.jtlog.printer;
 
 
-import com.jeramtough.jtlog.log.LogInformation;
+import com.jeramtough.jtlog.bean.LogInformation;
 
 /**
  * 这个接口负责输出方式，比如java输出，android输出

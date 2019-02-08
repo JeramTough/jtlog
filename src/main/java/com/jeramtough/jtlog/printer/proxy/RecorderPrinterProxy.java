@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.printer.proxy;
 
-import com.jeramtough.jtlog.log.LogContext;
+import com.jeramtough.jtlog.bean.LogContext;
 import com.jeramtough.jtlog.printer.Printer;
 import com.jeramtough.jtlog.recorder.LogRecorder;
 

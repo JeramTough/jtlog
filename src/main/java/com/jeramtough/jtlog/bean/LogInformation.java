@@ -1,4 +1,4 @@
-package com.jeramtough.jtlog.log;
+package com.jeramtough.jtlog.bean;
 
 import com.jeramtough.jtlog.level.LogLevel;
 
@@ -27,7 +27,6 @@ public class LogInformation {
     private String methodName;
     private String line;
     private LogLevel logLevel;
-    private LogContext logContext;
 
 
     private LogInformation() {
@@ -84,15 +83,6 @@ public class LogInformation {
     void setLogLevel(LogLevel logLevel) {
         this.logLevel = logLevel;
     }
-
-    public LogContext getLogContext() {
-        return logContext;
-    }
-
-    void setLogContext(LogContext logContext) {
-        this.logContext = logContext;
-    }
-
 
     private void processingInformation() {
         if (stackTraceElement == null) {

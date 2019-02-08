@@ -1,8 +1,8 @@
 package com.jeramtough.jtlog.filter;
 
 
-import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.log.LogInformation;
+import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.bean.LogInformation;
 
 /**
  * 日志标签过滤器，根据tag过滤日志

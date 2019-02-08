@@ -1,9 +1,6 @@
 package com.jeramtough.jtlog.recorder;
 
-import com.jeramtough.jtlog.log.LogInformation;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import com.jeramtough.jtlog.bean.LogInformation;
 
 /**
  * 实现日志信息持久化功能

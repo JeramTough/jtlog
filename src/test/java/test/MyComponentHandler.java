@@ -27,7 +27,7 @@ public class MyComponentHandler extends DefaultComponentHandler {
 
     @Override
     public void handleLogRecorders(ArrayList<LogRecorder> logRecorders) {
-        File file = new File("E:\\Codes\\IdeaCodes\\JtlogForMaven\\jtlog.log");
+        File file = new File("E:\\Codes\\IdeaCodes\\JtlogForMaven\\jtlog.context");
         FileLogRecorder fileLogRecorder = new FileLogRecorder(file, 5);
         logRecorders.add(fileLogRecorder);
     }

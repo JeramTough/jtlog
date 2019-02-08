@@ -1,10 +1,10 @@
 package com.jeramtough.jtlog.facade;
 
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
-import com.jeramtough.jtlog.jtlogger.JtLogger;
-import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
+import com.jeramtough.jtlog.jtlogger.Logger;
+import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.log.LogContext;
+import com.jeramtough.jtlog.bean.LogContext;
 import com.jeramtough.jtlog.util.MyStringUtil;
 
 /**
@@ -17,16 +17,16 @@ import com.jeramtough.jtlog.util.MyStringUtil;
         maxLengthOfRow = 140)
 public class L {
 
-    private static JtLogger jtLogger;
+    private static Logger logger;
 
     static {
-        jtLogger = JtLoggerManager.getJtLogger(L.class);
+        logger = LoggerManager.getJtLogger(L.class);
 
         StringBuilder text = new StringBuilder();
         for (int ii = 0; ii < 3; ii++) {
             if (ii != 1) {
                 for (int i = 0;
-                     i < jtLogger.getLogContext().getLogConfig().getMaxLengthOfRow() * 2;
+                     i < logger.getLogContext().getLogConfig().getMaxLengthOfRow() * 2;
                      ++i) {
                     text.append("-");
                 }
@@ -40,59 +40,59 @@ public class L {
 
 
     public static void arrive() {
-        jtLogger.arrive();
+        logger.arrive();
     }
 
     public static <T> void p(T message) {
-        jtLogger.p(message);
+        logger.p(message);
     }
 
     public static <T> void info(T message) {
-        jtLogger.info(message);
+        logger.info(message);
     }
 
     public static <T> void info(String tag, T message) {
-        jtLogger.info(tag, message);
+        logger.info(tag, message);
     }
 
     public static <T> void warn(T message) {
-        jtLogger.warn(message);
+        logger.warn(message);
     }
 
     public static <T> void warn(String tag, T message) {
-        jtLogger.warn(tag, message);
+        logger.warn(tag, message);
     }
 
     public static <T> void error(T message) {
-        jtLogger.error(message);
+        logger.error(message);
     }
 
     public static <T> void error(String tag, T message) {
-        jtLogger.error(tag, message);
+        logger.error(tag, message);
     }
 
     public static <T> void debug(T message) {
-        jtLogger.debug(message);
+        logger.debug(message);
     }
 
     public static <T> void debug(String tag, T message) {
-        jtLogger.debug(tag, message);
+        logger.debug(tag, message);
     }
 
     public static <T> void debugs(T... messages) {
-        jtLogger.debugs(messages);
+        logger.debugs(messages);
     }
 
     public static <T> void verbose(T message) {
-        jtLogger.verbose(message);
+        logger.verbose(message);
     }
 
     public static <T> void verbose(String tag, T message) {
-        jtLogger.verbose(tag, message);
+        logger.verbose(tag, message);
     }
 
     public static LogContext getLogContext() {
-        return jtLogger.getLogContext();
+        return logger.getLogContext();
     }
 
 

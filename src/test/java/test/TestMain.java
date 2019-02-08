@@ -1,15 +1,11 @@
 package test;
 
-import ch.qos.logback.classic.Logger;
 import com.jeramtough.jtlog.annotation.JtLoggerConfig;
 import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.filter.TagLogFilter;
-import com.jeramtough.jtlog.jtlogger.JtLogger;
-import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
+import com.jeramtough.jtlog.jtlogger.Logger;
+import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.config.LogConfig;
-import com.jeramtough.jtlog.config.LogConfigDefaultValues;
-import com.jeramtough.jtlog.config.SimpleLogConfigDefaultValues;
 import com.jeramtough.jtlog.recorder.FileLogRecorder;
 import com.jeramtough.jtlog.with.WithJtLogger;
 import org.junit.jupiter.api.Test;
@@ -22,22 +18,22 @@ public class TestMain implements WithJtLogger {
 
     @Test
     public void test() {
-        JtLogger jtLogger = JtLoggerManager.getJtLogger("JtloggerInterface");
+        Logger logger = LoggerManager.getJtLogger("JtloggerInterface");
 
         //过滤掉标签标记为“aaa”的日志
         TagLogFilter tagLogFilter = new TagLogFilter("aaa");
-        jtLogger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
+        logger.getLogContext().getLogConfig().addLogFilter(tagLogFilter);
 
-        jtLogger.info("aaa", "这句日志信息将会被过滤掉");
+        logger.info("aaa", "这句日志信息将会被过滤掉");
 
-        jtLogger.arrive();
-        jtLogger.info("11111");
-        jtLogger.warn("22222");
-        jtLogger.debug("tag", "3333");
-        jtLogger.debug("44444");
-        jtLogger.error("tag", "55555");
-        jtLogger.verbose("tag", "66666");
-        jtLogger.p("77777"); //不带任何格式输出
+        logger.arrive();
+        logger.info("11111");
+        logger.warn("22222");
+        logger.debug("tag", "3333");
+        logger.debug("44444");
+        logger.error("tag", "55555");
+        logger.verbose("tag", "66666");
+        logger.p("77777"); //不带任何格式输出
     }
 
     @Test
@@ -57,30 +53,30 @@ public class TestMain implements WithJtLogger {
 
     @Test
     public void test3() {
-        Logger logger = (Logger) LoggerFactory.getLogger("testlogback");
+        ch.qos.logback.classic.Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("testlogback");
         logger.debug("aaa");
     }
 
     @Test
     public void testComponentHandler() {
-        JtLogger jtLogger = JtLoggerManager.getJtLogger(MyComponentHandler.class);
-        jtLogger.debug("abc111111");
-        jtLogger.debug("abc222222");
-        jtLogger.debug("abc3333");
-        jtLogger.debug("abc44444444");
+        Logger logger = LoggerManager.getJtLogger(MyComponentHandler.class);
+        logger.debug("abc111111");
+        logger.debug("abc222222");
+        logger.debug("abc3333");
+        logger.debug("abc44444444");
 
-        jtLogger.debug("bbb", "这条日志将会被过滤掉");
+        logger.debug("bbb", "这条日志将会被过滤掉");
 
         //手动触发保存
-        ((FileLogRecorder) jtLogger.getLogContext().getLogConfig().getLogRecorders().get(
+        ((FileLogRecorder) logger.getLogContext().getLogConfig().getLogRecorders().get(
                 0)).wirteLogFile();
 
         //5次后触发
-        jtLogger.debug("abc555555555");
-        jtLogger.debug("abc666666666");
-        jtLogger.debug("abc777777777");
-        jtLogger.debug("abc888888888");
-        jtLogger.debug("abc999999999");
+        logger.debug("abc555555555");
+        logger.debug("abc666666666");
+        logger.debug("abc777777777");
+        logger.debug("abc888888888");
+        logger.debug("abc999999999");
     }
 
     @Test

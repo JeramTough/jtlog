@@ -1,7 +1,6 @@
 package com.jeramtough.jtlog.printer;
 
-import com.jeramtough.jtlog.facade.L;
-import com.jeramtough.jtlog.log.LogContext;
+import com.jeramtough.jtlog.bean.LogContext;
 import com.jeramtough.jtlog.printer.proxy.FilterPrinterProxy;
 import com.jeramtough.jtlog.printer.proxy.PrinterProxy;
 import com.jeramtough.jtlog.printer.proxy.RecorderPrinterProxy;

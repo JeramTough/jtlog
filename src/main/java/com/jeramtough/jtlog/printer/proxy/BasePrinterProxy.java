@@ -1,7 +1,7 @@
 package com.jeramtough.jtlog.printer.proxy;
 
-import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.log.LogInformation;
+import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.printer.Printer;
 
 import java.lang.reflect.InvocationHandler;

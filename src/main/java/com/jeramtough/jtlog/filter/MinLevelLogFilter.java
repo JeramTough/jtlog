@@ -1,8 +1,8 @@
 package com.jeramtough.jtlog.filter;
 
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.log.LogInformation;
+import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.bean.LogInformation;
 
 /**
  *

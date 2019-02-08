@@ -1,6 +1,6 @@
 package com.jeramtough.jtlog.style;
 
-import com.jeramtough.jtlog.log.LogInformation;
+import com.jeramtough.jtlog.bean.LogInformation;
 
 /**
  * 负责输出样式，以什么样的风格输出

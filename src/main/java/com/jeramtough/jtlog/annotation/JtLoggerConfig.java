@@ -1,11 +1,9 @@
 package com.jeramtough.jtlog.annotation;
 
+import com.jeramtough.jtlog.constant.LogConfigDefaultValues;
 import com.jeramtough.jtlog.handler.ComponentHandler;
 import com.jeramtough.jtlog.handler.DefaultComponentHandler;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.config.JtLogConfigDefaultValues;
-import com.jeramtough.jtlog.config.LogConfig;
-import com.jeramtough.jtlog.config.LogConfigDefaultValues;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -25,9 +23,9 @@ public @interface JtLoggerConfig {
     /**
      * 是否允许输出日志
      *
-     * @return return true if enable to print log
+     * @return return true if enabled
      */
-    boolean isEnabled() default JtLogConfigDefaultValues.IS_ENABLED;
+    boolean isEnabled() default LogConfigDefaultValues.IS_ENABLED;
 
     /**
      * 是否使用JtLogger框架的Api进行日志输出，
@@ -36,16 +34,16 @@ public @interface JtLoggerConfig {
      *
      * @return 默认true
      */
-    boolean isUsedJtloggerApi() default JtLogConfigDefaultValues.IS_USED_JTLOGGER_API;
+    boolean isUsedJtloggerApi() default LogConfigDefaultValues.IS_USED_JTLOGGER_API;
 
 
     /**
      * 日志框架输出内容时，每一行的最大长度，超过这个长度就会换行,设置
      * 为0时则是不换行
      *
-     * @return 默认130
+     * @return 默认0
      */
-    int maxLengthOfRow() default JtLogConfigDefaultValues.MAX_LENGTH_OF_ROM;
+    int maxLengthOfRow() default LogConfigDefaultValues.MAX_LENGTH_OF_ROM;
 
     /**
      * 最低可见日志等级，默认为DEBUG等级，日志等级优先级就参考
@@ -68,7 +66,7 @@ public @interface JtLoggerConfig {
      *
      * @return 默认0
      */
-    int callerPlus() default JtLogConfigDefaultValues.CALLER_PLUS;
+    int callerPlus() default LogConfigDefaultValues.CALLER_PLUS;
 
     /**
      * 添加日志系统附加组件的把持类
@@ -76,4 +74,5 @@ public @interface JtLoggerConfig {
      * @return 默认返回 {@link DefaultComponentHandler}
      */
     Class<? extends ComponentHandler> componentHandleClass() default DefaultComponentHandler.class;
+
 }

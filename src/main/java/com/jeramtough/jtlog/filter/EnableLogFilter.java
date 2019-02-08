@@ -1,7 +1,7 @@
 package com.jeramtough.jtlog.filter;
 
-import com.jeramtough.jtlog.log.LogContext;
-import com.jeramtough.jtlog.log.LogInformation;
+import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.bean.LogInformation;
 
 /**
  * 是否允许输出过滤器

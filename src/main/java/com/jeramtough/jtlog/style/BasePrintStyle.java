@@ -1,7 +1,7 @@
 package com.jeramtough.jtlog.style;
 
 import com.jeramtough.jtlog.facade.L;
-import com.jeramtough.jtlog.log.LogInformation;
+import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.util.MyStringUtil;
 
 /**

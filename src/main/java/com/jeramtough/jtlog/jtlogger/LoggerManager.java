@@ -5,8 +5,7 @@ import com.jeramtough.jtlog.filter.EnableLogFilter;
 import com.jeramtough.jtlog.filter.MinLevelLogFilter;
 import com.jeramtough.jtlog.handler.ComponentHandler;
 import com.jeramtough.jtlog.handler.DefaultComponentHandler;
-import com.jeramtough.jtlog.config.LogConfig;
-import com.jeramtough.jtlog.log.LogContext;
+import com.jeramtough.jtlog.bean.LogContext;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -18,9 +17,9 @@ import java.util.HashMap;
  * Created on 2018-08-21 17:11
  * by @author JeramTough
  */
-public final class JtLoggerManager {
+public final class LoggerManager {
 
-    private static HashMap<String, JtLogger> jtLoggerHashMap;
+    private static HashMap<String, Logger> jtLoggerHashMap;
     private static HashMap<Class, ComponentHandler> componentHandlerHashMap;
 
     static {
@@ -28,14 +27,14 @@ public final class JtLoggerManager {
         componentHandlerHashMap = new HashMap<>();
     }
 
-    private JtLoggerManager() {
+    private LoggerManager() {
     }
 
-    public static JtLogger getJtLogger(Class contextClass) {
+    public static Logger getJtLogger(Class contextClass) {
         String contextName = parseContextNameFromAnnotation(contextClass);
-        JtLogger jtLogger;
+        Logger logger;
         if (jtLoggerHashMap.containsKey(contextName)) {
-            jtLogger = jtLoggerHashMap.get(contextName);
+            logger = jtLoggerHashMap.get(contextName);
         }
         else {
             LogConfig logConfig = parseLogConfigFromAnnotation(contextClass);
@@ -45,16 +44,16 @@ public final class JtLoggerManager {
 
             LogContext logContext = new LogContext(contextName, logConfig);
 
-            jtLogger = new JtLoggerImpl(logContext);
-            jtLoggerHashMap.put(contextName, jtLogger);
+            logger = new JtLogger(logContext);
+            jtLoggerHashMap.put(contextName, logger);
         }
-        return jtLogger;
+        return logger;
     }
 
-    public static JtLogger getJtLogger(String contextName) {
-        JtLogger jtLogger;
+    public static Logger getJtLogger(String contextName) {
+        Logger logger;
         if (jtLoggerHashMap.containsKey(contextName)) {
-            jtLogger = jtLoggerHashMap.get(contextName);
+            logger = jtLoggerHashMap.get(contextName);
         }
         else {
             LogConfig logConfig = new LogConfig();
@@ -63,27 +62,27 @@ public final class JtLoggerManager {
             addSomeLogFillters(logConfig);
 
             LogContext logContext = new LogContext(contextName, logConfig);
-            jtLogger = new JtLoggerImpl(logContext);
-            jtLoggerHashMap.put(contextName, jtLogger);
+            logger = new JtLogger(logContext);
+            jtLoggerHashMap.put(contextName, logger);
         }
-        return jtLogger;
+        return logger;
     }
 
-    public static JtLogger getJtLogger(LogContext logContext) {
-        JtLogger jtLogger;
+    public static Logger getJtLogger(LogContext logContext) {
+        Logger logger;
         if (jtLoggerHashMap.containsKey(logContext.getContextName())) {
-            jtLogger = jtLoggerHashMap.get(logContext.getContextName());
-            jtLogger.getLogContext().setLogConfig(logContext.getLogConfig());
+            logger = jtLoggerHashMap.get(logContext.getContextName());
+            logger.getLogContext().setLogConfig(logContext.getLogConfig());
         }
         else {
 
             //添加一些默认实现的日志过滤器
             addSomeLogFillters(logContext.getLogConfig());
 
-            jtLogger = new JtLoggerImpl(logContext);
-            jtLoggerHashMap.put(logContext.getContextName(), jtLogger);
+            logger = new JtLogger(logContext);
+            jtLoggerHashMap.put(logContext.getContextName(), logger);
         }
-        return jtLogger;
+        return logger;
     }
 
     //*************************

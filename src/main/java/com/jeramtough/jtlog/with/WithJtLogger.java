@@ -1,7 +1,7 @@
 package com.jeramtough.jtlog.with;
 
-import com.jeramtough.jtlog.jtlogger.JtLogger;
-import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
+import com.jeramtough.jtlog.jtlogger.Logger;
+import com.jeramtough.jtlog.jtlogger.LoggerManager;
 
 /**
  * 附加日志接口，默认contextName为当前类名
@@ -9,9 +9,9 @@ import com.jeramtough.jtlog.jtlogger.JtLoggerManager;
  */
 public interface WithJtLogger {
 
-    default JtLogger getJtLogger() {
-        JtLogger jtLogger = JtLoggerManager.getJtLogger(this.getClass());
-        return jtLogger;
+    default Logger getJtLogger() {
+        Logger logger = LoggerManager.getJtLogger(this.getClass());
+        return logger;
     }
 
 }

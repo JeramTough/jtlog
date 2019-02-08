@@ -1,128 +1,128 @@
 package com.jeramtough.jtlog.jtlogger;
 
-import com.jeramtough.jtlog.log.LogContext;
+import com.jeramtough.jtlog.printer.PrinterFactory;
+import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.bean.LogContext;
+import com.jeramtough.jtlog.bean.LogInformation;
 
 /**
- * 这个是客户端使用JtLog日志框架的核心接口
- * <p>
- * Created on 2018-08-21 14:34
+ * Created on 2018-08-21 14:51
  * by @author JeramTough
  */
-public interface JtLogger {
+public class JtLogger implements Logger {
 
-    /**
-     * 程序执行到标记锚点输出，格式为:
-     */
-    void arrive();
+    private LogContext logContext;
 
-    /**
-     * 普通的输出，不带任何格式,类似于
-     * System.out.println();
-     *
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void p(T message);
+    JtLogger(LogContext logContext) {
+        this.logContext = logContext;
+    }
 
-    /**
-     * 输出Info级别的日志
-     *
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void info(T message);
+    @Override
+    public  void arrive() {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.ARRIVE)
+                .setLogContext(logContext).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
+    @Override
+    public  <T> void p(T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.PRINTLN)
+                .setLogContext(logContext).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 输出warn级别的日志
-     *
-     * @param tag     标签
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void info(String tag, T message);
+    @Override
+    public  <T> void info(T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.INFO)
+                .setMessage(message).setLogContext(logContext).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
+    @Override
+    public  <T> void info(String tag, T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.INFO)
+                .setMessage(message).setLogContext(logContext).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void warn(T message);
+    @Override
+    public  <T> void warn(T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.WARN)
+                .setLogContext(logContext).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 输出warn级别的日志
-     *
-     * @param tag     标签
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void warn(String tag, T message);
+    @Override
+    public  <T> void warn(String tag, T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.WARN)
+                .setMessage(message).setLogContext(logContext).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 输出error级别的日志
-     *
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void error(T message);
+    @Override
+    public  <T> void error(T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.ERROR)
+                .setLogContext(logContext).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 输出error级别的日志
-     *
-     * @param tag     标签
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void error(String tag, T message);
+    @Override
+    public  <T> void error(String tag, T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.ERROR)
+                .setMessage(message).setLogContext(logContext).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 输出debug级别的日志
-     *
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void debug(T message);
+    @Override
+    public  <T> void debug(T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.DEBUG)
+                .setLogContext(logContext).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 输出debug级别的日志
-     *
-     * @param tag     标签
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void debug(String tag, T message);
+    @Override
+    public  <T> void debug(String tag, T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.DEBUG)
+                .setMessage(message).setLogContext(logContext).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
+    @Override
+    public  <T> void debugs(T... messages) {
+        String message = "";
+        for (int i = 0; i < messages.length; i++) {
+            String m = messages[i] == null ? "[null]" : messages[i].toString();
+            if (m != null) {
+                if (i == 0) {
+                    message = message + m;
+                } else {
+                    message = message + " ，" + m;
+                }
+            }
+        }
 
-    /**
-     * 输出debug级别的日志输出，可输出多条debug消息，
-     * 以“，”分割
-     *
-     * @param messages 输出内容
-     * @param <T>      任何数据类型
-     */
-    <T> void debugs(T... messages);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.DEBUG)
+                .setLogContext(logContext).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 输出verbose级别的日志
-     *
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void verbose(T message);
+    @Override
+    public  <T> void verbose(T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.VERBOSE)
+                .setLogContext(logContext).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 输出verbose级别的日志
-     *
-     * @param tag     标签
-     * @param message 输出内容
-     * @param <T>     任何数据类型
-     */
-    <T> void verbose(String tag, T message);
+    @Override
+    public  <T> void verbose(String tag, T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(LogLevel.VERBOSE)
+                .setMessage(message).setLogContext(logContext).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
 
-    /**
-     * 得到日志环境类
-     *
-     * @return 日志环境类 {@link LogContext}
-     */
-    LogContext getLogContext();
+    @Override
+    public  LogContext getLogContext() {
+        return logContext;
+    }
+
 }
