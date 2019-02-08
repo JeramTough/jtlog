@@ -18,6 +18,7 @@ public class LogConfigFactory {
         logConfig.setMinVisibleLevel(logConfigDefaultValues.loadMinVisibleLevel());
         logConfig.setUsedJtloggerApi(logConfigDefaultValues.loadIsUsedJtloggerApi());
         logConfig.setLogHeaders(logConfigDefaultValues.loadLogHeaders());
+        logConfig.setWrapCount(logConfigDefaultValues.loadWrapCount());
         return logConfig;
     }
 

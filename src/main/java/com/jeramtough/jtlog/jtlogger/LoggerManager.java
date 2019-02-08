@@ -85,7 +85,7 @@ public final class LoggerManager {
         Logger logger = new JtLogger(logContext);
 
         //add some default LogFillters
-        addSomeLogFillters(logContext);
+        addSomeLogFilters(logContext);
 
         jtLoggerHashMap.put(logContext.getContextName(), logger);
         return logger;
@@ -102,7 +102,7 @@ public final class LoggerManager {
         }
     }
 
-    private static void addSomeLogFillters(LogContext logContext) {
+    private static void addSomeLogFilters(LogContext logContext) {
         EnableLogFilter enableLogFilter = new EnableLogFilter();
         MinLevelLogFilter minLevelLogFilter = new MinLevelLogFilter();
 

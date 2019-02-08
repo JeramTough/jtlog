@@ -2,6 +2,7 @@ package test;
 
 import com.jeramtough.jtlog.annotation.LogConfiguration;
 import com.jeramtough.jtlog.facade.L;
+import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.Logger;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
@@ -18,19 +19,19 @@ public class TestMain implements WithLogger {
     public void test() {
         Logger logger = LoggerManager.getLogger("JtloggerInterface");
 
-      /*  logger.arrive();
+        logger.arrive();
         logger.info("11111");
         logger.warn("22222");
         logger.debug("tag", "3333");
         logger.debug("44444");
         logger.error("tag", "55555");
         logger.verbose("tag", "66666");
-        logger.p("77777"); //不带任何格式输出*/
+        logger.p("77777"); //不带任何格式输出
     }
 
     @Test
     public void test1() {
-        L.debug(null,null);
+        L.debug(null, null);
         L.info(88888.f);
         L.verbose("99999");
         L.arrive();
@@ -45,10 +46,10 @@ public class TestMain implements WithLogger {
 
     @Test
     public void test3() {
-        ch.qos.logback.classic.Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("testlogback");
+        ch.qos.logback.classic.Logger logger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(
+                "testlogback");
         logger.debug("aaa");
     }
-
 
 
     @Test
@@ -57,7 +58,13 @@ public class TestMain implements WithLogger {
         a.a();
         B b = new B();
         b.b();
+    }
 
+    @Test
+    public void test5() {
+        getLogger().getLogContext().getLogFilters().add(new TagLogFilter("lalala"));
+        getLogger().info("lalala", "这句不会被输出");
+        getLogger().info("lalala00000", "bbbbbbbbbbb");
     }
 
 }

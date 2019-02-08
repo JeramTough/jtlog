@@ -1,10 +1,12 @@
 package com.jeramtough.jtlog.facade;
 
 import com.jeramtough.jtlog.annotation.LogConfiguration;
+import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.jtlogger.Logger;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.context.LogContext;
+import com.jeramtough.jtlog.printer.PrinterFactory;
 import com.jeramtough.jtlog.util.MyStringUtil;
 
 /**
@@ -14,10 +16,11 @@ import com.jeramtough.jtlog.util.MyStringUtil;
  */
 public class L {
 
-    private static Logger logger;
+    private static LogContext logContext;
 
     static {
-        logger = LoggerManager.getLogger(L.class);
+        Logger logger = LoggerManager.getLogger(L.class);
+        logContext = logger.getLogContext();
 
         StringBuilder text = new StringBuilder();
         for (int ii = 0; ii < 3; ii++) {
@@ -37,59 +40,99 @@ public class L {
 
 
     public static void arrive() {
-        logger.arrive();
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.ARRIVE).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void p(T message) {
-        logger.p(message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.PRINTLN).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void info(T message) {
-        logger.info(message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.INFO).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void info(String tag, T message) {
-        logger.info(tag, message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.INFO).setMessage(message).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void warn(T message) {
-        logger.warn(message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.WARN).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void warn(String tag, T message) {
-        logger.warn(tag, message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.WARN).setMessage(message).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void error(T message) {
-        logger.error(message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.ERROR).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void error(String tag, T message) {
-        logger.error(tag, message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.ERROR).setMessage(message).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void debug(T message) {
-        logger.debug(message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.DEBUG).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void debug(String tag, T message) {
-        logger.debug(tag, message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.DEBUG).setMessage(message).setTag(
+                tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void debugs(T... messages) {
-        logger.debugs(messages);
+        String message = "";
+        for (int i = 0; i < messages.length; i++) {
+            String m = messages[i] == null ? "[null]" : messages[i].toString();
+            if (m != null) {
+                if (i == 0) {
+                    message = message + m;
+                }
+                else {
+                    message = message + " ，" + m;
+                }
+            }
+        }
+
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.DEBUG).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void verbose(T message) {
-        logger.verbose(message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.VERBOSE).setMessage(message).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static <T> void verbose(String tag, T message) {
-        logger.verbose(tag, message);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.VERBOSE).setMessage(message).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
     public static LogContext getLogContext() {
-        return logger.getLogContext();
+        return logContext;
     }
 
 
