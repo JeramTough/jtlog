@@ -10,9 +10,9 @@ public class PrintlnPrintStyle extends BasePrintStyle {
 
     @Override
     public String stylize(LogInformation logInformation) {
-        String formattedMessage = logInformation.getMessage();
+        String formattedMessage = logInformation.getMessageStr();
         for (int i = 0; i < getLogContext().getLogConfig().getWrapCount(); i++) {
-            formattedMessage = formattedMessage + "\n";
+            formattedMessage = formattedMessage + System.lineSeparator();
         }
         return formattedMessage;
     }

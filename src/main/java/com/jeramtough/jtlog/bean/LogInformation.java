@@ -18,7 +18,7 @@ public class LogInformation {
     private final static int CALLER_COUNT = 4;
 
     private Object message;
-    private String messageString;
+    private String messageStr;
     private StackTraceElement stackTraceElement;
     private String tag;
     private String time;
@@ -47,8 +47,8 @@ public class LogInformation {
         return threadName;
     }
 
-    public String getMessage() {
-        return messageString;
+    public String getMessageStr() {
+        return messageStr;
     }
 
     public String getClassName() {
@@ -71,7 +71,7 @@ public class LogInformation {
         return trace;
     }
 
-    public void setMessage(Object message) {
+    void setMessage(Object message) {
         this.message = message;
     }
 
@@ -98,10 +98,10 @@ public class LogInformation {
         }
 
         if (message == null) {
-            messageString = "[null]";
+            messageStr = "[null]";
         }
         else {
-            messageString = message.toString();
+            messageStr = message.toString();
         }
 
         //processing time

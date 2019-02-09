@@ -22,9 +22,12 @@ public class RecorderPrinterProxy extends BasePrinterProxy {
                   Object[] args) throws IllegalAccessException, InvocationTargetException {
         String stylizedText = (String) method.invoke(printer, args);
 
-        for (LogRecorder logRecorder : logContext.getLogRecorders()) {
-            logRecorder.record(getLogInformation(), stylizedText);
+        if (stylizedText != null) {
+            for (LogRecorder logRecorder : logContext.getLogRecorders()) {
+                logRecorder.record(getLogInformation(), stylizedText);
+            }
         }
+
 
         return stylizedText;
     }

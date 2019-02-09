@@ -10,7 +10,7 @@ import com.jeramtough.jtlog.header.LogHeader;
  */
 public abstract class BasePrintStyle implements PrintStyle {
 
-    public static final String DEFAULT_LOG_FORMAT = "{headers}\n{message}";
+    public static final String DEFAULT_LOG_FORMAT = "{headers}" + System.lineSeparator() + "{message}";
     private LogContext logContext;
 
     public BasePrintStyle(LogContext logContext) {
@@ -53,9 +53,9 @@ public abstract class BasePrintStyle implements PrintStyle {
     public String getFormattedMessage(LogInformation logInformation) {
         String formattedMessage = DEFAULT_LOG_FORMAT.replace("{headers}",
                 getLogHeaders(logInformation)).replace("{message}",
-                logInformation.getMessage());
+                logInformation.getMessageStr());
         for (int i = 0; i < getLogContext().getLogConfig().getWrapCount(); i++) {
-            formattedMessage = formattedMessage + "\n";
+            formattedMessage = formattedMessage + System.lineSeparator();
         }
         return formattedMessage;
     }

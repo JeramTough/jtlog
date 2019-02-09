@@ -16,7 +16,7 @@ public class ArrivePrintStyle extends BasePrintStyle {
         String formattedMessage = ARRIVE_LOG_FORMAT.replace("{headers}",
                 getLogHeaders(logInformation));
         for (int i = 0; i < getLogContext().getLogConfig().getWrapCount(); i++) {
-            formattedMessage = formattedMessage + "\n";
+            formattedMessage = formattedMessage + System.lineSeparator();
         }
         return formattedMessage;
     }

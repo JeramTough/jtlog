@@ -65,4 +65,14 @@ public final class LogContext {
     public List<LogRecorder> getLogRecorders() {
         return logRecorders;
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

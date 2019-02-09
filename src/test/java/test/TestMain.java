@@ -6,9 +6,12 @@ import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.Logger;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.recorder.FileLogRecorder;
 import com.jeramtough.jtlog.with.WithLogger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
 
 @LogConfiguration(isUsedJtloggerApi = 1, isEnabled = 1,
         maxLengthOfRow = 130, contextName = "MyLogger",
@@ -66,6 +69,19 @@ public class TestMain implements WithLogger {
         getLogger().info("lalala", "这句不会被输出");
         getLogger().info("my", "这句也不会被输出");
         getLogger().info("lalala00000", "bbbbbbbbbbb");
+    }
+
+
+    @Test
+    public void test6() {
+        getLogger().getLogContext().getLogRecorders().add(new FileLogRecorder(new File(
+                "E:\\Codes\\IdeaCodes\\JtlogForMaven\\src\\test\\resources\\test.log")));
+        getLogger().debug("abc");
+
+        //因为添加了过滤器，这句其实不会打印出来
+        getLogger().info("my", "what");
+
+        getLogger().info("lalala00000", ";nani");
     }
 
 }
