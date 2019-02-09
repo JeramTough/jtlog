@@ -5,6 +5,7 @@ import com.jeramtough.jtlog.facade.L;
 import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.jtlogger.Logger;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
+import com.jeramtough.jtlog.lang.DefaultBoolean;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.recorder.FileLogRecorder;
 import com.jeramtough.jtlog.with.WithLogger;
@@ -13,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
-@LogConfiguration(isUsedJtloggerApi = 1, isEnabled = 1,
+@LogConfiguration(isUsedJtloggerApi = DefaultBoolean.TRUE, isEnabled = DefaultBoolean.TRUE,
         maxLengthOfRow = 130, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE, logFilter = {MyTagLogFilter.class})
 public class TestMain implements WithLogger {

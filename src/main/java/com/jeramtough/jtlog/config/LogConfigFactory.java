@@ -2,6 +2,7 @@ package com.jeramtough.jtlog.config;
 
 import com.jeramtough.jtlog.annotation.LogConfiguration;
 import com.jeramtough.jtlog.header.LogHeader;
+import com.jeramtough.jtlog.lang.DefaultBoolean;
 import com.jeramtough.jtlog.level.LogLevel;
 
 /**
@@ -30,10 +31,10 @@ public class LogConfigFactory {
                 LogConfiguration.class);
         if (logConfiguration != null) {
             //set isEnabled
-            if (logConfiguration.isEnabled() < 0) {
+            if (logConfiguration.isEnabled() == DefaultBoolean.DEFAULT) {
                 logConfig.setEnabled(logConfigDefaultValues.loadIsEnabled());
             }
-            else if (logConfiguration.isEnabled() == 0) {
+            else if (logConfiguration.isEnabled() == DefaultBoolean.FALSE) {
                 logConfig.setEnabled(false);
             }
             else {
@@ -41,10 +42,10 @@ public class LogConfigFactory {
             }
 
             //set isUsedJtloggerApi
-            if (logConfiguration.isUsedJtloggerApi() < 0) {
+            if (logConfiguration.isUsedJtloggerApi() == DefaultBoolean.DEFAULT) {
                 logConfig.setUsedJtloggerApi(logConfigDefaultValues.loadIsEnabled());
             }
-            else if (logConfiguration.isUsedJtloggerApi() == 0) {
+            else if (logConfiguration.isUsedJtloggerApi() == DefaultBoolean.FALSE) {
                 logConfig.setUsedJtloggerApi(false);
             }
             else {

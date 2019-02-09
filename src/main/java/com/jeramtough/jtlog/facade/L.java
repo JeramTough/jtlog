@@ -109,7 +109,7 @@ public class L {
                     message = message + m;
                 }
                 else {
-                    message = message + " ，" + m;
+                    message = message + " , " + m;
                 }
             }
         }

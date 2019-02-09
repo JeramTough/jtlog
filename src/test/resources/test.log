@@ -16,3 +16,54 @@ abc
 I:{context}=MyLogger .{tag}=lalala00000 .{time}=11:09:17:432 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:84) .
 ;nani
 
+D:{context}=JtloggerInterface .{time}=11:14:24:742 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:79) .
+abc
+
+I:{context}=JtloggerInterface .{tag}=lalala00000 .{time}=11:14:24:748 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:84) .
+;nani
+
+D:{context}=L .{time}=11:17:08:020 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:79) .
+abc
+
+I:{context}=L .{tag}=lalala00000 .{time}=11:17:08:022 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:84) .
+;nani
+
+D:{context}=JtloggerInterface .{time}=11:18:44:194 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:79) .
+abc
+
+I:{context}=JtloggerInterface .{tag}=lalala00000 .{time}=11:18:44:199 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:84) .
+;nani
+
+D:{context}=MyLogger .{time}=11:19:36:932 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:79) .
+abc
+
+I:{context}=L .{tag}=lalala00000 .{time}=11:19:36:934 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:84) .
+;nani
+
+I:{context}=L .{tag}=lalala00000 .{time}=11:19:36:935 .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:71) .
+bbbbbbbbbbb
+
+D:{context}=B .{time}=11:21:14:799 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:79) .
+abc
+
+I:{context}= .{tag}=lalala00000 .{time}=11:21:14:801 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:84) .
+;nani
+
+D:{context}=B .{time}=11:21:14:812 .{thread}=main .{trace}=at test.TestMain.test2(TestMain.java:46) .
+with.www
+
+D:{context}=B .{time}=11:21:14:813 .{thread}=main .{trace}=at test.TestMain.test2(TestMain.java:47) .
+Strinds £¬1 £¬12.1 £¬false
+
+D:{context}=JtloggerInterface .{time}=11:33:52:309 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:80) .
+abc
+
+I:{context}=JtloggerInterface .{tag}=lalala00000 .{time}=11:33:52:315 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:85) .
+;nani
+
+D:{context}=L .{time}=11:34:21:047 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:80) .
+abc
+
+I:{context}=L .{tag}=lalala00000 .{time}=11:34:21:050 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:85) .
+;nani
+

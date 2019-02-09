@@ -2,6 +2,7 @@ package com.jeramtough.jtlog.annotation;
 
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.header.LogHeader;
+import com.jeramtough.jtlog.lang.DefaultBoolean;
 import com.jeramtough.jtlog.level.LogLevel;
 
 import java.lang.annotation.ElementType;
@@ -29,10 +30,11 @@ public @interface LogConfiguration {
      * 决定是否允许输出日志
      * <p>
      * <p>
-     * 返回值小于0表示使用默认值，返回值0表示false, 返回值大于0 表示true
+     * 返回值DefaultBoolean.DEFAULT表示使用默认值，返回值DefaultBoolean.FALSE表示false,
+     * 返回值DefaultBoolean.TRUE 表示true
      * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
-    int isEnabled() default -1;
+    DefaultBoolean isEnabled() default DefaultBoolean.DEFAULT;
 
     /**
      * 决定是否使用JtLogger框架的Api进行日志输出，
@@ -40,10 +42,11 @@ public @interface LogConfiguration {
      * 的api实现输出
      * <p>
      * <p>
-     * 返回值小于0表示使用默认值，返回值0表示false, 返回值大于0 表示true
+     * 返回值DefaultBoolean.DEFAULT表示使用默认值，返回值DefaultBoolean.FALSE表示false,
+     * 返回值DefaultBoolean.TRUE 表示true
      * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
-    int isUsedJtloggerApi() default -1;
+    DefaultBoolean isUsedJtloggerApi() default DefaultBoolean.DEFAULT;
 
 
     /**
