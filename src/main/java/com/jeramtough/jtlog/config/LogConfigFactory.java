@@ -20,6 +20,7 @@ public class LogConfigFactory {
         logConfig.setUsedJtloggerApi(logConfigDefaultValues.loadIsUsedJtloggerApi());
         logConfig.setLogHeaders(logConfigDefaultValues.loadLogHeaders());
         logConfig.setWrapCount(logConfigDefaultValues.loadWrapCount());
+        logConfig.setDataFormat(logConfigDefaultValues.loadDataFormat());
         return logConfig;
     }
 
@@ -83,6 +84,15 @@ public class LogConfigFactory {
             else {
                 logConfig.setWrapCount(logConfiguration.wrapCount());
             }
+
+            //set dataFormat
+            if ("default".equals(logConfiguration.dataFormat())) {
+                logConfig.setDataFormat(logConfigDefaultValues.loadDataFormat());
+            }
+            else {
+                logConfig.setDataFormat(logConfiguration.dataFormat());
+            }
+
 
         }
         else {

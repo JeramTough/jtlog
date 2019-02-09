@@ -92,4 +92,13 @@ public @interface LogConfiguration {
      * 添加额外的日志过滤器，过滤器类必须有个无参公共的构造函数，过滤器详细见{@link LogFilter}
      */
     Class<? extends LogFilter>[] logFilter() default {};
+
+    /**
+     * 决定日志时间信息头的输出格式
+     * <p>
+     * <p>
+     * 返回"default"使用默认值,返回时间格式则使用该格式
+     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     */
+    String dataFormat() default "default";
 }

@@ -4,6 +4,9 @@ import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.header.LogHeader;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 /**
  * Created on 2019-02-08 16:35
  * by @author JeramTough
@@ -33,8 +36,12 @@ public abstract class BasePrintStyle implements PrintStyle {
                     }
                     break;
                 case TIME:
+                    //processing time
+                    DateFormat format = new SimpleDateFormat(
+                            logContext.getLogConfig().getDataFormat());
+                    String time = format.format(logInformation.getDate());
                     logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(
-                            "}=").append(logInformation.getTime()).append(" .");
+                            "}=").append(time).append(" .");
                     break;
                 case THREAD:
                     logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(

@@ -19,6 +19,8 @@ public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
 
     public static final int WRAP_COUNT = 1;
 
+    public static final String DATA_FORMAT = "HH:mm:ss:SSS";
+
     public static final LogHeader[] LOG_HEADERS = new LogHeader[]{LogHeader.CONTEXT,
             LogHeader.TAG, LogHeader.TIME, LogHeader.THREAD, LogHeader.TRACE};
 
@@ -50,6 +52,11 @@ public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
     @Override
     public int loadWrapCount() {
         return WRAP_COUNT;
+    }
+
+    @Override
+    public String loadDataFormat() {
+        return DATA_FORMAT;
     }
 
 

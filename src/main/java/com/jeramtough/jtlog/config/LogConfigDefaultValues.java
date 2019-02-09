@@ -55,4 +55,9 @@ public interface LogConfigDefaultValues {
      * 每条新日志间的空行数, 0则两条日志间无空行
      */
     int loadWrapCount();
+
+    /**
+     * 决定日志时间信息头的输出格式
+     */
+    String loadDataFormat();
 }

@@ -3,8 +3,6 @@ package com.jeramtough.jtlog.config;
 import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 
-import javax.naming.ldap.PagedResultsControl;
-
 /**
  * 每个JtLogger类的配置类
  * <p>
@@ -51,6 +49,11 @@ public class LogConfig {
      * 每条新日志间的空行数, 0则两条日志间无空行
      */
     private int wrapCount;
+
+    /**
+     * 日志时间信息头的输出格式
+     */
+    private String dataFormat;
 
 
     public Integer getMaxLengthOfRow() {
@@ -107,5 +110,13 @@ public class LogConfig {
 
     public void setWrapCount(int wrapCount) {
         this.wrapCount = wrapCount;
+    }
+
+    public String getDataFormat() {
+        return dataFormat;
+    }
+
+    public void setDataFormat(String dataFormat) {
+        this.dataFormat = dataFormat;
     }
 }

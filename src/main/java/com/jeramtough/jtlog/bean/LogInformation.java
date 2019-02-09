@@ -2,6 +2,7 @@ package com.jeramtough.jtlog.bean;
 
 import com.jeramtough.jtlog.level.LogLevel;
 
+import javax.xml.crypto.Data;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,7 +22,7 @@ public class LogInformation {
     private String messageStr;
     private StackTraceElement stackTraceElement;
     private String tag;
-    private String time;
+    private Date date;
     private String threadName;
     private String className;
     private String fileName;
@@ -39,8 +40,8 @@ public class LogInformation {
         this.stackTraceElement = stackTraceElement;
     }
 
-    public String getTime() {
-        return time;
+    public Date getDate() {
+        return date;
     }
 
     public String getThreadName() {
@@ -104,10 +105,7 @@ public class LogInformation {
             messageStr = message.toString();
         }
 
-        //processing time
-        Date date = new Date();
-        DateFormat format = new SimpleDateFormat("HH:mm:ss:SSS");
-        time = format.format(date);
+        date = new Date();
 
         threadName = Thread.currentThread().getName();
         className = stackTraceElement.getClassName();

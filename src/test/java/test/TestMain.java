@@ -16,7 +16,8 @@ import java.io.File;
 
 @LogConfiguration(isUsedJtloggerApi = DefaultBoolean.TRUE, isEnabled = DefaultBoolean.TRUE,
         maxLengthOfRow = 130, contextName = "MyLogger",
-        minVisibleLevel = LogLevel.VERBOSE, logFilter = {MyTagLogFilter.class})
+        minVisibleLevel = LogLevel.VERBOSE, logFilter = {MyTagLogFilter.class},
+        dataFormat = "YYYY:MM:HH:mm:ss")
 public class TestMain implements WithLogger {
 
     @Test

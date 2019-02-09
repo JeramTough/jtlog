@@ -67,3 +67,36 @@ abc
 I:{context}=L .{tag}=lalala00000 .{time}=11:34:21:050 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:85) .
 ;nani
 
+D:{context}=JtloggerInterface .{time}=11:47:35:375 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:80) .
+abc
+
+I:{context}=JtloggerInterface .{tag}=lalala00000 .{time}=11:47:35:377 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:85) .
+;nani
+
+D:{context}=JtloggerInterface .{time}=11:48:36:992 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:81) .
+abc
+
+I:{context}=JtloggerInterface .{tag}=lalala00000 .{time}=11:48:36:994 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
+;nani
+
+D:{context}=JtloggerInterface .{time}=11:49:21:363 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:81) .
+abc
+
+I:{context}=JtloggerInterface .{tag}=lalala00000 .{time}=11:49:21:366 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
+;nani
+
+D:{context}=MyLogger .{time}=11:49:40:736 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:81) .
+abc
+
+I:{context}=MyLogger .{tag}=my .{time}=11:49:40:738 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:84) .
+what
+
+I:{context}=MyLogger .{tag}=lalala00000 .{time}=11:49:40:739 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
+;nani
+
+D:{context}=JtloggerInterface .{time}=11:50:14:160 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:81) .
+abc
+
+I:{context}=JtloggerInterface .{tag}=lalala00000 .{time}=11:50:14:162 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
+;nani
+
