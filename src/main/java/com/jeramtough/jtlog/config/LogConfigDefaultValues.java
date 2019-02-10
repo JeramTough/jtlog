@@ -18,14 +18,14 @@ public interface LogConfigDefaultValues {
      *
      * @return 加载默认值
      */
-    int loadMaxLengthOfRow();
+    int decideMaxLengthOfRow();
 
     /**
      * 是否允许输出日志
      *
      * @return 加载默认值
      */
-    boolean loadIsEnabled();
+    boolean decideIsEnabled();
 
     /**
      * 是否使用JtLogger框架的Api,当为Android框架时强制使用Logcat的Api实现输出，
@@ -34,7 +34,7 @@ public interface LogConfigDefaultValues {
      *
      * @return 加载默认值
      */
-    boolean loadIsUsedJtloggerApi();
+    boolean decideIsUsedJtloggerApi();
 
 
     /**
@@ -43,21 +43,21 @@ public interface LogConfigDefaultValues {
      *
      * @return 加载默认值
      */
-    LogLevel loadMinVisibleLevel();
+    LogLevel decideMinVisibleLevel();
 
     /**
      * 决定要输出的日志信息头及顺序，有则输出，没有则不输出，
      * 日志信息头见{@link LogLevel}
      */
-    LogHeader[] loadLogHeaders();
+    LogHeader[] decideLogHeaders();
 
     /**
      * 每条新日志间的空行数, 0则两条日志间无空行
      */
-    int loadWrapCount();
+    int decideWrapCount();
 
     /**
      * 决定日志时间信息头的输出格式
      */
-    String loadDataFormat();
+    String decideDataFormat();
 }

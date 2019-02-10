@@ -14,13 +14,13 @@ public class LogConfigFactory {
     public static LogConfig getDefaultValueLogConfig(
             LogConfigDefaultValues logConfigDefaultValues) {
         LogConfig logConfig = new LogConfig();
-        logConfig.setMaxLengthOfRow(logConfigDefaultValues.loadMaxLengthOfRow());
-        logConfig.setEnabled(logConfigDefaultValues.loadIsEnabled());
-        logConfig.setMinVisibleLevel(logConfigDefaultValues.loadMinVisibleLevel());
-        logConfig.setUsedJtloggerApi(logConfigDefaultValues.loadIsUsedJtloggerApi());
-        logConfig.setLogHeaders(logConfigDefaultValues.loadLogHeaders());
-        logConfig.setWrapCount(logConfigDefaultValues.loadWrapCount());
-        logConfig.setDataFormat(logConfigDefaultValues.loadDataFormat());
+        logConfig.setMaxLengthOfRow(logConfigDefaultValues.decideMaxLengthOfRow());
+        logConfig.setEnabled(logConfigDefaultValues.decideIsEnabled());
+        logConfig.setMinVisibleLevel(logConfigDefaultValues.decideMinVisibleLevel());
+        logConfig.setUsedJtloggerApi(logConfigDefaultValues.decideIsUsedJtloggerApi());
+        logConfig.setLogHeaders(logConfigDefaultValues.decideLogHeaders());
+        logConfig.setWrapCount(logConfigDefaultValues.decideWrapCount());
+        logConfig.setDataFormat(logConfigDefaultValues.decideDataFormat());
         return logConfig;
     }
 
@@ -33,7 +33,7 @@ public class LogConfigFactory {
         if (logConfiguration != null) {
             //set isEnabled
             if (logConfiguration.isEnabled() == DefaultBoolean.DEFAULT) {
-                logConfig.setEnabled(logConfigDefaultValues.loadIsEnabled());
+                logConfig.setEnabled(logConfigDefaultValues.decideIsEnabled());
             }
             else if (logConfiguration.isEnabled() == DefaultBoolean.FALSE) {
                 logConfig.setEnabled(false);
@@ -44,7 +44,7 @@ public class LogConfigFactory {
 
             //set isUsedJtloggerApi
             if (logConfiguration.isUsedJtloggerApi() == DefaultBoolean.DEFAULT) {
-                logConfig.setUsedJtloggerApi(logConfigDefaultValues.loadIsEnabled());
+                logConfig.setUsedJtloggerApi(logConfigDefaultValues.decideIsEnabled());
             }
             else if (logConfiguration.isUsedJtloggerApi() == DefaultBoolean.FALSE) {
                 logConfig.setUsedJtloggerApi(false);
@@ -55,7 +55,7 @@ public class LogConfigFactory {
 
             //set minVisibleLevel
             if (logConfiguration.minVisibleLevel() == LogLevel.DEFAULT) {
-                logConfig.setMinVisibleLevel(logConfigDefaultValues.loadMinVisibleLevel());
+                logConfig.setMinVisibleLevel(logConfigDefaultValues.decideMinVisibleLevel());
             }
             else {
                 logConfig.setMinVisibleLevel(logConfiguration.minVisibleLevel());
@@ -63,7 +63,7 @@ public class LogConfigFactory {
 
             //set maxLengthOfRow
             if (logConfiguration.maxLengthOfRow() < 0) {
-                logConfig.setMaxLengthOfRow(logConfigDefaultValues.loadMaxLengthOfRow());
+                logConfig.setMaxLengthOfRow(logConfigDefaultValues.decideMaxLengthOfRow());
             }
             else {
                 logConfig.setMaxLengthOfRow(logConfiguration.maxLengthOfRow());
@@ -71,7 +71,7 @@ public class LogConfigFactory {
 
             //set logHeaders
             if (logConfiguration.logHeaders().length == 1 && logConfiguration.logHeaders()[0] == LogHeader.DEFAULT) {
-                logConfig.setLogHeaders(logConfigDefaultValues.loadLogHeaders());
+                logConfig.setLogHeaders(logConfigDefaultValues.decideLogHeaders());
             }
             else {
                 logConfig.setLogHeaders(logConfiguration.logHeaders());
@@ -79,7 +79,7 @@ public class LogConfigFactory {
 
             //set wrapCount
             if (logConfiguration.wrapCount() < 0) {
-                logConfig.setWrapCount(logConfigDefaultValues.loadWrapCount());
+                logConfig.setWrapCount(logConfigDefaultValues.decideWrapCount());
             }
             else {
                 logConfig.setWrapCount(logConfiguration.wrapCount());
@@ -87,7 +87,7 @@ public class LogConfigFactory {
 
             //set dataFormat
             if ("default".equals(logConfiguration.dataFormat())) {
-                logConfig.setDataFormat(logConfigDefaultValues.loadDataFormat());
+                logConfig.setDataFormat(logConfigDefaultValues.decideDataFormat());
             }
             else {
                 logConfig.setDataFormat(logConfiguration.dataFormat());

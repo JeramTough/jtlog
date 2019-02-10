@@ -6,6 +6,7 @@ import com.jeramtough.jtlog.jtlogger.Logger;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.context.LogContext;
+import com.jeramtough.jtlog.printer.Printer;
 import com.jeramtough.jtlog.printer.PrinterFactory;
 import com.jeramtough.jtlog.util.MyStringUtil;
 
@@ -41,8 +42,9 @@ public class L {
 
     public static void arrive() {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
-                LogLevel.ARRIVE).build();
-        PrinterFactory.getPrinter(logContext).print(logInformation);
+                LogLevel.ARRIVE).setMessage("arrive").build();
+        Printer printer = PrinterFactory.getPrinter(logContext);
+        printer.print(logInformation);
     }
 
     public static <T> void p(T message) {

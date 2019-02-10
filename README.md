@@ -29,7 +29,7 @@ JDK1.8及以上
 - Gradle 
 
 ```
-compile group: 'com.jeramtough', headerName: 'jtlog', version: 'x.x.x'
+compile group: 'com.jeramtough', name: 'jtlog', version: 'x.x.x'
 
 ```
 
@@ -38,10 +38,11 @@ compile group: 'com.jeramtough', headerName: 'jtlog', version: 'x.x.x'
 
 ---
 ### ==三、简单使用==
-##### 1. 使用JtLogger接口
+##### 1. 使用Logger接口
 
 ```
-JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class); 
+//Logger logger = LoggerManager.getLogger(TestMain.class);
+Logger logger=LoggerManager.getLogger("MyLogger");
 logger.arrive();
 logger.info("11111");
 logger.warn("22222");
@@ -55,23 +56,24 @@ logger.p("77777"); //不带任何格式输出
 *效果：*
 
 ```
-Arrive:{time}=19:36:35.332 , {thread}=main , {context}=TestMain , {location}=TestMain.test().29 , {caller}=(TestMain.java:29)
-I:{time}=19:36:35.354 , {thread}=main , {context}=TestMain
+Arrive:{time}=13:12:34:618 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:93) .
+
+I:{time}=13:12:34:667 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:94) .
 11111
 
-W:{time}=19:36:35.355 , {thread}=main , {context}=TestMain
+W:{time}=13:12:34:669 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:95) .
 22222
 
-D:{time}=19:36:35.355 , {thread}=main , {context}=TestMain , {tag}=tag , {location}=TestMain.test().32 , {caller}=(TestMain.java:32)
+D:{time}=13:12:34:671 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:96) .
 3333
 
-D:{time}=19:36:35.355 , {thread}=main , {context}=TestMain , {location}=TestMain.test().33 , {caller}=(TestMain.java:33)
+D:{time}=13:12:34:672 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:97) .
 44444
 
-E:{time}=19:36:35.356 , {thread}=main , {context}=TestMain , {tag}=tag
+E:{time}=13:12:34:672 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:98) .
 55555
 
-V:{time}=19:36:35.357 , {thread}=main , {context}=TestMain , {tag}=tag
+V:{time}=13:12:34:673 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:99) .
 66666
 
 77777
@@ -81,50 +83,57 @@ V:{time}=19:36:35.357 , {thread}=main , {context}=TestMain , {tag}=tag
 ##### 2. 使用全局日志工具类 
 
 ```
-L.debug(null);
+L.debug(null, null);
+L.error("tag","gggggggggg");
 L.info(88888.f);
 L.verbose("99999");
-L.debugs(null,111111,121212);`
-
+L.arrive();
+L.debugs(null, 111111, 121212);
 ```
 *效果：*
 
 ```
-D:{time}=19:58:16.479 , {thread}=main , {location}=TestMain.test1().40 , {caller}=(TestMain.java:40)
+D:{time}=13:15:34:042 .{context}=L .{thread}=main .{trace}=at test.TestMain.test1(TestMain.java:39) .
 [null]
 
-I:{time}=19:58:16.480 , {thread}=main
+E:{time}=13:15:34:072 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test1(TestMain.java:40) .
+gggggggggg
+
+I:{time}=13:15:34:073 .{context}=L .{thread}=main .{trace}=at test.TestMain.test1(TestMain.java:41) .
 88888.0
 
-V:{time}=19:58:16.480 , {thread}=main
+V:{time}=13:15:34:074 .{context}=L .{thread}=main .{trace}=at test.TestMain.test1(TestMain.java:42) .
 99999
 
-D:{time}=19:58:16.480 , {thread}=main , {location}=TestMain.test1().43 , {caller}=(TestMain.java:43)
-[null] ，111111 ，121212
+Arrive:{time}=13:15:34:076 .{context}=L .{thread}=main .{trace}=at test.TestMain.test1(TestMain.java:43) .
+
+D:{time}=13:15:34:077 .{context}=L .{thread}=main .{trace}=at test.TestMain.test1(TestMain.java:44) .
+[null] , 111111 , 121212
 ```
 ——————————————————————
-##### 3. 实现WithJtLogger接口 
+##### 3. 实现WithLogger接口
 
 ```
-public class TestMain implements WithJtLogger {
+public class TestMain implements WithLogger {
     public static void main(String[] args) {
         new TestMain();
     }
 
     public TestMain() {
-        getJtLogger().debug(131313);
-        getJtLogger().info("tag",false);
+         //使用接口的默认方法getLogger()得到Logger
+        getLogger().debug("with.www");
+        getLogger().debugs("Strinds", 1, 12.1f, false);
     }
 }
 ```
 *效果：*
 
 ```
-D:{time}=20:09:08.882 , {thread}=main , {context}=TestMain , {location}=TestMain.<init>().18 , {caller}=(TestMain.java:18)
-131313
+D:{time}=2019:02:13:18:53 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test2(TestMain.java:49) .
+with.www
 
-I:{time}=20:09:08.903 , {thread}=main , {context}=TestMain , {tag}=tag
-false
+D:{time}=2019:02:13:18:53 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test2(TestMain.java:50) .
+Strinds ，1 ，12.1 ，false
 ```
 ---
 
@@ -133,30 +142,35 @@ false
 
 ### ==四、配置==
 
-##### 注释型配置的属性：
+##### 配置的属性：
 
 属性名 | 描述 | 默认值
 ---|---|---
-contextName | 日志环境名，{context}=的标识，日志框架根据环境名区分不同的日志环境 |传入Class对象的类名或者实现WithJtLogger接口的类名
-isEnabled | 是否允许输出日志 |true
-maxLengthOfRow | 日志框架输出内容时，每一行的最大长度，超过这个长度就会换行 |0
+contextName | 日志环境名，{context}=的标识，日志框架根据环境名区分不同的日志环境 |"default"
+isEnabled | 是否允许输出日志 |TRUE
+maxLengthOfRow | 日志框架输出内容时，每一行的最大长度，超过这个长度就会换行,0表示不换行 |0
 minVisibleLevel | 最低可见日志等级，默认为DEBUG等级，日志等级优先级为：PRINTLN > ERROR > WARN > INFO > DEBUG > ARRIVE > VERBOSE |DEBUG
-isUsedJtloggerApi | 是否使用JtLogger框架的Api进行日志输出，false的话会自适应使用Logback或者Log4j2的Api进行输出 |true
-componentHandleClass | 设置日志系统附加组件的把持类，可以添加一些组件，比如自定义日志过滤器，自定义日志记录器 |DefaultComponentHandler.class
+isUsedJtloggerApi | 是否使用JtLogger框架的Api进行日志输出，false的话会自适应使用Logback或者Log4j2的Api进行输出 |TRUE
+logHeaders | 决定要输出的日志信息头及顺序，有则输出，没有则不输出 |TIME,CONTEXT,TAG,HREAD,TRACE
+dataFormat | 日志时间信息头的输出格式 |"HH:mm:ss:SSS"
+wrapCount | 每条新日志之间的空行数, 0则两条日志间无空行 |1
+logFilters | 添加额外的日志过滤器，过滤器类必须有个无参公共的构造函数，过滤器详细见{@link com.jeramtough.jtlog.filter.LogFilter} |无
+logRecorders | 加额外的日志记录器，记录器类必须有个无参公共的构造函数，过滤器详细见{@link com.jeramtough.jtlog.recorder.LogRecorder} |无
 
 
 
-##### 1. 使用注释声明式配置
+##### 1. @注释声明式配置使用方法
 
 ```
-@JtLoggerConfig(isUsedJtloggerApi = false, isEnabled = false,
-        maxLengthOfRow = 0,contextName = "MyLogger",
-        minVisibleLevel = LogLevel.VERBOSE)
+@LogConfiguration(isUsedJtloggerApi = DefaultBoolean.TRUE, isEnabled = DefaultBoolean.TRUE,
+        maxLengthOfRow = 130, contextName = "MyLogger",
+        minVisibleLevel = LogLevel.VERBOSE, logFilters = {MyTagLogFilter.class},
+        dataFormat = "YYYY:MM:HH:mm:ss")
 public class TestMain implements WithJtLogger {
+
     public static void main(String[] args) {
-        JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class);
-        logger.info("information");
-        new TestMain();
+        Logger Logger = LoggerManager.getLogger(TestMain.class);
+        Logger.info("information");
     }
 }
 ```
@@ -165,48 +179,65 @@ public class TestMain implements WithJtLogger {
 ```
 public class TestMain {
     public static void main(String[] args) {
-        JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class);
-        logger.getLogContext().getLogConfig().setMaxLengthOfRow(0);
-        logger.getLogContext().getLogConfig().setEnabled(false);
-        logger.info("information");
+          //使用LogConfig对象进行设置
+          Logger logger = LoggerManager.getLogger("JtloggerInterface");
+          logger.getLogContext().getLogConfig().setWrapCount(3);
     }
 ```
 
 
 ##### 3. 覆盖框架默认配置
-在第一次使用Jtlog框架前调用才能生效，推荐在项目初始化代码块里调用，++注意，当使用声明式注释配置时，以声明式注释配置为准++。
+在第一次使用Jtlog框架前调用才能生效，推荐在项目初始化代码块里调用。
 
- LogConfig.setLogConfigDefaultValues(new **LogConfigDefaultValues**(){...});  
+ LoggerManager.setLogConfigDefaultValues(new **LogConfigDefaultValues**(){...});  
  或者  
-LogConfig.setLogConfigDefaultValues(new **SimpleLogConfigDefaultValues**() {...});
+ LoggerManager.setLogConfigDefaultValues(new **SimpleLogConfigDefaultValues**() {...});
 ```
 public class TestMain {
     public static void main(String[] args) {
-         LogConfig.setLogConfigDefaultValues(new LogConfigDefaultValues() {
-            @Override
-            public int loadMaxLengthOfRow() {
-                return 0;
-            }
-
-            @Override
-            public boolean loadIsEnabled() {
-                return true;
-            }
-
-            @Override
-            public boolean loadIsUsedJtloggerApi() {
-                return true;
-            }
-
-            @Override
-            public LogLevel loadMinVisibleLevel() {
-                return LogLevel.DEBUG;
-            }
-
-            @Override
-            public int loadCallerPlus() {
-                return 0;
-            }
+        LoggerManager.setLogConfigDefaultValues(new LogConfigDefaultValues() {
+                @Override
+                public int decideMaxLengthOfRow() {
+                    return 0;
+                }
+    
+                @Override
+                public boolean decideIsEnabled() {
+                    return true;
+                }
+    
+                @Override
+                public boolean decideIsUsedJtloggerApi() {
+                    return true;
+                }
+    
+                @Override
+                public LogLevel decideMinVisibleLevel() {
+                    return LogLevel.DEBUG;
+                }
+    
+                @Override
+                public LogHeader[] decideLogHeaders() {
+                    return new LogHeader[]{LogHeader.TIME, LogHeader.CONTEXT,
+                            LogHeader.TAG, LogHeader.THREAD, LogHeader.TRACE};
+                }
+    
+                @Override
+                public int decideWrapCount() {
+                    return 0;
+                }
+    
+                @Override
+                public String decideDataFormat() {
+                    return "HH:mm:ss:SSS";
+                }
+        });
+        
+        LoggerManager.setLogConfigDefaultValues(new SimpleLogConfigDefaultValues() {
+                @Override
+                public boolean decideIsEnabled() {
+                    return true;
+                }
         });
     }
 ```
@@ -234,36 +265,22 @@ public class CustomLogFilter implements LogFilter {
 }
 
 ```
-**- 使用日志过滤器**
+**- 添加日志过滤器**
 1. 使用编程式方法去使用
 
 ```
 //使用LogConfig方法
-logger.getLogContext().getLogConfig().addLogFilter(customLogFilter);
+logger.getLogContext().addLogFilter(customLogFilter);
 ```
-2. 使用注释的方法去使用
+2. 使用注释配置方法添加过滤器，过滤器类必须有个无参公共的构造函数
 
 ```
-//第一步，实现ComponentHandler接口或者集成DefaultComponentHandler类
-public class MyComponentHandler extends DefaultComponentHandler {
-
-    @Override
-    public void handleLogFilters(ArrayList<LogFilter> logFilters) {
-        //往logFilters集合里添加日志过滤器对象
-        TagLogFilter tagLogFilter = new TagLogFilter("bbb");
-        logFilters.add(tagLogFilter);
-    }
-
-}
-
--------------------------------------------
-//第二步，配置注释
-@JtLoggerConfig(componentHandleClass = MyComponentHandler.class,
+@JtLoggerConfig(logFilters = {MyTagLogFilter.class},
         contextName = "ComponentHandlerTest")
 public class TestMain {
     public static void main(String[] args) {
-         JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class);
-         logger.info("bbb", "因为添加了标签过滤器，这句日志信息将会被过滤掉");
+         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+         jtLogger.info("bbb", "因为添加了标签过滤器，这句日志信息将会被过滤掉");
     }
 }
 
@@ -291,54 +308,27 @@ public class MyLogRecorder implements LogRecorder {
     }
 }
 
-
-/**
- * 使用注释配置RecorderHandler类
- */
-@JtLoggerConfig(recorderHandleClass = MyRecordHandler.class,
-isEnabled = true)
-public class FileTst implements WithJtLogger {
-    @Test
-    public void test() {
-        getJtLogger().info("saving log information in somewhere");
-    }
-}
-
 ````
 
-**- 使用日志记录器**
+**- 添加日志记录器**
 1. 使用编程式方法去使用
 
 ```
 //使用LogConfig方法
-logger.getLogContext().getLogConfig().addLogRecorder(new MyLogRecorder());
+jtLogger.getLogContext().addLogRecorder(new MyLogRecorder());
 ```
-2. 使用注释的方法去使用
+ 
+2. 使用注释配置方法添加记录器，记录器类必须有个无参公共的构造函数
 
 ```
-//第一步，实现ComponentHandler接口或者集成DefaultComponentHandler类
-public class MyComponentHandler extends DefaultComponentHandler {
-
-    @Override
-    public void handleLogRecorders(ArrayList<LogRecorder> logRecorders) {
-        File file = new File("E:\\Codes\\IdeaCodes\\JtlogForMaven\\jtlog.log");
-        FileLogRecorder fileLogRecorder = new FileLogRecorder(file, 5);
-        logRecorders.add(fileLogRecorder);
-    }
-
-}
-
--------------------------------------------
-//第二步，配置注释
-@JtLoggerConfig(componentHandleClass = MyComponentHandler.class,
+@JtLoggerConfig(logRecorders = {MyLogRecorder.class},
         contextName = "ComponentHandlerTest")
 public class TestMain {
     public static void main(String[] args) {
-         JtLogger logger = JtLoggerManager.getJtLogger(TestMain.class);
-         logger.info("aaa", "因为使用了FileLogRecorder，这句日志将会被持久化到文件中");
+         JtLogger jtLogger = JtLoggerManager.getJtLogger(TestMain.class);
+         jtLogger.info("bbb", "因为添加了文件记录器，这句日志信息将会被记录在文件上");
     }
 }
-
 ```
 
 

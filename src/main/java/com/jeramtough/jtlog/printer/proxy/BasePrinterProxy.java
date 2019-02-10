@@ -33,14 +33,17 @@ public abstract class BasePrinterProxy implements PrinterProxy {
                         for (Object arg : args) {
                             if (arg instanceof LogInformation) {
                                 logInformation = (LogInformation) arg;
+                                break;
                             }
                         }
 
                         try {
-                            return BasePrinterProxy.this.invoke(logContext, finalPrinter, proxy,
+                            return BasePrinterProxy.this.invoke(logContext, finalPrinter,
+                                    proxy,
                                     method,
                                     args);
-                        } catch (IllegalAccessException | InvocationTargetException e) {
+                        }
+                        catch (IllegalAccessException | InvocationTargetException e) {
                             e.printStackTrace();
                         }
                         return null;

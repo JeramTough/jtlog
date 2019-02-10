@@ -4,6 +4,7 @@ import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.lang.DefaultBoolean;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.recorder.LogRecorder;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -89,9 +90,15 @@ public @interface LogConfiguration {
     int wrapCount() default -1;
 
     /**
-     * 添加额外的日志过滤器，过滤器类必须有个无参公共的构造函数，过滤器详细见{@link LogFilter}
+     * 添加额外的日志过滤器，过滤器类必须有个无参公共的构造函数，过滤器详细见{@link com.jeramtough.jtlog.filter.LogFilter}
      */
-    Class<? extends LogFilter>[] logFilter() default {};
+    Class<? extends LogFilter>[] logFilters() default {};
+
+
+    /**
+     * 添加额外的日志记录器，记录器类必须有个无参公共的构造函数，过滤器详细见{@link com.jeramtough.jtlog.recorder.LogRecorder}
+     */
+    Class<? extends LogRecorder>[] logRecorders() default {};
 
     /**
      * 决定日志时间信息头的输出格式

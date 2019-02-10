@@ -21,41 +21,41 @@ public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
 
     public static final String DATA_FORMAT = "HH:mm:ss:SSS";
 
-    public static final LogHeader[] LOG_HEADERS = new LogHeader[]{LogHeader.CONTEXT,
-            LogHeader.TAG, LogHeader.TIME, LogHeader.THREAD, LogHeader.TRACE};
+    public static final LogHeader[] LOG_HEADERS = new LogHeader[]{LogHeader.TIME, LogHeader.CONTEXT,
+            LogHeader.TAG, LogHeader.THREAD, LogHeader.TRACE};
 
     @Override
-    public int loadMaxLengthOfRow() {
+    public int decideMaxLengthOfRow() {
         return MAX_LENGTH_OF_ROM;
     }
 
     @Override
-    public boolean loadIsEnabled() {
+    public boolean decideIsEnabled() {
         return IS_ENABLED;
     }
 
     @Override
-    public boolean loadIsUsedJtloggerApi() {
+    public boolean decideIsUsedJtloggerApi() {
         return IS_USED_JTLOGGER_API;
     }
 
     @Override
-    public LogLevel loadMinVisibleLevel() {
+    public LogLevel decideMinVisibleLevel() {
         return MIN_VISIBLE_LEVEL;
     }
 
     @Override
-    public LogHeader[] loadLogHeaders() {
+    public LogHeader[] decideLogHeaders() {
         return LOG_HEADERS;
     }
 
     @Override
-    public int loadWrapCount() {
+    public int decideWrapCount() {
         return WRAP_COUNT;
     }
 
     @Override
-    public String loadDataFormat() {
+    public String decideDataFormat() {
         return DATA_FORMAT;
     }
 

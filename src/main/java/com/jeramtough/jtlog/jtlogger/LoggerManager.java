@@ -9,6 +9,7 @@ import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.filter.EnableLogFilter;
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.filter.MinLevelLogFilter;
+import com.jeramtough.jtlog.recorder.LogRecorder;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -69,8 +70,10 @@ public final class LoggerManager {
 
             LogFilter[] additionalLogFilters =
                     parseAdditionalLogFiltersFromAnnotation(contextClass);
+            LogRecorder[] additionalLogRecorders =
+                    parseAdditionalLogRecodersFromAnnotation(contextClass);
             logContext.getLogFilters().addAll(Arrays.asList(additionalLogFilters));
-
+            logContext.getLogRecorders().addAll(Arrays.asList(additionalLogRecorders));
             logger = generatingLogger(logContext);
         }
         return logger;
@@ -113,9 +116,9 @@ public final class LoggerManager {
         LogConfiguration logConfiguration = (LogConfiguration) c.getAnnotation(
                 LogConfiguration.class);
         if (logConfiguration != null) {
-            LogFilter[] logFilters = new LogFilter[logConfiguration.logFilter().length];
-            for (int i = 0; i < logConfiguration.logFilter().length; i++) {
-                Class<? extends LogFilter> filterClass = logConfiguration.logFilter()[i];
+            LogFilter[] logFilters = new LogFilter[logConfiguration.logFilters().length];
+            for (int i = 0; i < logConfiguration.logFilters().length; i++) {
+                Class<? extends LogFilter> filterClass = logConfiguration.logFilters()[i];
                 try {
                     LogFilter logFilter = filterClass.newInstance();
                     logFilters[i] = logFilter;
@@ -129,6 +132,28 @@ public final class LoggerManager {
             return logFilters;
         }
         return new LogFilter[]{};
+    }
+
+    private static LogRecorder[] parseAdditionalLogRecodersFromAnnotation(Class c) {
+        LogConfiguration logConfiguration = (LogConfiguration) c.getAnnotation(
+                LogConfiguration.class);
+        if (logConfiguration != null) {
+            LogRecorder[] logRecorders = new LogRecorder[logConfiguration.logRecorders().length];
+            for (int i = 0; i < logConfiguration.logRecorders().length; i++) {
+                Class<? extends LogRecorder> recorderClass = logConfiguration.logRecorders()[i];
+                try {
+                    LogRecorder logRecorder = recorderClass.newInstance();
+                    logRecorders[i] = logRecorder;
+
+                }
+                catch (InstantiationException | IllegalAccessException e) {
+                    e.printStackTrace();
+                    return new LogRecorder[]{};
+                }
+            }
+            return logRecorders;
+        }
+        return new LogRecorder[]{};
     }
 
     private static void addCertainLogFilters(LogContext logContext) {

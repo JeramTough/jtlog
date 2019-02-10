@@ -2,7 +2,7 @@ package com.jeramtough.jtlog.level;
 
 /**
  * 日志可见等级排名：
- * PRINTLN   ERROR   WARN   INFO   DEBUG   ARRIVE   VERBOSE
+ * PRINTLN   ERROR   WARN   INFO   ARRIVE   DEBUG   VERBOSE
  *
  * @author 11718
  */
@@ -11,12 +11,7 @@ public enum LogLevel {
     /**
      *
      */
-    INFO("I", "info", 3),
-
-    /**
-     *
-     */
-    WARN("W", "warn", 4),
+    PRINTLN("P", "p", 6),
 
     /**
      *
@@ -26,18 +21,25 @@ public enum LogLevel {
     /**
      *
      */
-    DEBUG("D", "debug", 2),
+    WARN("W", "warn", 4),
+
+    /**
+     *
+     */
+    INFO("I", "info", 3),
 
 
     /**
      *
      */
-    PRINTLN("P", "p", 6),
+    ARRIVE("Arrive", "arrive", 2),
+
 
     /**
      *
      */
-    ARRIVE("Arrive", "arrive", 1),
+    DEBUG("D", "debug", 1),
+
 
     /**
      *
