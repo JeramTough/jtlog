@@ -94,7 +94,7 @@ public final class LoggerManager {
     private static Logger generatingLogger(LogContext logContext) {
         Logger logger = new JtLogger(logContext);
 
-        //add some default LogFillters
+        //add some default LogFilters
         addCertainLogFilters(logContext);
 
         jtLoggerHashMap.put(logContext.getContextName(), logger);

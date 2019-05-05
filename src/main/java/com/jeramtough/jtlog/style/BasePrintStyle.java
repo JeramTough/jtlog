@@ -32,7 +32,7 @@ public abstract class BasePrintStyle implements PrintStyle {
                 case TAG:
                     if (logInformation.getTag() != null) {
                         logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(
-                                "}=").append(logInformation.getTag()).append(" .");
+                                "}=").append(logInformation.getTag().getName()).append(" .");
                     }
                     break;
                 case TIME:

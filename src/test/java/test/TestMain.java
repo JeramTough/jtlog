@@ -11,6 +11,7 @@ import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.lang.DefaultBoolean;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.recorder.FileLogRecorder;
+import com.jeramtough.jtlog.tag.Tag;
 import com.jeramtough.jtlog.with.WithLogger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
@@ -33,17 +34,18 @@ public class TestMain implements WithLogger {
         logger.arrive();
         logger.info("11111");
         logger.warn("22222");
-        logger.debugT("tag", "3333");
+        logger.debug((Tag.get("tag")), "3333");
         logger.debug("44444");
-        logger.errorT("tag", "55555");
-        logger.verboseT("tag", "66666");
+        logger.error(Tag.get("tag"), "55555");
+        logger.verbose(Tag.get("tag"), "66666");
         logger.p("77777"); //不带任何格式输出
     }
 
     @Test
     public void test1() {
-        L.debug(null, null);
-        L.error("tag", "gggggggggg");
+        String n = null;
+        L.debug(Tag.get("null"), n);
+        L.error(Tag.get("tag"), "gggggggggg");
         L.info(88888.f);
         L.verbose("99999");
         L.arrive();
@@ -75,10 +77,10 @@ public class TestMain implements WithLogger {
 
     @Test
     public void test5() {
-        getLogger().getLogContext().getLogFilters().add(new TagLogFilter("lalala"));
-        getLogger().infoT("lalala", "这句不会被输出");
-        getLogger().infoT("my", "这句也不会被输出");
-        getLogger().infoT("lalala00000", "bbbbbbbbbbb");
+        getLogger().getLogContext().getLogFilters().add(new TagLogFilter(Tag.get("lalala")));
+        getLogger().info(Tag.get("lalala"), "这句不会被输出");
+        getLogger().info(Tag.get("my"), "有注释过滤器，这句也不会被输出");
+        getLogger().info(Tag.get("gggggg"), "bbbbbbbbbbb");
     }
 
 
@@ -89,7 +91,7 @@ public class TestMain implements WithLogger {
         getLogger().debug("abc");
 
         //因为添加了过滤器，这句其实不会打印出来
-        getLogger().infoT("my", "what");
+        getLogger().info(Tag.get("my"), "what");
 
         getLogger().info("lalala00000", ";nani");
     }
@@ -101,10 +103,10 @@ public class TestMain implements WithLogger {
         logger.arrive();
         logger.info("11111");
         logger.warn("22222");
-        logger.debugT("tag", "3333");
+        logger.debug(Tag.get("tag"), "3333");
         logger.debug("44444");
-        logger.errorT("tag", "55555");
-        logger.verboseT("tag", "66666");
+        logger.error(Tag.get("tag"), "55555");
+        logger.verbose(Tag.get("tag"), "66666");
         logger.p("77777"); //不带任何格式输出
     }
 
@@ -159,9 +161,10 @@ public class TestMain implements WithLogger {
     }
 
     @Test
-    public void test9(){
+    public void test9() {
         //测试占位符
-        getLogger().debug("aaaa%sbbbbb%d","JeramTough",123);
+        getLogger().debug("aaaa%sbbbbb%d", "JeramTough", 123);
+        L.debug("abcde%s", "Weibowen");
     }
 
 

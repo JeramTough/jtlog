@@ -1,6 +1,7 @@
 package test;
 
 import com.jeramtough.jtlog.filter.TagLogFilter;
+import com.jeramtough.jtlog.tag.Tag;
 
 /**
  * Created on 2019-02-09 00:50
@@ -8,6 +9,6 @@ import com.jeramtough.jtlog.filter.TagLogFilter;
  */
 public class MyTagLogFilter extends TagLogFilter {
     public MyTagLogFilter() {
-        super("my");
+        super(Tag.get("my"));
     }
 }

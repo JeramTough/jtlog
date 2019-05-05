@@ -13,11 +13,11 @@ public class Tag {
     private static Map<String, Tag> tagMap;
 
 
-    public Tag(String name) {
+    Tag(String name) {
         this.name = name;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
@@ -25,7 +25,7 @@ public class Tag {
         this.name = name;
     }
 
-    public static Tag getTag(String name) {
+    public static Tag get(String name) {
         if (tagMap == null) {
             tagMap = new HashMap<>(16);
         }

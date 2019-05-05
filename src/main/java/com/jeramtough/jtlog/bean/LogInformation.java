@@ -1,6 +1,7 @@
 package com.jeramtough.jtlog.bean;
 
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.tag.Tag;
 
 import javax.xml.crypto.Data;
 import java.text.DateFormat;
@@ -21,7 +22,7 @@ public class LogInformation {
     private Object message;
     private String messageStr;
     private StackTraceElement stackTraceElement;
-    private String tag;
+    private Tag tag;
     private Date date;
     private String threadName;
     private String className;
@@ -76,7 +77,7 @@ public class LogInformation {
         this.message = message;
     }
 
-    public String getTag() {
+    public Tag getTag() {
         return tag;
     }
 
@@ -84,7 +85,7 @@ public class LogInformation {
         return logLevel;
     }
 
-    void setTag(String tag) {
+    void setTag(Tag tag) {
         this.tag = tag;
     }
 
@@ -135,7 +136,7 @@ public class LogInformation {
             return this;
         }
 
-        public Builder setTag(String tag) {
+        public Builder setTag(Tag tag) {
             logInformation.setTag(tag);
             return this;
         }

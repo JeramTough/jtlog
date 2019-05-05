@@ -4,6 +4,7 @@ import com.jeramtough.jtlog.printer.PrinterFactory;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.bean.LogInformation;
+import com.jeramtough.jtlog.tag.Tag;
 
 /**
  * Created on 2018-08-21 14:51
@@ -39,7 +40,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void infoT(String tag, T message) {
+    public <T> void info(Tag tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.INFO).setMessage(message).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
@@ -54,7 +55,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void infoT(String tag, T message, Object... placeholders) {
+    public <T> void info(Tag tag, T message, Object... placeholders) {
         String formatMessage = String.format(message.toString(), placeholders);
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.INFO).setMessage(formatMessage).setTag(tag).build();
@@ -69,7 +70,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void warnT(String tag, T message) {
+    public <T> void warn(Tag tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.WARN).setMessage(message).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
@@ -84,7 +85,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void warnT(String tag, T message, Object... placeholders) {
+    public <T> void warn(Tag tag, T message, Object... placeholders) {
         String formatMessage = String.format(message.toString(), placeholders);
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.WARN).setMessage(formatMessage).setTag(tag).build();
@@ -99,7 +100,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void errorT(String tag, T message) {
+    public <T> void error(Tag tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.ERROR).setMessage(message).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
@@ -114,7 +115,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void errorT(String tag, T message, Object... placeholders) {
+    public <T> void error(Tag tag, T message, Object... placeholders) {
         String formatMessage = String.format(message.toString(), placeholders);
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.ERROR).setMessage(formatMessage).setTag(tag).build();
@@ -129,7 +130,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void debugT(String tag, T message) {
+    public <T> void debug(Tag tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.DEBUG).setMessage(message).setTag(
                 tag).build();
@@ -145,7 +146,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void debugT(String tag, T message, Object... placeholders) {
+    public <T> void debug(Tag tag, T message, Object... placeholders) {
         String formatMessage = String.format(message.toString(), placeholders);
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.DEBUG).setMessage(formatMessage).setTag(
@@ -181,7 +182,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void verboseT(String tag, T message) {
+    public <T> void verbose(Tag tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.VERBOSE).setMessage(message).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
@@ -196,7 +197,7 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void verboseT(String tag, T message, Object... placeholders) {
+    public <T> void verbose(Tag tag, T message, Object... placeholders) {
         String formatMessage = String.format(message.toString(), placeholders);
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.VERBOSE).setMessage(formatMessage).setTag(tag).build();

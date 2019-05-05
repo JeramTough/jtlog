@@ -3,6 +3,7 @@ package com.jeramtough.jtlog.filter;
 
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.bean.LogInformation;
+import com.jeramtough.jtlog.tag.Tag;
 
 /**
  * 日志标签过滤器，根据tag过滤日志
@@ -10,9 +11,9 @@ import com.jeramtough.jtlog.bean.LogInformation;
  * @author 11718
  */
 public class TagLogFilter implements LogFilter {
-    private String noPrintedTag;
+    private Tag noPrintedTag;
 
-    public TagLogFilter(String noPrintedTag) {
+    public TagLogFilter(Tag noPrintedTag) {
         this.noPrintedTag = noPrintedTag;
     }
 
