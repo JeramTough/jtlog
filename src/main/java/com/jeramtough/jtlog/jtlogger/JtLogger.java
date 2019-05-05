@@ -39,9 +39,25 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void info(String tag, T message) {
+    public <T> void infoT(String tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.INFO).setMessage(message).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void info(T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.INFO).setMessage(formatMessage).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void infoT(String tag, T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.INFO).setMessage(formatMessage).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
@@ -53,9 +69,25 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void warn(String tag, T message) {
+    public <T> void warnT(String tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.WARN).setMessage(message).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void warn(T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.WARN).setMessage(formatMessage).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void warnT(String tag, T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.WARN).setMessage(formatMessage).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
@@ -67,9 +99,25 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void error(String tag, T message) {
+    public <T> void errorT(String tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.ERROR).setMessage(message).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void error(T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.ERROR).setMessage(formatMessage).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void errorT(String tag, T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.ERROR).setMessage(formatMessage).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
@@ -81,9 +129,26 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void debug(String tag, T message) {
+    public <T> void debugT(String tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.DEBUG).setMessage(message).setTag(
+                tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void debug(T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.DEBUG).setMessage(formatMessage).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void debugT(String tag, T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.DEBUG).setMessage(formatMessage).setTag(
                 tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
     }
@@ -116,9 +181,25 @@ public class JtLogger implements Logger {
     }
 
     @Override
-    public <T> void verbose(String tag, T message) {
+    public <T> void verboseT(String tag, T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.VERBOSE).setMessage(message).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void verbose(T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.VERBOSE).setMessage(formatMessage).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void verboseT(String tag, T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.VERBOSE).setMessage(formatMessage).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 

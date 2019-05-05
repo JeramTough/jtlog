@@ -34,29 +34,68 @@ public interface Logger {
 
 
     /**
-     * 输出warn级别的日志
+     * 输出带tag标签的info级别的日志
      *
      * @param tag     标签
      * @param message 输出内容
      * @param <T>     任何数据类型
      */
-    <T> void info(String tag, T message);
-
+    <T> void infoT(String tag, T message);
 
     /**
+     * 输出info级别的日志
+     *
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void info(T message, Object... placeholders);
+
+    /**
+     * 输出带tag标签的info级别的日志
+     *
+     * @param tag          标签
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void infoT(String tag, T message, Object... placeholders);
+
+    /**
+     * 输出warn级别的日志
+     *
      * @param message 输出内容
      * @param <T>     任何数据类型
      */
     <T> void warn(T message);
 
     /**
-     * 输出warn级别的日志
+     * 输出带tag标签的warn级别的日志
      *
      * @param tag     标签
      * @param message 输出内容
      * @param <T>     任何数据类型
      */
-    <T> void warn(String tag, T message);
+    <T> void warnT(String tag, T message);
+
+    /**
+     * 输出warn级别的日志
+     *
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void warn(T message, Object... placeholders);
+
+    /**
+     * 输出带tag标签的warn级别的日志
+     *
+     * @param tag          标签
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void warnT(String tag, T message, Object... placeholders);
 
     /**
      * 输出error级别的日志
@@ -67,13 +106,32 @@ public interface Logger {
     <T> void error(T message);
 
     /**
-     * 输出error级别的日志
+     * 输出带tag标签的error级别的日志
      *
      * @param tag     标签
      * @param message 输出内容
      * @param <T>     任何数据类型
      */
-    <T> void error(String tag, T message);
+    <T> void errorT(String tag, T message);
+
+    /**
+     * 输出error级别的日志
+     *
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void error(T message, Object... placeholders);
+
+    /**
+     * 输出带tag标签的error级别的日志
+     *
+     * @param tag          标签
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void errorT(String tag, T message, Object... placeholders);
 
     /**
      * 输出debug级别的日志
@@ -84,13 +142,32 @@ public interface Logger {
     <T> void debug(T message);
 
     /**
-     * 输出debug级别的日志
+     * 输出带tag标签的debug级别的日志
      *
      * @param tag     标签
      * @param message 输出内容
      * @param <T>     任何数据类型
      */
-    <T> void debug(String tag, T message);
+    <T> void debugT(String tag, T message);
+
+    /**
+     * 输出debug级别的日志
+     *
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void debug(T message, Object... placeholders);
+
+    /**
+     * 输出带tag标签的debug级别的日志
+     *
+     * @param tag          标签
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void debugT(String tag, T message, Object... placeholders);
 
 
     /**
@@ -111,13 +188,32 @@ public interface Logger {
     <T> void verbose(T message);
 
     /**
-     * 输出verbose级别的日志
+     * 输出带tag标签的verbose级别的日志
      *
      * @param tag     标签
      * @param message 输出内容
      * @param <T>     任何数据类型
      */
-    <T> void verbose(String tag, T message);
+    <T> void verboseT(String tag, T message);
+
+    /**
+     * 输出verbose级别的日志
+     *
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void verbose(T message, Object... placeholders);
+
+    /**
+     * 输出带tag标签的verbose级别的日志
+     *
+     * @param tag          标签
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void verboseT(String tag, T message, Object... placeholders);
 
     /**
      * 得到日志环境类

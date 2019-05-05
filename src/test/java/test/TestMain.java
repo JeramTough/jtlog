@@ -14,6 +14,9 @@ import com.jeramtough.jtlog.recorder.FileLogRecorder;
 import com.jeramtough.jtlog.with.WithLogger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+import org.slf4j.helpers.BasicMarker;
 
 import java.io.File;
 
@@ -30,10 +33,10 @@ public class TestMain implements WithLogger {
         logger.arrive();
         logger.info("11111");
         logger.warn("22222");
-        logger.debug("tag", "3333");
+        logger.debugT("tag", "3333");
         logger.debug("44444");
-        logger.error("tag", "55555");
-        logger.verbose("tag", "66666");
+        logger.errorT("tag", "55555");
+        logger.verboseT("tag", "66666");
         logger.p("77777"); //不带任何格式输出
     }
 
@@ -73,9 +76,9 @@ public class TestMain implements WithLogger {
     @Test
     public void test5() {
         getLogger().getLogContext().getLogFilters().add(new TagLogFilter("lalala"));
-        getLogger().info("lalala", "这句不会被输出");
-        getLogger().info("my", "这句也不会被输出");
-        getLogger().info("lalala00000", "bbbbbbbbbbb");
+        getLogger().infoT("lalala", "这句不会被输出");
+        getLogger().infoT("my", "这句也不会被输出");
+        getLogger().infoT("lalala00000", "bbbbbbbbbbb");
     }
 
 
@@ -86,7 +89,7 @@ public class TestMain implements WithLogger {
         getLogger().debug("abc");
 
         //因为添加了过滤器，这句其实不会打印出来
-        getLogger().info("my", "what");
+        getLogger().infoT("my", "what");
 
         getLogger().info("lalala00000", ";nani");
     }
@@ -98,10 +101,10 @@ public class TestMain implements WithLogger {
         logger.arrive();
         logger.info("11111");
         logger.warn("22222");
-        logger.debug("tag", "3333");
+        logger.debugT("tag", "3333");
         logger.debug("44444");
-        logger.error("tag", "55555");
-        logger.verbose("tag", "66666");
+        logger.errorT("tag", "55555");
+        logger.verboseT("tag", "66666");
         logger.p("77777"); //不带任何格式输出
     }
 
@@ -154,6 +157,13 @@ public class TestMain implements WithLogger {
         L.arrive();
 
     }
+
+    @Test
+    public void test9(){
+        //测试占位符
+        getLogger().debug("aaaa%sbbbbb%d","JeramTough",123);
+    }
+
 
 }
 

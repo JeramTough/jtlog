@@ -100,3 +100,102 @@ abc
 I:{context}=JtloggerInterface .{tag}=lalala00000 .{time}=11:50:14:162 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
 ;nani
 
+D:{time}=2019:02:14:47:44 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
+abc
+
+I:{time}=14:47:44:723 .{context}=L .{tag}=lalala00000 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+;nani
+
+Arrive:{time}=14:47:45:009 .{context}=L .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:98) .
+
+I:{time}=14:47:45:009 .{context}=L .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:99) .
+11111
+
+W:{time}=2019:02:14:47:45 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:100) .
+22222
+
+D:{time}=2019:02:14:47:45 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:101) .
+3333
+
+D:{time}=2019:02:14:47:45 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:102) .
+44444
+
+E:{time}=14:47:45:012 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:103) .
+55555
+
+V:{time}=14:47:45:012 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:104) .
+66666
+
+77777
+
+I:{time}=14:47:45:013 .{context}=L .{tag}=lalala00000 .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:78) .
+bbbbbbbbbbb
+
+D:{time}=14:49:17:347 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
+abc
+
+I:{time}=14:49:17:349 .{context}=JtloggerInterface .{tag}=lalala00000 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+;nani
+
+Arrive:{time}=14:49:17:355 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:98) .
+
+I:{time}=14:49:17:356 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:99) .
+11111
+
+W:{time}=14:49:17:356 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:100) .
+22222
+
+D:{time}=14:49:17:357 .{context}=JtloggerInterface .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:101) .
+3333
+
+D:{time}=14:49:17:357 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:102) .
+44444
+
+E:{time}=14:49:17:358 .{context}=JtloggerInterface .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:103) .
+55555
+
+V:{time}=14:49:17:358 .{context}=JtloggerInterface .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:104) .
+66666
+
+77777
+
+D:{time}=09:14:32:328 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
+abc
+
+I:{time}=09:14:32:331 .{context}=L .{tag}=lalala00000 .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+;nani
+
+I:{time}=09:14:32:332 .{context}=L .{tag}=lalala00000 .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:78) .
+bbbbbbbbbbb
+
+D:{time}=14:43:47:051 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:86) .
+abc
+
+I:{time}=14:43:47:054 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+lalala00000
+
+Arrive:{time}=14:43:47:059 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:98) .
+
+I:{time}=14:43:47:060 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:99) .
+11111
+
+W:{time}=14:43:47:060 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:100) .
+22222
+
+D:{time}=14:43:47:061 .{context}=JtloggerInterface .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:101) .
+3333
+
+D:{time}=14:43:47:061 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:102) .
+44444
+
+E:{time}=14:43:47:062 .{context}=JtloggerInterface .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:103) .
+55555
+
+V:{time}=14:43:47:062 .{context}=JtloggerInterface .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:104) .
+66666
+
+77777
+
+D:{time}=14:43:47:068 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test9(TestMain.java:161) .
+aaaaJeramToughbbbbb123
+

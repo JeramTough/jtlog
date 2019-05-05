@@ -3,9 +3,9 @@
     <appender headerName="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
          encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default
-        <encoder>
+       <!-- <encoder>
             <pattern>logback:%msg%n</pattern>
-        </encoder>
+        </encoder>-->
         <!--<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="com.jeramtough.jtlog.extra.logback.JtlogLayout"/>
         </encoder>-->
