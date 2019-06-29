@@ -24,7 +24,7 @@ public class RecorderPrinterProxy extends BasePrinterProxy {
 
         if (stylizedText != null) {
             for (LogRecorder logRecorder : logContext.getLogRecorders()) {
-                logRecorder.record(getLogInformation(), stylizedText);
+                logRecorder.record(logContext, getLogInformation(), stylizedText);
             }
         }
 

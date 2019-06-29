@@ -1,6 +1,7 @@
 package com.jeramtough.jtlog.recorder;
 
 import com.jeramtough.jtlog.bean.LogInformation;
+import com.jeramtough.jtlog.context.LogContext;
 
 /**
  * 实现日志信息持久化功能
@@ -12,9 +13,10 @@ public interface LogRecorder {
     /**
      * 重写该方法以实现记录逻辑
      *
+     * @param logContext     {@link LogContext}
      * @param logInformation {@link LogInformation}
-     * @param stylizedText 格式化后的日志文本信息
+     * @param stylizedText   格式化后的日志文本信息
      */
-    void record(LogInformation logInformation, String stylizedText);
+    void record(LogContext logContext, LogInformation logInformation, String stylizedText);
 
 }

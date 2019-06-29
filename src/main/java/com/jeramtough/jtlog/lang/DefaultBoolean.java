@@ -19,5 +19,5 @@ public enum DefaultBoolean {
     /**
      * 默认值default
      */
-    DEFAULT;
+    DEFAULT
 }

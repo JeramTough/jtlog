@@ -58,3 +58,34 @@ abc
 I:{time}=21:34:04:224 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:96) .
 lalala00000
 
+D:{time}=15:21:50:529 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:92) .
+abc
+
+I:{time}=15:21:50:539 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:97) .
+lalala00000
+
+I:{time}=15:21:50:539 .{context}=L .{tag}=gggggg .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:84) .
+bbbbbbbbbbb
+
+Arrive:{time}=15:21:50:539 .{context}=L .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:104) .
+
+I:{time}=15:21:50:539 .{context}=L .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:105) .
+11111
+
+W:{time}=2019:06:15:21:50 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:106) .
+22222
+
+D:{time}=15:21:50:539 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:107) .
+3333
+
+D:{time}=15:21:50:539 .{context}=L .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:108) .
+44444
+
+E:{time}=15:21:50:539 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:109) .
+55555
+
+V:{time}=15:21:50:539 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:110) .
+66666
+
+77777
+
