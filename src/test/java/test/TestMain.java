@@ -22,7 +22,7 @@ import org.slf4j.helpers.BasicMarker;
 import java.io.File;
 
 @LogConfiguration(isUsedJtloggerApi = DefaultBoolean.TRUE, isEnabled = DefaultBoolean.TRUE,
-        maxLengthOfRow = 130, contextName = "MyLogger",
+        maxLengthOfRow = 5, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE, logFilters = {MyTagLogFilter.class},
         dataFormat = "YYYY:MM:HH:mm:ss")
 public class TestMain implements WithLogger {
@@ -31,8 +31,9 @@ public class TestMain implements WithLogger {
     public void test() {
         Logger logger = LoggerManager.getLogger("JtloggerInterface");
         logger.getLogContext().getLogConfig().setWrapCount(1);
+        logger.getLogContext().getLogConfig().setMaxLengthOfRow(5);
         logger.arrive();
-        logger.info("11111");
+        logger.info("1111111111111111");
         logger.warn("22222");
         logger.debug((Tag.get("tag")), "3333");
         logger.debug("44444");

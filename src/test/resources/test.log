@@ -4,3 +4,57 @@ abc
 I:{time}=2019:05:16:50:52 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:95) .
 lalala00000
 
+D:{time}=2019:05:17:03:35 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+abc
+
+I:{time}=2019:05:17:03:35 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:96) .
+lalala00000
+
+D:{time}=2019:05:17:03:35 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test2(TestMain.java:58) .
+with.www
+
+D:{time}=2019:05:17:03:35 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test2(TestMain.java:59) .
+Strinds £¬1 £¬12.1 £¬false
+
+D:{time}=23:49:01:366 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+abc
+
+I:{time}=23:49:01:372 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:96) .
+lalala00000
+
+I:{time}=23:49:01:373 .{context}=L .{tag}=gggggg .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:83) .
+bbbbbbbbbbb
+
+D:{time}=23:49:01:375 .{context}=L .{thread}=main .{trace}=at test.TestMain.test9(TestMain.java:166) .
+aaaaJeramToughbbbbb123
+
+D:{time}=00:00:27:107 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+abc
+
+I:{time}=00:00:27:110 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:96) .
+lalala00000
+
+D:{time}=00:00:27:112 .{context}=L .{thread}=main .{trace}=at test.TestMain.test9(TestMain.java:166) .
+aaaaJeramToughbbbbb123
+
+D:{time}=2019:06:21:24:09 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+abc
+
+I:{time}=21:24:09:723 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:96) .
+lalala00000
+
+I:{time}=21:24:09:724 .{context}=L .{tag}=gggggg .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:83) .
+bbbbbbbbbbb
+
+D:{time}=2019:06:21:24:09 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test9(TestMain.java:166) .
+aaaaJeramToughbbbbb123
+
+D:{time}=21:26:42:332 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+abc
+
+D:{time}=21:34:04:222 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:91) .
+abc
+
+I:{time}=21:34:04:224 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:96) .
+lalala00000
+

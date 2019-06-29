@@ -3,6 +3,7 @@ package com.jeramtough.jtlog.style;
 import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.header.LogHeader;
+import com.jeramtough.jtlog.util.MyStringUtil;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -58,9 +59,16 @@ public abstract class BasePrintStyle implements PrintStyle {
     }
 
     public String getFormattedMessage(LogInformation logInformation) {
+
+        String messageStr = MyStringUtil.splitTextByCounterOfRow(
+                logInformation.getMessageStr(),
+                logContext.getLogConfig().getMaxLengthOfRow());
+
         String formattedMessage = DEFAULT_LOG_FORMAT.replace("{headers}",
                 getLogHeaders(logInformation)).replace("{message}",
-                logInformation.getMessageStr());
+                messageStr);
+
+
         for (int i = 0; i < getLogContext().getLogConfig().getWrapCount(); i++) {
             formattedMessage = formattedMessage + System.lineSeparator();
         }
