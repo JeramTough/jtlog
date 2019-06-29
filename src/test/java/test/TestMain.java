@@ -30,8 +30,6 @@ public class TestMain implements WithLogger {
     @Test
     public void test() {
         Logger logger = LoggerManager.getLogger("JtloggerInterface");
-        logger.getLogContext().getLogConfig().setWrapCount(1);
-        logger.getLogContext().getLogConfig().setMaxLengthOfRow(5);
         logger.arrive();
         logger.info("1111111111111111");
         logger.warn("22222");
@@ -40,6 +38,9 @@ public class TestMain implements WithLogger {
         logger.error(Tag.get("tag"), "55555");
         logger.verbose(Tag.get("tag"), "66666");
         logger.p("77777"); //不带任何格式输出
+
+        //使用占位符
+        logger.info("%d and %s",12,"字符型");
     }
 
     @Test

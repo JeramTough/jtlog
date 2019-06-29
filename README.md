@@ -50,7 +50,12 @@ logger.debug("tag", "3333");
 logger.debug("44444");
 logger.error("tag", "55555");
 logger.verbose("tag", "66666");
-logger.p("77777"); //不带任何格式输出
+
+//不带任何格式输出
+logger.p("77777"); 
+
+//使用占位符
+logger.info("%d and %s",12,"字符型");
 
 ```
 *效果：*
@@ -77,6 +82,9 @@ V:{time}=13:12:34:673 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at 
 66666
 
 77777
+
+I:{time}=15:43:24:206 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test(TestMain.java:43) .
+12 and 字符型
 ```
 
 ——————————————————————
