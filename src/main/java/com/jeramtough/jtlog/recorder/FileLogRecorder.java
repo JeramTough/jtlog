@@ -18,17 +18,13 @@ public class FileLogRecorder implements LogRecorder {
 
     public FileLogRecorder(File logFile) {
         this.logFile = logFile;
-        ThreadFactory threadFactory = new ThreadFactory() {
-            @Override
-            public Thread newThread(Runnable r) {
-                Thread thread = new Thread(r);
-                thread.setName("FileLogRecorder-" + thread.getId());
-                return thread;
-            }
-        };
-        executorService = new ThreadPoolExecutor(1, 1,
-                0L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<>(), threadFactory);
+        executorService = new ThreadPoolExecutor(1, 10000,
+                120L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<>(), r -> {
+                    Thread thread = new Thread(r);
+                    thread.setName("FileLogRecorder-" + thread.getId());
+                    return thread;
+                });
 
         init();
     }
