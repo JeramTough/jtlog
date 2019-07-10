@@ -98,3 +98,12 @@ lalala00000
 D:{time}=2019:07:20:16:49 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:93) .
 abc
 
+D:{time}=22:43:25:495 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:93) .
+abc
+
+I:{time}=22:43:25:496 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:98) .
+lalala00000
+
+I:{time}=22:43:25:497 .{context}=L .{tag}=gggggg .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:85) .
+bbbbbbbbbbb
+

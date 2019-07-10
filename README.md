@@ -52,10 +52,20 @@ logger.error("tag", "55555");
 logger.verbose("tag", "66666");
 
 //不带任何格式输出
-logger.p("77777"); 
+getLogger().p("相当于System.out.println");
+//不带任何格式输出 
+getLogger().e("相当于System.err.println");
 
 //使用占位符
 logger.info("%d and %s",12,"字符型");
+
+//输出异常信息
+try {
+    throw new NullPointerException("抛出异常");
+}
+catch (Exception e){
+    logger.error(e,"异常:%s",e.getMessage());
+}
 
 ```
 *效果：*
@@ -81,10 +91,24 @@ E:{time}=13:12:34:672 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at 
 V:{time}=13:12:34:673 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:99) .
 66666
 
-77777
+相当于System.out.println
+
+相当于System.err.println
 
 I:{time}=15:43:24:206 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test(TestMain.java:43) .
 12 and 字符型
+
+E:{time}=23:02:52:073 .{context}=JtloggerInterface .{thread}=main .{trace}=at test.TestMain.test(TestMain.java:53) .
+异常:抛出异常
+java.lang.NullPointerException: 抛出异常
+	test.TestMain.test(TestMain.java:51)
+	sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	java.lang.reflect.Method.invoke(Method.java:498)
+	org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:513)
+	org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:115)
+
 ```
 
 ——————————————————————

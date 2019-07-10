@@ -26,6 +26,15 @@ public interface Logger {
     <T> void p(T message);
 
     /**
+     * 普通的错误输出，不带任何格式,类似于
+     * System.err.println();
+     *
+     * @param message 输出内容
+     * @param <T>     任何数据类型
+     */
+    <T> void e(T message);
+
+    /**
      * 输出Info级别的日志
      *
      * @param message 输出内容
@@ -125,6 +134,23 @@ public interface Logger {
     <T> void error(T message, Object... placeholders);
 
     /**
+     * 输出error级别的日志
+     *
+     * @param e            异常类
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void error(Exception e, T message, Object... placeholders);
+
+    /**
+     * 输出error级别的日志
+     *
+     * @param e   异常类
+     */
+    void error(Exception e);
+
+    /**
      * 输出带tag标签的error级别的日志
      *
      * @param tag          标签
@@ -133,6 +159,17 @@ public interface Logger {
      * @param <T>          任何数据类型
      */
     <T> void error(Tag tag, T message, Object... placeholders);
+
+    /**
+     * 输出带tag标签的error级别的日志
+     *
+     * @param tag          标签
+     * @param e            异常类
+     * @param message      输出内容
+     * @param placeholders %s、%d等占位符
+     * @param <T>          任何数据类型
+     */
+    <T> void error(Tag tag, Exception e, T message, Object... placeholders);
 
     /**
      * 输出debug级别的日志

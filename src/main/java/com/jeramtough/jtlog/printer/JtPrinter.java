@@ -2,6 +2,7 @@ package com.jeramtough.jtlog.printer;
 
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.bean.LogInformation;
+import com.jeramtough.jtlog.tag.Tag;
 
 /**
  * Created on 2018-08-21 16:55
@@ -45,7 +46,12 @@ public class JtPrinter extends BasePrinter {
 
     @Override
     public void println(LogInformation logInformation, String stylizedText) {
-        System.out.println(stylizedText);
+        if (Tag.getOutPrintlnTag().equals(logInformation.getTag())) {
+            System.out.println(stylizedText);
+        }
+        else if (Tag.getErrPrintlnTag().equals(logInformation.getTag())) {
+            System.err.println(stylizedText);
+        }
     }
 
 }

@@ -22,7 +22,7 @@ import org.slf4j.helpers.BasicMarker;
 import java.io.File;
 
 @LogConfiguration(isUsedJtloggerApi = DefaultBoolean.TRUE, isEnabled = DefaultBoolean.TRUE,
-        maxLengthOfRow = 5, contextName = "MyLogger",
+        maxLengthOfRow = 15, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE, logFilters = {MyTagLogFilter.class},
         dataFormat = "YYYY:MM:HH:mm:ss")
 public class TestMain implements WithLogger {
@@ -37,10 +37,22 @@ public class TestMain implements WithLogger {
         logger.debug("44444");
         logger.error(Tag.get("tag"), "55555");
         logger.verbose(Tag.get("tag"), "66666");
-        logger.p("77777"); //不带任何格式输出
+        //不带任何格式输出
+        getLogger().p("相当于System.out.println");
+        //不带任何格式输出
+        getLogger().e("相当于System.err.println");
 
         //使用占位符
-        logger.info("%d and %s",12,"字符型");
+        logger.info("%d and %s", 12, "字符型");
+
+
+        //输出异常信息
+        try {
+            throw new NullPointerException("抛出异常");
+        }catch (Exception e){
+            logger.error(e,"异常:%s",e.getMessage());
+        }
+
     }
 
     @Test

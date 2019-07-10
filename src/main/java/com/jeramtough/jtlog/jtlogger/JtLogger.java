@@ -5,6 +5,7 @@ import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.tag.Tag;
+import com.jeramtough.jtlog.util.ExceptionUtil;
 
 /**
  * Created on 2018-08-21 14:51
@@ -28,7 +29,16 @@ public class JtLogger implements Logger {
     @Override
     public <T> void p(T message) {
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
-                LogLevel.PRINTLN).setMessage(message).build();
+                LogLevel.PRINTLN).setMessage(message).setTag(
+                Tag.getOutPrintlnTag()).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void e(T message) {
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.PRINTLN).setMessage(message).setTag(
+                Tag.getErrPrintlnTag()).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
     }
 
@@ -115,8 +125,36 @@ public class JtLogger implements Logger {
     }
 
     @Override
+    public <T> void error(Exception e, T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        formatMessage = formatMessage + System.getProperty(
+                "line.separator") + ExceptionUtil.getDetail(e);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.ERROR).setMessage(formatMessage).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public void error(Exception e) {
+        String formatMessage = ExceptionUtil.getDetail(e);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.ERROR).setMessage(formatMessage).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
     public <T> void error(Tag tag, T message, Object... placeholders) {
         String formatMessage = String.format(message.toString(), placeholders);
+        LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
+                LogLevel.ERROR).setMessage(formatMessage).setTag(tag).build();
+        PrinterFactory.getPrinter(logContext).print(logInformation);
+    }
+
+    @Override
+    public <T> void error(Tag tag, Exception e, T message, Object... placeholders) {
+        String formatMessage = String.format(message.toString(), placeholders);
+        formatMessage = formatMessage + System.getProperty(
+                "line.separator") + ExceptionUtil.getDetail(e);
         LogInformation logInformation = new LogInformation.Builder().setJtLogLevel(
                 LogLevel.ERROR).setMessage(formatMessage).setTag(tag).build();
         PrinterFactory.getPrinter(logContext).print(logInformation);
@@ -208,5 +246,6 @@ public class JtLogger implements Logger {
     public LogContext getLogContext() {
         return logContext;
     }
+
 
 }
