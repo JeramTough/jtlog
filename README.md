@@ -184,7 +184,7 @@ maxLengthOfRow | 日志框架输出内容时，每一行的最大长度，超过
 minVisibleLevel | 最低可见日志等级，默认为DEBUG等级，日志等级优先级为：PRINTLN > ERROR > WARN > INFO > DEBUG > ARRIVE > VERBOSE |DEBUG
 isUsedJtloggerApi | 是否使用JtLogger框架的Api进行日志输出，false的话会自适应使用Logback或者Log4j2的Api进行输出 |TRUE
 logHeaders | 决定要输出的日志信息头及顺序，有则输出，没有则不输出 |TIME,CONTEXT,TAG,HREAD,TRACE
-dataFormat | 日志时间信息头的输出格式 |"HH:mm:ss:SSS"
+dateFormat | 日志时间信息头的输出格式 |"HH:mm:ss:SSS"
 wrapCount | 每条新日志之间的空行数, 0则两条日志间无空行 |1
 logFilters | 添加额外的日志过滤器，过滤器类必须有个无参公共的构造函数，过滤器详细见{@link com.jeramtough.jtlog.filter.LogFilter} |无
 logRecorders | 加额外的日志记录器，记录器类必须有个无参公共的构造函数，过滤器详细见{@link com.jeramtough.jtlog.recorder.LogRecorder} |无
@@ -197,7 +197,7 @@ logRecorders | 加额外的日志记录器，记录器类必须有个无参公�
 @LogConfiguration(isUsedJtloggerApi = DefaultBoolean.TRUE, isEnabled = DefaultBoolean.TRUE,
         maxLengthOfRow = 130, contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE, logFilters = {MyTagLogFilter.class},
-        dataFormat = "YYYY:MM:HH:mm:ss")
+        dateFormat = "YYYY:MM:HH:mm:ss")
 public class TestMain implements WithJtLogger {
 
     public static void main(String[] args) {
@@ -260,7 +260,7 @@ public class TestMain {
                 }
     
                 @Override
-                public String decideDataFormat() {
+                public String decideDateFormat() {
                     return "HH:mm:ss:SSS";
                 }
         });

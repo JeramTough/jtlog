@@ -15,13 +15,11 @@ import java.text.SimpleDateFormat;
 public abstract class BasePrintStyle implements PrintStyle {
 
     public static final String DEFAULT_LOG_FORMAT = "{headers}" + System.lineSeparator() + "{message}";
-    private LogContext logContext;
 
-    public BasePrintStyle(LogContext logContext) {
-        this.logContext = logContext;
+    public BasePrintStyle() {
     }
 
-    public String getLogHeaders(LogInformation logInformation) {
+    public String getLogHeaders(LogContext logContext, LogInformation logInformation) {
         StringBuilder logHeadersBuilder = new StringBuilder(
                 logInformation.getLogLevel().getFlag() + ":");
         for (LogHeader logHeader : logContext.getLogConfig().getLogHeaders()) {
@@ -39,7 +37,7 @@ public abstract class BasePrintStyle implements PrintStyle {
                 case TIME:
                     //processing time
                     DateFormat format = new SimpleDateFormat(
-                            logContext.getLogConfig().getDataFormat());
+                            logContext.getLogConfig().getDateFormat());
                     String time = format.format(logInformation.getDate());
                     logHeadersBuilder.append("{").append(logHeader.getHeaderName()).append(
                             "}=").append(time).append(" .");
@@ -58,24 +56,21 @@ public abstract class BasePrintStyle implements PrintStyle {
         return logHeadersBuilder.toString();
     }
 
-    public String getFormattedMessage(LogInformation logInformation) {
+    public String getFormattedMessage(LogContext logContext, LogInformation logInformation) {
 
         String messageStr = MyStringUtil.splitTextByCounterOfRow(
                 logInformation.getMessageStr(),
                 logContext.getLogConfig().getMaxLengthOfRow());
 
         String formattedMessage = DEFAULT_LOG_FORMAT.replace("{headers}",
-                getLogHeaders(logInformation)).replace("{message}",
+                getLogHeaders(logContext, logInformation)).replace("{message}",
                 messageStr);
 
 
-        for (int i = 0; i < getLogContext().getLogConfig().getWrapCount(); i++) {
+        for (int i = 0; i < logContext.getLogConfig().getWrapCount(); i++) {
             formattedMessage = formattedMessage + System.lineSeparator();
         }
         return formattedMessage;
     }
 
-    public LogContext getLogContext() {
-        return logContext;
-    }
 }

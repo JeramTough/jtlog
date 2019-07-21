@@ -107,3 +107,43 @@ lalala00000
 I:{time}=22:43:25:497 .{context}=L .{tag}=gggggg .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:85) .
 bbbbbbbbbbb
 
+D:{time}=01:26:18:272 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:105) .
+abc
+
+I:{time}=01:26:18:274 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:110) .
+lalala00000
+
+I:{time}=01:26:18:275 .{context}=L .{tag}=gggggg .{thread}=main .{trace}=at test.TestMain.test5(TestMain.java:97) .
+bbbbbbbbbbb
+
+Arrive:{time}=01:26:18:482 .{context}=L .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:117) .
+
+I:{time}=01:26:18:482 .{context}=L .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:118) .
+11111
+
+W:{time}=2019:07:01:26:18 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:119) .
+22222
+
+D:{time}=01:26:18:484 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:120) .
+3333
+
+D:{time}=01:26:18:484 .{context}=L .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:121) .
+44444
+
+E:{time}=01:26:18:485 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:122) .
+55555
+
+V:{time}=01:26:18:485 .{context}=L .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:123) .
+66666
+
+77777
+
+D:{time}=01:26:18:487 .{context}=L .{thread}=main .{trace}=at test.TestMain.test9(TestMain.java:180) .
+aaaaJeramToughbbbbb123
+
+D:{time}=2019:07:01:27:32 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:105) .
+abc
+
+I:{time}=01:27:32:808 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:110) .
+lalala00000
+

@@ -31,9 +31,9 @@ public @interface LogConfiguration {
      * 决定是否允许输出日志
      * <p>
      * <p>
-     * 返回值DefaultBoolean.DEFAULT表示使用默认值，返回值DefaultBoolean.FALSE表示false,
+     * 返回值DefaultBoolean.DEFAULT表示使用全局默认值，返回值DefaultBoolean.FALSE表示false,
      * 返回值DefaultBoolean.TRUE 表示true
-     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     DefaultBoolean isEnabled() default DefaultBoolean.DEFAULT;
 
@@ -43,20 +43,20 @@ public @interface LogConfiguration {
      * 的api实现输出
      * <p>
      * <p>
-     * 返回值DefaultBoolean.DEFAULT表示使用默认值，返回值DefaultBoolean.FALSE表示false,
+     * 返回值DefaultBoolean.DEFAULT表示使用全局默认值，返回值DefaultBoolean.FALSE表示false,
      * 返回值DefaultBoolean.TRUE 表示true
-     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     DefaultBoolean isUsedJtloggerApi() default DefaultBoolean.DEFAULT;
 
 
     /**
-     * 决定日志框架输出内容时，每一行的最大长度，超过这个长度就会换行,设置
+     * 决定日志框架输出内容时，每一行字数的最大长度，超过这个长度就会换行,设置
      * 为0时则是不换行
      * <p>
      * <p>
-     * 返回值小于0使用默认值，返回值0表示不换行, 返回值大于0 表示超过这个值就会换行
-     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 返回值小于0使用全局默认值，返回值0表示不换行, 返回值大于0 表示超过这个值就会换行
+     * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     int maxLengthOfRow() default -1;
 
@@ -65,8 +65,8 @@ public @interface LogConfiguration {
      * {@link LogLevel}
      * <p>
      * <p>
-     * 返回LogLevel.DEFAULT使用默认值
-     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 返回LogLevel.DEFAULT使用全局默认值
+     * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     LogLevel minVisibleLevel() default LogLevel.DEFAULT;
 
@@ -76,18 +76,26 @@ public @interface LogConfiguration {
      * 日志信息头见{@link LogLevel}
      * <p>
      * <p>
-     * 返回{ LogHeader.DEFAULT }使用默认值
-     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 返回{ LogHeader.DEFAULT }使用全局默认值
+     * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     LogHeader[] logHeaders() default {LogHeader.DEFAULT};
 
     /**
      * 每条新日志间的空行数, 0则两条日志间无空行
      * <p>
-     * 返回值小于0使用默认值，返回值0表示两条日志间无空行, 返回值大于0 表示两条日志间有n条空行
-     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 返回值小于0使用全局默认值，返回值0表示两条日志间无空行, 返回值大于0 表示两条日志间有n条空行
+     * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
     int wrapCount() default -1;
+
+    /**
+     * Trace信息的回溯下标偏移量
+     * <p/>
+     * 返回值0表示Trace输出信息没有偏移, 返回值大于或则小于0表示Trace输出信息有偏移
+     * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     */
+    int stackTraceOffset() default 0;
 
     /**
      * 添加额外的日志过滤器，过滤器类必须有个无参公共的构造函数，过滤器详细见{@link com.jeramtough.jtlog.filter.LogFilter}
@@ -104,8 +112,8 @@ public @interface LogConfiguration {
      * 决定日志时间信息头的输出格式
      * <p>
      * <p>
-     * 返回"default"使用默认值,返回时间格式则使用该格式
-     * 关于默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
+     * 返回"default"使用全局默认值,返回时间格式则使用该格式
+     * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      */
-    String dataFormat() default "default";
+    String dateFormat() default "default";
 }

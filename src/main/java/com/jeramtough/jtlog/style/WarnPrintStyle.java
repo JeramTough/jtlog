@@ -5,12 +5,8 @@ import com.jeramtough.jtlog.context.LogContext;
 
 public class WarnPrintStyle extends BasePrintStyle {
 
-    public WarnPrintStyle(LogContext logContext) {
-        super(logContext);
-    }
-
     @Override
-    public String stylize(LogInformation logInformation) {
-        return getFormattedMessage(logInformation);
+    public String stylize(LogContext logContext, LogInformation logInformation) {
+        return getFormattedMessage(logContext, logInformation);
     }
 }

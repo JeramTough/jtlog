@@ -37,7 +37,7 @@ public enum LogHeader {
     /**
      *
      */
-    DEFAULT(null);
+    DEFAULT("");
 
     private String headerName;
 

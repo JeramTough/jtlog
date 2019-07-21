@@ -20,7 +20,8 @@ public class LogConfigFactory {
         logConfig.setUsedJtloggerApi(logConfigDefaultValues.decideIsUsedJtloggerApi());
         logConfig.setLogHeaders(logConfigDefaultValues.decideLogHeaders());
         logConfig.setWrapCount(logConfigDefaultValues.decideWrapCount());
-        logConfig.setDataFormat(logConfigDefaultValues.decideDataFormat());
+        logConfig.setStackTraceOffset(logConfigDefaultValues.decideStackTraceOffset());
+        logConfig.setDateFormat(logConfigDefaultValues.decideDateFormat());
         return logConfig;
     }
 
@@ -85,12 +86,16 @@ public class LogConfigFactory {
                 logConfig.setWrapCount(logConfiguration.wrapCount());
             }
 
-            //set dataFormat
-            if ("default".equals(logConfiguration.dataFormat())) {
-                logConfig.setDataFormat(logConfigDefaultValues.decideDataFormat());
+            //set stackTraceOffset
+            logConfig.setStackTraceOffset(logConfiguration.stackTraceOffset());
+
+            //set dateFormat
+            String defaultDateFormat = "default";
+            if (defaultDateFormat.equals(logConfiguration.dateFormat())) {
+                logConfig.setDateFormat(logConfigDefaultValues.decideDateFormat());
             }
             else {
-                logConfig.setDataFormat(logConfiguration.dataFormat());
+                logConfig.setDateFormat(logConfiguration.dateFormat());
             }
 
 

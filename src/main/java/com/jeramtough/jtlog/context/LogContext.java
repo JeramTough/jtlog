@@ -4,6 +4,7 @@ import com.jeramtough.jtlog.config.LogConfig;
 import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.jtlogger.JtLogger;
 import com.jeramtough.jtlog.recorder.LogRecorder;
+import com.jeramtough.jtlog.style.PrintStyle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,11 @@ public final class LogContext {
      * 日志配置类
      */
     private LogConfig logConfig;
+
+    /**
+     * 日志输出风格
+     */
+    private PrintStyle printStyle;
 
 
     public LogContext(String contextName, LogConfig logConfig) {
@@ -64,6 +70,14 @@ public final class LogContext {
 
     public List<LogRecorder> getLogRecorders() {
         return logRecorders;
+    }
+
+    public PrintStyle getPrintStyle() {
+        return printStyle;
+    }
+
+    public void setPrintStyle(PrintStyle printStyle) {
+        this.printStyle = printStyle;
     }
 
     @Override

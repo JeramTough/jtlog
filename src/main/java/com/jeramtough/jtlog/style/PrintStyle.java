@@ -1,6 +1,7 @@
 package com.jeramtough.jtlog.style;
 
 import com.jeramtough.jtlog.bean.LogInformation;
+import com.jeramtough.jtlog.context.LogContext;
 
 /**
  * 负责输出样式，以什么样的风格输出
@@ -14,5 +15,5 @@ public interface PrintStyle {
      * @param logInformation 日志信息类
      * @return 风格化后的日志信息
      */
-    String stylize(LogInformation logInformation);
+    String stylize(LogContext logContext, LogInformation logInformation);
 }

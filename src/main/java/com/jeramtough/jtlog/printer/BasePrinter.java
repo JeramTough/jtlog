@@ -26,44 +26,44 @@ public abstract class BasePrinter implements Printer {
         switch (logInformation.getLogLevel()) {
             case ARRIVE:
                 stylizedText =
-                        PrintStyleManager.getArrivePrintStyle(logContext).stylize(
-                                logInformation);
+                        PrintStyleManager.getArrivePrintStyle().stylize(
+                                logContext, logInformation);
                 arrive(logInformation, stylizedText);
                 break;
             case DEBUG:
                 stylizedText =
-                        PrintStyleManager.getDebugPrintStyle(logContext).stylize(
-                                logInformation);
+                        PrintStyleManager.getDebugPrintStyle().stylize(
+                                logContext, logInformation);
                 debug(logInformation, stylizedText);
                 break;
             case PRINTLN:
                 stylizedText =
-                        PrintStyleManager.getPrintlnPrintStyle(logContext).stylize(
-                                logInformation);
+                        PrintStyleManager.getPrintlnPrintStyle().stylize(
+                                logContext, logInformation);
                 println(logInformation, stylizedText);
                 break;
             case INFO:
                 stylizedText =
-                        PrintStyleManager.getInfoPrintStyle(logContext).stylize(
-                                logInformation);
+                        PrintStyleManager.getInfoPrintStyle().stylize(
+                                logContext, logInformation);
                 info(logInformation, stylizedText);
                 break;
             case WARN:
                 stylizedText =
-                        PrintStyleManager.getWarnPrintStyle(logContext).stylize(
-                                logInformation);
+                        PrintStyleManager.getWarnPrintStyle().stylize(
+                                logContext, logInformation);
                 warn(logInformation, stylizedText);
                 break;
             case ERROR:
                 stylizedText =
-                        PrintStyleManager.getErrorPrintStyle(logContext).stylize(
-                                logInformation);
+                        PrintStyleManager.getErrorPrintStyle().stylize(
+                                logContext, logInformation);
                 error(logInformation, stylizedText);
                 break;
             case VERBOSE:
                 stylizedText =
-                        PrintStyleManager.getVerbosePrintStyle(logContext).stylize(
-                                logInformation);
+                        PrintStyleManager.getVerbosePrintStyle().stylize(
+                                logContext, logInformation);
                 verbose(logInformation, stylizedText);
                 break;
             default:

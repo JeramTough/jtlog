@@ -51,9 +51,14 @@ public class LogConfig {
     private int wrapCount;
 
     /**
+     * Trace信息的回溯下标偏移量，默认是0
+     */
+    private int stackTraceOffset;
+
+    /**
      * 日志时间信息头的输出格式
      */
-    private String dataFormat;
+    private String dateFormat;
 
 
     public Integer getMaxLengthOfRow() {
@@ -112,11 +117,20 @@ public class LogConfig {
         this.wrapCount = wrapCount;
     }
 
-    public String getDataFormat() {
-        return dataFormat;
+    public int getStackTraceOffset() {
+        return stackTraceOffset;
     }
 
-    public void setDataFormat(String dataFormat) {
-        this.dataFormat = dataFormat;
+    public void setStackTraceOffset(int stackTraceOffset) {
+        this.stackTraceOffset = stackTraceOffset;
     }
+
+    public String getDateFormat() {
+        return dateFormat;
+    }
+
+    public void setDateFormat(String dateFormat) {
+        this.dateFormat = dateFormat;
+    }
+
 }

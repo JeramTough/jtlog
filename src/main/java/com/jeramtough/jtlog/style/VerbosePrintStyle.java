@@ -8,12 +8,9 @@ import com.jeramtough.jtlog.context.LogContext;
  * by @author JeramTough
  */
 public class VerbosePrintStyle extends BasePrintStyle {
-    public VerbosePrintStyle(LogContext logContext) {
-        super(logContext);
-    }
 
     @Override
-    public String stylize(LogInformation logInformation) {
-        return getFormattedMessage(logInformation);
+    public String stylize(LogContext logContext, LogInformation logInformation) {
+        return getFormattedMessage(logContext, logInformation);
     }
 }

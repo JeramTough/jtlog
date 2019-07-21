@@ -1,11 +1,10 @@
 package com.jeramtough.jtlog.bean;
 
+import com.jeramtough.jtlog.context.LogContext;
+import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.tag.Tag;
 
-import javax.xml.crypto.Data;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -13,15 +12,16 @@ import java.util.Date;
  * <p>
  * Created by 11718
  * on 2017  October 14 Saturday 17:38.
+ *
+ * @author JeramTough
  */
 
 public class LogInformation {
 
-    private final static int CALLER_COUNT = 4;
 
     private Object message;
     private String messageStr;
-    private StackTraceElement stackTraceElement;
+
     private Tag tag;
     private Date date;
     private String threadName;
@@ -35,10 +35,6 @@ public class LogInformation {
 
 
     private LogInformation() {
-    }
-
-    void setStackTraceElement(StackTraceElement stackTraceElement) {
-        this.stackTraceElement = stackTraceElement;
     }
 
     public Date getDate() {
@@ -73,7 +69,7 @@ public class LogInformation {
         return trace;
     }
 
-    void setMessage(Object message) {
+    private void setMessage(Object message) {
         this.message = message;
     }
 
@@ -89,46 +85,25 @@ public class LogInformation {
         this.tag = tag;
     }
 
-    void setLogLevel(LogLevel logLevel) {
+    private void setLogLevel(LogLevel logLevel) {
         this.logLevel = logLevel;
     }
 
-    private void processingInformation() {
-        if (stackTraceElement == null) {
-            stackTraceElement =
-                    ((new Exception()).getStackTrace())[CALLER_COUNT];
-        }
-
-        if (message == null) {
-            messageStr = "[null]";
-        }
-        else {
-            messageStr = message.toString();
-        }
-
-        date = new Date();
-
-        threadName = Thread.currentThread().getName();
-        className = stackTraceElement.getClassName();
-        methodName = stackTraceElement.getMethodName();
-        fileName = stackTraceElement.getFileName();
-
-        line = stackTraceElement.getLineNumber() + "";
-
-        //processing trace
-        trace = "at " + className + "." +
-                methodName + "(" +
-                fileName + ":" +
-                line + ")";
-    }
 
     //{{{{{{{{{}}}}}}}}}}}}}}}}}
 
+
     public static class Builder {
         private LogInformation logInformation;
+        private final static int STACK_TRACE_COUNT = 3;
+        private int stackTraceOffset;
 
         public Builder() {
+        }
+
+        public Builder(LogContext logContext) {
             logInformation = new LogInformation();
+            stackTraceOffset = logContext.getLogConfig().getStackTraceOffset();
         }
 
         public Builder setJtLogLevel(LogLevel logLevel) {
@@ -146,14 +121,37 @@ public class LogInformation {
             return this;
         }
 
-        public Builder setStackTraceElement(StackTraceElement stackTraceElement) {
-            logInformation.setStackTraceElement(stackTraceElement);
-            return this;
-        }
-
         public LogInformation build() {
-            logInformation.processingInformation();
+            processingInformation(logInformation);
             return logInformation;
         }
+
+        private void processingInformation(LogInformation logInformation) {
+            StackTraceElement stackTraceElement =
+                    ((new Exception()).getStackTrace())[STACK_TRACE_COUNT + stackTraceOffset];
+
+            if (logInformation.message == null) {
+                logInformation.messageStr = "[null]";
+            }
+            else {
+                logInformation.messageStr = logInformation.message.toString();
+            }
+
+            logInformation.date = new Date();
+
+            logInformation.threadName = Thread.currentThread().getName();
+            logInformation.className = stackTraceElement.getClassName();
+            logInformation.methodName = stackTraceElement.getMethodName();
+            logInformation.fileName = stackTraceElement.getFileName();
+
+            logInformation.line = stackTraceElement.getLineNumber() + "";
+
+            //processing trace
+            logInformation.trace = "at " + logInformation.className + "." +
+                    logInformation.methodName + "(" +
+                    logInformation.fileName + ":" +
+                    logInformation.line + ")";
+        }
+
     }
 }

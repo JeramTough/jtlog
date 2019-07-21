@@ -12,8 +12,7 @@ public class Tag {
     private String name;
     private static Map<String, Tag> tagMap;
 
-    private static final String SYSTEM_OUT_PRINTLN = "System.out.println";
-    private static final String SYSTEM_ERR_PRINTLN = "System.err.println";
+
 
 
     Tag(String name) {
@@ -59,11 +58,5 @@ public class Tag {
         return tag;
     }
 
-    public static Tag getOutPrintlnTag() {
-        return get(SYSTEM_OUT_PRINTLN);
-    }
 
-    public static Tag getErrPrintlnTag() {
-        return get(SYSTEM_ERR_PRINTLN);
-    }
 }

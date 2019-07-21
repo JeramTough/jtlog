@@ -15,16 +15,13 @@ import com.jeramtough.jtlog.tag.Tag;
 import com.jeramtough.jtlog.with.WithLogger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
-import org.slf4j.helpers.BasicMarker;
 
 import java.io.File;
 
 @LogConfiguration(isUsedJtloggerApi = DefaultBoolean.TRUE, isEnabled = DefaultBoolean.TRUE,
-        maxLengthOfRow = 15, contextName = "MyLogger",
+        contextName = "MyLogger",
         minVisibleLevel = LogLevel.VERBOSE, logFilters = {MyTagLogFilter.class},
-        dataFormat = "YYYY:MM:HH:mm:ss")
+        dateFormat = "YYYY:MM:HH:mm:ss")
 public class TestMain implements WithLogger {
 
     @Test
@@ -49,8 +46,9 @@ public class TestMain implements WithLogger {
         //输出异常信息
         try {
             throw new NullPointerException("抛出异常");
-        }catch (Exception e){
-            logger.error(e,"异常:%s",e.getMessage());
+        }
+        catch (Exception e) {
+            logger.error(e, "异常:%s", e.getMessage());
         }
 
     }
@@ -64,6 +62,7 @@ public class TestMain implements WithLogger {
         L.verbose("99999");
         L.arrive();
         L.debugs(null, 111111, 121212);
+        L.error(new Exception("Exception"));
     }
 
     @Test
@@ -159,26 +158,52 @@ public class TestMain implements WithLogger {
             }
 
             @Override
-            public String decideDataFormat() {
-                return "HH:mm:ss:SSS";
+            public int decideStackTraceOffset() {
+                return 0;
+            }
+
+            @Override
+            public String decideDateFormat() {
+                return "HH:mm";
             }
         });
+
+        L.arrive();
+        getLogger().arrive();
+
+        //已经调用过了Jtlogger的api，所以下面的配置不生效了
         LoggerManager.setLogConfigDefaultValues(new SimpleLogConfigDefaultValues() {
             @Override
             public boolean decideIsEnabled() {
                 return true;
             }
+
+            @Override
+            public String decideDateFormat() {
+                return "YYYY-MM-dd";
+            }
         });
         L.arrive();
-        L.arrive();
-
+        getLogger().arrive();
     }
 
     @Test
     public void test9() {
         //测试占位符
-        getLogger().debug("aaaa%sbbbbb%d", "JeramTough", 123);
+        getLogger().debug("aaaa,%s,%s", "hkhjk", "dsfsd");
         L.debug("abcde%s", "Weibowen");
+    }
+
+    @Test
+    public void testStackTraceOffset() {
+        /*getLogger().getLogContext().getLogConfig().setStackTraceOffset(0);
+        getLogger().info("aaaa");*/
+    }
+
+    @Test
+    public void testMaxLengthOfRow() {
+        getLogger().getLogContext().getLogConfig().setMaxLengthOfRow(1);
+        getLogger().info("aaaa");
     }
 
 

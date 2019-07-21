@@ -56,8 +56,15 @@ public interface LogConfigDefaultValues {
      */
     int decideWrapCount();
 
+
+    /**
+     * Trace信息的回溯下标偏移量,默认是0
+     * @return 返回0则代表默认，以调用api的stack输出为准
+     */
+    int decideStackTraceOffset();
+
     /**
      * 决定日志时间信息头的输出格式
      */
-    String decideDataFormat();
+    String decideDateFormat();
 }

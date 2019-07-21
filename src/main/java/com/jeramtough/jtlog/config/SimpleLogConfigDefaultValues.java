@@ -19,7 +19,9 @@ public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
 
     public static final int WRAP_COUNT = 1;
 
-    public static final String DATA_FORMAT = "HH:mm:ss:SSS";
+    public static final int STACK_TRACE_OFFSET = 0;
+
+    public static final String DATE_FORMAT = "MM/dd HH:mm:ss:SSS";
 
     public static final LogHeader[] LOG_HEADERS = new LogHeader[]{LogHeader.TIME, LogHeader.CONTEXT,
             LogHeader.TAG, LogHeader.THREAD, LogHeader.TRACE};
@@ -55,8 +57,13 @@ public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
     }
 
     @Override
-    public String decideDataFormat() {
-        return DATA_FORMAT;
+    public int decideStackTraceOffset() {
+        return STACK_TRACE_OFFSET;
+    }
+
+    @Override
+    public String decideDateFormat() {
+        return DATE_FORMAT;
     }
 
 

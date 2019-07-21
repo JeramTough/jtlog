@@ -4,12 +4,9 @@ import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.context.LogContext;
 
 public class DebugPrintStyle extends BasePrintStyle {
-    public DebugPrintStyle(LogContext logContext) {
-        super(logContext);
-    }
 
     @Override
-    public String stylize(LogInformation logInformation) {
-        return getFormattedMessage(logInformation);
+    public String stylize(LogContext logContext, LogInformation logInformation) {
+        return getFormattedMessage(logContext, logInformation);
     }
 }
