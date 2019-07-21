@@ -1,7 +1,11 @@
 package com.jeramtough.jtlog.config;
 
+import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.recorder.LogRecorder;
+
+import java.util.List;
 
 /**
  * 该接口决定日志配置默认值，系统默认的实现类为{@link SimpleLogConfigDefaultValues}。
@@ -59,6 +63,7 @@ public interface LogConfigDefaultValues {
 
     /**
      * Trace信息的回溯下标偏移量,默认是0
+     *
      * @return 返回0则代表默认，以调用api的stack输出为准
      */
     int decideStackTraceOffset();
@@ -67,4 +72,14 @@ public interface LogConfigDefaultValues {
      * 决定日志时间信息头的输出格式
      */
     String decideDateFormat();
+
+    /**
+     * 添加全局的日志过滤器
+     */
+    void decideGlobalLogFilters(List<LogFilter> logFilters);
+
+    /**
+     * 添加全局的日志过滤器
+     */
+    void decideGlobalLogRecoders(List<LogRecorder> logRecorders);
 }

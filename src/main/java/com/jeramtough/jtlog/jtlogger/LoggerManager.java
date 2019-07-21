@@ -74,6 +74,7 @@ public final class LoggerManager {
                     parseAdditionalLogRecodersFromAnnotation(contextClass);
             logContext.getLogFilters().addAll(Arrays.asList(additionalLogFilters));
             logContext.getLogRecorders().addAll(Arrays.asList(additionalLogRecorders));
+
             logger = generatingLogger(logContext);
         }
         return logger;
@@ -159,11 +160,16 @@ public final class LoggerManager {
     }
 
     private static void addCertainLogFilters(LogContext logContext) {
+
+        //添加默认的两个过滤器
         EnableLogFilter enableLogFilter = new EnableLogFilter();
         MinLevelLogFilter minLevelLogFilter = new MinLevelLogFilter();
-
         logContext.getLogFilters().add(enableLogFilter);
         logContext.getLogFilters().add(minLevelLogFilter);
+
+        //添加用户自定义的全局过滤器和记录器
+        logConfigDefaultValues.decideGlobalLogFilters(logContext.getLogFilters());
+        logConfigDefaultValues.decideGlobalLogRecoders(logContext.getLogRecorders());
     }
 
 }

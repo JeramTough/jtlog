@@ -1,9 +1,12 @@
 package test;
 
 import com.jeramtough.jtlog.annotation.LogConfiguration;
+import com.jeramtough.jtlog.bean.LogInformation;
 import com.jeramtough.jtlog.config.LogConfigDefaultValues;
 import com.jeramtough.jtlog.config.SimpleLogConfigDefaultValues;
+import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.facade.L;
+import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.filter.TagLogFilter;
 import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.jtlogger.Logger;
@@ -11,12 +14,14 @@ import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.lang.DefaultBoolean;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.recorder.FileLogRecorder;
+import com.jeramtough.jtlog.recorder.LogRecorder;
 import com.jeramtough.jtlog.tag.Tag;
 import com.jeramtough.jtlog.with.WithLogger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.util.List;
 
 @LogConfiguration(isUsedJtloggerApi = DefaultBoolean.TRUE, isEnabled = DefaultBoolean.TRUE,
         contextName = "MyLogger",
@@ -166,6 +171,16 @@ public class TestMain implements WithLogger {
             public String decideDateFormat() {
                 return "HH:mm";
             }
+
+            @Override
+            public void decideGlobalLogFilters(List<LogFilter> logFilters) {
+
+            }
+
+            @Override
+            public void decideGlobalLogRecoders(List<LogRecorder> logRecorders) {
+
+            }
         });
 
         L.arrive();
@@ -179,6 +194,20 @@ public class TestMain implements WithLogger {
             @Override
             public String decideDateFormat() {
                 return "YYYY-MM-dd";
+            }
+
+            @Override
+            public void decideGlobalLogFilters(List<LogFilter> logFilters) {
+                logFilters.add(new LogFilter() {
+                    @Override
+                    public boolean isPrinted(LogContext logContext,
+                                             LogInformation logInformation) {
+                        if (logInformation.getThreadName().equals("main")) {
+                            return false;
+                        }
+                        return true;
+                    }
+                });
             }
         });
         L.arrive();

@@ -1,7 +1,12 @@
 package com.jeramtough.jtlog.config;
 
+import com.jeramtough.jtlog.facade.L;
+import com.jeramtough.jtlog.filter.LogFilter;
 import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.recorder.LogRecorder;
+
+import java.util.List;
 
 /**
  * Created on 2018-09-25 01:15
@@ -64,6 +69,16 @@ public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
     @Override
     public String decideDateFormat() {
         return DATE_FORMAT;
+    }
+
+    @Override
+    public void decideGlobalLogFilters(List<LogFilter> logFilters) {
+        //添加全局过滤器
+    }
+
+    @Override
+    public void decideGlobalLogRecoders(List<LogRecorder> logRecorders) {
+        //添加全局记录器
     }
 
 

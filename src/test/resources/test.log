@@ -218,3 +218,12 @@ V:{time}=2019:07:19:06:43 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}
 
 77777
 
+D:{time}=2019:07:19:49:13 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:109) .
+abc
+
+I:{time}=2019:07:19:49:13 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:114) .
+lalala00000
+
+D:{time}=2019:07:19:49:13 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test9(TestMain.java:219) .
+aaaa,hkhjk,dsfsd
+
