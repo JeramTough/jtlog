@@ -119,5 +119,5 @@ public @interface LogConfiguration {
      * 关于全局默认值见日志配置默认值接口{@link com.jeramtough.jtlog.config.LogConfigDefaultValues}
      * </p>
      */
-    String dateFormat() default "default"; 
+    String dateFormat() default "default";
 }
