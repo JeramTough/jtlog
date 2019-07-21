@@ -147,3 +147,74 @@ abc
 I:{time}=01:27:32:808 .{context}=L .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:110) .
 lalala00000
 
+D:{time}=2019:07:19:06:43 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:104) .
+a
+b
+c
+
+
+I:{time}=2019:07:19:06:43 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test6(TestMain.java:109) .
+l
+a
+l
+a
+l
+a
+0
+0
+0
+0
+0
+
+
+Arrive:{time}=2019:07:19:06:43 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:116) .
+
+I:{time}=2019:07:19:06:43 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:117) .
+1
+1
+1
+1
+1
+
+
+W:{time}=2019:07:19:06:43 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:118) .
+2
+2
+2
+2
+2
+
+
+D:{time}=2019:07:19:06:43 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:119) .
+3
+3
+3
+3
+
+
+D:{time}=2019:07:19:06:43 .{context}=MyLogger .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:120) .
+4
+4
+4
+4
+4
+
+
+E:{time}=2019:07:19:06:43 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:121) .
+5
+5
+5
+5
+5
+
+
+V:{time}=2019:07:19:06:43 .{context}=MyLogger .{tag}=tag .{thread}=main .{trace}=at test.TestMain.test7(TestMain.java:122) .
+6
+6
+6
+6
+6
+
+
+77777
+

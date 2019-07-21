@@ -169,9 +169,7 @@ public class TestMain implements WithLogger {
         });
 
         L.arrive();
-        getLogger().arrive();
 
-        //已经调用过了Jtlogger的api，所以下面的配置不生效了
         LoggerManager.setLogConfigDefaultValues(new SimpleLogConfigDefaultValues() {
             @Override
             public boolean decideIsEnabled() {
@@ -184,7 +182,6 @@ public class TestMain implements WithLogger {
             }
         });
         L.arrive();
-        getLogger().arrive();
     }
 
     @Test
@@ -202,8 +199,10 @@ public class TestMain implements WithLogger {
 
     @Test
     public void testMaxLengthOfRow() {
-        getLogger().getLogContext().getLogConfig().setMaxLengthOfRow(1);
-        getLogger().info("aaaa");
+        Logger logger = LoggerManager.getLogger("aaaa");
+        logger.getLogContext().getLogConfig().setMaxLengthOfRow(1);
+        logger.debug("aaaa");
+        getLogger().debug("bbbbbbbbbbb");
     }
 
 

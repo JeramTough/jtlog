@@ -86,6 +86,8 @@ public final class LoggerManager {
     public static void setLogConfigDefaultValues(
             LogConfigDefaultValues logConfigDefaultValues) {
         LoggerManager.logConfigDefaultValues = logConfigDefaultValues;
+
+        jtLoggerHashMap.clear();
     }
 
 
