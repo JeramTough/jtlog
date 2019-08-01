@@ -6,13 +6,20 @@ import com.jeramtough.jtlog.lang.DefaultBoolean;
 import com.jeramtough.jtlog.level.LogLevel;
 
 /**
- * Created on 2019-01-11 15:22
+ * Created on 2019-08-01 14:41
  * by @author JeramTough
  */
-public class LogConfigFactory {
+public class DefalutLogConfigFactory implements LogConfigFactory {
 
-    public static LogConfig getDefaultValueLogConfig(
+    private LogConfigDefaultValues logConfigDefaultValues;
+
+    public DefalutLogConfigFactory(
             LogConfigDefaultValues logConfigDefaultValues) {
+        this.logConfigDefaultValues = logConfigDefaultValues;
+    }
+
+    @Override
+    public LogConfig getDefaultValueLogConfig(String contextName) {
         LogConfig logConfig = new LogConfig();
         logConfig.setMaxLengthOfRow(logConfigDefaultValues.decideMaxLengthOfRow());
         logConfig.setEnabled(logConfigDefaultValues.decideIsEnabled());
@@ -25,12 +32,12 @@ public class LogConfigFactory {
         return logConfig;
     }
 
-    public static LogConfig getLogConfigByAnnotation(
-            LogConfigDefaultValues logConfigDefaultValues,
-            Class classWithLogConfigerAnnotation) {
+    @Override
+    public LogConfig getLogConfigByAnnotation(String contextName,
+                                              Class classWithLogConfigerAnnotation) {
         LogConfig logConfig = new LogConfig();
-        LogConfiguration logConfiguration = (LogConfiguration) classWithLogConfigerAnnotation.getAnnotation(
-                LogConfiguration.class);
+        LogConfiguration logConfiguration = (LogConfiguration)
+                classWithLogConfigerAnnotation.getAnnotation(LogConfiguration.class);
         if (logConfiguration != null) {
             //set isEnabled
             if (logConfiguration.isEnabled() == DefaultBoolean.DEFAULT) {
@@ -101,10 +108,9 @@ public class LogConfigFactory {
 
         }
         else {
-            return getDefaultValueLogConfig(logConfigDefaultValues);
+            return getDefaultValueLogConfig(contextName);
         }
 
         return logConfig;
     }
-
 }

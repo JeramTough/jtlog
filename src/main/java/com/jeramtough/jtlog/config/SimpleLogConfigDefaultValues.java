@@ -6,6 +6,7 @@ import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.recorder.LogRecorder;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -27,6 +28,8 @@ public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
     public static final int STACK_TRACE_OFFSET = 0;
 
     public static final String DATE_FORMAT = "MM/dd HH:mm:ss:SSS";
+
+    public static final File COVER_FILE = null;
 
     public static final LogHeader[] LOG_HEADERS = new LogHeader[]{LogHeader.TIME, LogHeader.CONTEXT,
             LogHeader.TAG, LogHeader.THREAD, LogHeader.TRACE};
@@ -72,13 +75,18 @@ public class SimpleLogConfigDefaultValues implements LogConfigDefaultValues {
     }
 
     @Override
-    public void decideGlobalLogFilters(List<LogFilter> logFilters) {
+    public void additionGlobalLogFilters(List<LogFilter> logFilters) {
         //添加全局过滤器
     }
 
     @Override
-    public void decideGlobalLogRecoders(List<LogRecorder> logRecorders) {
+    public void additionGlobalLogRecorders(List<LogRecorder> logRecorders) {
         //添加全局记录器
+    }
+
+    @Override
+    public File decideCoverConfigFile() {
+        return COVER_FILE;
     }
 
 

@@ -274,6 +274,50 @@ public class TestMain {
         });
     }
 ```
+
+##### 4. 在生产环境使用外部json格式配置文件  
+
+&ensp;&ensp;&ensp;&ensp;第一步配置外部配置文件，覆盖方法decideCoverConfigFile()，返回null代表不需要使用外部配置文件，默认返回null。
+```
+LoggerManager.setLogConfigDefaultValues(new SimpleLogConfigDefaultValues(){
+            @Override
+            public File decideCoverConfigFile() {
+                return new File("./jtlog-config.json");
+//                return null;
+            }
+        });
+```
+
+&ensp;&ensp;&ensp;&ensp;框架会根据File对象的路径自动生成外部json格式配置文件，在生产环境只需要改变这个配置文件就可以覆盖默认注释式的配置。
+
+```
+{
+  "contextName": {
+    "wrapCount": 999,
+    "minVisibleLevel": "INFO"
+    //...不显示写出来的代表使用默认值
+  },
+  "L": {
+    "wrapCount": 1,
+    "logHeaders": [
+      "TIME",
+      "CONTEXT",
+      "TAG",
+      "TRACE",
+      "THREAD"
+    ],
+    "minVisibleLevel": "VERBOSE",
+    "dateFormat": "yyyy/MM/dd HH:mm:ss:SSS",
+    "stackTraceOffset": 1,
+    "enabled": true,
+    "usedJtloggerApi": true
+  }
+  。。。。。。
+  。。。。
+}
+```
+
+
 ---
 
 --

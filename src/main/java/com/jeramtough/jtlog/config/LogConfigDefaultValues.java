@@ -5,6 +5,7 @@ import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.recorder.LogRecorder;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -76,10 +77,17 @@ public interface LogConfigDefaultValues {
     /**
      * 添加全局的日志过滤器
      */
-    void decideGlobalLogFilters(List<LogFilter> logFilters);
+    void additionGlobalLogFilters(List<LogFilter> logFilters);
 
     /**
      * 添加全局的日志过滤器
      */
-    void decideGlobalLogRecoders(List<LogRecorder> logRecorders);
+    void additionGlobalLogRecorders(List<LogRecorder> logRecorders);
+
+    /**
+     * 决定外部JSON配置文件位置在哪，这个配置文件优先级最高，适用于生产环境，
+     * <p></p>
+     * 返回空则不需要
+     */
+    File decideCoverConfigFile();
 }

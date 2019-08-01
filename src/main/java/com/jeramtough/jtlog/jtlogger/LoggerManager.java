@@ -1,10 +1,7 @@
 package com.jeramtough.jtlog.jtlogger;
 
 import com.jeramtough.jtlog.annotation.LogConfiguration;
-import com.jeramtough.jtlog.config.SimpleLogConfigDefaultValues;
-import com.jeramtough.jtlog.config.LogConfig;
-import com.jeramtough.jtlog.config.LogConfigDefaultValues;
-import com.jeramtough.jtlog.config.LogConfigFactory;
+import com.jeramtough.jtlog.config.*;
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.filter.EnableLogFilter;
 import com.jeramtough.jtlog.filter.LogFilter;
@@ -13,6 +10,7 @@ import com.jeramtough.jtlog.recorder.LogRecorder;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 负责生成和管理JtLogger实例
@@ -22,33 +20,42 @@ import java.util.HashMap;
  */
 public final class LoggerManager {
 
-    private static HashMap<String, Logger> jtLoggerHashMap;
+    private static Map<String, Logger> loggerMap;
 
     private static LogConfigDefaultValues logConfigDefaultValues;
+    private static LogConfigFactory logConfigFactory;
 
     static {
-        jtLoggerHashMap = new HashMap<>();
         logConfigDefaultValues = new SimpleLogConfigDefaultValues();
+        initResources();
+    }
+
+    static void initResources(){
+        loggerMap = new HashMap<>();
+        logConfigFactory = getLogConfigFactory(logConfigDefaultValues);
     }
 
     public static Logger getLogger(String contextName) {
         Logger logger;
-        if (jtLoggerHashMap.containsKey(contextName)) {
-            logger = jtLoggerHashMap.get(contextName);
+        if (loggerMap.containsKey(contextName)) {
+            logger = loggerMap.get(contextName);
         }
         else {
-            LogConfig logConfig = LogConfigFactory.getDefaultValueLogConfig(
-                    logConfigDefaultValues);
+            LogConfig logConfig = logConfigFactory.getDefaultValueLogConfig(contextName);
             LogContext logContext = new LogContext(contextName, logConfig);
             logger = generatingLogger(logContext);
         }
         return logger;
     }
 
+    /**
+     * @deprecated 不好使也不常用，已经不推荐使用了
+     */
+    @Deprecated
     public static Logger getLogger(LogContext logContext) {
         Logger logger;
-        if (jtLoggerHashMap.containsKey(logContext.getContextName())) {
-            logger = jtLoggerHashMap.get(logContext.getContextName());
+        if (loggerMap.containsKey(logContext.getContextName())) {
+            logger = loggerMap.get(logContext.getContextName());
         }
         else {
             logger = generatingLogger(logContext);
@@ -60,12 +67,12 @@ public final class LoggerManager {
         String contextName = parseContextNameFromAnnotation(contextClass);
 
         Logger logger;
-        if (jtLoggerHashMap.containsKey(contextName)) {
-            logger = jtLoggerHashMap.get(contextName);
+        if (loggerMap.containsKey(contextName)) {
+            logger = loggerMap.get(contextName);
         }
         else {
-            LogConfig logConfig = LogConfigFactory.getLogConfigByAnnotation(
-                    logConfigDefaultValues, contextClass);
+            LogConfig logConfig = logConfigFactory.getLogConfigByAnnotation
+                    (contextName, contextClass);
             LogContext logContext = new LogContext(contextName, logConfig);
 
             LogFilter[] additionalLogFilters =
@@ -87,12 +94,22 @@ public final class LoggerManager {
     public static void setLogConfigDefaultValues(
             LogConfigDefaultValues logConfigDefaultValues) {
         LoggerManager.logConfigDefaultValues = logConfigDefaultValues;
-
-        jtLoggerHashMap.clear();
+        initResources();
     }
 
 
     //**********************************
+
+    private static LogConfigFactory getLogConfigFactory(
+            LogConfigDefaultValues logConfigDefaultValues) {
+
+        if (logConfigDefaultValues.decideCoverConfigFile() == null) {
+            return new DefalutLogConfigFactory(logConfigDefaultValues);
+        }
+        else {
+            return new CoverLogConfigFactory(logConfigDefaultValues);
+        }
+    }
 
     private static Logger generatingLogger(LogContext logContext) {
         Logger logger = new JtLogger(logContext);
@@ -100,7 +117,7 @@ public final class LoggerManager {
         //add some default LogFilters
         addCertainLogFilters(logContext);
 
-        jtLoggerHashMap.put(logContext.getContextName(), logger);
+        loggerMap.put(logContext.getContextName(), logger);
         return logger;
     }
 
@@ -168,8 +185,8 @@ public final class LoggerManager {
         logContext.getLogFilters().add(minLevelLogFilter);
 
         //添加用户自定义的全局过滤器和记录器
-        logConfigDefaultValues.decideGlobalLogFilters(logContext.getLogFilters());
-        logConfigDefaultValues.decideGlobalLogRecoders(logContext.getLogRecorders());
+        logConfigDefaultValues.additionGlobalLogFilters(logContext.getLogFilters());
+        logConfigDefaultValues.additionGlobalLogRecorders(logContext.getLogRecorders());
     }
 
 }

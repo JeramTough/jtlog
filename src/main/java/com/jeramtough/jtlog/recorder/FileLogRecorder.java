@@ -1,9 +1,12 @@
 package com.jeramtough.jtlog.recorder;
 
 import com.jeramtough.jtlog.bean.LogInformation;
+import com.jeramtough.jtlog.config.LogConfig;
 import com.jeramtough.jtlog.context.LogContext;
+import com.jeramtough.jtlog.util.FileUtil;
 
 import java.io.*;
+import java.util.Map;
 import java.util.concurrent.*;
 
 /**
@@ -30,20 +33,7 @@ public class FileLogRecorder implements LogRecorder {
     }
 
     protected void init() {
-        try {
-            File parentDirectory = logFile.getParentFile();
-            if (!parentDirectory.exists()) {
-                boolean isOk = parentDirectory.mkdirs();
-                if (isOk) {
-                    logFile.createNewFile();
-                }
-            }
-
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        FileUtil.createFile(logFile);
     }
 
     @Override

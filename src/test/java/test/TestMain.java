@@ -173,13 +173,18 @@ public class TestMain implements WithLogger {
             }
 
             @Override
-            public void decideGlobalLogFilters(List<LogFilter> logFilters) {
+            public void additionGlobalLogFilters(List<LogFilter> logFilters) {
 
             }
 
             @Override
-            public void decideGlobalLogRecoders(List<LogRecorder> logRecorders) {
+            public void additionGlobalLogRecorders(List<LogRecorder> logRecorders) {
 
+            }
+
+            @Override
+            public File decideCoverConfigFile() {
+                return null;
             }
         });
 
@@ -197,7 +202,7 @@ public class TestMain implements WithLogger {
             }
 
             @Override
-            public void decideGlobalLogFilters(List<LogFilter> logFilters) {
+            public void additionGlobalLogFilters(List<LogFilter> logFilters) {
                 logFilters.add(new LogFilter() {
                     @Override
                     public boolean isPrinted(LogContext logContext,

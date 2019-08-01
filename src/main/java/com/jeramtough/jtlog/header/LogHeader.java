@@ -47,4 +47,11 @@ public enum LogHeader {
 
     public String getHeaderName() {
         return headerName;
-    }}
+    }
+
+    @Override
+    public String toString() {
+        return headerName;
+    }
+}
+
