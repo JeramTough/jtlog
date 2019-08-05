@@ -3,7 +3,6 @@ package com.jeramtough.jtlog.config;
 import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.util.FileUtil;
-import com.sun.istack.internal.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -22,7 +21,7 @@ public class CoverConfigHandler {
     private LogConfigDefaultValues logConfigDefaultValues;
     private Map<String, LogConfig> configMap;
 
-    public CoverConfigHandler(@NotNull File coverFile,
+    public CoverConfigHandler(File coverFile,
                               LogConfigDefaultValues logConfigDefaultValues) {
         this.coverFile = coverFile;
         this.logConfigDefaultValues = logConfigDefaultValues;

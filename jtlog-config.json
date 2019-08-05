@@ -4,7 +4,7 @@
     "minVisibleLevel": "INFO"
   },
   "L": {
-    "wrapCount": 1,
+    "wrapCount": 2,
     "logHeaders": [
       "TIME",
       "CONTEXT",
