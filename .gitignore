@@ -25,9 +25,13 @@ buildNumber.properties
 !/.mvn/wrapper/maven-wrapper.jar
 
 #idea
-/.idea/workspace.xml
-/.idea/vcs.xml
+# IntelliJ IDEA Files
+*.iml
+*.ipr
+*.iws
+*.idea
 
-#target
-target/*
-!target/*.jar
+# Build Artifacts
+.gradle/
+build/
+target/
