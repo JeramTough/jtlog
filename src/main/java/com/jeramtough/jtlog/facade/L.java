@@ -123,7 +123,7 @@ public class L {
 
     @SafeVarargs
     public static <T> void debugs(T... messages) {
-        getLogger().debug(messages);
+        getLogger().debugs(messages);
     }
 
     public static <T> void verbose(T message) {

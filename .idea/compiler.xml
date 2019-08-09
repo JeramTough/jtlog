@@ -10,5 +10,8 @@
         <module name="JtlogForMaven" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JtlogForMaven" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
