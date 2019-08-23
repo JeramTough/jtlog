@@ -25,12 +25,6 @@
 
     <dependencies>
 
-        <!--<dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20180813</version>
-        </dependency>-->
-
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -148,32 +142,6 @@
                 <configuration>
                     <skip>false</skip>
                 </configuration>
-            </plugin>
-
-            <!-- Maven Shade Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <createDependencyReducedPom>true</createDependencyReducedPom>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <!-- <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                     &lt;!&ndash; 主类的全限定名 &ndash;&gt;
-                                     <mainClass>com.healchow.consumer.Main</mainClass>
-                                 </transformer>-->
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
             <!--skip test-->
