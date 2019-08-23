@@ -31,8 +31,18 @@ public class PrinterFactory {
         else {
 
             if (logContext.getLogConfig().isUsedJtloggerApi()) {
+
+                boolean hasTestFrame = false;
+
+                if (isUsedEspecialLogApi(
+                        BasePrinter.TEST_PACKAGE_NAME_1) || isUsedEspecialLogApi(
+                        BasePrinter.TEST_PACKAGE_NAME_2)) {
+                    hasTestFrame = true;
+                }
+
                 if (isUsedEspecialLogApi(AndroidPrinter.LOGCAT_PACKAGE_NAME) &&
-                        !isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)) {
+                        !isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)
+                        && !hasTestFrame) {
                     printer = new AndroidPrinter(logContext);
                 }
                 else {

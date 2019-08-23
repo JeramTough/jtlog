@@ -16,6 +16,12 @@ public class AndroidPrinter extends BasePrinter {
 
     public static final String LOGCAT_PACKAGE_NAME = "android.util.Log";
 
+    private static boolean isUsedAndroidLogApi = true;
+
+    public static void setUsedAndroidLogApi(boolean usedAndroidLogApi) {
+        isUsedAndroidLogApi = usedAndroidLogApi;
+    }
+
     public AndroidPrinter(LogContext logContext) {
         super(logContext);
     }
@@ -27,7 +33,8 @@ public class AndroidPrinter extends BasePrinter {
             Method method = Class.forName(LOGCAT_PACKAGE_NAME).getMethod("v", String.class,
                     String.class);
             method.invoke(null, LOGCAT_TAG, stylizedText);
-        } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
+        }
+        catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
 
@@ -40,7 +47,8 @@ public class AndroidPrinter extends BasePrinter {
             Method method = Class.forName(LOGCAT_PACKAGE_NAME).getMethod("d", String.class,
                     String.class);
             method.invoke(null, LOGCAT_TAG, stylizedText);
-        } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
+        }
+        catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
@@ -52,7 +60,8 @@ public class AndroidPrinter extends BasePrinter {
             Method method = Class.forName(LOGCAT_PACKAGE_NAME).getMethod("d", String.class,
                     String.class);
             method.invoke(null, LOGCAT_TAG, stylizedText);
-        } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
+        }
+        catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
@@ -64,7 +73,8 @@ public class AndroidPrinter extends BasePrinter {
             Method method = Class.forName(LOGCAT_PACKAGE_NAME).getMethod("i", String.class,
                     String.class);
             method.invoke(null, LOGCAT_TAG, stylizedText);
-        } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
+        }
+        catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
@@ -76,7 +86,8 @@ public class AndroidPrinter extends BasePrinter {
             Method method = Class.forName(LOGCAT_PACKAGE_NAME).getMethod("w", String.class,
                     String.class);
             method.invoke(null, LOGCAT_TAG, stylizedText);
-        } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
+        }
+        catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
@@ -88,7 +99,8 @@ public class AndroidPrinter extends BasePrinter {
             Method method = Class.forName(LOGCAT_PACKAGE_NAME).getMethod("e", String.class,
                     String.class);
             method.invoke(null, LOGCAT_TAG, stylizedText);
-        } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
+        }
+        catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }

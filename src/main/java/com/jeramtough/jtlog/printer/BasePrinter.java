@@ -9,6 +9,10 @@ import com.jeramtough.jtlog.style.PrintStyleManager;
  * by @author JeramTough
  */
 public abstract class BasePrinter implements Printer {
+
+    public static final String TEST_PACKAGE_NAME_1 = "org.junit.Test";
+    public static final String TEST_PACKAGE_NAME_2 = "org.junit.jupiter.api.Test";
+
     private LogContext logContext;
 
     public BasePrinter(LogContext logContext) {
