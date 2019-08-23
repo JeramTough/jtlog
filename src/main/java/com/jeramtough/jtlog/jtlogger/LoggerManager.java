@@ -49,7 +49,9 @@ public final class LoggerManager {
     }
 
     /**
+     * @param logContext {@link LogContext}
      * @deprecated 不好使也不常用，已经不推荐使用了
+     * @return {@link Logger}
      */
     @Deprecated
     public static Logger getLogger(LogContext logContext) {

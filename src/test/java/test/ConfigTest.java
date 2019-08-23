@@ -3,8 +3,8 @@ package test;
 import com.jeramtough.jtlog.config.LogConfig;
 import com.jeramtough.jtlog.config.SimpleLogConfigDefaultValues;
 import com.jeramtough.jtlog.facade.L;
+import com.jeramtough.jtlog.json.JSONObject;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

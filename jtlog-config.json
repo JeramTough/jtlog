@@ -1,7 +1,19 @@
 {
-  "contextName": {
-    "wrapCount": 999,
-    "minVisibleLevel": "INFO"
+  "": {
+    "wrapCount": 1,
+    "logHeaders": [
+      "TIME",
+      "CONTEXT",
+      "TAG",
+      "THREAD",
+      "TRACE"
+    ],
+    "minVisibleLevel": "VERBOSE",
+    "maxLengthOfRow": 0,
+    "dateFormat": "YYYY-MM-dd",
+    "stackTraceOffset": 0,
+    "enabled": true,
+    "usedJtloggerApi": true
   },
   "L": {
     "wrapCount": 2,
@@ -13,8 +25,25 @@
       "THREAD"
     ],
     "minVisibleLevel": "VERBOSE",
+    "maxLengthOfRow": 0,
     "dateFormat": "yyyy/MM/dd HH:mm:ss:SSS",
     "stackTraceOffset": 1,
+    "enabled": true,
+    "usedJtloggerApi": true
+  },
+  "contextName": {
+    "wrapCount": 999,
+    "logHeaders": [
+      "TIME",
+      "CONTEXT",
+      "TAG",
+      "THREAD",
+      "TRACE"
+    ],
+    "minVisibleLevel": "INFO",
+    "maxLengthOfRow": 0,
+    "dateFormat": "MM/dd HH:mm:ss:SSS",
+    "stackTraceOffset": 0,
     "enabled": true,
     "usedJtloggerApi": true
   }

@@ -1,10 +1,10 @@
 package com.jeramtough.jtlog.config;
 
 import com.jeramtough.jtlog.header.LogHeader;
+import com.jeramtough.jtlog.json.JSONArray;
+import com.jeramtough.jtlog.json.JSONObject;
 import com.jeramtough.jtlog.level.LogLevel;
 import com.jeramtough.jtlog.util.FileUtil;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.*;
 import java.util.HashMap;

@@ -12,6 +12,7 @@ public interface PrintStyle {
     /**
      * 格式化日志信息成为String
      *
+     * @param logContext     {@link LogContext}
      * @param logInformation 日志信息类
      * @return 风格化后的日志信息
      */

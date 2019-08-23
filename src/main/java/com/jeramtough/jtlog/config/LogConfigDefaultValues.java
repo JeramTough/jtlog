@@ -53,11 +53,15 @@ public interface LogConfigDefaultValues {
     /**
      * 决定要输出的日志信息头及顺序，有则输出，没有则不输出，
      * 日志信息头见{@link LogLevel}
+     *
+     * @return {@link LogLevel}
      */
     LogHeader[] decideLogHeaders();
 
     /**
      * 每条新日志间的空行数, 0则两条日志间无空行
+     *
+     * @return 条新日志间的空行数
      */
     int decideWrapCount();
 
@@ -71,23 +75,28 @@ public interface LogConfigDefaultValues {
 
     /**
      * 决定日志时间信息头的输出格式
+     *
+     * @return 比如"yyyy-MM-DD HH:MM:SS"
      */
     String decideDateFormat();
 
     /**
      * 添加全局的日志过滤器
+     * @param logFilters {@link LogFilter}
      */
     void additionGlobalLogFilters(List<LogFilter> logFilters);
 
     /**
      * 添加全局的日志过滤器
+     * @param logRecorders {@link LogRecorder}
      */
     void additionGlobalLogRecorders(List<LogRecorder> logRecorders);
 
     /**
      * 决定外部JSON配置文件位置在哪，这个配置文件优先级最高，适用于生产环境，
-     * <p></p>
-     * 返回空则不需要
+     *
+     *
+     * @return 返回null则不需要外部配置
      */
     File decideCoverConfigFile();
 }
