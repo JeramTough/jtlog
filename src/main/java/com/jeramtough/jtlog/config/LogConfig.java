@@ -3,6 +3,8 @@ package com.jeramtough.jtlog.config;
 import com.jeramtough.jtlog.header.LogHeader;
 import com.jeramtough.jtlog.level.LogLevel;
 
+import java.util.Arrays;
+
 /**
  * 每个JtLogger类的配置类
  * <p>
@@ -133,4 +135,52 @@ public class LogConfig {
         this.dateFormat = dateFormat;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        LogConfig logConfig = (LogConfig) o;
+
+        if (wrapCount != logConfig.wrapCount) {
+            return false;
+        }
+        if (stackTraceOffset != logConfig.stackTraceOffset) {
+            return false;
+        }
+        if (!maxLengthOfRow.equals(logConfig.maxLengthOfRow)) {
+            return false;
+        }
+        if (!isEnabled.equals(logConfig.isEnabled)) {
+            return false;
+        }
+        if (!isUsedJtloggerApi.equals(logConfig.isUsedJtloggerApi)) {
+            return false;
+        }
+        if (minVisibleLevel != logConfig.minVisibleLevel) {
+            return false;
+        }
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        if (!Arrays.equals(logHeaders, logConfig.logHeaders)) {
+            return false;
+        }
+        return dateFormat.equals(logConfig.dateFormat);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = maxLengthOfRow.hashCode();
+        result = 31 * result + isEnabled.hashCode();
+        result = 31 * result + isUsedJtloggerApi.hashCode();
+        result = 31 * result + minVisibleLevel.hashCode();
+        result = 31 * result + Arrays.hashCode(logHeaders);
+        result = 31 * result + wrapCount;
+        result = 31 * result + stackTraceOffset;
+        result = 31 * result + dateFormat.hashCode();
+        return result;
+    }
 }

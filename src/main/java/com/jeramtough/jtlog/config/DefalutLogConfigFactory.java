@@ -11,7 +11,7 @@ import com.jeramtough.jtlog.level.LogLevel;
  */
 public class DefalutLogConfigFactory implements LogConfigFactory {
 
-    private LogConfigDefaultValues logConfigDefaultValues;
+    private final LogConfigDefaultValues logConfigDefaultValues;
 
     public DefalutLogConfigFactory(
             LogConfigDefaultValues logConfigDefaultValues) {

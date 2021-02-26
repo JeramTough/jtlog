@@ -19,7 +19,7 @@ public class Log4j2Printer extends BasePrinter {
         super(logContext);
 
         try {
-            loggerObject = Class.forName("org.slf4j.LoggerFactory").getMethod(
+            loggerObject = Class.forName(LOG4J2_LOG_MANAGER_PACKAGE_NAME).getMethod(
                     "getLogger", String.class).invoke(null, logContext.getContextName());
         } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class LogbackPrinter extends BasePrinter {
     public LogbackPrinter(LogContext logContext) {
         super(logContext);
         try {
-            loggerObject = Class.forName("org.slf4j.LoggerFactory").getMethod(
+            loggerObject = Class.forName(LOGBACK_FACTORY_PACKAGE_NAME).getMethod(
                    "getLogger",String.class).invoke(null, logContext.getContextName());
         } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
