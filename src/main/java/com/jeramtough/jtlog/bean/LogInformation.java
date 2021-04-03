@@ -3,8 +3,10 @@ package com.jeramtough.jtlog.bean;
 import com.jeramtough.jtlog.context.LogContext;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.level.LogLevel;
+import com.jeramtough.jtlog.message.MessageWrapper;
 import com.jeramtough.jtlog.tag.Tag;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -18,8 +20,8 @@ import java.util.Date;
 
 public class LogInformation {
 
-
     private Object message;
+    private MessageWrapper messageWrapper;
     private String messageStr;
 
     private Tag tag;
@@ -46,6 +48,13 @@ public class LogInformation {
     }
 
     public String getMessageStr() {
+        if (messageWrapper != null) {
+            Object message = messageWrapper.message();
+            if (message != null) {
+                return message.toString();
+            }
+        }
+
         return messageStr;
     }
 
@@ -89,6 +98,13 @@ public class LogInformation {
         this.logLevel = logLevel;
     }
 
+    public MessageWrapper getMessageWrapper() {
+        return messageWrapper;
+    }
+
+    void setMessageWrapper(MessageWrapper messageWrapper) {
+        this.messageWrapper = messageWrapper;
+    }
 
     //{{{{{{{{{}}}}}}}}}}}}}}}}}
 
@@ -121,6 +137,11 @@ public class LogInformation {
             return this;
         }
 
+        public Builder setMessageWrapper(MessageWrapper messageWrapper) {
+            logInformation.setMessageWrapper(messageWrapper);
+            return this;
+        }
+
         public LogInformation build() {
             processingInformation(logInformation);
             return logInformation;
@@ -130,6 +151,7 @@ public class LogInformation {
             StackTraceElement stackTraceElement =
                     ((new Exception()).getStackTrace())[STACK_TRACE_COUNT + stackTraceOffset];
 
+            //set message
             if (logInformation.message == null) {
                 logInformation.messageStr = "[null]";
             }

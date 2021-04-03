@@ -22,10 +22,15 @@ public class RecorderPrinterProxy extends BasePrinterProxy {
                   Object[] args) throws IllegalAccessException, InvocationTargetException {
         String stylizedText = (String) method.invoke(printer, args);
 
+        //改成并发异步执行
         if (stylizedText != null) {
-            for (LogRecorder logRecorder : logContext.getLogRecorders()) {
-                logRecorder.record(logContext, getLogInformation(), stylizedText);
-            }
+            logContext.getLogRecorders()
+                      .parallelStream()
+                      .forEach(logRecorder -> {
+                          getThreadPool().execute(() -> {
+                              logRecorder.record(logContext, getLogInformation(), stylizedText);
+                          });
+                      });
         }
 
 

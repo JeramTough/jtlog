@@ -8,6 +8,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.concurrent.*;
 
 /**
  * Created on 2018-08-22 21:51
@@ -18,8 +19,13 @@ public abstract class BasePrinterProxy implements PrinterProxy {
     private LogContext logContext;
     private LogInformation logInformation;
 
+    private final ThreadPoolExecutor threadPoolExecutor;
+
     public BasePrinterProxy(LogContext logContext) {
         this.logContext = logContext;
+        threadPoolExecutor = new ThreadPoolExecutor(0, Integer.MAX_VALUE,
+                60L, TimeUnit.SECONDS,
+                new SynchronousQueue<>(), (ThreadFactory) Thread::new);
     }
 
     @Override
@@ -58,5 +64,9 @@ public abstract class BasePrinterProxy implements PrinterProxy {
 
     public LogInformation getLogInformation() {
         return logInformation;
+    }
+
+    public ThreadPoolExecutor getThreadPool() {
+        return threadPoolExecutor;
     }
 }
