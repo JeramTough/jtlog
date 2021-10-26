@@ -38,7 +38,7 @@ public class Log4j2Printer extends BasePrinter {
     @Override
     public void arrive(LogInformation logInformation, String stylizedText) {
         try {
-            loggerObject.getClass().getMethod("debug", String.class).invoke(loggerObject,
+            loggerObject.getClass().getMethod("error", String.class).invoke(loggerObject,
                     stylizedText);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();

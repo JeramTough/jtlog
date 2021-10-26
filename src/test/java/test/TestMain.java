@@ -13,8 +13,9 @@ import com.jeramtough.jtlog.jtlogger.Logger;
 import com.jeramtough.jtlog.jtlogger.LoggerManager;
 import com.jeramtough.jtlog.lang.DefaultBoolean;
 import com.jeramtough.jtlog.level.LogLevel;
-import com.jeramtough.jtlog.recorder.FileLogRecorder;
+import com.jeramtough.jtlog.recorder.file.FileLogRecorder;
 import com.jeramtough.jtlog.recorder.LogRecorder;
+import com.jeramtough.jtlog.recorder.strategy.OneFileStrategy;
 import com.jeramtough.jtlog.tag.Tag;
 import com.jeramtough.jtlog.with.WithLogger;
 import org.junit.jupiter.api.Test;
@@ -104,8 +105,9 @@ public class TestMain implements WithLogger {
 
     @Test
     public void test6() {
-        getLogger().getLogContext().getLogRecorders().add(new FileLogRecorder(new File(
-                "E:\\Codes\\IdeaCodes\\JtlogForMaven\\src\\test\\resources\\test.log")));
+        getLogger().getLogContext().getLogRecorders().add(
+                new FileLogRecorder(new OneFileStrategy(new File(
+                        "E:\\Codes\\IdeaCodes\\JtlogForMaven\\src\\test\\resources\\test.log"))));
         getLogger().debug("abc");
 
         //因为添加了过滤器，这句其实不会打印出来

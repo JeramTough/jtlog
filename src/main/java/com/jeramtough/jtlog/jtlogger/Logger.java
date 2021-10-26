@@ -383,6 +383,7 @@ public interface Logger {
      * @param messages 输出内容
      * @param <T>      任何数据类型
      */
+    @SuppressWarnings({"unchecked", "varargs"})
     <T> void debugs(T... messages);
 
     /**

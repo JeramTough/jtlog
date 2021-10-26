@@ -22,7 +22,7 @@ public class JtPrinter extends BasePrinter {
 
     @Override
     public void arrive(LogInformation logInformation, String stylizedText) {
-        System.out.println(stylizedText);
+        System.err.println(stylizedText);
     }
 
     @Override

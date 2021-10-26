@@ -106,7 +106,7 @@ public final class LoggerManager {
             LogConfigDefaultValues logConfigDefaultValues) {
 
         if (logConfigDefaultValues.decideCoverConfigFile() == null) {
-            return new DefalutLogConfigFactory(logConfigDefaultValues);
+            return new DefaultLogConfigFactory(logConfigDefaultValues);
         }
         else {
             return new CoverLogConfigFactory(logConfigDefaultValues);

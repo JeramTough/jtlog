@@ -1,0 +1,6 @@
+I:{time}=08/19 21:32:02:850 .{context}=FileTst .{thread}=main .{trace}=at test.FileTst.test1(FileTst.java:26) .
+cccc
+
+I:{time}=08/19 22:35:34:559 .{context}=FileTst .{thread}=main .{trace}=at test.FileTst.test1(FileTst.java:26) .
+cccc
+

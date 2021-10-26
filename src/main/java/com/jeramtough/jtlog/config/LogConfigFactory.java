@@ -9,5 +9,5 @@ public interface LogConfigFactory {
     LogConfig getDefaultValueLogConfig(String contextName);
 
     LogConfig getLogConfigByAnnotation(String contextName,
-                                       Class classWithLogConfigerAnnotation);
+                                       Class<?> classWithLogConfigerAnnotation);
 }

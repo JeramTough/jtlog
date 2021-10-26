@@ -6,7 +6,7 @@ package com.jeramtough.jtlog.config;
  * Created on 2019-08-01 15:08
  * by @author JeramTough
  */
-public class CoverLogConfigFactory extends DefalutLogConfigFactory
+public class CoverLogConfigFactory extends DefaultLogConfigFactory
         implements LogConfigFactory {
 
     private CoverConfigHandler coverConfigHandler;
@@ -33,7 +33,7 @@ public class CoverLogConfigFactory extends DefalutLogConfigFactory
 
     @Override
     public LogConfig getLogConfigByAnnotation(String contextName,
-                                              Class classWithLogConfigerAnnotation) {
+                                              Class<?> classWithLogConfigerAnnotation) {
         LogConfig logConfig = coverConfigHandler.getLogConfig(contextName);
         if (logConfig == null) {
             logConfig = super.getLogConfigByAnnotation(contextName,

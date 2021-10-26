@@ -1,7 +1,5 @@
 package com.jeramtough.jtlog.util;
 
-import com.jeramtough.jtlog.facade.L;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class MyStringUtil {
         }
 
         String[] texts = originalText.split("\n");
-        List<String> newTexts = new ArrayList();
+        List<String> newTexts = new ArrayList<>();
         StringBuilder newText = new StringBuilder();
         int position;
         int howManySection;
@@ -32,7 +30,7 @@ public class MyStringUtil {
                         newTexts.add(text.substring(position, position + limitNumber));
                         position = position + limitNumber;
                     } else {
-                        newTexts.add(text.substring(position, text.length()));
+                        newTexts.add(text.substring(position));
                     }
                 }
             } else {
@@ -51,30 +49,16 @@ public class MyStringUtil {
     }
 
 
-    public static String ObjectsToString(Object... os) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (Object o : os) {
-            if (o == null) {
-                stringBuilder.append("[null]");
-            } else {
-                stringBuilder.append(o.toString());
-            }
-        }
-
-        return stringBuilder.toString();
-    }
-
     public static String getLogo() {
-        StringBuilder text = new StringBuilder();
-        text.append("\n" +
+        //        text.append("\nWELCOME TO USE JtLog\n");
+
+        String text = "\n" +
                 "    []   [][][]   []        [][]     [][][]  \n" +
                 "    []     []     []       []  []   []    [] \n" +
                 "    []     []     []       []  []   []       \n" +
                 "    []     []     []       []  []   []  [][] \n" +
                 "[]  []     []     []       []  []   []    [] \n" +
-                " [][]      []     [][][]    [][]    [][][][] \n");
-//        text.append("\nWELCOME TO USE JtLog\n");
-
-        return text.toString();
+                " [][]      []     [][][]    [][]    [][][][] \n";
+        return text;
     }
 }

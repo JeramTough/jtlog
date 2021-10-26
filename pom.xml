@@ -6,7 +6,9 @@
 
     <groupId>com.jeramtough</groupId>
     <artifactId>jtlog</artifactId>
-    <version>1.8.1-SNAPSHOT</version>
+    <version>1.8.4-SNAPSHOT</version>
+    <!--<version>1.7.2-RELEASE</version>-->
+    <!--<version>1.8.1-LOCAL</version>-->
     <!--<version>1.7.5-LOCAL</version>-->
     <!--<version>1.7.2-SNAPSHOT</version>-->
     <!-- <version>1.7.1-RELEASE</version>-->
@@ -48,6 +50,7 @@
             <scope>test</scope>
         </dependency>
 
+
     </dependencies>
 
     <name>jtlog</name>
@@ -74,7 +77,7 @@
         </developer>
     </developers>
 
-   <!-- <distributionManagement>
+    <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -83,9 +86,9 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-    </distributionManagement>-->
+    </distributionManagement>
 
-    <distributionManagement>
+    <!--<distributionManagement>
         <repository>
             <id>nexus-ssd</id>
             <name>Nexus ssd</name>
@@ -96,7 +99,7 @@
             <name>Nexus ssd snapshot</name>
             <url>http://maven.ssd.vi:3333/repository/nexus-ssd-snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement>-->
 
     <build>
         <plugins>
