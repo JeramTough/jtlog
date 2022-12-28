@@ -52,22 +52,22 @@ public class PrinterFactory {
                 if (isUsedEspecialLogApi(AndroidPrinter.LOGCAT_PACKAGE_NAME) &&
                         !isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)
                         && !hasTestFrame) {
-                    printer = new AndroidPrinter(logContext);
+                    printer = new AndroidPrinter();
                 }
                 else {
-                    printer = new JtPrinter(logContext);
+                    printer = new JtPrinter();
                 }
             }
             else if (isUsedEspecialLogApi(LogbackPrinter.LOGBACK_FACTORY_PACKAGE_NAME)
                     && isExistedLogbackConfigFileInClasspath()) {
-                printer = new LogbackPrinter(logContext);
+                printer = new LogbackPrinter();
             }
             else if (isUsedEspecialLogApi(Log4j2Printer.LOG4J2_LOG_MANAGER_PACKAGE_NAME)
                     && isExistedLog4j2ConfigFileInClasspath()) {
-                printer = new Log4j2Printer(logContext);
+                printer = new Log4j2Printer();
             }
             else {
-                printer = new JtPrinter(logContext);
+                printer = new JtPrinter();
             }
 
             printer = loadPrinterProxy(logContext, printer);

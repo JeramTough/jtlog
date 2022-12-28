@@ -15,4 +15,9 @@ public interface WithLogger {
         return logger;
     }
 
+    default Logger getLogger(Object o) {
+        Logger logger = LoggerManager.getLogger(o.getClass());
+        return logger;
+    }
+
 }

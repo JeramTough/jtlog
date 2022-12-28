@@ -13,16 +13,11 @@ public abstract class BasePrinter implements Printer {
     public static final String TEST_PACKAGE_NAME_1 = "org.junit.Test";
     public static final String TEST_PACKAGE_NAME_2 = "org.junit.jupiter.api.Test";
 
-    private LogContext logContext;
 
-    public BasePrinter(LogContext logContext) {
-        this.logContext = logContext;
+    public BasePrinter() {
     }
 
 
-    public LogContext getLogContext() {
-        return logContext;
-    }
 
     @Override
     public String print(LogInformation logInformation) {
@@ -31,43 +26,43 @@ public abstract class BasePrinter implements Printer {
             case ARRIVE:
                 stylizedText =
                         PrintStyleManager.getArrivePrintStyle().stylize(
-                                logContext, logInformation);
+                                logInformation.getLogContext(), logInformation);
                 arrive(logInformation, stylizedText);
                 break;
             case DEBUG:
                 stylizedText =
                         PrintStyleManager.getDebugPrintStyle().stylize(
-                                logContext, logInformation);
+                                logInformation.getLogContext(), logInformation);
                 debug(logInformation, stylizedText);
                 break;
             case PRINTLN:
                 stylizedText =
                         PrintStyleManager.getPrintlnPrintStyle().stylize(
-                                logContext, logInformation);
+                                logInformation.getLogContext(), logInformation);
                 println(logInformation, stylizedText);
                 break;
             case INFO:
                 stylizedText =
                         PrintStyleManager.getInfoPrintStyle().stylize(
-                                logContext, logInformation);
+                                logInformation.getLogContext(), logInformation);
                 info(logInformation, stylizedText);
                 break;
             case WARN:
                 stylizedText =
                         PrintStyleManager.getWarnPrintStyle().stylize(
-                                logContext, logInformation);
+                                logInformation.getLogContext(), logInformation);
                 warn(logInformation, stylizedText);
                 break;
             case ERROR:
                 stylizedText =
                         PrintStyleManager.getErrorPrintStyle().stylize(
-                                logContext, logInformation);
+                                logInformation.getLogContext(), logInformation);
                 error(logInformation, stylizedText);
                 break;
             case VERBOSE:
                 stylizedText =
                         PrintStyleManager.getVerbosePrintStyle().stylize(
-                                logContext, logInformation);
+                                logInformation.getLogContext(), logInformation);
                 verbose(logInformation, stylizedText);
                 break;
             default:

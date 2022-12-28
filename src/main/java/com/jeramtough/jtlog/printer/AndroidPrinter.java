@@ -22,8 +22,7 @@ public class AndroidPrinter extends BasePrinter {
         isUsedAndroidLogApi = usedAndroidLogApi;
     }
 
-    public AndroidPrinter(LogContext logContext) {
-        super(logContext);
+    public AndroidPrinter() {
     }
 
     @Override

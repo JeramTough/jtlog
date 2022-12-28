@@ -11,8 +11,7 @@ import com.jeramtough.jtlog.tag.OutPrintlnTag;
  */
 public class JtPrinter extends BasePrinter {
 
-    JtPrinter(LogContext logContext) {
-        super(logContext);
+    JtPrinter() {
     }
 
     @Override

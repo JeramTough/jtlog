@@ -36,6 +36,12 @@ public class LogInformation {
     private String trace;
 
 
+    /**
+     * 环境跟着输入的信息走
+     */
+    private LogContext logContext;
+
+
     private LogInformation() {
     }
 
@@ -106,6 +112,14 @@ public class LogInformation {
         this.messageWrapper = messageWrapper;
     }
 
+    public LogContext getLogContext() {
+        return logContext;
+    }
+
+    public void setLogContext(LogContext logContext) {
+        this.logContext = logContext;
+    }
+
     //{{{{{{{{{}}}}}}}}}}}}}}}}}
 
 
@@ -120,6 +134,7 @@ public class LogInformation {
         public Builder(LogContext logContext) {
             logInformation = new LogInformation();
             stackTraceOffset = logContext.getLogConfig().getStackTraceOffset();
+            logInformation.setLogContext(logContext);
         }
 
         public Builder setJtLogLevel(LogLevel logLevel) {
