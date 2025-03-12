@@ -11,6 +11,7 @@ import com.jeramtough.jtlog.recorder.LogRecorder;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 负责生成和管理JtLogger实例
@@ -31,7 +32,7 @@ public final class LoggerManager {
     }
 
     static void initResources(){
-        loggerMap = new HashMap<>();
+        loggerMap = new ConcurrentHashMap<>();
         logConfigFactory = getLogConfigFactory(logConfigDefaultValues);
     }
 
